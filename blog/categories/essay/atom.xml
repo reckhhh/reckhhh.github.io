@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Essay | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/essay/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-24T00:33:43+08:00</updated>
+  <updated>2015-04-24T00:47:07+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -46,7 +46,7 @@
 <p>Bonus:</p>
 
 <p>For removing the file/document named &ldquo;sometingToRemove&rdquo; of your local respository:
-* git rm sometingToRemove</p>
+- git rm sometingToRemove</p>
 ]]></content>
   </entry>
   
