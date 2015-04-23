@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Essay | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/essay/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-24T00:55:00+08:00</updated>
+  <updated>2015-04-24T01:00:53+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -18,31 +18,36 @@
     <link href="http://reckhhh.github.io/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line/"/>
     <updated>2015-04-24T00:31:36+08:00</updated>
     <id>http://reckhhh.github.io/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line</id>
-    <content type="html"><![CDATA[<ol>
+    <content type="html"><![CDATA[<ul>
 <li><p>Register an &ldquo;username&rdquo; and login in GitHub</p></li>
 <li><p>Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository and give it a name</p></li>
 <li><p>Open your repository and you can see the clone URL is located at the right side, for instance: <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></p></li>
 <li><p>Copy the URL of your repository and clone it from remote to local by typing: git clone <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></p></li>
 <li><p>See the current configured remote repository for your fork by typing: git remote -v</p></li>
 <li><p>Add something to the local respository, sush as a &ldquo;README.md&rdquo; file</p></li>
-<li><p>Push the new added file &ldquo;README.md&rdquo; to the remote version on GitHub by typing:</p></li>
-<li><p>git init</p></li>
-<li><p>git add README.md</p></li>
-<li><p>git commit -m &ldquo;your commit remark&rdquo;</p></li>
-<li><p>git remote rm origin</p></li>
-<li><p>git remote add origin <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></p></li>
-<li><p>git push -u origin master</p></li>
-<li><p>Typing your username and password to submit the changes to your repository on GitHub</p></li>
-<li><p>Mission Complete. Now you can refresh the web page of your repository to see the &ldquo;README.md&rdquo; file that justed added</p></li>
-</ol>
+<li><p>Push the new added file &ldquo;README.md&rdquo; to the remote version on GitHub by typing:</p>
 
+<ul>
+<li>git init</li>
+<li>git add README.md</li>
+<li>git commit -m &ldquo;your commit remark&rdquo;</li>
+<li>git remote rm origin</li>
+<li>git remote add origin <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></li>
+<li>git push -u origin master</li>
+</ul>
+</li>
+<li><p>Typing your username and password to submit the changes to your repository on GitHub</p></li>
+</ul>
+
+
+<h2>* Mission Complete. Now you can refresh the web page of your repository to see the &ldquo;README.md&rdquo; file that justed added</h2>
 
 <p>Bonus:</p>
 
 <p>For removing the file/document named &ldquo;sometingToRemove&rdquo; of your local respository:</p>
 
 <ul>
-<li>git rm sometingToRemove</li>
+<li> git rm sometingToRemove</li>
 </ul>
 
 ]]></content>
