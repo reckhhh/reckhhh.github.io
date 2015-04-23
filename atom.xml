@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-24T01:04:46+08:00</updated>
+  <updated>2015-04-24T01:07:04+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -36,20 +36,16 @@
 <li>git push -u origin master</li>
 </ul>
 </li>
-<li>Typing your username and password to submit the changes to your repository on GitHub
+<li>Typing your username and password to submit the changes to your repository on GitHub</li>
+<li>Now you can refresh the web page of your repository to see the &ldquo;README.md&rdquo; file that just added</li>
+<li>For removing the file/document named &ldquo;sometingToRemove&rdquo; of your local repository:
 
 <ul>
-<li>Mission Complete. Now you can refresh the web page of your repository to see the &ldquo;README.md&rdquo; file that just added</li>
+<li>git rm sometingToRemove</li>
 </ul>
 </li>
 </ul>
 
-
-<hr />
-
-<p>Bonus:
-For removing the file/document named &ldquo;sometingToRemove&rdquo; of your local repository:
-   * git rm sometingToRemove</p>
 ]]></content>
   </entry>
   
