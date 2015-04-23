@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>First Blog - Black Mamba</title>
+  <title>How_to_Add_Stuff_on_GitHub_via_Command_Line - Black Mamba</title>
   <meta name="author" content="Chen Rui">
 
   
-  <meta name="description" content="After several hours efforts, I have my Octopress blog in the end. Hello, World ! Then, what to write ? I intend to: Share technology about &hellip;">
+  <meta name="description" content="Register an &ldquo;username&rdquo; and login in GitHub
+Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository and give it a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://reckhhh.github.io/blog/2015/04/23/first-blog/">
+  <link rel="canonical" href="http://reckhhh.github.io/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Black Mamba" type="application/atom+xml">
@@ -68,7 +69,7 @@
   
   <header>
     
-      <h1 class="entry-title">First Blog</h1>
+      <h1 class="entry-title">How_to_Add_Stuff_on_GitHub_via_Command_Line</h1>
     
     
       <p class="meta">
@@ -77,28 +78,42 @@
 
 
 
-<time class='entry-date' datetime='2015-04-23T23:38:25+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>11:38 pm</span></time>
+<time class='entry-date' datetime='2015-04-24T00:31:36+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:31 am</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>After several hours efforts, I have my Octopress blog in the end.</p>
+<div class="entry-content"><ol>
+<li>Register an &ldquo;username&rdquo; and login in GitHub</li>
+<li>Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository and give it a name</li>
+<li>Open your repository and you can see the clone URL is located at the right side, for instance: <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></li>
+<li>Copy the URL of your repository and clone it from remote to local by typing: git clone <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></li>
+<li>See the current configured remote repository for your fork by typing: git remote -v</li>
+<li>Add something to the local respository, sush as a &ldquo;README.md&rdquo; file</li>
+<li>Push the new added file &ldquo;README.md&rdquo; to the remote version on GitHub by typing:</li>
+<li>git init</li>
+<li>git add README.md</li>
+<li>git commit -m &ldquo;your commit remark&rdquo;</li>
+<li>git remote rm origin</li>
+<li>git remote add origin <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></li>
+<li>git push -u origin master</li>
+<li>Typing your username and password to submit the changes to your repository on GitHub
 
-<h4><em>Hello, World !</em></h4>
+<ol>
+<li>Mission Complete. Now you can refresh the web page of your repository to see the &ldquo;README.md&rdquo; file that justed added</li>
+</ol>
+</li>
+</ol>
 
-<p>Then, what to write ?</p>
 
-<p>I intend to:</p>
+<hr />
 
-<ul>
-<li><p>Share technology about <em>Programming</em> and <em>Software Development</em></p></li>
-<li><p>Share <em>Experiences</em>, <em>Lessons</em> and <em>Thoughts</em></p></li>
-<li><p>Record <em>Life</em> and <em>Time</em></p></li>
-<li><p>Write about <em>Other interesting stuff</em></p></li>
-</ul>
+<p>Bonus:</p>
 
+<p>For removing the file/document named &ldquo;sometingToRemove&rdquo; of your local respository:
+* git rm sometingToRemove</p>
 </div>
 
 
@@ -114,7 +129,7 @@
 
 
 
-<time class='entry-date' datetime='2015-04-23T23:38:25+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>11:38 pm</span></time>
+<time class='entry-date' datetime='2015-04-24T00:31:36+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:31 am</span></time>
       
 
 <span class="categories">
@@ -135,8 +150,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2015/04/23/first-blog/" title="Previous Post: First Blog">&laquo; First Blog</a>
       
-        <a class="basic-alignment right" href="/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line/" title="Next Post: How_to_Add_Stuff_on_GitHub_via_Command_Line">How_to_Add_Stuff_on_GitHub_via_Command_Line &raquo;</a>
       
     </p>
   </footer>
@@ -190,8 +205,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://reckhhh.github.io/blog/2015/04/23/first-blog/';
-        var disqus_url = 'http://reckhhh.github.io/blog/2015/04/23/first-blog/';
+        var disqus_identifier = 'http://reckhhh.github.io/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line/';
+        var disqus_url = 'http://reckhhh.github.io/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-24T00:28:08+08:00</updated>
+  <updated>2015-04-24T00:32:08+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How_to_Add_Stuff_on_GitHub_via_Command_Line]]></title>
+    <link href="http://reckhhh.github.io/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line/"/>
+    <updated>2015-04-24T00:31:36+08:00</updated>
+    <id>http://reckhhh.github.io/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line</id>
+    <content type="html"><![CDATA[<ol>
+<li>Register an &ldquo;username&rdquo; and login in GitHub</li>
+<li>Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository and give it a name</li>
+<li>Open your repository and you can see the clone URL is located at the right side, for instance: <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></li>
+<li>Copy the URL of your repository and clone it from remote to local by typing: git clone <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></li>
+<li>See the current configured remote repository for your fork by typing: git remote -v</li>
+<li>Add something to the local respository, sush as a &ldquo;README.md&rdquo; file</li>
+<li>Push the new added file &ldquo;README.md&rdquo; to the remote version on GitHub by typing:</li>
+<li>git init</li>
+<li>git add README.md</li>
+<li>git commit -m &ldquo;your commit remark&rdquo;</li>
+<li>git remote rm origin</li>
+<li>git remote add origin <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></li>
+<li>git push -u origin master</li>
+<li>Typing your username and password to submit the changes to your repository on GitHub
+
+<ol>
+<li>Mission Complete. Now you can refresh the web page of your repository to see the &ldquo;README.md&rdquo; file that justed added</li>
+</ol>
+</li>
+</ol>
+
+
+<hr />
+
+<p>Bonus:</p>
+
+<p>For removing the file/document named &ldquo;sometingToRemove&rdquo; of your local respository:
+* git rm sometingToRemove</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[First Blog]]></title>
