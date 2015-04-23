@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Essay | Black Mamba]]></title>
+  <link href="http://reckhhh.github.io/blog/categories/essay/atom.xml" rel="self"/>
+  <link href="http://reckhhh.github.io/"/>
+  <updated>2015-04-24T00:23:04+08:00</updated>
+  <id>http://reckhhh.github.io/</id>
+  <author>
+    <name><![CDATA[Chen Rui]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[First Blog]]></title>
+    <link href="http://reckhhh.github.io/blog/2015/04/23/first-blog/"/>
+    <updated>2015-04-23T23:38:25+08:00</updated>
+    <id>http://reckhhh.github.io/blog/2015/04/23/first-blog</id>
+    <content type="html"><![CDATA[<p>After several hours efforts, I have my Octopress blog in the end.</p>
+
+<h4><em>Hello, World !</em></h4>
+
+<p>Then, what to write ?</p>
+
+<p>I intend to:</p>
+
+<ul>
+<li><p>Share technology about <em>Programming</em> and <em>Software Development</em></p></li>
+<li><p>Share <em>Experiences</em>, <em>Lessons</em> and <em>Thoughts</em></p></li>
+<li><p>Record <em>Life</em> and <em>Time</em></p></li>
+<li><p>Write about <em>Others</em></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
