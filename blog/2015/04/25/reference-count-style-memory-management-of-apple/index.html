@@ -108,8 +108,10 @@ id obj = [[NSObject alloc] init]; A variable can hold the objects generate by ot
 
 
 <ul>
-<li><p>If the objects of a variable are no longer needed, the variable can release the objects held by itself</p></li>
-<li><p>Generate by itself and hold the objects by itself</p></li>
+<li><p>If the objects of a variable are no longer needed, the variable can release the objects held by itself</p>
+
+<pre><code>  -  Generate by itself and hold the objects by itself
+</code></pre></li>
 </ul>
 
 
@@ -119,10 +121,8 @@ id obj = [[NSObject alloc] init]; A variable can hold the objects generate by ot
 </span><span class='line'>[obj release];</span></code></pre></td></tr></table></div></figure>
 
 
-<ul>
-<li>Generate by others and hold the objects by itself</li>
-</ul>
-
+<pre><code>    -  Generate by others and hold the objects by itself
+</code></pre>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
