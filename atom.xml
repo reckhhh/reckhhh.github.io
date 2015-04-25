@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-26T00:48:19+08:00</updated>
+  <updated>2015-04-26T00:50:05+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -42,20 +42,31 @@
 <li><p>If the objects of a variable are no longer needed, the variable can release the objects held by itself</p>
 
 <ul>
-<li><p> Generate by itself and hold the objects by itself
-<code>
-id obj = [[NSObject alloc] init];
-[obj release];
-</code></p></li>
-<li><p> Generate by others and hold the objects by itself
-<code>
-id obj = [NSMutableArray array];
-[obj retain];
-[obj release];
-</code></p></li>
+<li> Generate by itself and hold the objects by itself</li>
 </ul>
 </li>
-<li><p>A variable cannot release the objects held by others</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>id obj = [[NSObject alloc] init];
+</span><span class='line'>[obj release];</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>-  Generate by others and hold the objects by itself
+</code></pre>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>id obj = [NSMutableArray array];
+</span><span class='line'>[obj retain];
+</span><span class='line'>[obj release];</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>A variable cannot release the objects held by others</li>
 </ul>
 
 
