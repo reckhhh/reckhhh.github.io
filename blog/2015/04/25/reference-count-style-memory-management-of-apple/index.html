@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>How to Add Stuff on GitHub via Command Line - Black Mamba</title>
+  <title>Reference Count Style Memory Management of Apple - Black Mamba</title>
   <meta name="author" content="Chen Rui">
 
   
-  <meta name="description" content="Register an &ldquo;username&rdquo; and login in GitHub
-Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository and give it a &hellip;">
+  <meta name="description" content="A variable hold the objects generate by itself
+A variable can hold the objects generate by other variables
+If the objects of a variable are no &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@ Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://reckhhh.github.io/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line/">
+  <link rel="canonical" href="http://reckhhh.github.io/blog/2015/04/25/reference-count-style-memory-management-of-apple/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Black Mamba" type="application/atom+xml">
@@ -70,7 +71,7 @@ Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository 
   
   <header>
     
-      <h1 class="entry-title">How to Add Stuff on GitHub via Command Line</h1>
+      <h1 class="entry-title">Reference Count Style Memory Management of Apple</h1>
     
     
       <p class="meta">
@@ -79,40 +80,19 @@ Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository 
 
 
 
-<time class='entry-date' datetime='2015-04-24T00:31:36+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:31 am</span></time>
+<time class='entry-date' datetime='2015-04-25T23:32:02+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:32 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><ul>
-<li>Register an &ldquo;username&rdquo; and login in GitHub</li>
-<li>Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository and give it a name</li>
-<li>Open your repository and you can see the clone URL is located at the right side, for instance: <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></li>
-<li>Copy the URL of your repository and clone it from remote to local by typing: git clone <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></li>
-<li>See the current configured remote repository for your fork by typing: git remote -v</li>
-<li>Add something to the local repository, such as a &ldquo;README.md&rdquo; file</li>
-<li>Push the new added file &ldquo;README.md&rdquo; to the remote version on GitHub by typing:
-
-<ul>
-<li>git init</li>
-<li>git add README.md</li>
-<li>git commit -m &ldquo;your commit remark&rdquo;</li>
-<li>git remote rm origin</li>
-<li>git remote add origin <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></li>
-<li>git push -u origin master</li>
-</ul>
-</li>
-<li>Typing your username and password to submit the changes to your repository on GitHub</li>
-<li>Now you can refresh the web page of your repository to see the &ldquo;README.md&rdquo; file that just added</li>
-<li>For removing the file/document named &ldquo;sometingToRemove&rdquo; of your local repository:
-
-<ul>
-<li>git rm sometingToRemove</li>
-</ul>
-</li>
-</ul>
+<div class="entry-content"><ol>
+<li>A variable hold the objects generate by itself</li>
+<li>A variable can hold the objects generate by other variables</li>
+<li>If the objects of a variable are no longer needed, the variable can release the objects held by itself</li>
+<li>A variable can&rsquo;t release the objects held by others</li>
+</ol>
 
 </div>
 
@@ -129,12 +109,12 @@ Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository 
 
 
 
-<time class='entry-date' datetime='2015-04-24T00:31:36+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:31 am</span></time>
+<time class='entry-date' datetime='2015-04-25T23:32:02+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:32 pm</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/essay/'>essay</a>
+    <a class='category' href='/blog/categories/ios/'>ios,</a>, <a class='category' href='/blog/categories/os/'>os</a>, <a class='category' href='/blog/categories/x/'>x</a>
   
 </span>
 
@@ -150,10 +130,8 @@ Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository 
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2015/04/23/first-blog/" title="Previous Post: First Blog">&laquo; First Blog</a>
+        <a class="basic-alignment left" href="/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line/" title="Previous Post: How to Add Stuff on GitHub via Command Line">&laquo; How to Add Stuff on GitHub via Command Line</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/04/25/reference-count-style-memory-management-of-apple/" title="Next Post: Reference Count Style Memory Management of Apple">Reference Count Style Memory Management of Apple &raquo;</a>
       
     </p>
   </footer>
@@ -211,8 +189,8 @@ Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository 
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://reckhhh.github.io/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line/';
-        var disqus_url = 'http://reckhhh.github.io/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line/';
+        var disqus_identifier = 'http://reckhhh.github.io/blog/2015/04/25/reference-count-style-memory-management-of-apple/';
+        var disqus_url = 'http://reckhhh.github.io/blog/2015/04/25/reference-count-style-memory-management-of-apple/';
         var disqus_script = 'embed.js';
       
     (function () {

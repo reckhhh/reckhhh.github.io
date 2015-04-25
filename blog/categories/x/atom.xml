@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: X | Black Mamba]]></title>
+  <link href="http://reckhhh.github.io/blog/categories/x/atom.xml" rel="self"/>
+  <link href="http://reckhhh.github.io/"/>
+  <updated>2015-04-25T23:48:32+08:00</updated>
+  <id>http://reckhhh.github.io/</id>
+  <author>
+    <name><![CDATA[Chen Rui]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Reference Count Style Memory Management of Apple]]></title>
+    <link href="http://reckhhh.github.io/blog/2015/04/25/reference-count-style-memory-management-of-apple/"/>
+    <updated>2015-04-25T23:32:02+08:00</updated>
+    <id>http://reckhhh.github.io/blog/2015/04/25/reference-count-style-memory-management-of-apple</id>
+    <content type="html"><![CDATA[<ol>
+<li>A variable hold the objects generate by itself</li>
+<li>A variable can hold the objects generate by other variables</li>
+<li>If the objects of a variable are no longer needed, the variable can release the objects held by itself</li>
+<li>A variable can&rsquo;t release the objects held by others</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
