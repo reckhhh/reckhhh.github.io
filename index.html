@@ -90,18 +90,18 @@ id obj = [[NSObject alloc] init]; A variable can hold the objects generate by ot
   </header>
 
 
-  <div class="entry-content"><ol>
+  <div class="entry-content"><ul>
 <li>A variable hold the objects generate by itself</li>
-</ol>
+</ul>
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>id obj = [[NSObject alloc] init];</span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
+<ul>
 <li>A variable can hold the objects generate by other variables</li>
-</ol>
+</ul>
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -110,16 +110,16 @@ id obj = [[NSObject alloc] init]; A variable can hold the objects generate by ot
 </span><span class='line'>[obj retain];</span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
+<ul>
 <li><p>If the objects of a variable are no longer needed, the variable can release the objects held by itself</p></li>
 <li><p>Generate by itself and hold the objects by itself</p></li>
-</ol>
+</ul>
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>id obj = [[NSObject alloc] init];
-</span><span class='line'>[obj release]</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>[obj release];</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -135,9 +135,9 @@ id obj = [[NSObject alloc] init]; A variable can hold the objects generate by ot
 </span><span class='line'>[obj release];</span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
-<li>A variable can’t release the objects held by others</li>
-</ol>
+<ul>
+<li>A variable cannot release the objects held by others</li>
+</ul>
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>

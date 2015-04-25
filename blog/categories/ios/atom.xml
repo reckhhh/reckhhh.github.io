@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ios | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-26T00:32:26+08:00</updated>
+  <updated>2015-04-26T00:42:02+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -18,24 +18,34 @@
     <link href="http://reckhhh.github.io/blog/2015/04/25/reference-count-style-memory-management-of-apple/"/>
     <updated>2015-04-25T23:32:02+08:00</updated>
     <id>http://reckhhh.github.io/blog/2015/04/25/reference-count-style-memory-management-of-apple</id>
-    <content type="html"><![CDATA[<ol>
-<li><p>A variable hold the objects generate by itself
-<code>id obj = [[NSObject alloc] init];</code></p></li>
-<li><p>A variable can hold the objects generate by other variables
-<code>id obj = [NSMutableArray array];
-[obj retain];</code></p></li>
-<li><p>If the objects of a variable are no longer needed, the variable can release the objects held by itself</p></li>
-<li>Generate by itself and hold the objects by itself
-<code>id obj = [[NSObject alloc] init];
-[obj release];</code></li>
-<li><p>Generate by others and hold the objects by itself
-<code>id obj = [NSMutableArray array];
+    <content type="html"><![CDATA[<ul>
+<li>A variable hold the objects generate by itself
+<code>
+id obj = [[NSObject alloc] init];
+</code></li>
+<li>A variable can hold the objects generate by other variables
+<code>
+id obj = [NSMutableArray array];
 [obj retain];
-[obj release];</code></p></li>
-<li><p>A variable can’t release the objects held by others
-<code>id obj1 = [obj0 object];
-[obj1 release];    // error</code></p></li>
-</ol>
+</code></li>
+<li><p>If the objects of a variable are no longer needed, the variable can release the objects held by itself</p></li>
+<li><p>Generate by itself and hold the objects by itself
+<code>
+id obj = [[NSObject alloc] init];
+[obj release];
+</code></p></li>
+<li>Generate by others and hold the objects by itself
+<code>
+id obj = [NSMutableArray array];
+[obj retain];
+[obj release];
+</code></li>
+<li>A variable cannot release the objects held by others
+<code>
+id obj1 = [obj0 object];
+[obj1 release];    // error
+</code></li>
+</ul>
 
 ]]></content>
   </entry>
