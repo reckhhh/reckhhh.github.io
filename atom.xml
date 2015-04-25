@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-26T00:12:04+08:00</updated>
+  <updated>2015-04-26T00:14:02+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -39,8 +39,8 @@
 
 
 <ol>
-<li>If the objects of a variable are no longer needed, the variable can release the objects held by itself</li>
-<li>Generate by itself and hold the objects by itself</li>
+<li><p>If the objects of a variable are no longer needed, the variable can release the objects held by itself</p></li>
+<li><p>Generate by itself and hold the objects by itself</p></li>
 </ol>
 
 
