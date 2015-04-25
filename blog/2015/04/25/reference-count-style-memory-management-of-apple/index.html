@@ -9,9 +9,9 @@
   <meta name="author" content="Chen Rui">
 
   
-  <meta name="description" content="A variable hold the objects generate by itself
-A variable can hold the objects generate by other variables
-If the objects of a variable are no &hellip;">
+  <meta name="description" content="A variable hold the objects generate by itself 1
+id obj = [[NSObject alloc] init]; A variable can hold the objects generate by other variables 1
+2 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,10 +89,58 @@ If the objects of a variable are no &hellip;">
 
 <div class="entry-content"><ol>
 <li>A variable hold the objects generate by itself</li>
-<li>A variable can hold the objects generate by other variables</li>
-<li>If the objects of a variable are no longer needed, the variable can release the objects held by itself</li>
-<li>A variable can&rsquo;t release the objects held by others</li>
 </ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>id obj = [[NSObject alloc] init];</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>A variable can hold the objects generate by other variables</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>id obj = [NSMutableArray array];
+</span><span class='line'>[obj retain];</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>If the objects of a variable are no longer needed, the variable can release the objects held by itself</li>
+<li>Generate by itself and hold the objects by itself</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>id obj = [[NSObject alloc] init];
+</span><span class='line'>[obj release]</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Generate by others and hold the objects by itself</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>id obj = [NSMutableArray array];
+</span><span class='line'>[obj retain];
+</span><span class='line'>[obj release];</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>A variable can’t release the objects held by others</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>id obj1 = [obj0 object];
+</span><span class='line'>[obj1 release];    // error</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
