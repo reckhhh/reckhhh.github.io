@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ios | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-26T14:36:59+08:00</updated>
+  <updated>2015-04-26T14:39:26+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -37,9 +37,13 @@
 <hr />
 
 <ul>
-<li>atomic (default)</li>
+<li>atomic (default)
+
+<ul>
 <li>Only one thread access the variable (static type)</li>
 <li>Thread safe, but slow</li>
+</ul>
+</li>
 </ul>
 
 
@@ -50,10 +54,14 @@
 </code></p>
 
 <ul>
-<li>nonatomic</li>
+<li>nonatomic
+
+<ul>
 <li>Multiple threads access the variable (dynamic type)</li>
 <li>Thread unsafe, but fast</li>
 <li>Not a default behavior, need to add nonatomic keyword</li>
+</ul>
+</li>
 </ul>
 
 
@@ -64,11 +72,15 @@
 </code></p>
 
 <ul>
-<li>strong (iOS4 = retain, default)</li>
+<li>strong (iOS4 = retain, default)
+
+<ul>
 <li>Own the object, keep it in the heap until don&rsquo;t point to it anymore</li>
 <li>Can&rsquo;t dealloc this before aim fine with that same as &ldquo;retain&rdquo;</li>
 <li>Generally, using for UIViewControllers (UI item&rsquo;s parents)</li>
 <li>Used with ARC and ARC automatically releases it when you are done with it</li>
+</ul>
+</li>
 </ul>
 
 
@@ -79,11 +91,15 @@
 </code></p>
 
 <ul>
-<li>weak (iOS4 = unsafe_unretained )</li>
+<li>weak (iOS4 = unsafe_unretained )
+
+<ul>
 <li>Keep it as long as someone else points to it strongly</li>
 <li>A &ldquo;weak&rdquo; reference is a reference that you don&rsquo;t retain</li>
 <li>When the object is &ldquo;deallocated&rdquo;, the weak pointer is automatically set to nil</li>
 <li>Generally using for IBOutlets (UIViewController&rsquo;s Childs) because the child object only needs to exist as long as the parent object does</li>
+</ul>
+</li>
 </ul>
 
 
@@ -94,11 +110,15 @@
 </code></p>
 
 <ul>
-<li>retain = strong</li>
+<li>retain = strong
+
+<ul>
 <li>Old value is released and it is assigned</li>
 <li>Specifies the new value should be sent &ldquo;-retain&rdquo; on assignment and the old value sent &ldquo;-release&rdquo;</li>
 <li>If you write retain it will auto work like strong</li>
 <li>Methods like &ldquo;alloc&rdquo; include an implicit &ldquo;retain&rdquo;</li>
+</ul>
+</li>
 </ul>
 
 
@@ -109,8 +129,12 @@
 </code></p>
 
 <ul>
-<li>assign (default)</li>
+<li>assign (default)
+
+<ul>
 <li>A property attribute tells the compiler how to synthesize the property&rsquo;s setter implementation</li>
+</ul>
+</li>
 </ul>
 
 
@@ -121,9 +145,13 @@
 </code></p>
 
 <ul>
-<li>unsafe_unretained</li>
+<li>unsafe_unretained
+
+<ul>
 <li>An ownership qualifier that tells ARC how to insert retain/release calls</li>
 <li>The ARC version of assign</li>
+</ul>
+</li>
 </ul>
 
 
@@ -134,11 +162,15 @@
 </code></p>
 
 <ul>
-<li>copy</li>
+<li>copy
+
+<ul>
 <li>Required when the object is mutable</li>
 <li>Specifies the new value should be sent &ldquo;-copy&rdquo; on assignment and the old value should be sent &ldquo;-release&rdquo;</li>
 <li>Like retain, returns an object which you must explicitly release (e.g., in dealloc) in non-garbage collected environments</li>
 <li>Need to release the object when finished with it because you are retaining the copy</li>
+</ul>
+</li>
 </ul>
 
 
@@ -149,10 +181,14 @@
 </code></p>
 
 <ul>
-<li>readonly</li>
+<li>readonly
+
+<ul>
 <li>Tell compiler not to generate &ldquo;setter&rdquo; method automatically</li>
 <li>If you specify readonly, only a &ldquo;getter&rdquo; method is required in the @implementation block</li>
 <li>If you use the @synthesize directive in the @implementation block, only the &ldquo;getter&rdquo; method is synthesized</li>
+</ul>
+</li>
 </ul>
 
 
@@ -163,10 +199,14 @@
 </code></p>
 
 <ul>
-<li>readwrite  (default)</li>
+<li>readwrite  (default)
+
+<ul>
 <li>&ldquo;setter&rdquo; and &ldquo;getter&rdquo; are both generated</li>
 <li>Both &ldquo;setter&rdquo; and &ldquo;getter&rdquo; method are required in the @implementation block</li>
 <li>If you use the @synthesize directive in the implementation block, both the &ldquo;setter&rdquo; and &ldquo;getter&rdquo; methods are synthesized</li>
+</ul>
+</li>
 </ul>
 
 
