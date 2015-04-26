@@ -1,24 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Black Mamba]]></title>
-  <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
-  <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-26T14:36:59+08:00</updated>
-  <id>http://reckhhh.github.io/</id>
-  <author>
-    <name><![CDATA[Chen Rui]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Variable Property Attributes in iOS - Black Mamba</title>
+  <meta name="author" content="Chen Rui">
 
   
-  <entry>
-    <title type="html"><![CDATA[Variable Property Attributes in iOS]]></title>
-    <link href="http://reckhhh.github.io/blog/2015/04/26/variable-property-attributes-in-ios/"/>
-    <updated>2015-04-26T11:19:43+08:00</updated>
-    <id>http://reckhhh.github.io/blog/2015/04/26/variable-property-attributes-in-ios</id>
-    <content type="html"><![CDATA[<p>In iOS, variable property attributes indicate data accessibility and storage considerations,</p>
+  <meta name="description" content="In iOS, variable property attributes indicate data accessibility and storage considerations, atomic //default
+nonatomic
+strong = retain //default &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://reckhhh.github.io/blog/2015/04/26/variable-property-attributes-in-ios/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Black Mamba" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Black Mamba</a></h1>
+  
+    <h2>Faster, Higher, Stronger.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="reckhhh.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Variable Property Attributes in iOS</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-04-26T11:19:43+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:19 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>In iOS, variable property attributes indicate data accessibility and storage considerations,</p>
 
 <ul>
 <li>atomic                //default</li>
@@ -195,127 +264,125 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, readwrite) NSString *name;
 </span><span class='line'>@synthesize name;</span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[Reference Count Style Memory Management of Apple]]></title>
-    <link href="http://reckhhh.github.io/blog/2015/04/25/reference-count-style-memory-management-of-apple/"/>
-    <updated>2015-04-25T23:32:02+08:00</updated>
-    <id>http://reckhhh.github.io/blog/2015/04/25/reference-count-style-memory-management-of-apple</id>
-    <content type="html"><![CDATA[<ul>
-<li>A variable hold the objects generate by itself</li>
-</ul>
+
+<span class="byline author vcard">Posted by <span class="fn">Chen Rui</span></span>
+
+      
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>id obj = [[NSObject alloc] init];</span></code></pre></td></tr></table></div></figure>
 
 
-<ul>
-<li>A variable can hold the objects generate by other variables</li>
-</ul>
+<time class='entry-date' datetime='2015-04-26T11:19:43+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:19 am</span></time>
+      
 
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>id obj = [NSMutableArray array];
-</span><span class='line'>[obj retain];</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>If the objects of a variable are no longer needed, the variable can release the objects held by itself</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// Generate by itself and hold the objects by itself
-</span><span class='line'>id obj = [[NSObject alloc] init];
-</span><span class='line'>[obj release];
-</span><span class='line'>
-</span><span class='line'>// Generate by others and hold the objects by itself
-</span><span class='line'>id obj = [NSMutableArray array];
-</span><span class='line'>[obj retain];
-</span><span class='line'>[obj release];</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>A variable cannot release the objects held by others</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>id obj1 = [obj0 object];
-</span><span class='line'>[obj1 release];    // error</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
+<span class="categories">
   
-  <entry>
-    <title type="html"><![CDATA[How to Add Stuff on GitHub via Command Line]]></title>
-    <link href="http://reckhhh.github.io/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line/"/>
-    <updated>2015-04-24T00:31:36+08:00</updated>
-    <id>http://reckhhh.github.io/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line</id>
-    <content type="html"><![CDATA[<ul>
-<li>Register an &ldquo;username&rdquo; and login in GitHub</li>
-<li>Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository and give it a name</li>
-<li>Open your repository and you can see the clone URL is located at the right side, for instance: <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></li>
-<li>Copy the URL of your repository and clone it from remote to local by typing: git clone <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></li>
-<li>See the current configured remote repository for your fork by typing: git remote -v</li>
-<li>Add something to the local repository, such as a &ldquo;README.md&rdquo; file</li>
-<li>Push the new added file &ldquo;README.md&rdquo; to the remote version on GitHub by typing:
-
-<ul>
-<li>git init</li>
-<li>git add README.md</li>
-<li>git commit -m &ldquo;your commit remark&rdquo;</li>
-<li>git remote rm origin</li>
-<li>git remote add origin <a href="https://github.com/yourname/yourRepositoryName.git">https://github.com/yourname/yourRepositoryName.git</a></li>
-<li>git push -u origin master</li>
-</ul>
-</li>
-<li>Typing your username and password to submit the changes to your repository on GitHub</li>
-<li>Now you can refresh the web page of your repository to see the &ldquo;README.md&rdquo; file that just added</li>
-<li>For removing the file/document named &ldquo;sometingToRemove&rdquo; of your local repository:
-
-<ul>
-<li>git rm sometingToRemove</li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
+    <a class='category' href='/blog/categories/ios/'>ios</a>
   
-  <entry>
-    <title type="html"><![CDATA[First Blog]]></title>
-    <link href="http://reckhhh.github.io/blog/2015/04/23/first-blog/"/>
-    <updated>2015-04-23T23:38:25+08:00</updated>
-    <id>http://reckhhh.github.io/blog/2015/04/23/first-blog</id>
-    <content type="html"><![CDATA[<p>After several hours efforts, I have my Octopress blog in the end.</p>
+</span>
 
-<h4><em>Hello, World !</em></h4>
 
-<p>Then, what to write ?</p>
-
-<p>I intend to:</p>
-
-<ul>
-<li><p>Share technology about <em>Programming</em> and <em>Software Development</em></p></li>
-<li><p>Share <em>Experiences</em>, <em>Lessons</em> and <em>Thoughts</em></p></li>
-<li><p>Record <em>Life</em> and <em>Time</em></p></li>
-<li><p>Write about <em>Other Interesting Stuff</em></p></li>
-</ul>
-
-]]></content>
-  </entry>
+    </p>
+    
+      <div class="sharing">
   
-</feed>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/04/25/reference-count-style-memory-management-of-apple/" title="Previous Post: Reference Count Style Memory Management of Apple">&laquo; Reference Count Style Memory Management of Apple</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/04/26/variable-property-attributes-in-ios/">Variable Property Attributes in iOS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/04/25/reference-count-style-memory-management-of-apple/">Reference Count Style Memory Management of Apple</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line/">How to Add Stuff on GitHub via Command Line</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/04/23/first-blog/">First Blog</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Chen Rui -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'reckhhh';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://reckhhh.github.io/blog/2015/04/26/variable-property-attributes-in-ios/';
+        var disqus_url = 'http://reckhhh.github.io/blog/2015/04/26/variable-property-attributes-in-ios/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

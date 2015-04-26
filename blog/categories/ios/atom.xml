@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ios | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-26T00:54:52+08:00</updated>
+  <updated>2015-04-26T14:36:59+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -12,6 +12,171 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Variable Property Attributes in iOS]]></title>
+    <link href="http://reckhhh.github.io/blog/2015/04/26/variable-property-attributes-in-ios/"/>
+    <updated>2015-04-26T11:19:43+08:00</updated>
+    <id>http://reckhhh.github.io/blog/2015/04/26/variable-property-attributes-in-ios</id>
+    <content type="html"><![CDATA[<p>In iOS, variable property attributes indicate data accessibility and storage considerations,</p>
+
+<ul>
+<li>atomic                //default</li>
+<li>nonatomic</li>
+<li>strong = retain       //default</li>
+<li>weak = unsafe_unretained</li>
+<li>retain</li>
+<li>assign                //default</li>
+<li>unsafe_unretained</li>
+<li>copy</li>
+<li>readonly</li>
+<li>readwrite             //default</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>atomic (default)</li>
+<li>Only one thread access the variable (static type)</li>
+<li>Thread safe, but slow</li>
+</ul>
+
+
+<p>Example :
+<code>
+@property (atomic, retain) NSString *name;
+@synthesize name;
+</code></p>
+
+<ul>
+<li>nonatomic</li>
+<li>Multiple threads access the variable (dynamic type)</li>
+<li>Thread unsafe, but fast</li>
+<li>Not a default behavior, need to add nonatomic keyword</li>
+</ul>
+
+
+<p>Example:
+<code>
+@property (nonatomic, retain) NSString *name;
+@synthesize name;
+</code></p>
+
+<ul>
+<li>strong (iOS4 = retain, default)</li>
+<li>Own the object, keep it in the heap until don&rsquo;t point to it anymore</li>
+<li>Can&rsquo;t dealloc this before aim fine with that same as &ldquo;retain&rdquo;</li>
+<li>Generally, using for UIViewControllers (UI item&rsquo;s parents)</li>
+<li>Used with ARC and ARC automatically releases it when you are done with it</li>
+</ul>
+
+
+<p>Example:
+<code>
+@property (nonatomic, strong) ViewController *viewController;
+@synthesize viewController;
+</code></p>
+
+<ul>
+<li>weak (iOS4 = unsafe_unretained )</li>
+<li>Keep it as long as someone else points to it strongly</li>
+<li>A &ldquo;weak&rdquo; reference is a reference that you don&rsquo;t retain</li>
+<li>When the object is &ldquo;deallocated&rdquo;, the weak pointer is automatically set to nil</li>
+<li>Generally using for IBOutlets (UIViewController&rsquo;s Childs) because the child object only needs to exist as long as the parent object does</li>
+</ul>
+
+
+<p>Example :
+<code>
+@property (nonatomic, weak) IBOutlet UIButton *myButton;
+@synthesize myButton;
+</code></p>
+
+<ul>
+<li>retain = strong</li>
+<li>Old value is released and it is assigned</li>
+<li>Specifies the new value should be sent &ldquo;-retain&rdquo; on assignment and the old value sent &ldquo;-release&rdquo;</li>
+<li>If you write retain it will auto work like strong</li>
+<li>Methods like &ldquo;alloc&rdquo; include an implicit &ldquo;retain&rdquo;</li>
+</ul>
+
+
+<p>Example:
+<code>
+@property (nonatomic, retain) NSString *name;
+@synthesize name;
+</code></p>
+
+<ul>
+<li>assign (default)</li>
+<li>A property attribute tells the compiler how to synthesize the property&rsquo;s setter implementation</li>
+</ul>
+
+
+<p>Example:
+<code>
+@property (nonatomic, assign) NSString *address;
+@synthesize address;
+</code></p>
+
+<ul>
+<li>unsafe_unretained</li>
+<li>An ownership qualifier that tells ARC how to insert retain/release calls</li>
+<li>The ARC version of assign</li>
+</ul>
+
+
+<p>Example:
+<code>
+@property (nonatomic, unsafe_unretained) NSString *nickName;
+@synthesize nickName;
+</code></p>
+
+<ul>
+<li>copy</li>
+<li>Required when the object is mutable</li>
+<li>Specifies the new value should be sent &ldquo;-copy&rdquo; on assignment and the old value should be sent &ldquo;-release&rdquo;</li>
+<li>Like retain, returns an object which you must explicitly release (e.g., in dealloc) in non-garbage collected environments</li>
+<li>Need to release the object when finished with it because you are retaining the copy</li>
+</ul>
+
+
+<p>Example:
+<code>
+@property (nonatomic, copy) NSArray *myArray;
+@synthesize myArray;
+</code></p>
+
+<ul>
+<li>readonly</li>
+<li>Tell compiler not to generate &ldquo;setter&rdquo; method automatically</li>
+<li>If you specify readonly, only a &ldquo;getter&rdquo; method is required in the @implementation block</li>
+<li>If you use the @synthesize directive in the @implementation block, only the &ldquo;getter&rdquo; method is synthesized</li>
+</ul>
+
+
+<p>Example:
+<code>
+@property (nonatomic, readonly) NSString *name;
+@synthesize name;
+</code></p>
+
+<ul>
+<li>readwrite  (default)</li>
+<li>&ldquo;setter&rdquo; and &ldquo;getter&rdquo; are both generated</li>
+<li>Both &ldquo;setter&rdquo; and &ldquo;getter&rdquo; method are required in the @implementation block</li>
+<li>If you use the @synthesize directive in the implementation block, both the &ldquo;setter&rdquo; and &ldquo;getter&rdquo; methods are synthesized</li>
+</ul>
+
+
+<p>Example:
+<code>
+@property (nonatomic, readwrite) NSString *name;
+@synthesize name;
+</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Reference Count Style Memory Management of Apple]]></title>

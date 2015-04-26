@@ -9,9 +9,9 @@
   <meta name="author" content="Chen Rui">
 
   
-  <meta name="description" content="A variable hold the objects generate by itself 1
-id obj = [[NSObject alloc] init]; A variable can hold the objects generate by other variables 1
-2 &hellip;">
+  <meta name="description" content="In iOS, variable property attributes indicate data accessibility and storage considerations, atomic //default
+nonatomic
+strong = retain //default &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +68,211 @@ id obj = [[NSObject alloc] init]; A variable can hold the objects generate by ot
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/04/26/variable-property-attributes-in-ios/">Variable Property Attributes in iOS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-04-26T11:19:43+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:19 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In iOS, variable property attributes indicate data accessibility and storage considerations,</p>
+
+<ul>
+<li>atomic                //default</li>
+<li>nonatomic</li>
+<li>strong = retain       //default</li>
+<li>weak = unsafe_unretained</li>
+<li>retain</li>
+<li>assign                //default</li>
+<li>unsafe_unretained</li>
+<li>copy</li>
+<li>readonly</li>
+<li>readwrite             //default</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>atomic (default)</li>
+<li>Only one thread access the variable (static type)</li>
+<li>Thread safe, but slow</li>
+</ul>
+
+
+<p>Example :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@property (atomic, retain) NSString *name;
+</span><span class='line'>@synthesize name;</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>nonatomic</li>
+<li>Multiple threads access the variable (dynamic type)</li>
+<li>Thread unsafe, but fast</li>
+<li>Not a default behavior, need to add nonatomic keyword</li>
+</ul>
+
+
+<p>Example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, retain) NSString *name;
+</span><span class='line'>@synthesize name;</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>strong (iOS4 = retain, default)</li>
+<li>Own the object, keep it in the heap until don&rsquo;t point to it anymore</li>
+<li>Can&rsquo;t dealloc this before aim fine with that same as &ldquo;retain&rdquo;</li>
+<li>Generally, using for UIViewControllers (UI item&rsquo;s parents)</li>
+<li>Used with ARC and ARC automatically releases it when you are done with it</li>
+</ul>
+
+
+<p>Example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, strong) ViewController *viewController;
+</span><span class='line'>@synthesize viewController;</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>weak (iOS4 = unsafe_unretained )</li>
+<li>Keep it as long as someone else points to it strongly</li>
+<li>A &ldquo;weak&rdquo; reference is a reference that you don&rsquo;t retain</li>
+<li>When the object is &ldquo;deallocated&rdquo;, the weak pointer is automatically set to nil</li>
+<li>Generally using for IBOutlets (UIViewController&rsquo;s Childs) because the child object only needs to exist as long as the parent object does</li>
+</ul>
+
+
+<p>Example :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, weak) IBOutlet UIButton *myButton;
+</span><span class='line'>@synthesize myButton;</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>retain = strong</li>
+<li>Old value is released and it is assigned</li>
+<li>Specifies the new value should be sent &ldquo;-retain&rdquo; on assignment and the old value sent &ldquo;-release&rdquo;</li>
+<li>If you write retain it will auto work like strong</li>
+<li>Methods like &ldquo;alloc&rdquo; include an implicit &ldquo;retain&rdquo;</li>
+</ul>
+
+
+<p>Example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, retain) NSString *name;
+</span><span class='line'>@synthesize name;</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>assign (default)</li>
+<li>A property attribute tells the compiler how to synthesize the property&rsquo;s setter implementation</li>
+</ul>
+
+
+<p>Example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, assign) NSString *address;
+</span><span class='line'>@synthesize address;</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>unsafe_unretained</li>
+<li>An ownership qualifier that tells ARC how to insert retain/release calls</li>
+<li>The ARC version of assign</li>
+</ul>
+
+
+<p>Example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, unsafe_unretained) NSString *nickName;
+</span><span class='line'>@synthesize nickName;</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>copy</li>
+<li>Required when the object is mutable</li>
+<li>Specifies the new value should be sent &ldquo;-copy&rdquo; on assignment and the old value should be sent &ldquo;-release&rdquo;</li>
+<li>Like retain, returns an object which you must explicitly release (e.g., in dealloc) in non-garbage collected environments</li>
+<li>Need to release the object when finished with it because you are retaining the copy</li>
+</ul>
+
+
+<p>Example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, copy) NSArray *myArray;
+</span><span class='line'>@synthesize myArray;</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>readonly</li>
+<li>Tell compiler not to generate &ldquo;setter&rdquo; method automatically</li>
+<li>If you specify readonly, only a &ldquo;getter&rdquo; method is required in the @implementation block</li>
+<li>If you use the @synthesize directive in the @implementation block, only the &ldquo;getter&rdquo; method is synthesized</li>
+</ul>
+
+
+<p>Example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, readonly) NSString *name;
+</span><span class='line'>@synthesize name;</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>readwrite  (default)</li>
+<li>&ldquo;setter&rdquo; and &ldquo;getter&rdquo; are both generated</li>
+<li>Both &ldquo;setter&rdquo; and &ldquo;getter&rdquo; method are required in the @implementation block</li>
+<li>If you use the @synthesize directive in the implementation block, both the &ldquo;setter&rdquo; and &ldquo;getter&rdquo; methods are synthesized</li>
+</ul>
+
+
+<p>Example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, readwrite) NSString *name;
+</span><span class='line'>@synthesize name;</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -260,6 +465,10 @@ id obj = [[NSObject alloc] init]; A variable can hold the objects generate by ot
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/04/26/variable-property-attributes-in-ios/">Variable Property Attributes in iOS</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2015/04/25/reference-count-style-memory-management-of-apple/">Reference Count Style Memory Management of Apple</a>
