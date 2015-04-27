@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Python | Black Mamba]]></title>
+  <link href="http://reckhhh.github.io/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://reckhhh.github.io/"/>
+  <updated>2015-04-27T12:33:55+08:00</updated>
+  <id>http://reckhhh.github.io/</id>
+  <author>
+    <name><![CDATA[Chen Rui]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Python Notes I]]></title>
+    <link href="http://reckhhh.github.io/blog/2015/04/27/python-notes-i/"/>
+    <updated>2015-04-27T12:28:38+08:00</updated>
+    <id>http://reckhhh.github.io/blog/2015/04/27/python-notes-i</id>
+    <content type="html"><![CDATA[<h3>Work effectively with IDLE</h3>
+
+<ul>
+<li>Press <strong>TAB</strong> key, IDLE will offer suggestions to help you complete your statement</li>
+<li>Press <strong>Alt-P</strong> to recall the previous code statement and press <strong>Alt-N</strong> to move to the next code statement</li>
+</ul>
+
+
+<h3>Deal with Python list</h3>
+
+<ul>
+<li>Python&rsquo;s variable identifiers don&rsquo;t have a type, Python&rsquo;s list is a <strong>high-level collection</strong></li>
+<li>Using print() and len() to work out how many data items are in the list
+<code>
+animal  = ["Dog", 'Pig', 'Cat', "Duck"]
+print(animal)
+['Dog', 'Pig', 'Cat', 'Duck']
+print(len(cast))
+4
+print(animal[1])
+Pig
+</code></li>
+<li>Using append(), extend() and pop() method to add and remove data from the list
+<code>
+animal.append("Tiger")
+print(animal)
+['Dog', 'Pig', 'Cat', 'Duck', 'Tiger']
+animal.pop()
+'Tiger'
+print(animal)
+['Dog', 'Pig', 'Cat', 'Duck']
+animal.extend(["Fish", "Bird"])
+print(animal)
+['Dog', 'Pig', 'Cat', 'Duck', 'Fish', 'Bird']
+</code></li>
+<li><p>Using remove() and insert() to find and remove or add a <strong>specific</strong> data from list
+<code>
+animal.remove("Pig")
+print(animal)
+['Dog', 'Cat', 'Duck', 'Fish', 'Bird']
+animal.insert(1, "Bull")
+print(animal)
+['Dog', 'Bull', 'Cat', 'Duck', 'Fish', 'Bird']
+</code></p></li>
+<li><p>For loops work with lists of any size
+<code>
+animals = ["Dog", 'Pig', 'Cat', "Duck", "Fish"]
+for each_animal in animals:
+print each_animal
+</code></p></li>
+<li><p>Store list within lists
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>movie = [&ldquo;Titanic&rdquo;, 1997, &ldquo;Romance &amp; Disaster&rdquo;, &ldquo;194 minutes&rdquo;, [&ldquo;James Cameron&rdquo;, [&ldquo;Leonardo DiCaprio&rdquo;, &ldquo;Kate Winslet&rdquo;, &ldquo;Billy Zane&rdquo;, &ldquo;Kathy Bates&rdquo;, &ldquo;Frances Fisher&rdquo;]]]
+</span><span class='line'>for each_item in movie:
+</span><span class='line'>print each_item&lt;/p&gt;&lt;/li&gt;
+</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;Titanic
+</span><span class='line'>1997
+</span><span class='line'>Romance &amp; Disaster
+</span><span class='line'>194 minutes
+</span><span class='line'>[&lsquo;James Cameron&rsquo;, [&lsquo;Leonardo DiCaprio&rsquo;, &lsquo;Kate Winslet&rsquo;, &lsquo;Billy Zane&rsquo;, &lsquo;Kathy Bates&rsquo;, &lsquo;Frances Fisher&rsquo;]]&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;print movie[4][1][0]
+</span><span class='line'>Leonardo DiCaprio</span></code></pre></td></tr></table></div></figure></p>
+
+<h3>Don&rsquo;t repeat code and create a function</h3>
+
+<ul>
+<li>isinstance() BIF checks whether an identifier refers to a data object of some specified type</li>
+<li>Using <strong>def</strong> to define a custom function
+<code>
+def function_name (arguments):
+code suite
+</code></li>
+<li>Python3 defaults its recursion limit to 1,000</li>
+<li>Print items in list within lists
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def print_item(the_list):
+</span><span class='line'>for each_item in the_list:
+</span><span class='line'>if isinstance(each_item, list):
+</span><span class='line'>print_item(each_item)
+</span><span class='line'>else:
+</span><span class='line'>print(each_item)&lt;/li&gt;
+</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;print_item(movie)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;Titanic
+</span><span class='line'>1997
+</span><span class='line'>Romance &amp; Disaster
+</span><span class='line'>194 minutes
+</span><span class='line'>James Cameron
+</span><span class='line'>Leonardo DiCaprio
+</span><span class='line'>Kate Winslet
+</span><span class='line'>Billy Zane
+</span><span class='line'>Kathy Bates
+</span><span class='line'>Frances Fisher</span></code></pre></td></tr></table></div></figure></p>
+
+<hr />
+
+<h3>Bonus: Python BIFs</h3>
+
+<ul>
+<li>BIFs is short for <em>build-in functions</em>, it can mean less code to write</li>
+<li>There were over 70 BIFs in Python3</li>
+<li>At Python or IDLE shell, typing dir(<strong>builtins</strong>) to see a list of the built-in functions</li>
+<li>To find out what any BIF does—like input(), for example—type help(input) at the shell for a description of the BIFs function</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Python Notes I - Black Mamba</title>
+  <meta name="author" content="Chen Rui">
+
+  
+  <meta name="description" content="Work effectively with IDLE Press TAB key, IDLE will offer suggestions to help you complete your statement
+Press Alt-P to recall the previous code &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://reckhhh.github.io/blog/2015/04/27/python-notes-i/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Black Mamba" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Black Mamba</a></h1>
+  
+    <h2>Faster, Higher, Stronger.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="reckhhh.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Python Notes I</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-04-27T12:28:38+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:28 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3>Work effectively with IDLE</h3>
+
+<ul>
+<li>Press <strong>TAB</strong> key, IDLE will offer suggestions to help you complete your statement</li>
+<li>Press <strong>Alt-P</strong> to recall the previous code statement and press <strong>Alt-N</strong> to move to the next code statement</li>
+</ul>
+
+
+<h3>Deal with Python list</h3>
+
+<ul>
+<li>Python&rsquo;s variable identifiers don&rsquo;t have a type, Python&rsquo;s list is a <strong>high-level collection</strong></li>
+<li>Using print() and len() to work out how many data items are in the list</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>animal  = ["Dog", 'Pig', 'Cat', "Duck"]
+</span><span class='line'>print(animal)
+</span><span class='line'>['Dog', 'Pig', 'Cat', 'Duck']
+</span><span class='line'>print(len(cast))
+</span><span class='line'>4
+</span><span class='line'>print(animal[1])
+</span><span class='line'>Pig</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Using append(), extend() and pop() method to add and remove data from the list</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>animal.append("Tiger")
+</span><span class='line'>print(animal)
+</span><span class='line'>['Dog', 'Pig', 'Cat', 'Duck', 'Tiger']
+</span><span class='line'>animal.pop()
+</span><span class='line'>'Tiger'
+</span><span class='line'>print(animal)
+</span><span class='line'>['Dog', 'Pig', 'Cat', 'Duck']
+</span><span class='line'>animal.extend(["Fish", "Bird"])
+</span><span class='line'>print(animal)
+</span><span class='line'>['Dog', 'Pig', 'Cat', 'Duck', 'Fish', 'Bird']</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Using remove() and insert() to find and remove or add a <strong>specific</strong> data from list</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>animal.remove("Pig")
+</span><span class='line'>print(animal)
+</span><span class='line'>['Dog', 'Cat', 'Duck', 'Fish', 'Bird']
+</span><span class='line'>animal.insert(1, "Bull")
+</span><span class='line'>print(animal)
+</span><span class='line'>['Dog', 'Bull', 'Cat', 'Duck', 'Fish', 'Bird']</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>For loops work with lists of any size</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>animals = ["Dog", 'Pig', 'Cat', "Duck", "Fish"]
+</span><span class='line'>for each_animal in animals:
+</span><span class='line'>print each_animal</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Store list within lists</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>movie = ["Titanic", 1997, "Romance & Disaster", "194 minutes", ["James Cameron", ["Leonardo DiCaprio", "Kate Winslet", "Billy Zane", "Kathy Bates", "Frances Fisher"]]]
+</span><span class='line'>for each_item in movie:
+</span><span class='line'>print each_item
+</span><span class='line'>
+</span><span class='line'>Titanic
+</span><span class='line'>1997
+</span><span class='line'>Romance & Disaster
+</span><span class='line'>194 minutes
+</span><span class='line'>['James Cameron', ['Leonardo DiCaprio', 'Kate Winslet', 'Billy Zane', 'Kathy Bates', 'Frances Fisher']]
+</span><span class='line'>
+</span><span class='line'>print movie[4][1][0]
+</span><span class='line'>Leonardo DiCaprio</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Don&rsquo;t repeat code and create a function</h3>
+
+<ul>
+<li>isinstance() BIF checks whether an identifier refers to a data object of some specified type</li>
+<li>Using <strong>def</strong> to define a custom function</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def function_name (arguments):
+</span><span class='line'>code suite</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Python3 defaults its recursion limit to 1,000</li>
+<li>Print items in list within lists</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def print_item(the_list):
+</span><span class='line'>for each_item in the_list:
+</span><span class='line'>if isinstance(each_item, list): 
+</span><span class='line'>print_item(each_item)
+</span><span class='line'>else:
+</span><span class='line'>print(each_item)
+</span><span class='line'>
+</span><span class='line'>print_item(movie)
+</span><span class='line'>
+</span><span class='line'>Titanic
+</span><span class='line'>1997
+</span><span class='line'>Romance & Disaster
+</span><span class='line'>194 minutes
+</span><span class='line'>James Cameron
+</span><span class='line'>Leonardo DiCaprio
+</span><span class='line'>Kate Winslet
+</span><span class='line'>Billy Zane
+</span><span class='line'>Kathy Bates
+</span><span class='line'>Frances Fisher</span></code></pre></td></tr></table></div></figure>
+
+
+<hr />
+
+<h3>Bonus: Python BIFs</h3>
+
+<ul>
+<li>BIFs is short for <em>build-in functions</em>, it can mean less code to write</li>
+<li>There were over 70 BIFs in Python3</li>
+<li>At Python or IDLE shell, typing dir(<strong>builtins</strong>) to see a list of the built-in functions</li>
+<li>To find out what any BIF does—like input(), for example—type help(input) at the shell for a description of the BIFs function</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Chen Rui</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-04-27T12:28:38+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:28 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/python/'>python</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/04/26/variable-property-attributes-in-ios/" title="Previous Post: Variable Property Attributes in iOS">&laquo; Variable Property Attributes in iOS</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/04/27/python-notes-i/">Python Notes I</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/04/26/variable-property-attributes-in-ios/">Variable Property Attributes in iOS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/04/25/reference-count-style-memory-management-of-apple/">Reference Count Style Memory Management of Apple</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/04/24/how-to-add-stuff-on-github-via-command-line/">How to Add Stuff on GitHub via Command Line</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/04/23/first-blog/">First Blog</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Chen Rui -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'reckhhh';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://reckhhh.github.io/blog/2015/04/27/python-notes-i/';
+        var disqus_url = 'http://reckhhh.github.io/blog/2015/04/27/python-notes-i/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
