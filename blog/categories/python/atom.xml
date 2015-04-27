@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-27T13:00:26+08:00</updated>
+  <updated>2015-04-27T14:26:52+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -35,7 +35,7 @@
 animal  = ["Dog", 'Pig', 'Cat', "Duck"]
 print(animal)
 ['Dog', 'Pig', 'Cat', 'Duck']
-print(len(cast))
+print(len(animal))
 4
 print(animal[1])
 Pig
