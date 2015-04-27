@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-27T23:14:22+08:00</updated>
+  <updated>2015-04-27T23:15:52+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -370,8 +370,8 @@
 <ul>
 <li>BIFs is short for <em>build-in functions</em>, it can mean less code to write</li>
 <li>There were over 70 BIFs in Python3</li>
-<li>BIFs have their very own namespace called _ <em>builtins</em> _</li>
-<li>At Python or IDLE shell, typing dir(<em> </em>builtins<em> </em>) to see a list of the built-in functions</li>
+<li>BIFs have their very own namespace called <strong><em> builtins </em></strong></li>
+<li>At Python or IDLE shell, typing dir(<strong><em> builtins </em></strong>) to see a list of the built-in functions</li>
 <li>To find out what any BIF does—like input(), for example—type help(input) at the shell for a description of the BIFs function</li>
 <li>Before write new code, think BIF at first</li>
 </ul>
