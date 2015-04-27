@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-27T12:33:55+08:00</updated>
+  <updated>2015-04-27T12:37:16+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -106,7 +106,7 @@
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>animals = ["Dog", 'Pig', 'Cat', "Duck", "Fish"]
 </span><span class='line'>for each_animal in animals:
-</span><span class='line'>print each_animal</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>    print each_animal</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -128,7 +128,7 @@
 <span class='line-number'>12</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>movie = ["Titanic", 1997, "Romance & Disaster", "194 minutes", ["James Cameron", ["Leonardo DiCaprio", "Kate Winslet", "Billy Zane", "Kathy Bates", "Frances Fisher"]]]
 </span><span class='line'>for each_item in movie:
-</span><span class='line'>print each_item
+</span><span class='line'>    print each_item
 </span><span class='line'>
 </span><span class='line'>Titanic
 </span><span class='line'>1997
@@ -151,7 +151,7 @@
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>def function_name (arguments):
-</span><span class='line'>code suite</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>    code suite</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -180,11 +180,11 @@
 <span class='line-number'>18</span>
 <span class='line-number'>19</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>def print_item(the_list):
-</span><span class='line'>for each_item in the_list:
-</span><span class='line'>if isinstance(each_item, list): 
-</span><span class='line'>print_item(each_item)
-</span><span class='line'>else:
-</span><span class='line'>print(each_item)
+</span><span class='line'>    for each_item in the_list:
+</span><span class='line'>        if isinstance(each_item, list): 
+</span><span class='line'>            print_item(each_item)
+</span><span class='line'>        else:
+</span><span class='line'>            print(each_item)
 </span><span class='line'>
 </span><span class='line'>print_item(movie)
 </span><span class='line'>

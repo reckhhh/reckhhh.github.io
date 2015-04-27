@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-27T12:33:55+08:00</updated>
+  <updated>2015-04-27T12:37:16+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -66,7 +66,7 @@ print(animal)
 <code>
 animals = ["Dog", 'Pig', 'Cat', "Duck", "Fish"]
 for each_animal in animals:
-print each_animal
+  print each_animal
 </code></p></li>
 <li><p>Store list within lists
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -85,7 +85,7 @@ print each_animal
 <span class='line-number'>14</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>movie = [&ldquo;Titanic&rdquo;, 1997, &ldquo;Romance &amp; Disaster&rdquo;, &ldquo;194 minutes&rdquo;, [&ldquo;James Cameron&rdquo;, [&ldquo;Leonardo DiCaprio&rdquo;, &ldquo;Kate Winslet&rdquo;, &ldquo;Billy Zane&rdquo;, &ldquo;Kathy Bates&rdquo;, &ldquo;Frances Fisher&rdquo;]]]
 </span><span class='line'>for each_item in movie:
-</span><span class='line'>print each_item&lt;/p&gt;&lt;/li&gt;
+</span><span class='line'>  print each_item&lt;/p&gt;&lt;/li&gt;
 </span><span class='line'>&lt;/ul&gt;
 </span><span class='line'>
 </span><span class='line'>
@@ -105,7 +105,7 @@ print each_animal
 <li>Using <strong>def</strong> to define a custom function
 <code>
 def function_name (arguments):
-code suite
+  code suite
 </code></li>
 <li>Python3 defaults its recursion limit to 1,000</li>
 <li>Print items in list within lists
@@ -131,11 +131,11 @@ code suite
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>def print_item(the_list):
-</span><span class='line'>for each_item in the_list:
-</span><span class='line'>if isinstance(each_item, list):
-</span><span class='line'>print_item(each_item)
-</span><span class='line'>else:
-</span><span class='line'>print(each_item)&lt;/li&gt;
+</span><span class='line'>  for each_item in the_list:
+</span><span class='line'>      if isinstance(each_item, list):
+</span><span class='line'>          print_item(each_item)
+</span><span class='line'>      else:
+</span><span class='line'>          print(each_item)&lt;/li&gt;
 </span><span class='line'>&lt;/ul&gt;
 </span><span class='line'>
 </span><span class='line'>
