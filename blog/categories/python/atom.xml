@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-27T14:26:52+08:00</updated>
+  <updated>2015-04-27T22:56:14+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -152,15 +152,151 @@ def function_name (arguments):
 </span><span class='line'>Kathy Bates
 </span><span class='line'>Frances Fisher</span></code></pre></td></tr></table></div></figure></p>
 
+<h3>Build a distribution and upload code to PyPI</h3>
+
+<ul>
+<li>Create a folder for the module</li>
+<li>Create a file called &ldquo;setup.py&rdquo; in the new folder
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>from distutils.core import setup&lt;/li&gt;
+</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;setup(
+</span><span class='line'>    name = &lsquo;nester&rsquo;,
+</span><span class='line'>    version = &lsquo;1.0&rsquo;,
+</span><span class='line'>    py_modules = [&lsquo;nester&rsquo;],
+</span><span class='line'>    author = &lsquo;name&rsquo;,
+</span><span class='line'>    author_email = &lsquo;&lt;a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#110;&#x61;&#109;&#x65;&#x40;&#x73;&#111;&#109;&#101;&#119;&#104;&#x65;&#114;&#x65;&#46;&#x63;&#111;&#x6d;"&gt;&#x6e;&#97;&#x6d;&#101;&#x40;&#x73;&#111;&#109;&#x65;&#119;&#x68;&#101;&#114;&#x65;&#46;&#99;&#111;&#x6d;&lt;/a&gt;&rsquo;,
+</span><span class='line'>    url = &lsquo;&lt;a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#x6e;&#x61;&#x6d;&#101;&#x40;&#x73;&#111;&#x6d;&#101;&#112;&#108;&#x61;&#99;&#101;&#x2e;&#99;&#x6f;&#x6d;"&gt;&#110;&#x61;&#x6d;&#101;&#x40;&#x73;&#111;&#109;&#x65;&#112;&#x6c;&#x61;&#99;&#101;&#x2e;&#x63;&#x6f;&#109;&lt;/a&gt;&rsquo;,
+</span><span class='line'>    description = &lsquo;A simple printer of nested lists&rsquo;,
+</span><span class='line'>    )
+</span><span class='line'>&lt;code&gt;
+</span><span class='line'>- Build a distribution file, enter the command at the prompt
+</span><span class='line'>&lt;/code&gt;
+</span><span class='line'>python3 setup.py sdist
+</span><span class='line'>&lt;code&gt;
+</span><span class='line'>- Install the distribution into local copy of Python
+</span><span class='line'>&lt;/code&gt;
+</span><span class='line'>python3 setup.py install
+</span><span class='line'>&lt;code&gt;
+</span><span class='line'>- Then, the module has been *transformed* into a distribution and *installed* into local copy of Python
+</span><span class='line'>&lt;/code&gt;
+</span><span class='line'>// at the first time, should type the username and password
+</span><span class='line'>python3 setup.py register</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li>Finally, upload code to PyPI
+<code>
+python3 setup.py sdist upload
+</code></li>
+</ul>
+
+
+<h3>Import a module to use it</h3>
+
+<ul>
+<li>For instance, there is a function named &ldquo;nester.py&rdquo;
+<code>
+def print_item (the_list):
+  # This function takes a argument called "the_list"
+  for each_item in the_list:
+      if isinstance(each_item, list):
+          print_item (each_item)
+      else:
+          print (each_item)
+</code></li>
+<li>Type <strong>F5</strong> to run the module&rsquo;s code, use the following list data
+<code>
+// allow us to access nester's functions
+import nester
+animals = ['Pig', 'Dog', 'Cat', 'Bird', 'Fish']
+// "nester" is associated namespace which like family names helps to qualify what the code mean
+nester.print_item(animals)
+</code></li>
+</ul>
+
+
+<h3>Use optional arguments</h3>
+
+<ul>
+<li>Update the function &ldquo;nester.py&rdquo; with default arguments
+<code>
+def print_item (the_list, indent=False, level=0):
+  for each_item in the_list:
+      if isinstance(each_item, list):
+          print_item (each_item, indent, level+1)
+      else:
+          if indent:
+              for tab_stop in range(level):
+                  print("\t", end='@!')
+          print (each_item)
+</code></li>
+<li>Use <strong>indent</strong> to control whether indent code</li>
+<li>Use <strong>level</strong> to control the init indentation level</li>
+</ul>
+
+
+<h3>Update reversion to PyPI</h3>
+
+<ul>
+<li>Edit &ldquo;setup.py&rdquo; so that it has a new version
+<code>
+version = '1.1',
+</code></li>
+<li>Upload the new distribution to PyPI
+<code>
+python3 setup.py sdisk upload
+</code></li>
+</ul>
+
+
 <hr />
 
-<h3>Bonus: Python BIFs</h3>
+<h3>Bonus I: Python BIFs</h3>
 
 <ul>
 <li>BIFs is short for <em>build-in functions</em>, it can mean less code to write</li>
 <li>There were over 70 BIFs in Python3</li>
-<li>At Python or IDLE shell, typing dir(<strong>builtins</strong>) to see a list of the built-in functions</li>
+<li>BIFs have their very own namespace called <strong> builtins </strong></li>
+<li>At Python or IDLE shell, typing dir(<strong> builtins </strong>) to see a list of the built-in functions</li>
 <li>To find out what any BIF does—like input(), for example—type help(input) at the shell for a description of the BIFs function</li>
+<li>Before write new code, think BIF at first</li>
+</ul>
+
+
+<h3>Bonus II: .pyc Files</h3>
+
+<ul>
+<li>If the module code hasn&rsquo;t changed, no translation occurs and the &ldquo;compiled&rdquo; code is executed</li>
+<li>If the code has changed, the translation occurs (creating a new .pyc file) as needed</li>
+<li>When Python sees a .pyc file, it tries to use it because doing so makes everything go much faster</li>
+<li>The use of .pyc file (if found) is primarily a <strong>potential runtime optimization</strong> performed by the interpreter, it can&rsquo;t be created by users</li>
 </ul>
 
 ]]></content>
