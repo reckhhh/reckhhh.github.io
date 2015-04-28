@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-27T23:43:53+08:00</updated>
+  <updated>2015-04-28T22:30:04+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -12,6 +12,346 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python Notes II]]></title>
+    <link href="http://reckhhh.github.io/blog/2015/04/28/python-notes-ii/"/>
+    <updated>2015-04-28T22:29:26+08:00</updated>
+    <id>http://reckhhh.github.io/blog/2015/04/28/python-notes-ii</id>
+    <content type="html"><![CDATA[<h3>Operation for text</h3>
+
+<ul>
+<li><p>Open and close a file
+<code>
+the_file = open('sketch.txt')
+the_file.close()
+</code></p></li>
+<li><p>Get and change the current working directory
+<code>
+import os
+os.getcwd()
+os.chdir('.../targetDirectory')
+</code></p></li>
+<li><p>Read line and back to the start location of the file
+<code>
+data = open('sketch.txt')
+print(data.readline(), end='')
+data.seek(0)    // “rewind” a file to the beginning
+</code></p></li>
+<li><p>Process every line of a file
+<code>
+for eachLine in data:
+print(eachLine, end='')
+</code></p></li>
+<li><p>Using <em>split()</em> method to process each line to <em>extract</em> part of the line
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import os&lt;/p&gt;&lt;/li&gt;
+</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;if os.path.exists(&lsquo;sketch.txt&rsquo;):
+</span><span class='line'>data = open(&lsquo;sketch.txt&rsquo;)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;for eachLine in data:&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;only process the line that contains &lsquo;:&rsquo;&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;if not eachLine.find(&lsquo;:&rsquo;) == -1:&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;optional arg is set to 1, line of data is only broken into 2 pieces&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;(role, line_spoken) = eachLine.split(&lsquo;:&rsquo;, 1)
+</span><span class='line'>line_spoken = line_spoken.strip()&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;print(role, end=&lsquo;&rsquo;)
+</span><span class='line'>print(&lsquo; said: &rsquo;, end=&lsquo;&rsquo;)
+</span><span class='line'>print(line_spoken, end=&lsquo;&rsquo;)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;data.close()
+</span><span class='line'>else:
+</span><span class='line'>print(&lsquo;The data file is missing!&rsquo;)</span></code></pre></td></tr></table></div></figure></p>
+
+<h3>Handle Exceptions: try/except Machanism</h3>
+
+<ul>
+<li>Python try to run code first, then deal with runtime errors (exceptions) as they happen
+<code>
+try:
+code (which might cause a runtime error)
+except ErrorType:
+error-recovery code
+</code></li>
+<li>Python catch exceptions as they occur, gives you a chance to possibly recover from the error and, critically, not crash
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>try:
+</span><span class='line'>data = open(&lsquo;sketch.txt&rsquo;)&lt;/li&gt;
+</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;for eachLine in data:
+</span><span class='line'>try:
+</span><span class='line'>(role, spoken) = eachLine.split(&lsquo;:&rsquo;, 1)
+</span><span class='line'>line_spoken = line_spoken.strip()&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;print(role, end=&lsquo;&rsquo;)
+</span><span class='line'>print(&lsquo; said: &rsquo;, end=&lsquo;&rsquo;)
+</span><span class='line'>print(spoken, end=&lsquo;&rsquo;)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;for handling the case there is no &lsquo;:&rsquo; in a line&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;except ValueError:
+</span><span class='line'>pass&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;data.close()
+</span><span class='line'>except IOError:
+</span><span class='line'>print(&lsquo;The data file is missing!&rsquo;)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;
+</span><span class='line'>### Extend try/except with finally
+</span><span class='line'>- No matter what errors occur, code in the **finally** suite is always run
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;man = []
+</span><span class='line'>other = []&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;try:
+</span><span class='line'>data = open(&lsquo;sketch.txt&rsquo;)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;for eachLine in data:
+</span><span class='line'>try:
+</span><span class='line'>(role, spoken) = eachLine.split(&lsquo;:&rsquo;, 1)
+</span><span class='line'>spoken = spoken.strip()&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;if role == &lsquo;Man&rsquo;:
+</span><span class='line'>man.append(spoken)
+</span><span class='line'>elif role == &lsquo;Other Man&rsquo;:
+</span><span class='line'>other.append(spoken)
+</span><span class='line'>except ValueError:
+</span><span class='line'>pass&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;data.close()
+</span><span class='line'>except IOError:
+</span><span class='line'>print(&lsquo;The data file is missing!&rsquo;)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;try:
+</span><span class='line'>man_file = open(&lsquo;man_data.txt&rsquo;, &lsquo;w&rsquo;)
+</span><span class='line'>other_file = open(&lsquo;other_data.txt&rsquo;, &lsquo;w&rsquo;)
+</span><span class='line'>print(man, file=man_file)
+</span><span class='line'>print(other, file=other_file)
+</span><span class='line'>except IOError as err:
+</span><span class='line'>print(&lsquo;File Error: &rsquo; + str(err))
+</span><span class='line'>finally:
+</span><span class='line'>if &lsquo;man_file&rsquo; in locals():
+</span><span class='line'>man_file.close()
+</span><span class='line'>if &lsquo;other_file&rsquo; in locals():
+</span><span class='line'>other_file.close()</span></code></pre></td></tr></table></div></figure></p>
+
+<h3>Knowing the detailed error imformation</h3>
+
+<ul>
+<li>Python creates an exception object that is passed as an argument to the except suite
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>try:
+</span><span class='line'>data = open(&lsquo;missingFile.txt&rsquo;)
+</span><span class='line'>print(data.readline(), file=data)
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;the error imformation is named as &lsquo;err&rsquo;&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;except IOError as err:
+</span><span class='line'>print(&lsquo;File error: &rsquo; + str(err))
+</span><span class='line'>finally:
+</span><span class='line'>if &lsquo;data&rsquo; in locals():
+</span><span class='line'>data.close()&lt;/p&gt;&lt;/li&gt;
+</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;output:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;File error: [Errno 2] No such file or directory: &lsquo;missingFile.txt&rsquo;</span></code></pre></td></tr></table></div></figure></p>
+
+<h3>Use with to reduce the amount of code</h3>
+
+<ul>
+<li><p>The following code is identical to the former as a short version
+<code>
+try:
+with open('missingFile.txt', "w") as data:
+print(data.readline(), file=data)
+except IOError as err:
+print('File error: ' + str(err))
+</code></p></li>
+<li><p>try/except/finally code can be rewrite using <strong>with</strong>
+<code>
+try:
+with open('man_data.txt', 'w') as man_file, open('other_data.txt', 'w') as other_file:
+print(man, file=man_file)
+print(other, file=other_file)
+except IOError as err:
+print('File error: ' + str(err))
+</code></p></li>
+<li><p><strong>Note</strong>: no need to close file, because <strong>with</strong> does that job</p></li>
+</ul>
+
+
+<hr />
+
+<h3>Bonus I: BIF split()</h3>
+
+<ul>
+<li>split(&hellip;)
+<code>
+str.split([sep[, maxsplit]]) -&gt; list of strings
+</code></li>
+<li>Return a list of the words in str, using <em>sep</em> as the delimiter string</li>
+<li>If maxsplit is given, at most maxsplit splits are done</li>
+<li>If <em>sep</em> is not specified or is None, any <strong>whitespace</strong> string is a separator and empty strings are removed from the results</li>
+<li>If the <strong>optional argument</strong> is set to 1, line of data is only broken into 2 pieces, effectively negating the effect of any extra colon on any line</li>
+</ul>
+
+
+<h3>Bonus II: BIF strip()</h3>
+
+<ul>
+<li>strip(&hellip;)
+<code>
+str = "!!!!Today is a good day...Yeah.!!!!!!"
+str.strip('!')
+'Today is a good day...Yeah.'
+</code></li>
+<li>Returns a copy in which all chars have been stripped at the beginning and the end</li>
+</ul>
+
+
+<h3>Bonus III: BIFs Recall</h3>
+
+<ul>
+<li>open()</li>
+<li>close()</li>
+<li>readline()</li>
+<li>seek()</li>
+<li>split()</li>
+<li>strip()</li>
+<li>find()</li>
+<li>help()</li>
+<li>with &hellip; as</li>
+<li>not</li>
+<li>pass</li>
+<li>try/except</li>
+<li>ValueError: Occurs when data doesn&rsquo;t conform to an expected format</li>
+<li>IOError: Occurs when data can&rsquo;t be accessed properly</li>
+</ul>
+
+
+<h3>Bonus IV: Python Variable</h3>
+
+<ul>
+<li>Python variables don&rsquo;t actually contain the data assigned to them</li>
+<li>Python variables contain a reference to a data object</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python Notes I]]></title>
@@ -192,8 +532,8 @@ def function_name (arguments):
 </span><span class='line'>    version = &lsquo;1.0&rsquo;,
 </span><span class='line'>    py_modules = [&lsquo;nester&rsquo;],
 </span><span class='line'>    author = &lsquo;name&rsquo;,
-</span><span class='line'>    author_email = &lsquo;&lt;a href="&#109;&#97;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x6e;&#x61;&#109;&#101;&#64;&#115;&#x6f;&#x6d;&#x65;&#119;&#x68;&#x65;&#114;&#101;&#46;&#99;&#x6f;&#x6d;"&gt;&#x6e;&#x61;&#x6d;&#x65;&#x40;&#115;&#x6f;&#x6d;&#101;&#x77;&#104;&#x65;&#114;&#x65;&#46;&#x63;&#111;&#109;&lt;/a&gt;&rsquo;,
-</span><span class='line'>    url = &lsquo;&lt;a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#110;&#97;&#109;&#x65;&#x40;&#x73;&#111;&#109;&#x65;&#x70;&#108;&#x61;&#99;&#x65;&#x2e;&#x63;&#111;&#109;"&gt;&#x6e;&#x61;&#x6d;&#101;&#x40;&#x73;&#111;&#x6d;&#x65;&#112;&#x6c;&#x61;&#99;&#x65;&#x2e;&#x63;&#111;&#109;&lt;/a&gt;&rsquo;,
+</span><span class='line'>    author_email = &lsquo;&lt;a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#110;&#97;&#109;&#x65;&#64;&#115;&#111;&#109;&#x65;&#x77;&#104;&#101;&#x72;&#x65;&#x2e;&#x63;&#x6f;&#109;"&gt;&#110;&#97;&#x6d;&#101;&#x40;&#115;&#111;&#x6d;&#101;&#119;&#x68;&#101;&#x72;&#101;&#46;&#x63;&#x6f;&#109;&lt;/a&gt;&rsquo;,
+</span><span class='line'>    url = &lsquo;&lt;a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#x6e;&#97;&#x6d;&#x65;&#x40;&#x73;&#x6f;&#x6d;&#101;&#x70;&#108;&#97;&#99;&#101;&#46;&#99;&#x6f;&#x6d;"&gt;&#x6e;&#x61;&#x6d;&#101;&#64;&#115;&#x6f;&#x6d;&#x65;&#x70;&#108;&#97;&#x63;&#x65;&#46;&#99;&#111;&#109;&lt;/a&gt;&rsquo;,
 </span><span class='line'>    description = &lsquo;A simple printer of nested lists&rsquo;,
 </span><span class='line'>    )
 </span><span class='line'>&lt;code&gt;
