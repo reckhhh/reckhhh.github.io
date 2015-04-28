@@ -422,6 +422,192 @@ the_file.close() Get and change the current working directory 1
 </span><span class='line'>out.close()</span></code></pre></td></tr></table></div></figure>
 
 
+<h3>Update nester.py for formating the output files</h3>
+
+<ul>
+<li>Add the 4th argument (<strong>fh=sys.out</strong>) be the output file</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># nester.py
+</span><span class='line'>import sys
+</span><span class='line'>
+</span><span class='line'>def print_item (the_list, indent=False, level=0, fh=sys.stdout):
+</span><span class='line'>    for each_item in the_list:
+</span><span class='line'>        if isinstance(each_item, list):
+</span><span class='line'>            print_item (each_item, indent, level+1, fh)
+</span><span class='line'>        else:
+</span><span class='line'>            if indent:
+</span><span class='line'>                for tab_stop in range(level):
+</span><span class='line'>                    print("\t", end='@!', file=fh)
+</span><span class='line'>            print (each_item, file=fh)</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Using func <strong>print_item</strong> for formating the output file</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import nester
+</span><span class='line'>
+</span><span class='line'>man = []
+</span><span class='line'>other = []
+</span><span class='line'>
+</span><span class='line'>try:
+</span><span class='line'>    data = open('sketch.txt')
+</span><span class='line'>
+</span><span class='line'>for eachLine in data:
+</span><span class='line'>    try:
+</span><span class='line'>        (role, line_spoken) = eachLine.split(':', 1)
+</span><span class='line'>        line_spoken = line_spoken.strip()
+</span><span class='line'>
+</span><span class='line'>        if role == 'Man':
+</span><span class='line'>            man.append(line_spoken)
+</span><span class='line'>        elif role == 'Other Man':
+</span><span class='line'>            other.append(line_spoken)
+</span><span class='line'>    except ValueError:
+</span><span class='line'>        pass
+</span><span class='line'>    data.close()
+</span><span class='line'>except IOError:
+</span><span class='line'>    print('The data file is missing!')
+</span><span class='line'>
+</span><span class='line'>try:
+</span><span class='line'>    with open('man_data.txt', 'w') as man_file, open('other_data.txt', 'w') as other_file:
+</span><span class='line'>    # format the output files
+</span><span class='line'>    nester.print_item(man, fh=man_file)
+</span><span class='line'>    nester.print_item(other, fh=other_file)
+</span><span class='line'>except IOError as err:
+</span><span class='line'>    print('File error: ' + str(err))</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>Pickle the data</h1>
+
+<ul>
+<li>Store data using pickle.dump()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import pickle
+</span><span class='line'>
+</span><span class='line'>man = []
+</span><span class='line'>other = []
+</span><span class='line'>
+</span><span class='line'>try:
+</span><span class='line'>    ...
+</span><span class='line'>except IOError:
+</span><span class='line'>    ...
+</span><span class='line'>
+</span><span class='line'>try:
+</span><span class='line'>    # 'wb' indicate the access mode to be "writeable, binary"
+</span><span class='line'>    with open('man_data.txt', 'wb') as man_file, open('other_data.txt', 'wb') as other_file:
+</span><span class='line'>    # store data
+</span><span class='line'>    pickle.dump(man, man_file)
+</span><span class='line'>    pickle.dump(other, other_file)
+</span><span class='line'>except IOError as err:
+</span><span class='line'>    print('File error: ' + str(err))
+</span><span class='line'># handle pickle exceptions
+</span><span class='line'>except pickle.PickleError as perr:
+</span><span class='line'>    print('Pickling error: ' + str(perr))</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Load data using pickle.load()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import pickle
+</span><span class='line'>import nester
+</span><span class='line'>
+</span><span class='line'>new_man = []
+</span><span class='line'>
+</span><span class='line'>try:
+</span><span class='line'>    with open('man_data.txt', 'rb') as man_file:
+</span><span class='line'>        new_man = pickle.load(man_file)
+</span><span class='line'>except IOError as err:
+</span><span class='line'>    print('File error: ' + str(err))
+</span><span class='line'>except pickle.PickleError as perr:
+</span><span class='line'>    print('Pickle error: ' + str(perr))
+</span><span class='line'>
+</span><span class='line'>nester.print_item(new_man)</span></code></pre></td></tr></table></div></figure>
+
+
 <hr />
 
 <h3>Bonus I: BIF split()</h3>
@@ -474,12 +660,19 @@ the_file.close() Get and change the current working directory 1
 <li>strip()</li>
 <li>find()</li>
 <li>help()</li>
-<li>with &hellip; as</li>
 <li>not</li>
 <li>pass</li>
-<li>try/except</li>
+<li>pickle.dump()</li>
+<li>pickle.load()</li>
+<li>sys.out</li>
+<li>try/except/finally</li>
+<li>with &hellip; as
+
+<ul>
 <li>ValueError: Occurs when data doesn&rsquo;t conform to an expected format</li>
 <li>IOError: Occurs when data can&rsquo;t be accessed properly</li>
+</ul>
+</li>
 </ul>
 
 
