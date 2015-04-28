@@ -15,7 +15,7 @@ the_file = open('sketch.txt')
 the_file.close() Get and change the current working directory 1
 2
 3
-import &hellip;">
+4 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -115,9 +115,11 @@ import &hellip;">
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
+<span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>import os
 </span><span class='line'>os.getcwd()
-</span><span class='line'>os.chdir('.../targetDirectory')</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>os.chdir('.../targetDirectory')
+</span><span class='line'>os.listdir()</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -171,22 +173,22 @@ import &hellip;">
 </pre></td><td class='code'><pre><code class=''><span class='line'>import os
 </span><span class='line'>
 </span><span class='line'>if os.path.exists('sketch.txt'):
-</span><span class='line'>data = open('sketch.txt')
+</span><span class='line'>    data = open('sketch.txt')
 </span><span class='line'>
 </span><span class='line'>for eachLine in data:
-</span><span class='line'># only process the line that contains ':'
-</span><span class='line'>if not eachLine.find(':') == -1:
-</span><span class='line'># optional arg is set to 1, line of data is only broken into 2 pieces
-</span><span class='line'>(role, line_spoken) = eachLine.split(':', 1)
-</span><span class='line'>line_spoken = line_spoken.strip()
+</span><span class='line'>    # only process the line that contains ':'
+</span><span class='line'>    if not eachLine.find(':') == -1:
+</span><span class='line'>        # optional arg is set to 1, line of data is only broken into 2 pieces
+</span><span class='line'>        (role, line_spoken) = eachLine.split(':', 1)
+</span><span class='line'>        line_spoken = line_spoken.strip()
 </span><span class='line'>
-</span><span class='line'>print(role, end='')
-</span><span class='line'>print(' said: ', end='')
-</span><span class='line'>print(line_spoken, end='')
+</span><span class='line'>        print(role, end='')
+</span><span class='line'>        print(' said: ', end='')
+</span><span class='line'>        print(line_spoken, end='')
 </span><span class='line'>
-</span><span class='line'>data.close()
+</span><span class='line'>    data.close()
 </span><span class='line'>else:
-</span><span class='line'>print('The data file is missing!')</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>    print('The data file is missing!')</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>Handle Exceptions: try/except Machanism</h3>
@@ -201,9 +203,9 @@ import &hellip;">
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>try:
-</span><span class='line'>code (which might cause a runtime error)
+</span><span class='line'>    code (which might cause a runtime error)
 </span><span class='line'>except ErrorType:
-</span><span class='line'>error-recovery code</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>    error-recovery code</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -231,24 +233,24 @@ import &hellip;">
 <span class='line-number'>18</span>
 <span class='line-number'>19</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>try:
-</span><span class='line'>data = open('sketch.txt')
+</span><span class='line'>    data = open('sketch.txt')
 </span><span class='line'>
-</span><span class='line'>for eachLine in data:
-</span><span class='line'>try:
-</span><span class='line'>(role, spoken) = eachLine.split(':', 1)
-</span><span class='line'>line_spoken = line_spoken.strip()
+</span><span class='line'>    for eachLine in data:
+</span><span class='line'>    try:
+</span><span class='line'>        (role, spoken) = eachLine.split(':', 1)
+</span><span class='line'>        line_spoken = line_spoken.strip()
 </span><span class='line'>
-</span><span class='line'>print(role, end='')
-</span><span class='line'>print(' said: ', end='')
-</span><span class='line'>print(spoken, end='')
+</span><span class='line'>        print(role, end='')
+</span><span class='line'>        print(' said: ', end='')
+</span><span class='line'>        print(spoken, end='')
 </span><span class='line'>
-</span><span class='line'># for handling the case there is no ':' in a line
-</span><span class='line'>except ValueError:
-</span><span class='line'>pass
+</span><span class='line'>    # for handling the case there is no ':' in a line
+</span><span class='line'>    except ValueError:
+</span><span class='line'>        pass
 </span><span class='line'>
-</span><span class='line'>data.close()
+</span><span class='line'>    data.close()
 </span><span class='line'>except IOError:
-</span><span class='line'>print('The data file is missing!')
+</span><span class='line'>    print('The data file is missing!')
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -297,36 +299,36 @@ import &hellip;">
 </span><span class='line'>other = []
 </span><span class='line'>
 </span><span class='line'>try:
-</span><span class='line'>data = open('sketch.txt')
+</span><span class='line'>    data = open('sketch.txt')
 </span><span class='line'>
-</span><span class='line'>for eachLine in data:
-</span><span class='line'>try:
-</span><span class='line'>(role, spoken) = eachLine.split(':', 1)
-</span><span class='line'>spoken = spoken.strip()
+</span><span class='line'>    for eachLine in data:
+</span><span class='line'>    try:
+</span><span class='line'>        (role, spoken) = eachLine.split(':', 1)
+</span><span class='line'>        spoken = spoken.strip()
 </span><span class='line'>
-</span><span class='line'>if role == 'Man':
-</span><span class='line'>man.append(spoken)
-</span><span class='line'>elif role == 'Other Man':
-</span><span class='line'>other.append(spoken)
-</span><span class='line'>except ValueError:
-</span><span class='line'>pass
+</span><span class='line'>        if role == 'Man':
+</span><span class='line'>            man.append(spoken)
+</span><span class='line'>        elif role == 'Other Man':
+</span><span class='line'>            other.append(spoken)
+</span><span class='line'>        except ValueError:
+</span><span class='line'>            pass
 </span><span class='line'>
-</span><span class='line'>data.close()
+</span><span class='line'>    data.close()
 </span><span class='line'>except IOError:
-</span><span class='line'>print('The data file is missing!')
+</span><span class='line'>    print('The data file is missing!')
 </span><span class='line'>
 </span><span class='line'>try:
-</span><span class='line'>man_file = open('man_data.txt', 'w')
-</span><span class='line'>other_file = open('other_data.txt', 'w')
-</span><span class='line'>print(man, file=man_file)
-</span><span class='line'>print(other, file=other_file)
+</span><span class='line'>    man_file = open('man_data.txt', 'w')
+</span><span class='line'>    other_file = open('other_data.txt', 'w')
+</span><span class='line'>    print(man, file=man_file)
+</span><span class='line'>    print(other, file=other_file)
 </span><span class='line'>except IOError as err:
-</span><span class='line'>print('File Error: ' + str(err))
+</span><span class='line'>    print('File Error: ' + str(err))
 </span><span class='line'>finally:
-</span><span class='line'>if 'man_file' in locals():
-</span><span class='line'>man_file.close()
-</span><span class='line'>if 'other_file' in locals():
-</span><span class='line'>other_file.close()</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>    if 'man_file' in locals():
+</span><span class='line'>        man_file.close()
+</span><span class='line'>    if 'other_file' in locals():
+</span><span class='line'>        other_file.close()</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>Knowing the detailed error imformation</h3>
@@ -349,14 +351,14 @@ import &hellip;">
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>try:
-</span><span class='line'>data = open('missingFile.txt')
-</span><span class='line'>print(data.readline(), file=data)
+</span><span class='line'>    data = open('missingFile.txt')
+</span><span class='line'>        print(data.readline(), file=data)
 </span><span class='line'># the error imformation is named as 'err'
 </span><span class='line'>except IOError as err:
-</span><span class='line'>print('File error: ' + str(err))
+</span><span class='line'>    print('File error: ' + str(err))
 </span><span class='line'>finally:
-</span><span class='line'>if 'data' in locals():
-</span><span class='line'>data.close()
+</span><span class='line'>    if 'data' in locals():
+</span><span class='line'>        data.close()
 </span><span class='line'>
 </span><span class='line'># output:
 </span><span class='line'>File error: [Errno 2] No such file or directory: 'missingFile.txt'</span></code></pre></td></tr></table></div></figure>
@@ -375,10 +377,10 @@ import &hellip;">
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>try:
-</span><span class='line'>with open('missingFile.txt', "w") as data:
-</span><span class='line'>print(data.readline(), file=data)
+</span><span class='line'>    with open('missingFile.txt', "w") as data:
+</span><span class='line'>        print(data.readline(), file=data)
 </span><span class='line'>except IOError as err:
-</span><span class='line'>print('File error: ' + str(err))</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>    print('File error: ' + str(err))</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -393,16 +395,31 @@ import &hellip;">
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>try:
-</span><span class='line'>with open('man_data.txt', 'w') as man_file, open('other_data.txt', 'w') as other_file:
-</span><span class='line'>print(man, file=man_file)
-</span><span class='line'>print(other, file=other_file)
+</span><span class='line'>    with open('man_data.txt', 'w') as man_file, open('other_data.txt', 'w') as other_file:
+</span><span class='line'>        print(man, file=man_file)
+</span><span class='line'>        print(other, file=other_file)
 </span><span class='line'>except IOError as err:
-</span><span class='line'>print('File error: ' + str(err))</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>    print('File error: ' + str(err))</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
 <li><strong>Note</strong>: no need to close file, because <strong>with</strong> does that job</li>
 </ul>
+
+
+<h3>Open the file in write mode</h3>
+
+<ul>
+<li>Assume there is a file named &ldquo;example.txt&rdquo; in the current directory</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>out = open("example.txt", "w")
+</span><span class='line'>print("Write something to example.txt", file=out)
+</span><span class='line'>out.close()</span></code></pre></td></tr></table></div></figure>
 
 
 <hr />
