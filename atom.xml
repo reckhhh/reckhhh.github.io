@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-29T00:57:23+08:00</updated>
+  <updated>2015-04-29T01:30:10+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Wither and Fall]]></title>
+    <link href="http://reckhhh.github.io/blog/2015/04/29/wither-and-fall/"/>
+    <updated>2015-04-29T01:13:50+08:00</updated>
+    <id>http://reckhhh.github.io/blog/2015/04/29/wither-and-fall</id>
+    <content type="html"><![CDATA[<p>It should be a splendid flowering season
+But grass wither and the flowers fall</p>
+
+<p>It was painful
+No flowers nor fruits</p>
+
+<p>Reluctant withered at this time
+But falled just this time</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python Notes II]]></title>
@@ -67,7 +83,7 @@
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>for eachLine in data:
-</span><span class='line'>print(eachLine, end='')</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>    print(eachLine, end='')</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -446,7 +462,7 @@
 </span><span class='line'>    print('File error: ' + str(err))</span></code></pre></td></tr></table></div></figure>
 
 
-<h1>Pickle the data</h1>
+<h3>Pickle the data</h3>
 
 <ul>
 <li>Store data using pickle.dump()</li>
@@ -590,13 +606,9 @@
 <li>pickle.load()</li>
 <li>sys.out</li>
 <li>try/except/finally</li>
-<li>with &hellip; as
-
-<ul>
+<li>with &hellip; as</li>
 <li>ValueError: Occurs when data doesn&rsquo;t conform to an expected format</li>
 <li>IOError: Occurs when data can&rsquo;t be accessed properly</li>
-</ul>
-</li>
 </ul>
 
 
