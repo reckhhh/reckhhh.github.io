@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-29T18:18:08+08:00</updated>
+  <updated>2015-04-29T18:22:35+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -475,8 +475,8 @@ except IOError:
     # &lsquo;wb&rsquo; indicate the access mode to be &ldquo;writeable, binary&rdquo;
     with open(&lsquo;man_data.txt&rsquo;, &lsquo;wb&rsquo;) as man_file, open(&lsquo;other_data.txt&rsquo;, &lsquo;wb&rsquo;) as other_file:
     # store data
-    pickle.dump(man, man_file)
-    pickle.dump(other, other_file)
+        pickle.dump(man, man_file)
+        pickle.dump(other, other_file)
 except IOError as err:
     print(&lsquo;File error: &rsquo; + str(err))</p>
 
@@ -688,8 +688,8 @@ from distutils.core import setup</li>
     version = &lsquo;1.0&rsquo;,
     py_modules = [&lsquo;nester&rsquo;],
     author = &lsquo;name&rsquo;,
-    author_email = &lsquo;<a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x6e;&#97;&#109;&#101;&#64;&#x73;&#x6f;&#x6d;&#x65;&#x77;&#x68;&#x65;&#x72;&#101;&#46;&#x63;&#x6f;&#x6d;">&#110;&#x61;&#109;&#101;&#x40;&#x73;&#111;&#109;&#x65;&#119;&#x68;&#101;&#x72;&#101;&#x2e;&#x63;&#111;&#x6d;</a>&rsquo;,
-    url = &lsquo;<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#110;&#97;&#x6d;&#x65;&#64;&#115;&#111;&#x6d;&#x65;&#112;&#108;&#97;&#99;&#x65;&#x2e;&#99;&#111;&#109;">&#x6e;&#97;&#x6d;&#101;&#x40;&#115;&#111;&#109;&#x65;&#x70;&#x6c;&#x61;&#99;&#x65;&#46;&#99;&#111;&#109;</a>&rsquo;,
+    author_email = &lsquo;<a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#x6e;&#x61;&#109;&#x65;&#64;&#115;&#111;&#x6d;&#101;&#x77;&#104;&#x65;&#114;&#101;&#46;&#99;&#111;&#109;">&#x6e;&#97;&#109;&#x65;&#64;&#x73;&#x6f;&#x6d;&#101;&#x77;&#x68;&#101;&#114;&#x65;&#x2e;&#99;&#111;&#109;</a>&rsquo;,
+    url = &lsquo;<a href="&#109;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#x6e;&#x61;&#109;&#x65;&#x40;&#115;&#111;&#x6d;&#101;&#112;&#108;&#x61;&#x63;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#x6e;&#97;&#x6d;&#101;&#64;&#x73;&#111;&#109;&#101;&#x70;&#x6c;&#x61;&#x63;&#101;&#x2e;&#x63;&#x6f;&#109;</a>&rsquo;,
     description = &lsquo;A simple printer of nested lists&rsquo;,
     )
 <code>
