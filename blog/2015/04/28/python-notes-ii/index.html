@@ -561,8 +561,8 @@ the_file.close() Get and change the current working directory 1
 </span><span class='line'>    # 'wb' indicate the access mode to be "writeable, binary"
 </span><span class='line'>    with open('man_data.txt', 'wb') as man_file, open('other_data.txt', 'wb') as other_file:
 </span><span class='line'>    # store data
-</span><span class='line'>    pickle.dump(man, man_file)
-</span><span class='line'>    pickle.dump(other, other_file)
+</span><span class='line'>        pickle.dump(man, man_file)
+</span><span class='line'>        pickle.dump(other, other_file)
 </span><span class='line'>except IOError as err:
 </span><span class='line'>    print('File error: ' + str(err))
 </span><span class='line'># handle pickle exceptions

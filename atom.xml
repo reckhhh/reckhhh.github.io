@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-29T01:36:29+08:00</updated>
+  <updated>2015-04-30T01:29:38+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -507,8 +507,8 @@
 </span><span class='line'>    # 'wb' indicate the access mode to be "writeable, binary"
 </span><span class='line'>    with open('man_data.txt', 'wb') as man_file, open('other_data.txt', 'wb') as other_file:
 </span><span class='line'>    # store data
-</span><span class='line'>    pickle.dump(man, man_file)
-</span><span class='line'>    pickle.dump(other, other_file)
+</span><span class='line'>        pickle.dump(man, man_file)
+</span><span class='line'>        pickle.dump(other, other_file)
 </span><span class='line'>except IOError as err:
 </span><span class='line'>    print('File error: ' + str(err))
 </span><span class='line'># handle pickle exceptions
