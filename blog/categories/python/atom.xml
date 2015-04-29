@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-29T01:36:29+08:00</updated>
+  <updated>2015-04-29T18:18:08+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -12,6 +12,189 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python Notes III]]></title>
+    <link href="http://reckhhh.github.io/blog/2015/04/29/python-notes-iii/"/>
+    <updated>2015-04-29T13:57:45+08:00</updated>
+    <id>http://reckhhh.github.io/blog/2015/04/29/python-notes-iii</id>
+    <content type="html"><![CDATA[<h3>Sort in two ways</h3>
+
+<ul>
+<li><strong>sort()</strong>: In-place sorting, <em>replaces</em> the original data</li>
+<li><strong>sorted()</strong>: Copied sorting, return a <em>sorted copy</em> of the original data</li>
+<li><p>sorting order
+<code>
+sorted(data)    // ascending
+sorted(data, reverse=True)  //descending
+</code></p></li>
+<li><p>Get top 3 data from file
+&#8220;`
+def sanitize(time_string):
+  if &lsquo;-&rsquo; in time_string:
+      splitter = &lsquo;-&rsquo;
+  elif &lsquo;:&rsquo; in time_string:
+      splitter = &lsquo;:&rsquo;
+  else:
+      return (time_string)</p>
+
+<p>  (mins, secs) = time_string.split(splitter)
+  return (mins + &lsquo;.&rsquo; + secs)</p></li>
+</ul>
+
+
+<p>def get_data(filename):
+    try:
+        with open(filename) as file:
+            data = file.readline()
+        return data.strip().split(&lsquo;,&rsquo;)
+    except IOError as ioerr:
+        print(&lsquo;File error: &rsquo; + str(ioerr))
+        return(None)</p>
+
+<h1>file operation</h1>
+
+<p>james = get_data(&lsquo;james.txt&rsquo;)</p>
+
+<p>clean_james = []
+for each_t in james:
+    clean_james.append(sanitize(each_t))</p>
+
+<p>unique_james = []
+for each_t in clean_james:
+    if each_t not in unique_james:
+        unique_james.append(each_t)
+print(sorted(unique_james)[0:3])
+&#8220;`</p>
+
+<ul>
+<li><p>Remove the duplicates
+&#8220;`</p>
+
+<h1>file operation can be replaced with one line code</h1>
+
+<p>print(sorted(set([sanitize(each_t) for each_t in get_date(&lsquo;james.txt&rsquo;)]))[0:3])
+&#8220;`</p></li>
+<li><p>Bundle the code and data in a dictionary
+&#8220;`
+def get_data(filename):
+  try:
+      with open(filename) as file:
+          data = file.readline()
+      temp = data.strip().split(&lsquo;,&rsquo;)</p>
+
+<pre><code>  # return a dictionary
+  return({'Name' : temp.pop(0),
+          'DOB'  : temp.pop(0),
+          'Times': str(sorted(set([sanitize(each_t) for each_t in temp]))[0:3])
+         })
+</code></pre>
+
+<p>  except IOError as ioerr:
+      print(&lsquo;File error: &rsquo; + str(ioerr))
+      return(None)</p></li>
+</ul>
+
+
+<p>sarah = get_data(&lsquo;sarah2.txt&rsquo;)
+print(sarah[&lsquo;Name&rsquo;] + &ldquo;&rsquo;s fastest times are: &rdquo; + sarah[&lsquo;Times&rsquo;])
+&#8220;`</p>
+
+<ul>
+<li><p>Amend the code and data in a class that inherit from BIF <strong>list</strong>
+&#8220;`
+class Athlete(list):
+  def <strong>init</strong>(self, a_name, a_dob=None, a_times=[]):
+      list.<strong>init</strong>([])
+      self.name = a_name
+      self.dob = a_dob
+      self.extend(a_times)</p>
+
+<p>  def top3(self):
+      return(str(sorted(set([sanitize(each_t) for each_t in self]))[0:3]))</p></li>
+</ul>
+
+
+<p>def get_data(filename):
+    try:
+        &hellip;
+        return(Athlete(temp.pop(0), temp.pop(0), temp))
+    except IOError as ioerr:
+        &hellip;</p>
+
+<p>sarah = get_data(&lsquo;sarah2.txt&rsquo;)
+print(sarah.name + &ldquo;&rsquo;s fastest times are: &rdquo; + sarah.top3())
+&#8220;`</p>
+
+<hr />
+
+<h3>Bonus I: Factory Function: set()</h3>
+
+<ul>
+<li>Build an unordered collection of unique elements
+&#8220;`
+data = [1,1,13,3,3,2,2,3,1,13,1]
+set(data)
+
+<h1>output</h1>
+
+<p>{1, 2, 3, 13}
+&#8220;`</p></li>
+</ul>
+
+
+<h3>Bonus II: BIF: pop(i)</h3>
+
+<ul>
+<li>pop(i) call returns and removes data from the front of a list at location &ldquo;i = 0 : n - 1&rdquo;
+&#8220;`
+data = [1,13,3,3,1]
+data.pop(3)
+
+<h1>output</h1>
+
+<p>3
+data
+[1,13,3,1]
+&#8220;`</p></li>
+</ul>
+
+
+<h3>Bonus III: List Comprehension</h3>
+
+<ul>
+<li>When the code is like this
+<code>
+new = []
+for each_item in old:
+  ...
+append(len(each_item))
+</code></li>
+<li>Rewrite it like this
+<code>
+new = [len(each_item) for each_item in old]
+</code></li>
+</ul>
+
+
+<h3>Bonus IV: Dictionary</h3>
+
+<ul>
+<li>Two way to create an empty dictionary
+&#8220;`
+
+<h1>method 1</h1>
+
+d1 = {}
+
+<h1>method 2</h1>
+
+<p>d2 = dict()
+&#8220;`</p></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python Notes II]]></title>
@@ -45,52 +228,31 @@ for eachLine in data:
   print(eachLine, end='')
 </code></p></li>
 <li><p>Using <em>split()</em> method to process each line to <em>extract</em> part of the line
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>import os&lt;/p&gt;&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;if os.path.exists(&lsquo;sketch.txt&rsquo;):
-</span><span class='line'>    data = open(&lsquo;sketch.txt&rsquo;)&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;for eachLine in data:
-</span><span class='line'>    # only process the line that contains &lsquo;:&rsquo;
-</span><span class='line'>    if not eachLine.find(&lsquo;:&rsquo;) == -1:
-</span><span class='line'>        # optional arg is set to 1, line of data is only broken into 2 pieces
-</span><span class='line'>        (role, line_spoken) = eachLine.split(&lsquo;:&rsquo;, 1)
-</span><span class='line'>        line_spoken = line_spoken.strip()&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;    print(role, end='')
-</span><span class='line'>    print(' said: ', end='')
-</span><span class='line'>    print(line_spoken, end='')
-</span><span class='line'>
-</span><span class='line'>data.close()
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;else:
-</span><span class='line'>    print(&lsquo;The data file is missing!&rsquo;)</span></code></pre></td></tr></table></div></figure></p>
+&#8220;`
+import os</p></li>
+</ul>
+
+
+<p>if os.path.exists(&lsquo;sketch.txt&rsquo;):
+    data = open(&lsquo;sketch.txt&rsquo;)</p>
+
+<p>for eachLine in data:
+    # only process the line that contains &lsquo;:&rsquo;
+    if not eachLine.find(&lsquo;:&rsquo;) == -1:
+        # optional arg is set to 1, line of data is only broken into 2 pieces
+        (role, line_spoken) = eachLine.split(&lsquo;:&rsquo;, 1)
+        line_spoken = line_spoken.strip()</p>
+
+<pre><code>    print(role, end='')
+    print(' said: ', end='')
+    print(line_spoken, end='')
+
+data.close()
+</code></pre>
+
+<p>else:
+    print(&lsquo;The data file is missing!&rsquo;)
+&#8220;`</p>
 
 <h3>Handle Exceptions: try/except Machanism</h3>
 
@@ -103,173 +265,96 @@ except ErrorType:
   error-recovery code
 </code></p></li>
 <li><p>Python catch exceptions as they occur, gives you a chance to possibly recover from the error and, critically, not crash
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>try:
-</span><span class='line'>  data = open(&lsquo;sketch.txt&rsquo;)&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  for eachLine in data:
-</span><span class='line'>  try:
-</span><span class='line'>      (role, spoken) = eachLine.split(&lsquo;:&rsquo;, 1)
-</span><span class='line'>      line_spoken = line_spoken.strip()&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;  print(role, end='')
-</span><span class='line'>  print(' said: ', end='')
-</span><span class='line'>  print(spoken, end='')
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  # for handling the case there is no &lsquo;:&rsquo; in a line
-</span><span class='line'>  except ValueError:
-</span><span class='line'>      pass&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  data.close()
-</span><span class='line'>except IOError:
-</span><span class='line'>  print(&lsquo;The data file is missing!&rsquo;)&lt;/p&gt;&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;
-</span><span class='line'>### Extend try/except with finally
-</span><span class='line'>- No matter what errors occur, code in the **finally** suite is always run
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;man = []
-</span><span class='line'>other = []&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;try:
-</span><span class='line'>    data = open(&lsquo;sketch.txt&rsquo;)&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;for eachLine in data:
-</span><span class='line'>try:
-</span><span class='line'>    (role, spoken) = eachLine.split(':', 1)
-</span><span class='line'>    spoken = spoken.strip()
-</span><span class='line'>
-</span><span class='line'>    if role == 'Man':
-</span><span class='line'>        man.append(spoken)
-</span><span class='line'>    elif role == 'Other Man':
-</span><span class='line'>        other.append(spoken)
-</span><span class='line'>    except ValueError:
-</span><span class='line'>        pass
-</span><span class='line'>
-</span><span class='line'>data.close()
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;except IOError:
-</span><span class='line'>    print(&lsquo;The data file is missing!&rsquo;)&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;try:
-</span><span class='line'>    man_file = open(&lsquo;man_data.txt&rsquo;, &lsquo;w&rsquo;)
-</span><span class='line'>    other_file = open(&lsquo;other_data.txt&rsquo;, &lsquo;w&rsquo;)
-</span><span class='line'>    print(man, file=man_file)
-</span><span class='line'>    print(other, file=other_file)
-</span><span class='line'>except IOError as err:
-</span><span class='line'>    print(&lsquo;File Error: &rsquo; + str(err))
-</span><span class='line'>finally:
-</span><span class='line'>    if &lsquo;man_file&rsquo; in locals():
-</span><span class='line'>        man_file.close()
-</span><span class='line'>    if &lsquo;other_file&rsquo; in locals():
-</span><span class='line'>        other_file.close()</span></code></pre></td></tr></table></div></figure></p>
+&#8220;`
+try:
+  data = open(&lsquo;sketch.txt&rsquo;)</p>
+
+<p>  for eachLine in data:
+  try:
+      (role, spoken) = eachLine.split(&lsquo;:&rsquo;, 1)
+      line_spoken = line_spoken.strip()</p>
+
+<pre><code>  print(role, end='')
+  print(' said: ', end='')
+  print(spoken, end='')
+</code></pre>
+
+<p>  # for handling the case there is no &lsquo;:&rsquo; in a line
+  except ValueError:
+      pass</p>
+
+<p>  data.close()
+except IOError:
+  print(&lsquo;The data file is missing!&rsquo;)</p></li>
+</ul>
+
+
+<pre><code>
+### Extend try/except with finally
+- No matter what errors occur, code in the **finally** suite is always run
+</code></pre>
+
+<p>man = []
+other = []</p>
+
+<p>try:
+    data = open(&lsquo;sketch.txt&rsquo;)</p>
+
+<pre><code>for eachLine in data:
+try:
+    (role, spoken) = eachLine.split(':', 1)
+    spoken = spoken.strip()
+
+    if role == 'Man':
+        man.append(spoken)
+    elif role == 'Other Man':
+        other.append(spoken)
+    except ValueError:
+        pass
+
+data.close()
+</code></pre>
+
+<p>except IOError:
+    print(&lsquo;The data file is missing!&rsquo;)</p>
+
+<p>try:
+    man_file = open(&lsquo;man_data.txt&rsquo;, &lsquo;w&rsquo;)
+    other_file = open(&lsquo;other_data.txt&rsquo;, &lsquo;w&rsquo;)
+    print(man, file=man_file)
+    print(other, file=other_file)
+except IOError as err:
+    print(&lsquo;File Error: &rsquo; + str(err))
+finally:
+    if &lsquo;man_file&rsquo; in locals():
+        man_file.close()
+    if &lsquo;other_file&rsquo; in locals():
+        other_file.close()
+&#8220;`</p>
 
 <h3>Knowing the detailed error imformation</h3>
 
 <ul>
 <li>Python creates an exception object that is passed as an argument to the except suite
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>try:
-</span><span class='line'>  data = open(&lsquo;missingFile.txt&rsquo;)
-</span><span class='line'>      print(data.readline(), file=data)
-</span><span class='line'>
-</span><span class='line'>&lt;h1&gt;the error imformation is named as &lsquo;err&rsquo;&lt;/h1&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;except IOError as err:
-</span><span class='line'>  print(&lsquo;File error: &rsquo; + str(err))
-</span><span class='line'>finally:
-</span><span class='line'>  if &lsquo;data&rsquo; in locals():
-</span><span class='line'>      data.close()&lt;/p&gt;&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>&lt;h1&gt;output:&lt;/h1&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;File error: [Errno 2] No such file or directory: &lsquo;missingFile.txt&rsquo;</span></code></pre></td></tr></table></div></figure></p>
+&#8220;`
+try:
+  data = open(&lsquo;missingFile.txt&rsquo;)
+      print(data.readline(), file=data)
+
+<h1>the error imformation is named as &lsquo;err&rsquo;</h1>
+
+<p>except IOError as err:
+  print(&lsquo;File error: &rsquo; + str(err))
+finally:
+  if &lsquo;data&rsquo; in locals():
+      data.close()</p></li>
+</ul>
+
+
+<h1>output:</h1>
+
+<p>File error: [Errno 2] No such file or directory: &lsquo;missingFile.txt&rsquo;
+&#8220;`</p>
 
 <h3>Use with to reduce the amount of code</h3>
 
@@ -311,198 +396,112 @@ out.close()
 
 <ul>
 <li>Add the 4th argument (<strong>fh=sys.out</strong>) be the output file
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>&lt;h1&gt;nester.py&lt;/h1&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;import sys&lt;/p&gt;&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;def print_item (the_list, indent=False, level=0, fh=sys.stdout):
-</span><span class='line'>    for each_item in the_list:
-</span><span class='line'>        if isinstance(each_item, list):
-</span><span class='line'>            print_item (each_item, indent, level+1, fh)
-</span><span class='line'>        else:
-</span><span class='line'>            if indent:
-</span><span class='line'>                for tab_stop in range(level):
-</span><span class='line'>                    print(&ldquo;\t&rdquo;, end=&lsquo;@!&rsquo;, file=fh)
-</span><span class='line'>            print (each_item, file=fh)</span></code></pre></td></tr></table></div></figure></p>
+&#8220;`
+
+<h1>nester.py</h1>
+
+<p>import sys</p></li>
+</ul>
+
+
+<p>def print_item (the_list, indent=False, level=0, fh=sys.stdout):
+    for each_item in the_list:
+        if isinstance(each_item, list):
+            print_item (each_item, indent, level+1, fh)
+        else:
+            if indent:
+                for tab_stop in range(level):
+                    print(&ldquo;\t&rdquo;, end=&lsquo;@!&rsquo;, file=fh)
+            print (each_item, file=fh)
+&#8220;`</p>
 
 <ul>
 <li>Using func <strong>print_item</strong> for formating the output file
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>import nester&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;man = []
-</span><span class='line'>other = []&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;try:
-</span><span class='line'>    data = open(&lsquo;sketch.txt&rsquo;)&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;for eachLine in data:
-</span><span class='line'>    try:
-</span><span class='line'>        (role, line_spoken) = eachLine.split(&lsquo;:&rsquo;, 1)
-</span><span class='line'>        line_spoken = line_spoken.strip()&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;    if role == 'Man':
-</span><span class='line'>        man.append(line_spoken)
-</span><span class='line'>    elif role == 'Other Man':
-</span><span class='line'>        other.append(line_spoken)
-</span><span class='line'>except ValueError:
-</span><span class='line'>    pass
-</span><span class='line'>data.close()
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;except IOError:
-</span><span class='line'>    print(&lsquo;The data file is missing!&rsquo;)&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;try:
-</span><span class='line'>    with open(&lsquo;man_data.txt&rsquo;, &lsquo;w&rsquo;) as man_file, open(&lsquo;other_data.txt&rsquo;, &lsquo;w&rsquo;) as other_file:
-</span><span class='line'>    # format the output files
-</span><span class='line'>    nester.print_item(man, fh=man_file)
-</span><span class='line'>    nester.print_item(other, fh=other_file)
-</span><span class='line'>except IOError as err:
-</span><span class='line'>    print(&lsquo;File error: &rsquo; + str(err))</span></code></pre></td></tr></table></div></figure></p>
+&#8220;`
+import nester</li>
+</ul>
+
+
+<p>man = []
+other = []</p>
+
+<p>try:
+    data = open(&lsquo;sketch.txt&rsquo;)</p>
+
+<p>for eachLine in data:
+    try:
+        (role, line_spoken) = eachLine.split(&lsquo;:&rsquo;, 1)
+        line_spoken = line_spoken.strip()</p>
+
+<pre><code>    if role == 'Man':
+        man.append(line_spoken)
+    elif role == 'Other Man':
+        other.append(line_spoken)
+except ValueError:
+    pass
+data.close()
+</code></pre>
+
+<p>except IOError:
+    print(&lsquo;The data file is missing!&rsquo;)</p>
+
+<p>try:
+    with open(&lsquo;man_data.txt&rsquo;, &lsquo;w&rsquo;) as man_file, open(&lsquo;other_data.txt&rsquo;, &lsquo;w&rsquo;) as other_file:
+    # format the output files
+    nester.print_item(man, fh=man_file)
+    nester.print_item(other, fh=other_file)
+except IOError as err:
+    print(&lsquo;File error: &rsquo; + str(err))
+&#8220;`</p>
 
 <h3>Pickle the data</h3>
 
 <ul>
 <li>Store data using pickle.dump()
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>import pickle&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;man = []
-</span><span class='line'>other = []&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;try:
-</span><span class='line'>    &hellip;
-</span><span class='line'>except IOError:
-</span><span class='line'>    &hellip;&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;try:
-</span><span class='line'>    # &lsquo;wb&rsquo; indicate the access mode to be &ldquo;writeable, binary&rdquo;
-</span><span class='line'>    with open(&lsquo;man_data.txt&rsquo;, &lsquo;wb&rsquo;) as man_file, open(&lsquo;other_data.txt&rsquo;, &lsquo;wb&rsquo;) as other_file:
-</span><span class='line'>    # store data
-</span><span class='line'>    pickle.dump(man, man_file)
-</span><span class='line'>    pickle.dump(other, other_file)
-</span><span class='line'>except IOError as err:
-</span><span class='line'>    print(&lsquo;File error: &rsquo; + str(err))&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;h1&gt;handle pickle exceptions&lt;/h1&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;except pickle.PickleError as perr:
-</span><span class='line'>    print(&lsquo;Pickling error: &rsquo; + str(perr))
-</span><span class='line'>&lt;code&gt;
-</span><span class='line'>- Load data using pickle.load()
-</span><span class='line'>&lt;/code&gt;
-</span><span class='line'>import pickle
-</span><span class='line'>import nester&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;new_man = []&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;try:
-</span><span class='line'>    with open(&lsquo;man_data.txt&rsquo;, &lsquo;rb&rsquo;) as man_file:
-</span><span class='line'>        new_man = pickle.load(man_file)
-</span><span class='line'>except IOError as err:
-</span><span class='line'>    print(&lsquo;File error: &rsquo; + str(err))
-</span><span class='line'>except pickle.PickleError as perr:
-</span><span class='line'>    print(&lsquo;Pickle error: &rsquo; + str(perr))&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;nester.print_item(new_man)</span></code></pre></td></tr></table></div></figure></p>
+&#8220;`
+import pickle</li>
+</ul>
+
+
+<p>man = []
+other = []</p>
+
+<p>try:
+    &hellip;
+except IOError:
+    &hellip;</p>
+
+<p>try:
+    # &lsquo;wb&rsquo; indicate the access mode to be &ldquo;writeable, binary&rdquo;
+    with open(&lsquo;man_data.txt&rsquo;, &lsquo;wb&rsquo;) as man_file, open(&lsquo;other_data.txt&rsquo;, &lsquo;wb&rsquo;) as other_file:
+    # store data
+    pickle.dump(man, man_file)
+    pickle.dump(other, other_file)
+except IOError as err:
+    print(&lsquo;File error: &rsquo; + str(err))</p>
+
+<h1>handle pickle exceptions</h1>
+
+<p>except pickle.PickleError as perr:
+    print(&lsquo;Pickling error: &rsquo; + str(perr))
+<code>
+- Load data using pickle.load()
+</code>
+import pickle
+import nester</p>
+
+<p>new_man = []</p>
+
+<p>try:
+    with open(&lsquo;man_data.txt&rsquo;, &lsquo;rb&rsquo;) as man_file:
+        new_man = pickle.load(man_file)
+except IOError as err:
+    print(&lsquo;File error: &rsquo; + str(err))
+except pickle.PickleError as perr:
+    print(&lsquo;Pickle error: &rsquo; + str(perr))</p>
+
+<p>nester.print_item(new_man)
+&#8220;`</p>
 
 <hr />
 
@@ -622,34 +621,22 @@ for each_animal in animals:
   print each_animal
 </code></p></li>
 <li><p>Store list within lists
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>movie = [&ldquo;Titanic&rdquo;, 1997, &ldquo;Romance &amp; Disaster&rdquo;, &ldquo;194 minutes&rdquo;, [&ldquo;James Cameron&rdquo;, [&ldquo;Leonardo DiCaprio&rdquo;, &ldquo;Kate Winslet&rdquo;, &ldquo;Billy Zane&rdquo;, &ldquo;Kathy Bates&rdquo;, &ldquo;Frances Fisher&rdquo;]]]
-</span><span class='line'>for each_item in movie:
-</span><span class='line'>  print each_item&lt;/p&gt;&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;Titanic
-</span><span class='line'>1997
-</span><span class='line'>Romance &amp; Disaster
-</span><span class='line'>194 minutes
-</span><span class='line'>[&lsquo;James Cameron&rsquo;, [&lsquo;Leonardo DiCaprio&rsquo;, &lsquo;Kate Winslet&rsquo;, &lsquo;Billy Zane&rsquo;, &lsquo;Kathy Bates&rsquo;, &lsquo;Frances Fisher&rsquo;]]&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;print movie[4][1][0]
-</span><span class='line'>Leonardo DiCaprio</span></code></pre></td></tr></table></div></figure></p>
+&#8220;`
+movie = [&ldquo;Titanic&rdquo;, 1997, &ldquo;Romance &amp; Disaster&rdquo;, &ldquo;194 minutes&rdquo;, [&ldquo;James Cameron&rdquo;, [&ldquo;Leonardo DiCaprio&rdquo;, &ldquo;Kate Winslet&rdquo;, &ldquo;Billy Zane&rdquo;, &ldquo;Kathy Bates&rdquo;, &ldquo;Frances Fisher&rdquo;]]]
+for each_item in movie:
+  print each_item</p></li>
+</ul>
+
+
+<p>Titanic
+1997
+Romance &amp; Disaster
+194 minutes
+[&lsquo;James Cameron&rsquo;, [&lsquo;Leonardo DiCaprio&rsquo;, &lsquo;Kate Winslet&rsquo;, &lsquo;Billy Zane&rsquo;, &lsquo;Kathy Bates&rsquo;, &lsquo;Frances Fisher&rsquo;]]</p>
+
+<p>print movie[4][1][0]
+Leonardo DiCaprio
+&#8220;`</p>
 
 <h3>Don&rsquo;t repeat code and create a function</h3>
 
@@ -662,106 +649,63 @@ def function_name (arguments):
 </code></li>
 <li>Python3 defaults its recursion limit to 1,000</li>
 <li>Print items in list within lists
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def print_item(the_list):
-</span><span class='line'>  for each_item in the_list:
-</span><span class='line'>      if isinstance(each_item, list):
-</span><span class='line'>          print_item(each_item)
-</span><span class='line'>      else:
-</span><span class='line'>          print(each_item)&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;print_item(movie)&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;Titanic
-</span><span class='line'>1997
-</span><span class='line'>Romance &amp; Disaster
-</span><span class='line'>194 minutes
-</span><span class='line'>James Cameron
-</span><span class='line'>Leonardo DiCaprio
-</span><span class='line'>Kate Winslet
-</span><span class='line'>Billy Zane
-</span><span class='line'>Kathy Bates
-</span><span class='line'>Frances Fisher</span></code></pre></td></tr></table></div></figure></p>
+&#8220;`
+def print_item(the_list):
+  for each_item in the_list:
+      if isinstance(each_item, list):
+          print_item(each_item)
+      else:
+          print(each_item)</li>
+</ul>
+
+
+<p>print_item(movie)</p>
+
+<p>Titanic
+1997
+Romance &amp; Disaster
+194 minutes
+James Cameron
+Leonardo DiCaprio
+Kate Winslet
+Billy Zane
+Kathy Bates
+Frances Fisher
+&#8220;`</p>
 
 <h3>Build a distribution and upload code to PyPI</h3>
 
 <ul>
 <li>Create a folder for the module</li>
 <li>Create a file called &ldquo;setup.py&rdquo; in the new folder
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>from distutils.core import setup&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;setup(
-</span><span class='line'>    name = &lsquo;nester&rsquo;,
-</span><span class='line'>    version = &lsquo;1.0&rsquo;,
-</span><span class='line'>    py_modules = [&lsquo;nester&rsquo;],
-</span><span class='line'>    author = &lsquo;name&rsquo;,
-</span><span class='line'>    author_email = &lsquo;&lt;a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#x3a;&#110;&#x61;&#x6d;&#101;&#x40;&#115;&#111;&#109;&#101;&#119;&#x68;&#101;&#114;&#101;&#x2e;&#x63;&#111;&#x6d;"&gt;&#110;&#97;&#109;&#101;&#x40;&#x73;&#111;&#x6d;&#x65;&#119;&#104;&#x65;&#x72;&#101;&#x2e;&#x63;&#111;&#109;&lt;/a&gt;&rsquo;,
-</span><span class='line'>    url = &lsquo;&lt;a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#x6e;&#97;&#109;&#101;&#64;&#x73;&#x6f;&#109;&#101;&#x70;&#108;&#x61;&#99;&#x65;&#x2e;&#99;&#x6f;&#109;"&gt;&#x6e;&#97;&#x6d;&#101;&#64;&#x73;&#x6f;&#x6d;&#101;&#112;&#x6c;&#97;&#x63;&#101;&#46;&#x63;&#x6f;&#109;&lt;/a&gt;&rsquo;,
-</span><span class='line'>    description = &lsquo;A simple printer of nested lists&rsquo;,
-</span><span class='line'>    )
-</span><span class='line'>&lt;code&gt;
-</span><span class='line'>- Build a distribution file, enter the command at the prompt
-</span><span class='line'>&lt;/code&gt;
-</span><span class='line'>python3 setup.py sdist
-</span><span class='line'>&lt;code&gt;
-</span><span class='line'>- Install the distribution into local copy of Python
-</span><span class='line'>&lt;/code&gt;
-</span><span class='line'>python3 setup.py install
-</span><span class='line'>&lt;code&gt;
-</span><span class='line'>- Then, the module has been *transformed* into a distribution and *installed* into local copy of Python
-</span><span class='line'>&lt;/code&gt;
-</span><span class='line'>// at the first time, should type the username and password
-</span><span class='line'>python3 setup.py register</span></code></pre></td></tr></table></div></figure></p>
+&#8220;`
+from distutils.core import setup</li>
+</ul>
+
+
+<p>setup(
+    name = &lsquo;nester&rsquo;,
+    version = &lsquo;1.0&rsquo;,
+    py_modules = [&lsquo;nester&rsquo;],
+    author = &lsquo;name&rsquo;,
+    author_email = &lsquo;<a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x6e;&#97;&#109;&#101;&#64;&#x73;&#x6f;&#x6d;&#x65;&#x77;&#x68;&#x65;&#x72;&#101;&#46;&#x63;&#x6f;&#x6d;">&#110;&#x61;&#109;&#101;&#x40;&#x73;&#111;&#109;&#x65;&#119;&#x68;&#101;&#x72;&#101;&#x2e;&#x63;&#111;&#x6d;</a>&rsquo;,
+    url = &lsquo;<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#110;&#97;&#x6d;&#x65;&#64;&#115;&#111;&#x6d;&#x65;&#112;&#108;&#97;&#99;&#x65;&#x2e;&#99;&#111;&#109;">&#x6e;&#97;&#x6d;&#101;&#x40;&#115;&#111;&#109;&#x65;&#x70;&#x6c;&#x61;&#99;&#x65;&#46;&#99;&#111;&#109;</a>&rsquo;,
+    description = &lsquo;A simple printer of nested lists&rsquo;,
+    )
+<code>
+- Build a distribution file, enter the command at the prompt
+</code>
+python3 setup.py sdist
+<code>
+- Install the distribution into local copy of Python
+</code>
+python3 setup.py install
+<code>
+- Then, the module has been *transformed* into a distribution and *installed* into local copy of Python
+</code>
+// at the first time, should type the username and password
+python3 setup.py register
+&#8220;`</p>
 
 <ul>
 <li>Finally, upload code to PyPI
