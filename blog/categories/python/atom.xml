@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-30T01:29:38+08:00</updated>
+  <updated>2015-04-30T01:43:59+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -12,6 +12,351 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python Notes III]]></title>
+    <link href="http://reckhhh.github.io/blog/2015/04/30/python-notes-iii/"/>
+    <updated>2015-04-30T01:04:15+08:00</updated>
+    <id>http://reckhhh.github.io/blog/2015/04/30/python-notes-iii</id>
+    <content type="html"><![CDATA[<h3>Sort in two ways</h3>
+
+<ul>
+<li><strong>sort()</strong>: In-place sorting, <em>replaces</em> the original data</li>
+<li><strong>sorted()</strong>: Copied sorting, return a <em>sorted copy</em> of the original data</li>
+<li><p>sorting order
+<code>
+sorted(data)    // Ascending
+sorted(data, reverse=True)  // Descending
+</code></p></li>
+<li><p>Get top 3 data from file
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def sanitize(time_string):
+</span><span class='line'>  if &lsquo;-&rsquo; in time_string:
+</span><span class='line'>      splitter = &lsquo;-&rsquo;
+</span><span class='line'>  elif &lsquo;:&rsquo; in time_string:
+</span><span class='line'>      splitter = &lsquo;:&rsquo;
+</span><span class='line'>  else:
+</span><span class='line'>      return (time_string)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  (mins, secs) = time_string.split(splitter)
+</span><span class='line'>  return (mins + &lsquo;.&rsquo; + secs)&lt;/p&gt;&lt;/li&gt;
+</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;def get_data(filename):
+</span><span class='line'>    try:
+</span><span class='line'>        with open(filename) as file:
+</span><span class='line'>            data = file.readline()
+</span><span class='line'>        return data.strip().split(&lsquo;,&rsquo;)
+</span><span class='line'>    except IOError as ioerr:
+</span><span class='line'>        print(&lsquo;File error: &rsquo; + str(ioerr))
+</span><span class='line'>        return(None)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;file operation&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;james = get_data(&lsquo;james.txt&rsquo;)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;clean_james = []
+</span><span class='line'>for each_t in james:
+</span><span class='line'>    clean_james.append(sanitize(each_t))&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;unique_james = []
+</span><span class='line'>for each_t in clean_james:
+</span><span class='line'>    if each_t not in unique_james:
+</span><span class='line'>        unique_james.append(each_t)
+</span><span class='line'>print(sorted(unique_james)[0:3])</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li>Remove the duplicates
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>&lt;h1&gt;file operation can be replaced with one line code&lt;/h1&gt;&lt;/li&gt;
+</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;print(sorted(set([sanitize(each_t) for each_t in get_date(&ldquo;james.txt&rdquo;)]))[0:3])</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li><p>Bundle the code and data in a dictionary
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def get_data(filename):
+</span><span class='line'>  try:
+</span><span class='line'>      with open(filename) as file:
+</span><span class='line'>          data = file.readline()
+</span><span class='line'>      temp = data.strip().split(&lsquo;,&rsquo;)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;  # return a dictionary
+</span><span class='line'>  return({'Name' : temp.pop(0),
+</span><span class='line'>          'DOB'  : temp.pop(0),
+</span><span class='line'>          'Times': str(sorted(set([sanitize(each_t) for each_t in temp]))[0:3])})
+</span><span class='line'>  except IOError as ioerr:
+</span><span class='line'>      print('File error: ' + str(ioerr))
+</span><span class='line'>      return(None)
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;sarah = get_data(&lsquo;sarah2.txt&rsquo;)
+</span><span class='line'>print(sarah[&lsquo;Name&rsquo;] + &ldquo;&rsquo;s fastest times are: &rdquo; + sarah[&lsquo;Times&rsquo;])</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li>Amend the code and data in a class that inherit from BIF <strong>list</strong>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>class Athlete(list):
+</span><span class='line'>  def &lt;strong&gt;init&lt;/strong&gt;(self, a_name, a_dob=None, a_times=[]):
+</span><span class='line'>      list.&lt;strong&gt;init&lt;/strong&gt;([])
+</span><span class='line'>      self.name = a_name
+</span><span class='line'>      self.dob = a_dob
+</span><span class='line'>      self.extend(a_times)&lt;/li&gt;
+</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;def top3(self):
+</span><span class='line'>    return(str(sorted(set([sanitize(each_t) for each_t in self]))[0:3]))&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;def get_data(filename):
+</span><span class='line'>    try:
+</span><span class='line'>        &hellip;
+</span><span class='line'>        return(Athlete(temp.pop(0), temp.pop(0), temp))
+</span><span class='line'>    except IOError as ioerr:
+</span><span class='line'>        &hellip;&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;sarah = get_data(&lsquo;sarah2.txt&rsquo;)
+</span><span class='line'>print(sarah.name + &ldquo;&rsquo;s fastest times are: &rdquo; + sarah.top3())</span></code></pre></td></tr></table></div></figure></p>
+
+<h3>Model the data</h3>
+
+<ul>
+<li>Put class AthleteList in a module file
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import pickle
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;class AthleteList is saved in athletelist.py, import AthleteList using this line of code&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;use dir() command to confirm that the import has been successful&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;from athletelist import AthleteList&lt;/p&gt;&lt;/li&gt;
+</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;def get_data(filename):
+</span><span class='line'>    &hellip;&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;def put_to_store(file_list):
+</span><span class='line'>    all_athletes = {}
+</span><span class='line'>    for each_file in file_list:
+</span><span class='line'>        ath = get_data(each_file)
+</span><span class='line'>        all_athletes[ath.name] = ath
+</span><span class='line'>    try:
+</span><span class='line'>        with open(&lsquo;athletes.pickle&rsquo;, &lsquo;wb&rsquo;) as athf:
+</span><span class='line'>            pickle.dump(all_athletes, athf)
+</span><span class='line'>    except IOError as ioerr:
+</span><span class='line'>        print(&lsquo;File error (put_and_store): &rsquo; + str(ioerr))
+</span><span class='line'>        return (all_athletes)&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;def get_from_store():
+</span><span class='line'>    all_athletes = {}
+</span><span class='line'>    try:
+</span><span class='line'>        with open(&lsquo;athletes.pickle&rsquo;, &lsquo;rb&rsquo;) as athf:
+</span><span class='line'>            all_athletes = pickle.load(athf)
+</span><span class='line'>        except IOError as ioerr:
+</span><span class='line'>            print(&lsquo;File error (get_from_store): &rsquo; + str(ioerr))
+</span><span class='line'>            return (all_athletes)</span></code></pre></td></tr></table></div></figure></p>
+
+<hr />
+
+<h3>Bonus I: Factory Function: set()</h3>
+
+<ul>
+<li>Build an unordered collection of unique elements
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>data = [1,1,13,3,3,2,2,3,1,13,1]
+</span><span class='line'>set(data)
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;output&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;{1, 2, 3, 13}</span></code></pre></td></tr></table></div></figure></p></li>
+</ul>
+
+
+<h3>Bonus II: BIF: pop(i)</h3>
+
+<ul>
+<li>pop(i) call returns and removes data from the front of a list at location
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>data = [1,13,3,3,1]
+</span><span class='line'>data.pop(3)
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;output&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;3
+</span><span class='line'>data
+</span><span class='line'>[1,13,3,1]</span></code></pre></td></tr></table></div></figure></p></li>
+</ul>
+
+
+<h3>Bonus III: List Comprehension</h3>
+
+<ul>
+<li>When the code is like this
+<code>
+new = []
+for each_item in old:
+  ...
+append(len(each_item))
+</code></li>
+<li>Rewrite it like this
+<code>
+new = [len(each_item) for each_item in old]
+</code></li>
+</ul>
+
+
+<h3>Bonus IV: Dictionary</h3>
+
+<ul>
+<li>Two way to create an empty dictionary
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>&lt;h1&gt;method 1&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>d1 = {}
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;method 2&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;d2 = dict()</span></code></pre></td></tr></table></div></figure></p></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python Notes II]]></title>
@@ -745,8 +1090,8 @@ def function_name (arguments):
 </span><span class='line'>    version = &lsquo;1.0&rsquo;,
 </span><span class='line'>    py_modules = [&lsquo;nester&rsquo;],
 </span><span class='line'>    author = &lsquo;name&rsquo;,
-</span><span class='line'>    author_email = &lsquo;&lt;a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#x3a;&#110;&#97;&#109;&#x65;&#x40;&#x73;&#x6f;&#109;&#101;&#x77;&#104;&#x65;&#114;&#x65;&#x2e;&#99;&#111;&#109;"&gt;&#110;&#x61;&#x6d;&#101;&#64;&#115;&#111;&#x6d;&#x65;&#x77;&#104;&#x65;&#x72;&#101;&#x2e;&#x63;&#111;&#x6d;&lt;/a&gt;&rsquo;,
-</span><span class='line'>    url = &lsquo;&lt;a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#x6e;&#x61;&#109;&#x65;&#x40;&#115;&#x6f;&#x6d;&#x65;&#x70;&#x6c;&#97;&#99;&#101;&#x2e;&#x63;&#111;&#109;"&gt;&#110;&#x61;&#109;&#x65;&#x40;&#x73;&#111;&#109;&#101;&#x70;&#x6c;&#97;&#x63;&#101;&#46;&#x63;&#x6f;&#x6d;&lt;/a&gt;&rsquo;,
+</span><span class='line'>    author_email = &lsquo;&lt;a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#x6e;&#x61;&#109;&#x65;&#64;&#x73;&#111;&#109;&#101;&#119;&#104;&#101;&#114;&#101;&#46;&#99;&#111;&#109;"&gt;&#x6e;&#x61;&#109;&#x65;&#64;&#x73;&#111;&#x6d;&#101;&#x77;&#104;&#101;&#x72;&#101;&#x2e;&#99;&#x6f;&#x6d;&lt;/a&gt;&rsquo;,
+</span><span class='line'>    url = &lsquo;&lt;a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#110;&#x61;&#109;&#101;&#x40;&#115;&#111;&#x6d;&#101;&#x70;&#x6c;&#97;&#99;&#101;&#46;&#x63;&#x6f;&#109;"&gt;&#110;&#x61;&#109;&#101;&#64;&#x73;&#x6f;&#x6d;&#x65;&#x70;&#x6c;&#97;&#99;&#101;&#x2e;&#99;&#111;&#109;&lt;/a&gt;&rsquo;,
 </span><span class='line'>    description = &lsquo;A simple printer of nested lists&rsquo;,
 </span><span class='line'>    )
 </span><span class='line'>&lt;code&gt;
