@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-04-30T01:43:59+08:00</updated>
+  <updated>2015-04-30T01:45:44+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -25,8 +25,8 @@
 <li><strong>sorted()</strong>: Copied sorting, return a <em>sorted copy</em> of the original data</li>
 <li><p>sorting order
 <code>
-sorted(data)    // Ascending
-sorted(data, reverse=True)  // Descending
+sorted(data)    # Ascending
+sorted(data, reverse=True)  # Descending
 </code></p></li>
 <li><p>Get top 3 data from file
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1090,8 +1090,8 @@ def function_name (arguments):
 </span><span class='line'>    version = &lsquo;1.0&rsquo;,
 </span><span class='line'>    py_modules = [&lsquo;nester&rsquo;],
 </span><span class='line'>    author = &lsquo;name&rsquo;,
-</span><span class='line'>    author_email = &lsquo;&lt;a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#x6e;&#x61;&#109;&#x65;&#64;&#x73;&#111;&#109;&#101;&#119;&#104;&#101;&#114;&#101;&#46;&#99;&#111;&#109;"&gt;&#x6e;&#x61;&#109;&#x65;&#64;&#x73;&#111;&#x6d;&#101;&#x77;&#104;&#101;&#x72;&#101;&#x2e;&#99;&#x6f;&#x6d;&lt;/a&gt;&rsquo;,
-</span><span class='line'>    url = &lsquo;&lt;a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#110;&#x61;&#109;&#101;&#x40;&#115;&#111;&#x6d;&#101;&#x70;&#x6c;&#97;&#99;&#101;&#46;&#x63;&#x6f;&#109;"&gt;&#110;&#x61;&#109;&#101;&#64;&#x73;&#x6f;&#x6d;&#x65;&#x70;&#x6c;&#97;&#99;&#101;&#x2e;&#99;&#111;&#109;&lt;/a&gt;&rsquo;,
+</span><span class='line'>    author_email = &lsquo;&lt;a href="&#109;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#110;&#97;&#109;&#x65;&#x40;&#115;&#x6f;&#x6d;&#101;&#119;&#x68;&#101;&#x72;&#x65;&#46;&#x63;&#111;&#109;"&gt;&#x6e;&#97;&#x6d;&#101;&#64;&#115;&#111;&#109;&#101;&#x77;&#104;&#101;&#114;&#101;&#46;&#x63;&#x6f;&#x6d;&lt;/a&gt;&rsquo;,
+</span><span class='line'>    url = &lsquo;&lt;a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#110;&#97;&#x6d;&#x65;&#64;&#115;&#x6f;&#109;&#x65;&#x70;&#108;&#x61;&#x63;&#101;&#46;&#x63;&#111;&#109;"&gt;&#x6e;&#97;&#109;&#101;&#64;&#x73;&#x6f;&#109;&#x65;&#112;&#x6c;&#97;&#99;&#x65;&#46;&#x63;&#111;&#109;&lt;/a&gt;&rsquo;,
 </span><span class='line'>    description = &lsquo;A simple printer of nested lists&rsquo;,
 </span><span class='line'>    )
 </span><span class='line'>&lt;code&gt;
