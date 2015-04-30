@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T03:43:59+08:00</updated>
+  <updated>2015-05-01T04:10:56+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Python Notes IV]]></title>
     <link href="http://reckhhh.github.io/blog/2015/05/01/python-notes-iv/"/>
-    <updated>2015-05-01T03:42:25+08:00</updated>
+    <updated>2015-05-01T04:04:53+08:00</updated>
     <id>http://reckhhh.github.io/blog/2015/05/01/python-notes-iv</id>
     <content type="html"><![CDATA[<h3>input() and raw_input()</h3>
 
@@ -31,6 +31,908 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>input("Enter a number: ")
 </span><span class='line'>Enter a number: 3
 </span><span class='line'>3</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>raw_input(): Gets input from the user, as a string</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>raw_input("Enter a number: ")
+</span><span class='line'>Enter a number: 3
+</span><span class='line'>'3'</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>repr() and str()</h3>
+
+<ul>
+<li>repr(): Returns a string representation of a value</li>
+<li>A synonym for repr(&lsquo;x&rsquo;) is &lsquo;x&rsquo;</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>print repr("Hello, world!")
+</span><span class='line'>'Hello, world!'
+</span><span class='line'>print repr(10000L)
+</span><span class='line'>10000L</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>str(): Converts a value to a string</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>print str("Hello, world!")
+</span><span class='line'>Hello, world!
+</span><span class='line'>print str(10000L)
+</span><span class='line'>10000</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Slicing</h3>
+
+<ul>
+<li>numbers[beg : end : direction(interval)]</li>
+<li>range(beg&hellip;&lt;end), i.e., [beg, end)</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+</span><span class='line'>
+</span><span class='line'>numbers[3:6] = [4, 5, 6]
+</span><span class='line'>numbers[-3:-1] = [8, 9]
+</span><span class='line'>numbers[-3:] = [8, 9, 10]
+</span><span class='line'>numbers[:3] = [1, 2, 3]
+</span><span class='line'>
+</span><span class='line'>numbers[0:10:2] = [1, 3, 5, 7, 9]
+</span><span class='line'>numbers[3:6:2] = [4, 6]
+</span><span class='line'>
+</span><span class='line'>numbers[::3] = [1, 4, 7, 10]
+</span><span class='line'>numbers[8:3] = []
+</span><span class='line'>numbers[8:3:-1] = [9, 8, 7, 6, 5]
+</span><span class='line'>
+</span><span class='line'>numbers[10:0:-2] = [10, 8, 6, 4, 2]
+</span><span class='line'>numbers[5::-2] = [6, 4, 2]
+</span><span class='line'>numbers[:5:-2] = [10, 8]
+</span><span class='line'>
+</span><span class='line'>numbers[5::-2] = [6, 4, 2]
+</span><span class='line'>numbers[:5:-1] = [10, 9, 8, 7]</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Membership</h3>
+
+<ul>
+<li>if &hellip; in &hellip;</li>
+<li>if &hellip; not in &hellip;</li>
+</ul>
+
+
+<h3>Lists</h3>
+
+<ul>
+<li>To convert a list of characters such as the preceding code back to a string, use <strong>&lsquo; &rsquo;.join(somelist)</strong></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>somelist = ['b', 'o', 'y']
+</span><span class='line'>''.join(somelist)
+</span><span class='line'>
+</span><span class='line'>'boy'</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Deleting Elements use del</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>names = ['Ada', 'Bob', 'Cecil', 'David']
+</span><span class='line'>del names[2]
+</span><span class='line'>
+</span><span class='line'>names
+</span><span class='line'>['Ada', 'Bob', 'David']</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Assigning to Slices</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>name = list('Perl')
+</span><span class='line'>name[1:] = list('ython')
+</span><span class='line'>
+</span><span class='line'>name
+</span><span class='line'>['P', 'y', 't', 'h', 'o', 'n']</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Slice assignments can be used to insert elements without replacing any of the original ones</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>nums = [1, 5]
+</span><span class='line'>nums[1:1] = [2, 3, 4]
+</span><span class='line'>nums
+</span><span class='line'>[1, 2, 3, 4, 5]
+</span><span class='line'>
+</span><span class='line'>nums[1:4] = []  // del nums[1:4]
+</span><span class='line'>nums
+</span><span class='line'>[1, 5]</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>String Formatting</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>str = "Hello, %s! %s are you?"
+</span><span class='line'>val = ('Peter', 'How')
+</span><span class='line'>print (str % val)
+</span><span class='line'>
+</span><span class='line'>Hello, Peter! How are you?
+</span><span class='line'>
+</span><span class='line'># for short
+</span><span class='line'>'%s + %s = %s' % (1, 1, 2)
+</span><span class='line'>'1 + 1 = 2'</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Template Strings</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>from string import Template
+</span><span class='line'>
+</span><span class='line'>s = Template('$x,  glorious $x!')
+</span><span class='line'>s.substitute(x = 'slurm')
+</span><span class='line'>'slurm,  glorious slurm!'
+</span><span class='line'>
+</span><span class='line'># the replacement is part of a word
+</span><span class='line'>s = Template("It's ${x}tastic!")
+</span><span class='line'>s.substitute(x = ' slurm')
+</span><span class='line'>"It's  slurmtastic!"
+</span><span class='line'>
+</span><span class='line'># insert a dollar sign, use $$
+</span><span class='line'>s = Template("Make $$ selling $x!")
+</span><span class='line'>s.substitute(x='slurm')
+</span><span class='line'>'Make $ selling slurm!'
+</span><span class='line'>
+</span><span class='line'># supply the value-name pairs in a dictionary
+</span><span class='line'>s = Template('A $thing must never $action.')
+</span><span class='line'>d = {}
+</span><span class='line'>d['thing'] = 'dog'
+</span><span class='line'>d['action'] = 'eat grass'
+</span><span class='line'>s.substitute(d)
+</span><span class='line'>'A dog must never eat grass.'</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>find()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>title = "Monty Python's Flying Circus"
+</span><span class='line'>title.find('Python')
+</span><span class='line'>6</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>split()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>'1+2+3+4+5'.split('+')
+</span><span class='line'>['1', '2', '3', '4', '5']
+</span><span class='line'>
+</span><span class='line'>'/usr/bin/env'.split('/')
+</span><span class='line'>['', 'usr', 'bin', 'env']
+</span><span class='line'>
+</span><span class='line'>'a    aa    aaa    '.split()
+</span><span class='line'>['a', 'aa', 'aaa']</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>join()
+The inverse of split, used to join the elements of a sequence</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>seq = ['1', '2', '3', '4', '5']
+</span><span class='line'>'+'.join(seq)
+</span><span class='line'>'1+2+3+4+5'
+</span><span class='line'>
+</span><span class='line'>dirs = '', 'usr', 'bin', 'env'
+</span><span class='line'>dirs
+</span><span class='line'>('', 'usr', 'bin', 'env')
+</span><span class='line'>
+</span><span class='line'>'/'.join(dirs)
+</span><span class='line'>'/usr/bin/env'
+</span><span class='line'>
+</span><span class='line'>print('C:' + '\\'.join(dirs))
+</span><span class='line'>C:\usr\bin\env</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>strip()
+Get rid of the characters listed in strip()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>'!!!   a    aa    aaa    !!!!!'.strip('!')
+</span><span class='line'>'   a    aa    aaa    '
+</span><span class='line'>
+</span><span class='line'>'   a    aa    aaa    '.strip()
+</span><span class='line'>'a    aa    aaa'
+</span><span class='line'>
+</span><span class='line'># list all that to remove
+</span><span class='line'>'*** SPAN * for * everyone!!! ***'.strip(' *!')
+</span><span class='line'>'SPAN * for * everyone'</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>title()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"that's all, folks".title()
+</span><span class='line'>"That'S All, Folks"</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>string.capwords()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import string
+</span><span class='line'>string.capwords("that's all, folks")
+</span><span class='line'>"That's All, Folks"</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>replace()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>'This is a cat.'.replace('cat', 'dog')
+</span><span class='line'>'This is a dog.'</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>maketrans() and translate()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>from string import maketrans
+</span><span class='line'>
+</span><span class='line'>trantab = maketrans('aeiou', '12345')  # (in -&gt; out)
+</span><span class='line'>"this is string example...wow!".translate(trantab);
+</span><span class='line'>
+</span><span class='line'>'th3s 3s 1 str3ng 2x1mpl2...w4w!'</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>An optional second argument can be supplied to specify that should be deleted</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>'this is an incredible test..'.translate(trantab)
+</span><span class='line'>'th3s 3s 1n 3ncr2d3bl2 t2st.'
+</span><span class='line'>
+</span><span class='line'>'this is an incredible test'.translate(trantab, ' ')
+</span><span class='line'>'th3s3s1n3ncr2d3bl2t2st'</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Dictionary</h3>
+
+<ul>
+<li>dict()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># (key, value)
+</span><span class='line'>dict(name = 'Peter', age = 12)
+</span><span class='line'>{'name': 'Peter', 'age': 12}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>clear()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>x = {}
+</span><span class='line'>y = x   # refer to the same dictionary
+</span><span class='line'>x['key'] = 'value'
+</span><span class='line'>
+</span><span class='line'>y
+</span><span class='line'>{'key': 'value'}
+</span><span class='line'>
+</span><span class='line'>x.clear()
+</span><span class='line'>
+</span><span class='line'>y   # y is also empty
+</span><span class='line'>{}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>copy()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>x = {'username': 'admin', 'machines': ['foo', 'bar']}
+</span><span class='line'>y = x.copy()
+</span><span class='line'>y['username'] = 'peter'
+</span><span class='line'>y['machines'].remove('bar')
+</span><span class='line'>
+</span><span class='line'>y
+</span><span class='line'>{'username': 'peter', 'machines': ['foo']}
+</span><span class='line'>x
+</span><span class='line'>{'username': 'admin', 'machines': ['foo']}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>deepcopy()
+Avoid the situation that <em>modify</em> the value.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>d = {}
+</span><span class='line'>d['names'] = ['Alfred', 'Bertrand']
+</span><span class='line'>
+</span><span class='line'>c = d.copy()
+</span><span class='line'>deepc = deepcopy(d)
+</span><span class='line'>d['names'].append('Clive')
+</span><span class='line'>
+</span><span class='line'>d
+</span><span class='line'>{'names': ['Alfred', 'Bertrand', 'Clive']}
+</span><span class='line'>c
+</span><span class='line'>{'names': ['Alfred', 'Bertrand', 'Clive']}
+</span><span class='line'>deepc
+</span><span class='line'>{'names': ['Alfred', 'Bertrand']}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>fromkeys
+Create a new dictionary with the given keys.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{}.fromkeys(['name', 'age'])
+</span><span class='line'>{'name': None, 'age': None}
+</span><span class='line'>
+</span><span class='line'>dict.fromkeys(['name', 'age'])
+</span><span class='line'>{'name': None, 'age': None}
+</span><span class='line'>
+</span><span class='line'>dict.fromkeys(['name', 'age'], '(default)')
+</span><span class='line'>{'name': '(default)', 'age': '(default)'}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>get()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>d = {}
+</span><span class='line'>d['name'] = 'Peter'
+</span><span class='line'>d['addr'] = 'England'
+</span><span class='line'>d.get('name')
+</span><span class='line'>'Peter'
+</span><span class='line'>d.get('addr')
+</span><span class='line'>'England'</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>has_key()
+Check whether a dictionary has a given key.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Be gone after Python 3.0
+</span><span class='line'>d = {}
+</span><span class='line'>d.has_key('name')
+</span><span class='line'>False
+</span><span class='line'>d['name'] = 'Peter'
+</span><span class='line'>d.has_key('name')
+</span><span class='line'>True</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>items()
+Return all the items of dictionary as a list of the form (key, value)</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>d = {'title': 'Python Web Site', 'url': 'http://www.python.org', 'spam': 0}
+</span><span class='line'>d.items()
+</span><span class='line'>[('url', 'http://www.python.org'), ('spam', 0), ('title', 'Python Web Site')]</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>iteritems()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Return an iterator instead of a list
+</span><span class='line'>it = d.iteritems()
+</span><span class='line'>it
+</span><span class='line'>`dictionary-itemiterator object at 0x10b918788`
+</span><span class='line'>list(it)
+</span><span class='line'>[('url', 'http://www.python.org'), ('spam', 0), ('title', 'Python Web Site')]</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>pop()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>d = {'spam': 0, 'url': 'http://www.python.org', 'title': 'Python Web Site'}
+</span><span class='line'>
+</span><span class='line'>d.pop('spam')
+</span><span class='line'>0
+</span><span class='line'>
+</span><span class='line'>d
+</span><span class='line'>{'url': 'http://www.python.org', 'title': 'Python Web Site'}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>popitem()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>d = {'url': 'http://www.python.org', 'title': 'Python Web Site'}
+</span><span class='line'>d.popitem()
+</span><span class='line'>('url', 'http://www.python.org')
+</span><span class='line'>d
+</span><span class='line'>{'title': 'Python Web Site'}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>setdefault()
+Set the value corresponding to the given key if it not already in the dictionary</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>d = {}
+</span><span class='line'>d.setdefault('name', 'N/A')
+</span><span class='line'>'N/A'
+</span><span class='line'>d
+</span><span class='line'>{'name': 'N/A'}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>update()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>d = {
+</span><span class='line'>'name': 'Peter',
+</span><span class='line'>'addr': 'England',
+</span><span class='line'>}
+</span><span class='line'>x = {'addr': 'France'}
+</span><span class='line'>d.update(x)
+</span><span class='line'>
+</span><span class='line'>d
+</span><span class='line'>{'name': 'Peter', 'addr': 'France'}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>values</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>d = {}
+</span><span class='line'>d[1] = 1
+</span><span class='line'>d[2] = 2
+</span><span class='line'>
+</span><span class='line'>d.values()
+</span><span class='line'>dict_values([1, 2])</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>range(a, b), <strong>[a, b)</strong></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>for i in range(10, 12):
+</span><span class='line'>print(i)
+</span><span class='line'>
+</span><span class='line'>10
+</span><span class='line'>11</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Importing</h3>
+
+<ul>
+<li>import sth. from a module</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>from somemodule import somefunction
+</span><span class='line'>or
+</span><span class='line'>from somemodule import *</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Define aliases</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>from math import sqrt as foo
+</span><span class='line'>foo(4)
+</span><span class='line'>2.0</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>loop the key of a dictionary</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>d = {'x': 1, 'y': 2, 'z': 3}
+</span><span class='line'>for key in d:
+</span><span class='line'>print(key, d[key])
+</span><span class='line'>
+</span><span class='line'># this one is better
+</span><span class='line'>for key, value in d.items():
+</span><span class='line'>print(key, value)</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Slightly Loopy</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[x*x for x in range(10) if x % 3 == 0]
+</span><span class='line'>[0, 9, 36, 81]</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>res = []
+</span><span class='line'>for x in range(3):
+</span><span class='line'>for y in range(3):
+</span><span class='line'>res.append((x, y))
+</span><span class='line'>
+</span><span class='line'># for short
+</span><span class='line'>[(x, y) for x in range(2) for y in range(2)]
+</span><span class='line'>[(0, 0), (0, 1), (1, 0), (1, 1)]</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Executing and Evaluating</h3>
+
+<ul>
+<li>exec</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>exec "print 'hello, world!'"
+</span><span class='line'>hello, world!</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>eval</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>d = {}
+</span><span class='line'>d['x'] = 3  # exec 'x = 3' in d
+</span><span class='line'>eval('x * x', d)
+</span><span class='line'>9</span></code></pre></td></tr></table></div></figure>
+
+
+<hr />
+
+<h3>Bonus: Trick of Reduce Code</h3>
+
+<ul>
+<li>Comparison</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># using the former instead of the latter
+</span><span class='line'>1 &lt; num &lt; 10
+</span><span class='line'>1 &lt; num and num &lt; 10</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>or</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>name = input('Enter name: ') or 'N/A'
+</span><span class='line'>Enter name:
+</span><span class='line'>
+</span><span class='line'>name
+</span><span class='line'>'N/A'</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>a if b else c</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>score = int(99)
+</span><span class='line'>grade = 'A' if 90 &lt;= score &lt;= 100 else 'B'
+</span><span class='line'>
+</span><span class='line'>grade
+</span><span class='line'>'A'</span></code></pre></td></tr></table></div></figure>
+
+
 
 ]]></content>
   </entry>
