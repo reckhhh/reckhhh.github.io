@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T03:41:43+08:00</updated>
+  <updated>2015-05-01T03:43:59+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python Notes IV]]></title>
+    <link href="http://reckhhh.github.io/blog/2015/05/01/python-notes-iv/"/>
+    <updated>2015-05-01T03:42:25+08:00</updated>
+    <id>http://reckhhh.github.io/blog/2015/05/01/python-notes-iv</id>
+    <content type="html"><![CDATA[<h3>input() and raw_input()</h3>
+
+<ul>
+<li>input(): Gets inputs from the user</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>input("Enter a number: ")
+</span><span class='line'>Enter a number: 3
+</span><span class='line'>3</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python Notes III]]></title>
