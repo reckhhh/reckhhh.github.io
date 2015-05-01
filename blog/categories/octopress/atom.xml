@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T14:41:32+08:00</updated>
+  <updated>2015-05-01T14:50:06+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -18,7 +18,11 @@
     <link href="http://reckhhh.github.io/blog/2015/05/01/octopress-error-pygments-cant-parse-unknown-language/"/>
     <updated>2015-05-01T13:30:38+08:00</updated>
     <id>http://reckhhh.github.io/blog/2015/05/01/octopress-error-pygments-cant-parse-unknown-language</id>
-    <content type="html"><![CDATA[<p>Octopress is good, but not perfect.</p>
+    <content type="html"><![CDATA[<h1>Handle Octopress Error: Pygments can&rsquo;t parse unknown language: &lt;/p></h1>
+
+<hr />
+
+<p>Octopress is good, but not perfect.</p>
 
 <ul>
 <li>One of the common error when type &ldquo;<strong>rake generate</strong>&rdquo; is:
@@ -37,6 +41,11 @@ raise "Pygments can't parse unknown language: #{lang}#{code}."
 end
 </code>
 Then, when &ldquo;<strong>rake generate</strong>&rdquo; again, the error location will be listed.</p>
+
+<ul>
+<li>Another thing worth noted is that when blogging <strong>&lsquo;&rsquo; should be replaced with &lsquo; &rsquo;</strong>, i.e., add a blank between &lsquo;&rsquo;, otherwise, when <strong>rake generate</strong>, &lsquo;&rsquo; without blank between them will also produce this error and it is difficult to detect through error description</li>
+</ul>
+
 ]]></content>
   </entry>
   
