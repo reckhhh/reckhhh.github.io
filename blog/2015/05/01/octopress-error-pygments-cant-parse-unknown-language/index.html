@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Python - Black Mamba</title>
+  <title>Octopress Error: Pygments Can&#8217;t Parse Unknown Language: </p> - Black Mamba</title>
   <meta name="author" content="Chen Rui">
 
   
-  <meta name="description" content="Category: python">
+  <meta name="description" content="Octopress is good, but not perfect. One of the common error when type &ldquo;rake generate&rdquo; is: 1
+Error: Pygments can't parse unknown language &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://reckhhh.github.io/blog/categories/python/">
+  <link rel="canonical" href="http://reckhhh.github.io/blog/2015/05/01/octopress-error-pygments-cant-parse-unknown-language/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Black Mamba" type="application/atom+xml">
@@ -65,64 +66,96 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Python</h1>
+    
+      <h1 class="entry-title">Octopress Error: Pygments Can&#8217;t Parse Unknown Language: </p></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-05-01T13:30:38+08:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>1:30 pm</span></time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Octopress is good, but not perfect.</p>
 
-  
-  <h2>2015</h2>
-
-<article>
-  
-<h1><a href="/blog/2015/04/30/python-notes-iii/">Python Notes III</a></h1>
-<time datetime="2015-04-30T01:04:15+08:00" pubdate><span class='month'>Apr</span> <span class='day'>30</span> <span class='year'>2015</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/python/'>python</a></span>
-</footer>
+<ul>
+<li>One of the common error when type &ldquo;<strong>rake generate</strong>&rdquo; is:</li>
+</ul>
 
 
-</article>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Error: Pygments can't parse unknown language: &lt;/p&gt;</span></code></pre></td></tr></table></div></figure>
 
 
+<p>Although there is a error, <em>jekyll</em> don&rsquo;t point out the detailed location where the error come from in its default setting. It was very annoying.</p>
 
-<article>
-  
-<h1><a href="/blog/2015/04/28/python-notes-ii/">Python Notes II</a></h1>
-<time datetime="2015-04-28T22:29:26+08:00" pubdate><span class='month'>Apr</span> <span class='day'>28</span> <span class='year'>2015</span></time>
+<p>To deal with the error, one way is modify the Ruby file plugins/pygments_code.rb, add <strong>#{code}</strong> after <strong>#{lang}</strong>:</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/python/'>python</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2015/04/27/python-notes-i/">Python Notes I</a></h1>
-<time datetime="2015-04-27T12:28:38+08:00" pubdate><span class='month'>Apr</span> <span class='day'>27</span> <span class='year'>2015</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/python/'>python</a></span>
-</footer>
-
-
-</article>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rescue MentosError
+</span><span class='line'>raise "Pygments can't parse unknown language: #{lang}#{code}."
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Chen Rui</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-05-01T13:30:38+08:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>1:30 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/05/01/python-notes-iv/" title="Previous Post: Python Notes IV">&laquo; Python Notes IV</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -177,7 +210,10 @@
       var disqus_shortname = 'reckhhh';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://reckhhh.github.io/blog/2015/05/01/octopress-error-pygments-cant-parse-unknown-language/';
+        var disqus_url = 'http://reckhhh.github.io/blog/2015/05/01/octopress-error-pygments-cant-parse-unknown-language/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

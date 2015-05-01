@@ -9,12 +9,8 @@
   <meta name="author" content="Chen Rui">
 
   
-  <meta name="description" content="input() and raw_input() input(): Gets inputs from the user 1
-2
-3
-input("Enter a number: ")
-Enter a number: 3
-3 raw_input(): Gets input from the user &hellip;">
+  <meta name="description" content="Octopress is good, but not perfect. One of the common error when type &ldquo;rake generate&rdquo; is: 1
+Error: Pygments can't parse unknown language &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -71,6 +67,56 @@ Enter a number: 3
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/05/01/octopress-error-pygments-cant-parse-unknown-language/">Octopress Error: Pygments Can&#8217;t Parse Unknown Language: </p></a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-05-01T13:30:38+08:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>1:30 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Octopress is good, but not perfect.</p>
+
+<ul>
+<li>One of the common error when type &ldquo;<strong>rake generate</strong>&rdquo; is:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Error: Pygments can't parse unknown language: &lt;/p&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Although there is a error, <em>jekyll</em> don&rsquo;t point out the detailed location where the error come from in its default setting. It was very annoying.</p>
+
+<p>To deal with the error, one way is modify the Ruby file plugins/pygments_code.rb, add <strong>#{code}</strong> after <strong>#{lang}</strong>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rescue MentosError
+</span><span class='line'>raise "Pygments can't parse unknown language: #{lang}#{code}."
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -2862,6 +2908,10 @@ Set the value corresponding to the given key if it not already in the dictionary
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/05/01/octopress-error-pygments-cant-parse-unknown-language/">Octopress Error: Pygments Can&#8217;t Parse Unknown Language: </p></a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/05/01/python-notes-iv/">Python Notes IV</a>
       </li>
     
@@ -2875,10 +2925,6 @@ Set the value corresponding to the given key if it not already in the dictionary
     
       <li class="post">
         <a href="/blog/2015/04/28/python-notes-ii/">Python Notes II</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/04/27/python-notes-i/">Python Notes I</a>
       </li>
     
   </ul>
