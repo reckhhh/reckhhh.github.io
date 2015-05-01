@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ios | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T16:41:14+08:00</updated>
+  <updated>2015-05-01T16:43:33+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -221,10 +221,10 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Reference Count Style Memory Management of Apple]]></title>
-    <link href="http://reckhhh.github.io/blog/2015/04/25/reference-count-style-memory-management-of-apple/"/>
+    <title type="html"><![CDATA[Reference Count Style Memory Management and ARC Rules]]></title>
+    <link href="http://reckhhh.github.io/blog/2015/04/25/reference-count-style-memory-management-and-arc-rules/"/>
     <updated>2015-04-25T23:32:02+08:00</updated>
-    <id>http://reckhhh.github.io/blog/2015/04/25/reference-count-style-memory-management-of-apple</id>
+    <id>http://reckhhh.github.io/blog/2015/04/25/reference-count-style-memory-management-and-arc-rules</id>
     <content type="html"><![CDATA[<h3>Reference Count Style Memory Management</h3>
 
 <ul>
