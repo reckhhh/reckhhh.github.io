@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T17:16:27+08:00</updated>
+  <updated>2015-05-01T17:18:05+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -947,20 +947,18 @@ eval('x * x', d)
 </span></code></pre></td></tr></table></div></figure></p>
 
 <ul>
-<li>Remove the duplicates
+<li><p>Remove the duplicates
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="nb">file</span> <span class="n">operation</span> <span class="n">can</span> <span class="n">be</span> <span class="n">replaced</span> <span class="k">with</span> <span class="n">one</span> <span class="n">line</span> <span class="n">code</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="nb">file</span> <span class="n">operation</span> <span class="n">can</span> <span class="n">be</span> <span class="n">replaced</span> <span class="k">with</span> <span class="n">one</span> <span class="n">line</span> <span class="n">code</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">sanitize</span><span class="p">(</span><span class="n">each_t</span><span class="p">)</span> <span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="n">get_date</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">james</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)]))[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
-</span></code></pre></td></tr></table></div></figure></p>
-
-<ul>
+</span></code></pre></td></tr></table></div></figure></p></li>
 <li><p>Bundle the code and data in a dictionary
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1979,8 +1977,8 @@ eval('x * x', d)
 </span><span class='line'>    <span class="n">version</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="mf">1.0</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
 </span><span class='line'>    <span class="n">py_modules</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">nester</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;],</span>
 </span><span class='line'>    <span class="n">author</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">name</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
-</span><span class='line'>    <span class="n">author_email</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#109;&amp;#x61;&amp;#x69;&amp;#x6c;&amp;#x74;&amp;#111;&amp;#58;&amp;#x6e;&amp;#x61;&amp;#109;&amp;#101;&amp;#64;&amp;#115;&amp;#x6f;&amp;#x6d;&amp;#101;&amp;#119;&amp;#x68;&amp;#x65;&amp;#114;&amp;#x65;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#x6d;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#110;&amp;#x61;&amp;#x6d;&amp;#101;&amp;#64;&amp;#115;&amp;#x6f;&amp;#x6d;&amp;#101;&amp;#119;&amp;#104;&amp;#101;&amp;#114;&amp;#x65;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&amp;rsquo;,</span>
-</span><span class='line'>    <span class="n">url</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#x6d;&amp;#97;&amp;#105;&amp;#108;&amp;#116;&amp;#x6f;&amp;#x3a;&amp;#110;&amp;#97;&amp;#x6d;&amp;#101;&amp;#64;&amp;#115;&amp;#111;&amp;#x6d;&amp;#101;&amp;#x70;&amp;#x6c;&amp;#97;&amp;#99;&amp;#101;&amp;#46;&amp;#99;&amp;#x6f;&amp;#109;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#110;&amp;#97;&amp;#x6d;&amp;#x65;&amp;#64;&amp;#115;&amp;#x6f;&amp;#109;&amp;#x65;&amp;#x70;&amp;#x6c;&amp;#97;&amp;#99;&amp;#x65;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&amp;rsquo;,</span>
+</span><span class='line'>    <span class="n">author_email</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#x6d;&amp;#97;&amp;#105;&amp;#x6c;&amp;#116;&amp;#x6f;&amp;#58;&amp;#x6e;&amp;#x61;&amp;#x6d;&amp;#101;&amp;#x40;&amp;#115;&amp;#111;&amp;#x6d;&amp;#x65;&amp;#x77;&amp;#104;&amp;#101;&amp;#x72;&amp;#101;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#109;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#x6e;&amp;#97;&amp;#x6d;&amp;#101;&amp;#64;&amp;#x73;&amp;#111;&amp;#x6d;&amp;#x65;&amp;#x77;&amp;#x68;&amp;#x65;&amp;#x72;&amp;#101;&amp;#46;&amp;#99;&amp;#111;&amp;#x6d;&lt;/a&gt;&amp;rsquo;,</span>
+</span><span class='line'>    <span class="n">url</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#x6d;&amp;#97;&amp;#105;&amp;#108;&amp;#116;&amp;#111;&amp;#58;&amp;#x6e;&amp;#97;&amp;#109;&amp;#x65;&amp;#64;&amp;#115;&amp;#111;&amp;#109;&amp;#101;&amp;#x70;&amp;#x6c;&amp;#x61;&amp;#x63;&amp;#101;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#109;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#110;&amp;#x61;&amp;#109;&amp;#101;&amp;#x40;&amp;#x73;&amp;#x6f;&amp;#109;&amp;#101;&amp;#112;&amp;#108;&amp;#97;&amp;#99;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#111;&amp;#x6d;&lt;/a&gt;&amp;rsquo;,</span>
 </span><span class='line'>    <span class="n">description</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">A</span> <span class="n">simple</span> <span class="n">printer</span> <span class="n">of</span> <span class="n">nested</span> <span class="n">lists</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
 </span><span class='line'>    <span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
