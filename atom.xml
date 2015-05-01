@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-02T02:40:06+08:00</updated>
+  <updated>2015-05-02T02:45:13+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -33,17 +33,17 @@
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
 </pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">search2Binary</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-</span><span class='line'><span class="k">if</span> <span class="n">upper</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-</span><span class='line'><span class="n">upper</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-</span><span class='line'><span class="k">if</span> <span class="n">lower</span> <span class="o">==</span> <span class="n">upper</span><span class="p">:</span>
-</span><span class='line'><span class="k">assert</span><span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="n">seq</span><span class="p">[</span><span class="n">upper</span><span class="p">])</span>
-</span><span class='line'><span class="k">return</span> <span class="n">upper</span>
-</span><span class='line'><span class="k">else</span><span class="p">:</span>
-</span><span class='line'><span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">upper</span> <span class="o">+</span> <span class="n">lower</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-</span><span class='line'><span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="n">seq</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>
-</span><span class='line'><span class="k">return</span> <span class="n">search2Binary</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">upper</span><span class="p">)</span>
-</span><span class='line'><span class="k">else</span><span class="p">:</span>
-</span><span class='line'><span class="k">return</span> <span class="n">search2Binary</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">upper</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">upper</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">lower</span> <span class="o">==</span> <span class="n">upper</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">assert</span><span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="n">seq</span><span class="p">[</span><span class="n">upper</span><span class="p">])</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">upper</span>
+</span><span class='line'>    <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">upper</span> <span class="o">+</span> <span class="n">lower</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="n">seq</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>
+</span><span class='line'>            <span class="k">return</span> <span class="n">search2Binary</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">upper</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">return</span> <span class="n">search2Binary</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -275,7 +275,7 @@ Equivalent to func(func(func(seq[0], seq[1]), seq[2]), &hellip;)</li>
 </span><span class='line'>
 </span><span class='line'><span class="n">heap</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span class='line'><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-</span><span class='line'><span class="n">heappush</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">heappush</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="n">heap</span>
 </span><span class='line'><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
@@ -460,8 +460,8 @@ Equivalent to func(func(func(seq[0], seq[1]), seq[2]), &hellip;)</li>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">origin</span> <span class="o">=</span> <span class="s">&#39; &#39;</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">substi</span> <span class="o">=</span> <span class="s">&#39;Hello, &#39;</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="s">&#39;Peter&#39;</span><span class="p">,</span> <span class="n">substi</span><span class="p">)</span>
+</span><span class='line'><span class="n">substi</span> <span class="o">=</span> <span class="s">&#39;Hello, &#39;</span>
+</span><span class='line'><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="s">&#39;Peter&#39;</span><span class="p">,</span> <span class="n">substi</span><span class="p">)</span>
 </span><span class='line'><span class="s">&#39;Hello,Peter&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -478,7 +478,7 @@ Used to scape all the characters in a string that might be interpreted as a regu
 <span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="s">&#39;www.python.org&#39;</span><span class="p">)</span>
 </span><span class='line'><span class="s">&#39;www</span><span class="se">\\</span><span class="s">.python</span><span class="se">\\</span><span class="s">.org&#39;</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="s">&#39;Today is a good day.&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="s">&#39;Today is a good day.&#39;</span><span class="p">)</span>
 </span><span class='line'><span class="s">&#39;Today</span><span class="se">\\</span><span class="s"> is</span><span class="se">\\</span><span class="s"> a</span><span class="se">\\</span><span class="s"> good</span><span class="se">\\</span><span class="s"> day</span><span class="se">\\</span><span class="s">.&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -569,17 +569,17 @@ Used to scape all the characters in a string that might be interpreted as a regu
 </span><span class='line'><span class="sd">&#39;&#39;&#39;</span>
 </span><span class='line'><span class="sd">Square a number and returns the result.</span>
 </span><span class='line'>
-</span><span class='line'><span class="sd">&gt;&gt;&gt; mySquare(2)</span>
+</span><span class='line'><span class="sd">mySquare(2)</span>
 </span><span class='line'><span class="sd">4</span>
-</span><span class='line'><span class="sd">&gt;&gt;&gt; mySquare(3)</span>
+</span><span class='line'><span class="sd">mySquare(3)</span>
 </span><span class='line'><span class="sd">9</span>
 </span><span class='line'><span class="sd">&#39;&#39;&#39;</span>
 </span><span class='line'><span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
 </span><span class='line'>
 </span><span class='line'><span class="c"># add the lollowing code at the bottom</span>
 </span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">doctest</span><span class="o">,</span> <span class="nn">my_math</span>
-</span><span class='line'><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">my_math</span><span class="p">)</span>
+</span><span class='line'>    <span class="kn">import</span> <span class="nn">doctest</span><span class="o">,</span> <span class="nn">my_math</span>
+</span><span class='line'>    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">my_math</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -612,21 +612,21 @@ Used to scape all the characters in a string that might be interpreted as a regu
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
 </pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">Trying</span><span class="p">:</span>
-</span><span class='line'><span class="n">mySquare</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">mySquare</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </span><span class='line'><span class="n">Expecting</span><span class="p">:</span>
 </span><span class='line'><span class="mi">4</span>
 </span><span class='line'><span class="n">ok</span>
 </span><span class='line'><span class="n">Trying</span><span class="p">:</span>
-</span><span class='line'><span class="n">mySquare</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">mySquare</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </span><span class='line'><span class="n">Expecting</span><span class="p">:</span>
 </span><span class='line'><span class="mi">9</span>
 </span><span class='line'><span class="n">ok</span>
 </span><span class='line'><span class="mi">1</span> <span class="n">items</span> <span class="n">had</span> <span class="n">no</span> <span class="n">tests</span><span class="p">:</span>
 </span><span class='line'><span class="n">my_math</span>
-</span><span class='line'><span class="mi">1</span> <span class="n">items</span> <span class="n">passed</span> <span class="nb">all</span> <span class="n">tests</span><span class="p">:</span>
-</span><span class='line'><span class="mi">2</span> <span class="n">tests</span> <span class="ow">in</span> <span class="n">my_math</span><span class="o">.</span><span class="n">mySquare</span>
-</span><span class='line'><span class="mi">2</span> <span class="n">tests</span> <span class="ow">in</span> <span class="mi">2</span> <span class="n">items</span><span class="o">.</span>
-</span><span class='line'><span class="mi">2</span> <span class="n">passed</span> <span class="ow">and</span> <span class="mi">0</span> <span class="n">failed</span><span class="o">.</span>
+</span><span class='line'>    <span class="mi">1</span> <span class="n">items</span> <span class="n">passed</span> <span class="nb">all</span> <span class="n">tests</span><span class="p">:</span>
+</span><span class='line'>    <span class="mi">2</span> <span class="n">tests</span> <span class="ow">in</span> <span class="n">my_math</span><span class="o">.</span><span class="n">mySquare</span>
+</span><span class='line'>    <span class="mi">2</span> <span class="n">tests</span> <span class="ow">in</span> <span class="mi">2</span> <span class="n">items</span><span class="o">.</span>
+</span><span class='line'>    <span class="mi">2</span> <span class="n">passed</span> <span class="ow">and</span> <span class="mi">0</span> <span class="n">failed</span><span class="o">.</span>
 </span><span class='line'><span class="n">Test</span> <span class="n">passed</span><span class="o">.</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -663,7 +663,7 @@ Used to scape all the characters in a string that might be interpreted as a regu
 <span class='line-number'>25</span>
 </pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># my_math.py</span>
 </span><span class='line'><span class="k">def</span> <span class="nf">product</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-</span><span class='line'><span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
 </span><span class='line'>
 </span><span class='line'><span class="c"># test_my_math.py</span>
 </span><span class='line'><span class="kn">import</span> <span class="nn">unittest</span><span class="o">,</span> <span class="nn">my_math</span>
@@ -671,18 +671,18 @@ Used to scape all the characters in a string that might be interpreted as a regu
 </span><span class='line'><span class="k">class</span> <span class="nc">ProductTestCase</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">def</span> <span class="nf">testIntegers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span class='line'><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-</span><span class='line'><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-</span><span class='line'><span class="n">p</span> <span class="o">=</span> <span class="n">my_math</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</span><span class='line'><span class="bp">self</span><span class="o">.</span><span class="n">failUnless</span><span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;Integer failed&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+</span><span class='line'>            <span class="n">p</span> <span class="o">=</span> <span class="n">my_math</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span><span class='line'>            <span class="bp">self</span><span class="o">.</span><span class="n">failUnless</span><span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;Integer failed&#39;</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">def</span> <span class="nf">testFloat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span class='line'><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-</span><span class='line'><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-</span><span class='line'><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="mf">10.0</span>
-</span><span class='line'><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">/</span><span class="mf">10.0</span>
-</span><span class='line'><span class="n">p</span> <span class="o">=</span> <span class="n">my_math</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</span><span class='line'><span class="bp">self</span><span class="o">.</span><span class="n">failUnless</span><span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;Float failed&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+</span><span class='line'>            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="mf">10.0</span>
+</span><span class='line'>            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">/</span><span class="mf">10.0</span>
+</span><span class='line'>            <span class="n">p</span> <span class="o">=</span> <span class="n">my_math</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span><span class='line'>            <span class="bp">self</span><span class="o">.</span><span class="n">failUnless</span><span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;Float failed&#39;</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="c"># add the lollowing code at the bottom</span>
 </span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span> <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
