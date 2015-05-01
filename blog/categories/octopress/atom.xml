@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T14:02:47+08:00</updated>
+  <updated>2015-05-01T14:06:38+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -35,7 +35,8 @@ Error: Pygments can't parse unknown language: &lt;/p&gt;
 rescue MentosError
 raise "Pygments can't parse unknown language: #{lang}#{code}."
 end
-</code></p>
+</code>
+Then, when &ldquo;<strong>rake generate</strong>&rdquo; again, the error location will be listed.</p>
 ]]></content>
   </entry>
   

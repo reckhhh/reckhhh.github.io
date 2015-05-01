@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T14:02:47+08:00</updated>
+  <updated>2015-05-01T14:06:38+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -40,6 +40,8 @@
 </span><span class='line'>raise "Pygments can't parse unknown language: #{lang}#{code}."
 </span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
 
+
+<p>Then, when &ldquo;<strong>rake generate</strong>&rdquo; again, the error location will be listed.</p>
 ]]></content>
   </entry>
   
