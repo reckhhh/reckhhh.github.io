@@ -2122,13 +2122,14 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>animal  = ["Dog", 'Pig', 'Cat', "Duck"]
-</span><span class='line'>print(animal)
-</span><span class='line'>['Dog', 'Pig', 'Cat', 'Duck']
-</span><span class='line'>print(len(animal))
-</span><span class='line'>4
-</span><span class='line'>print(animal[1])
-</span><span class='line'>Pig</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">animal</span>  <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Dog&quot;</span><span class="p">,</span> <span class="s">&#39;Pig&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&quot;Duck&quot;</span><span class="p">]</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;Dog&#39;</span><span class="p">,</span> <span class="s">&#39;Pig&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&#39;Duck&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">animal</span><span class="p">))</span>
+</span><span class='line'><span class="mi">4</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span><span class='line'><span class="n">Pig</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2146,16 +2147,17 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>animal.append("Tiger")
-</span><span class='line'>print(animal)
-</span><span class='line'>['Dog', 'Pig', 'Cat', 'Duck', 'Tiger']
-</span><span class='line'>animal.pop()
-</span><span class='line'>'Tiger'
-</span><span class='line'>print(animal)
-</span><span class='line'>['Dog', 'Pig', 'Cat', 'Duck']
-</span><span class='line'>animal.extend(["Fish", "Bird"])
-</span><span class='line'>print(animal)
-</span><span class='line'>['Dog', 'Pig', 'Cat', 'Duck', 'Fish', 'Bird']</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;Tiger&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;Dog&#39;</span><span class="p">,</span> <span class="s">&#39;Pig&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&#39;Duck&#39;</span><span class="p">,</span> <span class="s">&#39;Tiger&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span><span class='line'><span class="s">&#39;Tiger&#39;</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;Dog&#39;</span><span class="p">,</span> <span class="s">&#39;Pig&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&#39;Duck&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s">&quot;Fish&quot;</span><span class="p">,</span> <span class="s">&quot;Bird&quot;</span><span class="p">])</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;Dog&#39;</span><span class="p">,</span> <span class="s">&#39;Pig&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&#39;Duck&#39;</span><span class="p">,</span> <span class="s">&#39;Fish&#39;</span><span class="p">,</span> <span class="s">&#39;Bird&#39;</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2169,12 +2171,13 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>animal.remove("Pig")
-</span><span class='line'>print(animal)
-</span><span class='line'>['Dog', 'Cat', 'Duck', 'Fish', 'Bird']
-</span><span class='line'>animal.insert(1, "Bull")
-</span><span class='line'>print(animal)
-</span><span class='line'>['Dog', 'Bull', 'Cat', 'Duck', 'Fish', 'Bird']</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">&quot;Pig&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;Dog&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&#39;Duck&#39;</span><span class="p">,</span> <span class="s">&#39;Fish&#39;</span><span class="p">,</span> <span class="s">&#39;Bird&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;Bull&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;Dog&#39;</span><span class="p">,</span> <span class="s">&#39;Bull&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&#39;Duck&#39;</span><span class="p">,</span> <span class="s">&#39;Fish&#39;</span><span class="p">,</span> <span class="s">&#39;Bird&#39;</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2185,9 +2188,10 @@ Set the value corresponding to the given key if it not already in the dictionary
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>animals = ["Dog", 'Pig', 'Cat', "Duck", "Fish"]
-</span><span class='line'>for each_animal in animals:
-</span><span class='line'>    print each_animal</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Dog&quot;</span><span class="p">,</span> <span class="s">&#39;Pig&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&quot;Duck&quot;</span><span class="p">,</span> <span class="s">&quot;Fish&quot;</span><span class="p">]</span>
+</span><span class='line'><span class="k">for</span> <span class="n">each_animal</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">print</span> <span class="n">each_animal</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2207,18 +2211,19 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>movie = ["Titanic", 1997, "Romance & Disaster", "194 minutes", ["James Cameron", ["Leonardo DiCaprio", "Kate Winslet", "Billy Zane", "Kathy Bates", "Frances Fisher"]]]
-</span><span class='line'>for each_item in movie:
-</span><span class='line'>    print each_item
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">movie</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Titanic&quot;</span><span class="p">,</span> <span class="mi">1997</span><span class="p">,</span> <span class="s">&quot;Romance &amp; Disaster&quot;</span><span class="p">,</span> <span class="s">&quot;194 minutes&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;James Cameron&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;Leonardo DiCaprio&quot;</span><span class="p">,</span> <span class="s">&quot;Kate Winslet&quot;</span><span class="p">,</span> <span class="s">&quot;Billy Zane&quot;</span><span class="p">,</span> <span class="s">&quot;Kathy Bates&quot;</span><span class="p">,</span> <span class="s">&quot;Frances Fisher&quot;</span><span class="p">]]]</span>
+</span><span class='line'><span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">movie</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">print</span> <span class="n">each_item</span>
 </span><span class='line'>
-</span><span class='line'>Titanic
-</span><span class='line'>1997
-</span><span class='line'>Romance & Disaster
-</span><span class='line'>194 minutes
-</span><span class='line'>['James Cameron', ['Leonardo DiCaprio', 'Kate Winslet', 'Billy Zane', 'Kathy Bates', 'Frances Fisher']]
+</span><span class='line'><span class="n">Titanic</span>
+</span><span class='line'><span class="mi">1997</span>
+</span><span class='line'><span class="n">Romance</span> <span class="o">&amp;</span> <span class="n">Disaster</span>
+</span><span class='line'><span class="mi">194</span> <span class="n">minutes</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;James Cameron&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;Leonardo DiCaprio&#39;</span><span class="p">,</span> <span class="s">&#39;Kate Winslet&#39;</span><span class="p">,</span> <span class="s">&#39;Billy Zane&#39;</span><span class="p">,</span> <span class="s">&#39;Kathy Bates&#39;</span><span class="p">,</span> <span class="s">&#39;Frances Fisher&#39;</span><span class="p">]]</span>
 </span><span class='line'>
-</span><span class='line'>print movie[4][1][0]
-</span><span class='line'>Leonardo DiCaprio</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="k">print</span> <span class="n">movie</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span><span class='line'><span class="n">Leonardo</span> <span class="n">DiCaprio</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>Don&rsquo;t repeat code and create a function</h3>
@@ -2231,8 +2236,9 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def function_name (arguments):
-</span><span class='line'>    code suite</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">function_name</span> <span class="p">(</span><span class="n">arguments</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">code</span> <span class="n">suite</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2260,25 +2266,26 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>17</span>
 <span class='line-number'>18</span>
 <span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def print_item(the_list):
-</span><span class='line'>    for each_item in the_list:
-</span><span class='line'>        if isinstance(each_item, list): 
-</span><span class='line'>            print_item(each_item)
-</span><span class='line'>        else:
-</span><span class='line'>            print(each_item)
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">print_item</span><span class="p">(</span><span class="n">the_list</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">each_item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+</span><span class='line'>            <span class="n">print_item</span><span class="p">(</span><span class="n">each_item</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="n">each_item</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'>print_item(movie)
+</span><span class='line'><span class="n">print_item</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'>Titanic
-</span><span class='line'>1997
-</span><span class='line'>Romance & Disaster
-</span><span class='line'>194 minutes
-</span><span class='line'>James Cameron
-</span><span class='line'>Leonardo DiCaprio
-</span><span class='line'>Kate Winslet
-</span><span class='line'>Billy Zane
-</span><span class='line'>Kathy Bates
-</span><span class='line'>Frances Fisher</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="n">Titanic</span>
+</span><span class='line'><span class="mi">1997</span>
+</span><span class='line'><span class="n">Romance</span> <span class="o">&amp;</span> <span class="n">Disaster</span>
+</span><span class='line'><span class="mi">194</span> <span class="n">minutes</span>
+</span><span class='line'><span class="n">James</span> <span class="n">Cameron</span>
+</span><span class='line'><span class="n">Leonardo</span> <span class="n">DiCaprio</span>
+</span><span class='line'><span class="n">Kate</span> <span class="n">Winslet</span>
+</span><span class='line'><span class="n">Billy</span> <span class="n">Zane</span>
+</span><span class='line'><span class="n">Kathy</span> <span class="n">Bates</span>
+</span><span class='line'><span class="n">Frances</span> <span class="n">Fisher</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>Build a distribution and upload code to PyPI</h3>
@@ -2300,17 +2307,18 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>from distutils.core import setup
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">distutils.core</span> <span class="kn">import</span> <span class="n">setup</span>
 </span><span class='line'>
-</span><span class='line'>setup(
-</span><span class='line'>    name = 'nester',
-</span><span class='line'>    version = '1.0',
-</span><span class='line'>    py_modules = ['nester'],
-</span><span class='line'>    author = 'name',
-</span><span class='line'>    author_email = 'name@somewhere.com',
-</span><span class='line'>    url = 'name@someplace.com',
-</span><span class='line'>    description = 'A simple printer of nested lists',
-</span><span class='line'>    )</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="n">setup</span><span class="p">(</span>
+</span><span class='line'>    <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;nester&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="n">version</span> <span class="o">=</span> <span class="s">&#39;1.0&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="n">py_modules</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;nester&#39;</span><span class="p">],</span>
+</span><span class='line'>    <span class="n">author</span> <span class="o">=</span> <span class="s">&#39;name&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="n">author_email</span> <span class="o">=</span> <span class="s">&#39;name@somewhere.com&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;name@someplace.com&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="n">description</span> <span class="o">=</span> <span class="s">&#39;A simple printer of nested lists&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2319,7 +2327,8 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>python3 setup.py sdist</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2328,7 +2337,8 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>python3 setup.py install</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2338,8 +2348,9 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// at the first time, should type the username and password
-</span><span class='line'>python3 setup.py register</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">//</span> <span class="n">at</span> <span class="n">the</span> <span class="n">first</span> <span class="n">time</span><span class="p">,</span> <span class="n">should</span> <span class="nb">type</span> <span class="n">the</span> <span class="n">username</span> <span class="ow">and</span> <span class="n">password</span>
+</span><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">register</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2348,7 +2359,8 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>python3 setup.py sdist upload</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span> <span class="n">upload</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>Import a module to use it</h3>
@@ -2365,13 +2377,14 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def print_item (the_list):
-</span><span class='line'>    # This function takes a argument called "the_list"
-</span><span class='line'>    for each_item in the_list:
-</span><span class='line'>        if isinstance(each_item, list):
-</span><span class='line'>            print_item (each_item)
-</span><span class='line'>        else:
-</span><span class='line'>            print (each_item)</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">print_item</span> <span class="p">(</span><span class="n">the_list</span><span class="p">):</span>
+</span><span class='line'>    <span class="c"># This function takes a argument called &quot;the_list&quot;</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">each_item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+</span><span class='line'>            <span class="n">print_item</span> <span class="p">(</span><span class="n">each_item</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">print</span> <span class="p">(</span><span class="n">each_item</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2384,11 +2397,12 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// allow us to access nester's functions
-</span><span class='line'>import nester
-</span><span class='line'>animals = ['Pig', 'Dog', 'Cat', 'Bird', 'Fish']
-</span><span class='line'>// "nester" is associated namespace which like family names helps to qualify what the code mean
-</span><span class='line'>nester.print_item(animals)</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">//</span> <span class="n">allow</span> <span class="n">us</span> <span class="n">to</span> <span class="n">access</span> <span class="n">nester</span><span class="s">&#39;s functions</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">nester</span>
+</span><span class='line'><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Pig&#39;</span><span class="p">,</span> <span class="s">&#39;Dog&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&#39;Bird&#39;</span><span class="p">,</span> <span class="s">&#39;Fish&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="o">//</span> <span class="s">&quot;nester&quot;</span> <span class="ow">is</span> <span class="n">associated</span> <span class="n">namespace</span> <span class="n">which</span> <span class="n">like</span> <span class="n">family</span> <span class="n">names</span> <span class="n">helps</span> <span class="n">to</span> <span class="n">qualify</span> <span class="n">what</span> <span class="n">the</span> <span class="n">code</span> <span class="n">mean</span>
+</span><span class='line'><span class="n">nester</span><span class="o">.</span><span class="n">print_item</span><span class="p">(</span><span class="n">animals</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>Use optional arguments</h3>
@@ -2407,15 +2421,16 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def print_item (the_list, indent=False, level=0):
-</span><span class='line'>    for each_item in the_list:
-</span><span class='line'>        if isinstance(each_item, list):
-</span><span class='line'>            print_item (each_item, indent, level+1)
-</span><span class='line'>        else:
-</span><span class='line'>            if indent:
-</span><span class='line'>                for tab_stop in range(level):
-</span><span class='line'>                    print("\t", end='@!')
-</span><span class='line'>            print (each_item)</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">print_item</span> <span class="p">(</span><span class="n">the_list</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">each_item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+</span><span class='line'>            <span class="n">print_item</span> <span class="p">(</span><span class="n">each_item</span><span class="p">,</span> <span class="n">indent</span><span class="p">,</span> <span class="n">level</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">if</span> <span class="n">indent</span><span class="p">:</span>
+</span><span class='line'>                <span class="k">for</span> <span class="n">tab_stop</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">level</span><span class="p">):</span>
+</span><span class='line'>                    <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39;@!&#39;</span><span class="p">)</span>
+</span><span class='line'>            <span class="k">print</span> <span class="p">(</span><span class="n">each_item</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2432,7 +2447,8 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>version = '1.1',</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">version</span> <span class="o">=</span> <span class="s">&#39;1.1&#39;</span><span class="p">,</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2441,7 +2457,8 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>python3 setup.py sdisk upload</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdisk</span> <span class="n">upload</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <hr />

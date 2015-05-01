@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T17:04:01+08:00</updated>
+  <updated>2015-05-01T17:06:53+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -1773,43 +1773,65 @@ str.strip('!')
 <ul>
 <li>Python&rsquo;s variable identifiers don&rsquo;t have a type, Python&rsquo;s list is a <strong>high-level collection</strong></li>
 <li>Using print() and len() to work out how many data items are in the list
-<code>
-animal  = ["Dog", 'Pig', 'Cat', "Duck"]
-print(animal)
-['Dog', 'Pig', 'Cat', 'Duck']
-print(len(animal))
-4
-print(animal[1])
-Pig
-</code></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">animal</span>  <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Dog</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Pig</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Cat</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Duck</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;]</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Dog</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Pig</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Cat</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Duck</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;]</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">animal</span><span class="p">))</span>
+</span><span class='line'><span class="mi">4</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span><span class='line'><span class="n">Pig</span>
+</span></code></pre></td></tr></table></div></figure></li>
 <li>Using append(), extend() and pop() method to add and remove data from the list
-<code>
-animal.append("Tiger")
-print(animal)
-['Dog', 'Pig', 'Cat', 'Duck', 'Tiger']
-animal.pop()
-'Tiger'
-print(animal)
-['Dog', 'Pig', 'Cat', 'Duck']
-animal.extend(["Fish", "Bird"])
-print(animal)
-['Dog', 'Pig', 'Cat', 'Duck', 'Fish', 'Bird']
-</code></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Tiger</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Dog</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Pig</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Cat</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Duck</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Tiger</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;]</span>
+</span><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Tiger</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Dog</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Pig</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Cat</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Duck</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;]</span>
+</span><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Fish</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Bird</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;])</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Dog</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Pig</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Cat</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Duck</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Fish</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Bird</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;]</span>
+</span></code></pre></td></tr></table></div></figure></li>
 <li><p>Using remove() and insert() to find and remove or add a <strong>specific</strong> data from list
-<code>
-animal.remove("Pig")
-print(animal)
-['Dog', 'Cat', 'Duck', 'Fish', 'Bird']
-animal.insert(1, "Bull")
-print(animal)
-['Dog', 'Bull', 'Cat', 'Duck', 'Fish', 'Bird']
-</code></p></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Pig</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Dog</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Cat</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Duck</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Fish</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Bird</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;]</span>
+</span><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Bull</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Dog</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Bull</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Cat</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Duck</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Fish</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Bird</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;]</span>
+</span></code></pre></td></tr></table></div></figure></p></li>
 <li><p>For loops work with lists of any size
-<code>
-animals = ["Dog", 'Pig', 'Cat', "Duck", "Fish"]
-for each_animal in animals:
-  print each_animal
-</code></p></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Dog</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Pig</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Cat</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Duck</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Fish</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;]</span>
+</span><span class='line'><span class="k">for</span> <span class="n">each_animal</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">print</span> <span class="n">each_animal</span>
+</span></code></pre></td></tr></table></div></figure></p></li>
 <li><p>Store list within lists
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1825,30 +1847,32 @@ for each_animal in animals:
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>movie = [&ldquo;Titanic&rdquo;, 1997, &ldquo;Romance &amp; Disaster&rdquo;, &ldquo;194 minutes&rdquo;, [&ldquo;James Cameron&rdquo;, [&ldquo;Leonardo DiCaprio&rdquo;, &ldquo;Kate Winslet&rdquo;, &ldquo;Billy Zane&rdquo;, &ldquo;Kathy Bates&rdquo;, &ldquo;Frances Fisher&rdquo;]]]
-</span><span class='line'>for each_item in movie:
-</span><span class='line'>  print each_item&lt;/p&gt;&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">movie</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Titanic</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="mi">1997</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Romance</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">Disaster</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="mi">194</span> <span class="n">minutes</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">James</span> <span class="n">Cameron</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Leonardo</span> <span class="n">DiCaprio</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Kate</span> <span class="n">Winslet</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Billy</span> <span class="n">Zane</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Kathy</span> <span class="n">Bates</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Frances</span> <span class="n">Fisher</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;]]]</span>
+</span><span class='line'><span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">movie</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">print</span> <span class="n">each_item</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;Titanic
-</span><span class='line'>1997
-</span><span class='line'>Romance &amp; Disaster
-</span><span class='line'>194 minutes
-</span><span class='line'>[&lsquo;James Cameron&rsquo;, [&lsquo;Leonardo DiCaprio&rsquo;, &lsquo;Kate Winslet&rsquo;, &lsquo;Billy Zane&rsquo;, &lsquo;Kathy Bates&rsquo;, &lsquo;Frances Fisher&rsquo;]]&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Titanic</span>
+</span><span class='line'><span class="mi">1997</span>
+</span><span class='line'><span class="n">Romance</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">Disaster</span>
+</span><span class='line'><span class="mi">194</span> <span class="n">minutes</span>
+</span><span class='line'><span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">James</span> <span class="n">Cameron</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Leonardo</span> <span class="n">DiCaprio</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Kate</span> <span class="n">Winslet</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Billy</span> <span class="n">Zane</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Kathy</span> <span class="n">Bates</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Frances</span> <span class="n">Fisher</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;]]</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;print movie[4][1][0]
-</span><span class='line'>Leonardo DiCaprio</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">print</span> <span class="n">movie</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span><span class='line'><span class="n">Leonardo</span> <span class="n">DiCaprio</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <h3>Don&rsquo;t repeat code and create a function</h3>
 
 <ul>
 <li>isinstance() BIF checks whether an identifier refers to a data object of some specified type</li>
 <li>Using <strong>def</strong> to define a custom function
-<code>
-def function_name (arguments):
-  code suite
-</code></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">function_name</span> <span class="p">(</span><span class="n">arguments</span><span class="p">):</span>
+</span><span class='line'>  <span class="n">code</span> <span class="n">suite</span>
+</span></code></pre></td></tr></table></div></figure></li>
 <li>Python3 defaults its recursion limit to 1,000</li>
 <li>Print items in list within lists
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1872,27 +1896,28 @@ def function_name (arguments):
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def print_item(the_list):
-</span><span class='line'>  for each_item in the_list:
-</span><span class='line'>      if isinstance(each_item, list):
-</span><span class='line'>          print_item(each_item)
-</span><span class='line'>      else:
-</span><span class='line'>          print(each_item)&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">print_item</span><span class="p">(</span><span class="n">the_list</span><span class="p">):</span>
+</span><span class='line'>  <span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span>
+</span><span class='line'>      <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">each_item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+</span><span class='line'>          <span class="n">print_item</span><span class="p">(</span><span class="n">each_item</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>          <span class="k">print</span><span class="p">(</span><span class="n">each_item</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;print_item(movie)&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">print_item</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;Titanic
-</span><span class='line'>1997
-</span><span class='line'>Romance &amp; Disaster
-</span><span class='line'>194 minutes
-</span><span class='line'>James Cameron
-</span><span class='line'>Leonardo DiCaprio
-</span><span class='line'>Kate Winslet
-</span><span class='line'>Billy Zane
-</span><span class='line'>Kathy Bates
-</span><span class='line'>Frances Fisher</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Titanic</span>
+</span><span class='line'><span class="mi">1997</span>
+</span><span class='line'><span class="n">Romance</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">Disaster</span>
+</span><span class='line'><span class="mi">194</span> <span class="n">minutes</span>
+</span><span class='line'><span class="n">James</span> <span class="n">Cameron</span>
+</span><span class='line'><span class="n">Leonardo</span> <span class="n">DiCaprio</span>
+</span><span class='line'><span class="n">Kate</span> <span class="n">Winslet</span>
+</span><span class='line'><span class="n">Billy</span> <span class="n">Zane</span>
+</span><span class='line'><span class="n">Kathy</span> <span class="n">Bates</span>
+</span><span class='line'><span class="n">Frances</span> <span class="n">Fisher</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <h3>Build a distribution and upload code to PyPI</h3>
 
@@ -1912,51 +1937,40 @@ def function_name (arguments):
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>from distutils.core import setup&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">distutils.core</span> <span class="kn">import</span> <span class="n">setup</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;setup(
-</span><span class='line'>    name = &lsquo;nester&rsquo;,
-</span><span class='line'>    version = &lsquo;1.0&rsquo;,
-</span><span class='line'>    py_modules = [&lsquo;nester&rsquo;],
-</span><span class='line'>    author = &lsquo;name&rsquo;,
-</span><span class='line'>    author_email = &lsquo;&lt;a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x6e;&#x61;&#x6d;&#101;&#64;&#x73;&#111;&#x6d;&#x65;&#x77;&#104;&#101;&#x72;&#x65;&#46;&#99;&#x6f;&#x6d;"&gt;&#110;&#97;&#109;&#x65;&#x40;&#x73;&#x6f;&#x6d;&#101;&#x77;&#x68;&#x65;&#114;&#101;&#46;&#99;&#x6f;&#109;&lt;/a&gt;&rsquo;,
-</span><span class='line'>    url = &lsquo;&lt;a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#x6e;&#x61;&#109;&#101;&#x40;&#x73;&#111;&#x6d;&#101;&#112;&#x6c;&#x61;&#x63;&#101;&#x2e;&#99;&#x6f;&#109;"&gt;&#x6e;&#97;&#x6d;&#x65;&#x40;&#x73;&#111;&#109;&#x65;&#x70;&#108;&#x61;&#x63;&#101;&#46;&#x63;&#111;&#x6d;&lt;/a&gt;&rsquo;,
-</span><span class='line'>    description = &lsquo;A simple printer of nested lists&rsquo;,
-</span><span class='line'>    )
-</span><span class='line'>&lt;code&gt;
-</span><span class='line'>- Build a distribution file, enter the command at the prompt
-</span><span class='line'>&lt;/code&gt;
-</span><span class='line'>python3 setup.py sdist
-</span><span class='line'>&lt;code&gt;
-</span><span class='line'>- Install the distribution into local copy of Python
-</span><span class='line'>&lt;/code&gt;
-</span><span class='line'>python3 setup.py install
-</span><span class='line'>&lt;code&gt;
-</span><span class='line'>- Then, the module has been *transformed* into a distribution and *installed* into local copy of Python
-</span><span class='line'>&lt;/code&gt;
-</span><span class='line'>// at the first time, should type the username and password
-</span><span class='line'>python3 setup.py register</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">setup</span><span class="p">(</span>
+</span><span class='line'>    <span class="n">name</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">nester</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
+</span><span class='line'>    <span class="n">version</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="mf">1.0</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
+</span><span class='line'>    <span class="n">py_modules</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">nester</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;],</span>
+</span><span class='line'>    <span class="n">author</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">name</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
+</span><span class='line'>    <span class="n">author_email</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#109;&amp;#x61;&amp;#x69;&amp;#x6c;&amp;#116;&amp;#x6f;&amp;#58;&amp;#110;&amp;#x61;&amp;#x6d;&amp;#x65;&amp;#64;&amp;#x73;&amp;#111;&amp;#109;&amp;#x65;&amp;#119;&amp;#x68;&amp;#x65;&amp;#x72;&amp;#101;&amp;#46;&amp;#x63;&amp;#111;&amp;#x6d;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#110;&amp;#x61;&amp;#109;&amp;#x65;&amp;#x40;&amp;#x73;&amp;#x6f;&amp;#109;&amp;#x65;&amp;#x77;&amp;#x68;&amp;#101;&amp;#x72;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#109;&lt;/a&gt;&amp;rsquo;,</span>
+</span><span class='line'>    <span class="n">url</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#109;&amp;#x61;&amp;#105;&amp;#x6c;&amp;#x74;&amp;#x6f;&amp;#x3a;&amp;#110;&amp;#x61;&amp;#x6d;&amp;#x65;&amp;#64;&amp;#x73;&amp;#111;&amp;#x6d;&amp;#x65;&amp;#x70;&amp;#108;&amp;#97;&amp;#x63;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#111;&amp;#109;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#x6e;&amp;#x61;&amp;#x6d;&amp;#x65;&amp;#64;&amp;#x73;&amp;#x6f;&amp;#x6d;&amp;#x65;&amp;#x70;&amp;#x6c;&amp;#x61;&amp;#99;&amp;#x65;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&lt;/a&gt;&amp;rsquo;,</span>
+</span><span class='line'>    <span class="n">description</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">A</span> <span class="n">simple</span> <span class="n">printer</span> <span class="n">of</span> <span class="n">nested</span> <span class="n">lists</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
+</span><span class='line'>    <span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+- Build a distribution file, enter the command at the prompt
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span>
+</span></code></pre></td></tr></table></div></figure>
+- Install the distribution into local copy of Python
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+</span></code></pre></td></tr></table></div></figure>
+- Then, the module has been <em>transformed</em> into a distribution and <em>installed</em> into local copy of Python
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">//</span> <span class="n">at</span> <span class="n">the</span> <span class="n">first</span> <span class="n">time</span><span class="p">,</span> <span class="n">should</span> <span class="nb">type</span> <span class="n">the</span> <span class="n">username</span> <span class="ow">and</span> <span class="n">password</span>
+</span><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">register</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <ul>
 <li>Finally, upload code to PyPI
-<code>
-python3 setup.py sdist upload
-</code></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span> <span class="n">upload</span>
+</span></code></pre></td></tr></table></div></figure></li>
 </ul>
 
 
@@ -1964,23 +1978,33 @@ python3 setup.py sdist upload
 
 <ul>
 <li>For instance, there is a function named &ldquo;nester.py&rdquo;
-<code>
-def print_item (the_list):
-  # This function takes a argument called "the_list"
-  for each_item in the_list:
-      if isinstance(each_item, list):
-          print_item (each_item)
-      else:
-          print (each_item)
-</code></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">print_item</span> <span class="p">(</span><span class="n">the_list</span><span class="p">):</span>
+</span><span class='line'>  <span class="c"># This function takes a argument called &amp;ldquo;the_list&amp;rdquo;</span>
+</span><span class='line'>  <span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span>
+</span><span class='line'>      <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">each_item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+</span><span class='line'>          <span class="n">print_item</span> <span class="p">(</span><span class="n">each_item</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>          <span class="k">print</span> <span class="p">(</span><span class="n">each_item</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></li>
 <li>Type <strong>F5</strong> to run the module&rsquo;s code, use the following list data
-<code>
-// allow us to access nester's functions
-import nester
-animals = ['Pig', 'Dog', 'Cat', 'Bird', 'Fish']
-// "nester" is associated namespace which like family names helps to qualify what the code mean
-nester.print_item(animals)
-</code></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">//</span> <span class="n">allow</span> <span class="n">us</span> <span class="n">to</span> <span class="n">access</span> <span class="n">nester</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="n">s</span> <span class="n">functions</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">nester</span>
+</span><span class='line'><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Pig</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Dog</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Cat</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Bird</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Fish</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;]</span>
+</span><span class='line'><span class="o">//</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">nester</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span> <span class="ow">is</span> <span class="n">associated</span> <span class="n">namespace</span> <span class="n">which</span> <span class="n">like</span> <span class="n">family</span> <span class="n">names</span> <span class="n">helps</span> <span class="n">to</span> <span class="n">qualify</span> <span class="n">what</span> <span class="n">the</span> <span class="n">code</span> <span class="n">mean</span>
+</span><span class='line'><span class="n">nester</span><span class="o">.</span><span class="n">print_item</span><span class="p">(</span><span class="n">animals</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></li>
 </ul>
 
 
@@ -1988,17 +2012,25 @@ nester.print_item(animals)
 
 <ul>
 <li>Update the function &ldquo;nester.py&rdquo; with default arguments
-<code>
-def print_item (the_list, indent=False, level=0):
-  for each_item in the_list:
-      if isinstance(each_item, list):
-          print_item (each_item, indent, level+1)
-      else:
-          if indent:
-              for tab_stop in range(level):
-                  print("\t", end='@!')
-          print (each_item)
-</code></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">print_item</span> <span class="p">(</span><span class="n">the_list</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+</span><span class='line'>  <span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span>
+</span><span class='line'>      <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">each_item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+</span><span class='line'>          <span class="n">print_item</span> <span class="p">(</span><span class="n">each_item</span><span class="p">,</span> <span class="n">indent</span><span class="p">,</span> <span class="n">level</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>          <span class="k">if</span> <span class="n">indent</span><span class="p">:</span>
+</span><span class='line'>              <span class="k">for</span> <span class="n">tab_stop</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">level</span><span class="p">):</span>
+</span><span class='line'>                  <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span>\<span class="n">t</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="n">end</span><span class="o">=&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="err">@!</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+</span><span class='line'>          <span class="k">print</span> <span class="p">(</span><span class="n">each_item</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></li>
 <li>Use <strong>indent</strong> to control whether indent code</li>
 <li>Use <strong>level</strong> to control the init indentation level</li>
 </ul>
@@ -2008,13 +2040,13 @@ def print_item (the_list, indent=False, level=0):
 
 <ul>
 <li>Edit &ldquo;setup.py&rdquo; so that it has a new version
-<code>
-version = '1.1',
-</code></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">version</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="mf">1.1</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
+</span></code></pre></td></tr></table></div></figure></li>
 <li>Upload the new distribution to PyPI
-<code>
-python3 setup.py sdisk upload
-</code></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdisk</span> <span class="n">upload</span>
+</span></code></pre></td></tr></table></div></figure></li>
 </ul>
 
 
