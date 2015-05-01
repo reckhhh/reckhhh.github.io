@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ios | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T16:36:14+08:00</updated>
+  <updated>2015-05-01T16:37:51+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -231,11 +231,12 @@
 </pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="kt">id</span> <span class="n">obj</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSObject</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
 </span></code></pre></td></tr></table></div></figure></p></li>
 <li><p>A variable can hold the objects generate by other variables
-<code>
-id obj = [NSMutableArray array];
-[obj retain];
-</code></p></li>
-<li>If the objects of a variable are no longer needed, the variable can release the objects held by itself
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="kt">id</span> <span class="n">obj</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSMutableArray</span> <span class="n">array</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">obj</span> <span class="k">retain</span><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure></p></li>
+<li><p>If the objects of a variable are no longer needed, the variable can release the objects held by itself
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -246,26 +247,27 @@ id obj = [NSMutableArray array];
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// Generate by itself and hold the objects by itself
-</span><span class='line'>id obj = [[NSObject alloc] init];
-</span><span class='line'>[obj release];&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="c1">// Generate by itself and hold the objects by itself</span>
+</span><span class='line'><span class="kt">id</span> <span class="n">obj</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSObject</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">obj</span> <span class="k">release</span><span class="p">];</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;// Generate by others and hold the objects by itself
-</span><span class='line'>id obj = [NSMutableArray array];
-</span><span class='line'>[obj retain];
-</span><span class='line'>[obj release];
-</span><span class='line'>&lt;code&gt;
-</span><span class='line'>- A variable cannot release the objects held by others
-</span><span class='line'>&lt;/code&gt;
-</span><span class='line'>id obj1 = [obj0 object];
-</span><span class='line'>[obj1 release];    // error</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="c1">// Generate by others and hold the objects by itself</span>
+</span><span class='line'><span class="kt">id</span> <span class="n">obj</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSMutableArray</span> <span class="n">array</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">obj</span> <span class="k">retain</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">obj</span> <span class="k">release</span><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li>A variable cannot release the objects held by others
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="kt">id</span> <span class="n">obj1</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj0</span> <span class="n">object</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">obj1</span> <span class="k">release</span><span class="p">];</span>    <span class="c1">// error</span>
+</span></code></pre></td></tr></table></div></figure></li>
+</ul>
+
 ]]></content>
   </entry>
   
