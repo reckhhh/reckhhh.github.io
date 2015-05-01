@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T16:55:10+08:00</updated>
+  <updated>2015-05-01T17:00:39+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -2305,18 +2305,27 @@ Set the value corresponding to the given key if it not already in the dictionary
     <id>http://reckhhh.github.io/blog/2015/04/26/variable-property-attributes-in-ios</id>
     <content type="html"><![CDATA[<p>In iOS, variable property attributes indicate data accessibility and storage considerations,</p>
 
-<ul>
-<li>atomic                //default</li>
-<li>nonatomic</li>
-<li>strong = retain       //default</li>
-<li>weak = unsafe_unretained</li>
-<li>retain</li>
-<li>assign                //default</li>
-<li>unsafe_unretained</li>
-<li>copy</li>
-<li>readonly</li>
-<li>readwrite             //default</li>
-</ul>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="p">-</span> <span class="nf">atomic</span>              <span class="c1">//default</span>
+</span><span class='line'><span class="p">-</span> <span class="nf">nonatomic</span>
+</span><span class='line'><span class="p">-</span> <span class="nf">strong</span> <span class="o">=</span> <span class="k">retain</span>        <span class="c1">//default</span>
+</span><span class='line'><span class="o">-</span> <span class="k">weak</span> <span class="o">=</span> <span class="k">unsafe_unretained</span>
+</span><span class='line'><span class="o">-</span> <span class="k">retain</span>
+</span><span class='line'><span class="o">-</span> <span class="k">assign</span>                <span class="c1">//default</span>
+</span><span class='line'><span class="o">-</span> <span class="k">unsafe_unretained</span>
+</span><span class='line'><span class="o">-</span> <span class="k">copy</span>
+</span><span class='line'><span class="o">-</span> <span class="k">readonly</span>
+</span><span class='line'><span class="o">-</span> <span class="k">readwrite</span>             <span class="c1">//default</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <hr />
@@ -2336,8 +2345,9 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@property (atomic, retain) NSString *name;
-</span><span class='line'>@synthesize name;</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">@property</span> <span class="p">(</span><span class="k">atomic</span><span class="p">,</span> <span class="k">retain</span><span class="p">)</span> <span class="bp">NSString</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
+</span><span class='line'><span class="k">@synthesize</span> <span class="n">name</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2356,8 +2366,9 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, retain) NSString *name;
-</span><span class='line'>@synthesize name;</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">retain</span><span class="p">)</span> <span class="bp">NSString</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
+</span><span class='line'><span class="k">@synthesize</span> <span class="n">name</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2377,8 +2388,9 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, strong) ViewController *viewController;
-</span><span class='line'>@synthesize viewController;</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">strong</span><span class="p">)</span> <span class="n">ViewController</span> <span class="o">*</span><span class="n">viewController</span><span class="p">;</span>
+</span><span class='line'><span class="k">@synthesize</span> <span class="n">viewController</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2399,8 +2411,9 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, weak) IBOutlet UIButton *myButton;
-</span><span class='line'>@synthesize myButton;</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">weak</span><span class="p">)</span> <span class="kt">IBOutlet</span> <span class="bp">UIButton</span> <span class="o">*</span><span class="n">myButton</span><span class="p">;</span>
+</span><span class='line'><span class="k">@synthesize</span> <span class="n">myButton</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2420,8 +2433,9 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, retain) NSString *name;
-</span><span class='line'>@synthesize name;</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">retain</span><span class="p">)</span> <span class="bp">NSString</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
+</span><span class='line'><span class="k">@synthesize</span> <span class="n">name</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2438,8 +2452,9 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, assign) NSString *address;
-</span><span class='line'>@synthesize address;</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">assign</span><span class="p">)</span> <span class="bp">NSString</span> <span class="o">*</span><span class="n">address</span><span class="p">;</span>
+</span><span class='line'><span class="k">@synthesize</span> <span class="n">address</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2458,8 +2473,9 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, unsafe_unretained) NSString *nickName;
-</span><span class='line'>@synthesize nickName;</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">unsafe_unretained</span><span class="p">)</span> <span class="bp">NSString</span> <span class="o">*</span><span class="n">nickName</span><span class="p">;</span>
+</span><span class='line'><span class="k">@synthesize</span> <span class="n">nickName</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2479,8 +2495,9 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, copy) NSArray *myArray;
-</span><span class='line'>@synthesize myArray;</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">copy</span><span class="p">)</span> <span class="bp">NSArray</span> <span class="o">*</span><span class="n">myArray</span><span class="p">;</span>
+</span><span class='line'><span class="k">@synthesize</span> <span class="n">myArray</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -2499,12 +2516,13 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, readonly) NSString *name;
-</span><span class='line'>@synthesize name;</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">readonly</span><span class="p">)</span> <span class="bp">NSString</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
+</span><span class='line'><span class="k">@synthesize</span> <span class="n">name</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
-<li>readwrite  (default)
+<li>readwrite (default)
 
 <ul>
 <li>&ldquo;setter&rdquo; and &ldquo;getter&rdquo; are both generated</li>
@@ -2519,8 +2537,9 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@property (nonatomic, readwrite) NSString *name;
-</span><span class='line'>@synthesize name;</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">readwrite</span><span class="p">)</span> <span class="bp">NSString</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
+</span><span class='line'><span class="k">@synthesize</span> <span class="n">name</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>
@@ -2596,27 +2615,27 @@ Set the value corresponding to the given key if it not already in the dictionary
 <li><p>Can&rsquo;t use retain / release / retainCount / autorelease</p>
 
 <ul>
-<li> Memory management is the compiler&rsquo;s job, so there is no need to use this methods</li>
-<li> This methods is need to use when the ARC is invalid</li>
+<li>Memory management is the compiler&rsquo;s job, so there is no need to use this methods</li>
+<li>This methods is need to use when the ARC is invalid</li>
 </ul>
 </li>
 <li><p>Can&rsquo;t use NSAllocateObject / NSDeallocateObject</p>
 
 <ul>
-<li> When ARC is available, the methods NSAllocateObject and NSDeallocateObject are both forbidden</li>
+<li>When ARC is available, the methods NSAllocateObject and NSDeallocateObject are both forbidden</li>
 </ul>
 </li>
 <li><p>Don&rsquo;t call dealloc explicitly</p>
 
 <ul>
-<li> When the object is abandoned, dealloc is called automatically no matter ARC is available or not</li>
+<li>When the object is abandoned, dealloc is called automatically no matter ARC is available or not</li>
 </ul>
 </li>
 <li><p>Using @autoreleasepool instead of using NSAutoreleasePool</p></li>
 <li><p>Object type variables can&rsquo;t be a member of structure</p>
 
 <ul>
-<li> Structure can&rsquo;t manage the life circle of its member</li>
+<li>Structure can&rsquo;t manage the life circle of its member</li>
 </ul>
 </li>
 </ul>
