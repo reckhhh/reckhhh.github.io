@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T13:59:57+08:00</updated>
+  <updated>2015-05-01T14:02:47+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Octopress Error: Pygments Can't Parse Unknown Language: </p>]]></title>
+    <title type="html"><![CDATA[Octopress Error: Pygments Can't Parse Unknown Language: &lt;/p>]]></title>
     <link href="http://reckhhh.github.io/blog/2015/05/01/octopress-error-pygments-cant-parse-unknown-language/"/>
     <updated>2015-05-01T13:30:38+08:00</updated>
     <id>http://reckhhh.github.io/blog/2015/05/01/octopress-error-pygments-cant-parse-unknown-language</id>
@@ -31,7 +31,7 @@
 
 <p>Although there is a error, <em>jekyll</em> don&rsquo;t point out the detailed location where the error come from in its default setting. It was very annoying.</p>
 
-<p>To deal with the error, one way is modify the Ruby file plugins/pygments_code.rb, add <strong>#{code}</strong> after <strong>#{lang}</strong>:</p>
+<p>To deal with the error, one way is modify the Ruby file <strong>plugins/pygments_code.rb</strong>, add <strong>#{code}</strong> after <strong>#{lang}</strong>:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
