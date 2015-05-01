@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-02T02:50:11+08:00</updated>
+  <updated>2015-05-02T02:51:05+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -671,19 +671,19 @@ Equivalent to func(func(func(seq[0], seq[1]), seq[2]), &hellip;)</li>
 </span><span class='line'>
 </span><span class='line'><span class="k">class</span> <span class="nc">ProductTestCase</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">testIntegers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-</span><span class='line'>        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-</span><span class='line'>            <span class="n">p</span> <span class="o">=</span> <span class="n">my_math</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</span><span class='line'>            <span class="bp">self</span><span class="o">.</span><span class="n">failUnless</span><span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;Integer failed&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">testIntegers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+</span><span class='line'>            <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+</span><span class='line'>                <span class="n">p</span> <span class="o">=</span> <span class="n">my_math</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span><span class='line'>                <span class="bp">self</span><span class="o">.</span><span class="n">failUnless</span><span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;Integer failed&#39;</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">testFloat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-</span><span class='line'>        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-</span><span class='line'>            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="mf">10.0</span>
-</span><span class='line'>            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">/</span><span class="mf">10.0</span>
-</span><span class='line'>            <span class="n">p</span> <span class="o">=</span> <span class="n">my_math</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</span><span class='line'>            <span class="bp">self</span><span class="o">.</span><span class="n">failUnless</span><span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;Float failed&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">testFloat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+</span><span class='line'>            <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+</span><span class='line'>                <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="mf">10.0</span>
+</span><span class='line'>                <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">/</span><span class="mf">10.0</span>
+</span><span class='line'>                <span class="n">p</span> <span class="o">=</span> <span class="n">my_math</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span><span class='line'>                <span class="bp">self</span><span class="o">.</span><span class="n">failUnless</span><span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;Float failed&#39;</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="c"># add the lollowing code at the bottom</span>
 </span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span> <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
