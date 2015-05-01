@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T14:50:06+08:00</updated>
+  <updated>2015-05-01T14:52:30+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -18,11 +18,7 @@
     <link href="http://reckhhh.github.io/blog/2015/05/01/octopress-error-pygments-cant-parse-unknown-language/"/>
     <updated>2015-05-01T13:30:38+08:00</updated>
     <id>http://reckhhh.github.io/blog/2015/05/01/octopress-error-pygments-cant-parse-unknown-language</id>
-    <content type="html"><![CDATA[<h1>Handle Octopress Error: Pygments can&rsquo;t parse unknown language: &lt;/p></h1>
-
-<hr />
-
-<p>Octopress is good, but not perfect.</p>
+    <content type="html"><![CDATA[<p>Octopress is good, but not perfect.</p>
 
 <ul>
 <li>One of the common error when type &ldquo;<strong>rake generate</strong>&rdquo; is:
