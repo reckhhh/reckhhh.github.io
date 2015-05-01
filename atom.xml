@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T14:06:38+08:00</updated>
+  <updated>2015-05-01T14:34:32+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -50,7 +50,11 @@
     <link href="http://reckhhh.github.io/blog/2015/05/01/python-notes-iv/"/>
     <updated>2015-05-01T04:04:53+08:00</updated>
     <id>http://reckhhh.github.io/blog/2015/05/01/python-notes-iv</id>
-    <content type="html"><![CDATA[<h3>input() and raw_input()</h3>
+    <content type="html"><![CDATA[<h1>Python Notes IV</h1>
+
+<hr />
+
+<h3>input() and raw_input()</h3>
 
 <ul>
 <li>input(): Gets inputs from the user</li>
@@ -181,7 +185,7 @@
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>somelist = ['b', 'o', 'y']
-</span><span class='line'>''.join(somelist)
+</span><span class='line'>' '.join(somelist)
 </span><span class='line'>
 </span><span class='line'>'boy'</span></code></pre></td></tr></table></div></figure>
 
@@ -963,8 +967,6 @@ Set the value corresponding to the given key if it not already in the dictionary
 </span><span class='line'>
 </span><span class='line'>grade
 </span><span class='line'>'A'</span></code></pre></td></tr></table></div></figure>
-
-
 
 ]]></content>
   </entry>
