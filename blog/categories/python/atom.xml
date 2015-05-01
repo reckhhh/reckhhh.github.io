@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T17:06:53+08:00</updated>
+  <updated>2015-05-01T17:09:06+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -1772,7 +1772,7 @@ str.strip('!')
 
 <ul>
 <li>Python&rsquo;s variable identifiers don&rsquo;t have a type, Python&rsquo;s list is a <strong>high-level collection</strong></li>
-<li>Using print() and len() to work out how many data items are in the list
+<li><p>Using print() and len() to work out how many data items are in the list
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -1780,15 +1780,19 @@ str.strip('!')
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">animal</span>  <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Dog</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Pig</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Cat</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Duck</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;]</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">blockquote</span><span class="o">&gt;&lt;</span><span class="n">blockquote</span><span class="o">&gt;&lt;</span><span class="n">blockquote</span><span class="o">&gt;&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">animal</span>  <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Dog</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Pig</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Cat</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Duck</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;]</span>
 </span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
 </span><span class='line'><span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Dog</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Pig</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Cat</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Duck</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;]</span>
 </span><span class='line'><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">animal</span><span class="p">))</span>
 </span><span class='line'><span class="mi">4</span>
 </span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </span><span class='line'><span class="n">Pig</span>
-</span></code></pre></td></tr></table></div></figure></li>
-<li>Using append(), extend() and pop() method to add and remove data from the list
+</span></code></pre></td></tr></table></div></figure></p></blockquote></blockquote></blockquote></li>
+<li><p>Using append(), extend() and pop() method to add and remove data from the list
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -1809,7 +1813,7 @@ str.strip('!')
 </span><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Fish</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Bird</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;])</span>
 </span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
 </span><span class='line'><span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Dog</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Pig</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Cat</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Duck</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Fish</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Bird</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;]</span>
-</span></code></pre></td></tr></table></div></figure></li>
+</span></code></pre></td></tr></table></div></figure></p></li>
 <li><p>Using remove() and insert() to find and remove or add a <strong>specific</strong> data from list
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1946,8 +1950,8 @@ str.strip('!')
 </span><span class='line'>    <span class="n">version</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="mf">1.0</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
 </span><span class='line'>    <span class="n">py_modules</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">nester</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;],</span>
 </span><span class='line'>    <span class="n">author</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">name</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
-</span><span class='line'>    <span class="n">author_email</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#109;&amp;#x61;&amp;#x69;&amp;#x6c;&amp;#116;&amp;#x6f;&amp;#58;&amp;#110;&amp;#x61;&amp;#x6d;&amp;#x65;&amp;#64;&amp;#x73;&amp;#111;&amp;#109;&amp;#x65;&amp;#119;&amp;#x68;&amp;#x65;&amp;#x72;&amp;#101;&amp;#46;&amp;#x63;&amp;#111;&amp;#x6d;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#110;&amp;#x61;&amp;#109;&amp;#x65;&amp;#x40;&amp;#x73;&amp;#x6f;&amp;#109;&amp;#x65;&amp;#x77;&amp;#x68;&amp;#101;&amp;#x72;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#109;&lt;/a&gt;&amp;rsquo;,</span>
-</span><span class='line'>    <span class="n">url</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#109;&amp;#x61;&amp;#105;&amp;#x6c;&amp;#x74;&amp;#x6f;&amp;#x3a;&amp;#110;&amp;#x61;&amp;#x6d;&amp;#x65;&amp;#64;&amp;#x73;&amp;#111;&amp;#x6d;&amp;#x65;&amp;#x70;&amp;#108;&amp;#97;&amp;#x63;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#111;&amp;#109;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#x6e;&amp;#x61;&amp;#x6d;&amp;#x65;&amp;#64;&amp;#x73;&amp;#x6f;&amp;#x6d;&amp;#x65;&amp;#x70;&amp;#x6c;&amp;#x61;&amp;#99;&amp;#x65;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&lt;/a&gt;&amp;rsquo;,</span>
+</span><span class='line'>    <span class="n">author_email</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#x6d;&amp;#97;&amp;#x69;&amp;#108;&amp;#116;&amp;#111;&amp;#x3a;&amp;#110;&amp;#97;&amp;#x6d;&amp;#x65;&amp;#x40;&amp;#115;&amp;#x6f;&amp;#x6d;&amp;#x65;&amp;#119;&amp;#x68;&amp;#x65;&amp;#114;&amp;#x65;&amp;#46;&amp;#99;&amp;#x6f;&amp;#x6d;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#x6e;&amp;#97;&amp;#x6d;&amp;#x65;&amp;#x40;&amp;#x73;&amp;#x6f;&amp;#x6d;&amp;#101;&amp;#x77;&amp;#x68;&amp;#x65;&amp;#114;&amp;#x65;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#109;&lt;/a&gt;&amp;rsquo;,</span>
+</span><span class='line'>    <span class="n">url</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#109;&amp;#x61;&amp;#105;&amp;#x6c;&amp;#116;&amp;#x6f;&amp;#58;&amp;#110;&amp;#x61;&amp;#109;&amp;#x65;&amp;#64;&amp;#115;&amp;#111;&amp;#109;&amp;#x65;&amp;#x70;&amp;#x6c;&amp;#97;&amp;#99;&amp;#101;&amp;#x2e;&amp;#99;&amp;#111;&amp;#109;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#110;&amp;#x61;&amp;#x6d;&amp;#101;&amp;#64;&amp;#x73;&amp;#111;&amp;#x6d;&amp;#x65;&amp;#x70;&amp;#x6c;&amp;#x61;&amp;#x63;&amp;#101;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&lt;/a&gt;&amp;rsquo;,</span>
 </span><span class='line'>    <span class="n">description</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">A</span> <span class="n">simple</span> <span class="n">printer</span> <span class="n">of</span> <span class="n">nested</span> <span class="n">lists</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
 </span><span class='line'>    <span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
@@ -1962,8 +1966,14 @@ str.strip('!')
 - Then, the module has been <em>transformed</em> into a distribution and <em>installed</em> into local copy of Python
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">//</span> <span class="n">at</span> <span class="n">the</span> <span class="n">first</span> <span class="n">time</span><span class="p">,</span> <span class="n">should</span> <span class="nb">type</span> <span class="n">the</span> <span class="n">username</span> <span class="ow">and</span> <span class="n">password</span>
-</span><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">register</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">at</span> <span class="n">the</span> <span class="n">first</span> <span class="n">time</span><span class="p">,</span> <span class="n">should</span> <span class="nb">type</span> <span class="n">the</span> <span class="n">username</span> <span class="ow">and</span> <span class="n">password</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">register</span>
 </span></code></pre></td></tr></table></div></figure></p>
 
 <ul>
@@ -1999,12 +2009,18 @@ str.strip('!')
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">//</span> <span class="n">allow</span> <span class="n">us</span> <span class="n">to</span> <span class="n">access</span> <span class="n">nester</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="n">s</span> <span class="n">functions</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">allow</span> <span class="n">us</span> <span class="n">to</span> <span class="n">access</span> <span class="n">nester</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="n">s</span> <span class="n">functions</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
 </span><span class='line'><span class="kn">import</span> <span class="nn">nester</span>
 </span><span class='line'><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Pig</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Dog</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Cat</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Bird</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Fish</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;]</span>
-</span><span class='line'><span class="o">//</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">nester</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span> <span class="ow">is</span> <span class="n">associated</span> <span class="n">namespace</span> <span class="n">which</span> <span class="n">like</span> <span class="n">family</span> <span class="n">names</span> <span class="n">helps</span> <span class="n">to</span> <span class="n">qualify</span> <span class="n">what</span> <span class="n">the</span> <span class="n">code</span> <span class="n">mean</span>
-</span><span class='line'><span class="n">nester</span><span class="o">.</span><span class="n">print_item</span><span class="p">(</span><span class="n">animals</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></li>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">nester</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span> <span class="ow">is</span> <span class="n">associated</span> <span class="n">namespace</span> <span class="n">which</span> <span class="n">like</span> <span class="n">family</span> <span class="n">names</span> <span class="n">helps</span> <span class="n">to</span> <span class="n">qualify</span> <span class="n">what</span> <span class="n">the</span> <span class="n">code</span> <span class="n">mean</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">nester</span><span class="o">.</span><span class="n">print_item</span><span class="p">(</span><span class="n">animals</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></p></li>
 </ul>
 
 
