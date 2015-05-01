@@ -107,9 +107,10 @@ Error: Pygments can't parse unknown language &hellip;">
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rescue MentosError
-</span><span class='line'>raise "Pygments can't parse unknown language: #{lang}#{code}."
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">rescue</span> <span class="no">MentosError</span>
+</span><span class='line'><span class="k">raise</span> <span class="s2">&quot;Pygments can&#39;t parse unknown language: </span><span class="si">#{</span><span class="n">lang</span><span class="si">}#{</span><span class="n">code</span><span class="si">}</span><span class="s2">.&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Then, when &ldquo;<strong>rake generate</strong>&rdquo; again, the error location will be listed.</p>

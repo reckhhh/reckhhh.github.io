@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T17:00:39+08:00</updated>
+  <updated>2015-05-01T17:04:01+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -31,11 +31,13 @@ Error: Pygments can't parse unknown language: &lt;/p&gt;
 <p>Although there is a error, <em>jekyll</em> don&rsquo;t point out the detailed location where the error come from in its default setting. It was very annoying.</p>
 
 <p>To deal with the error, one way is modify the Ruby file <strong>plugins/pygments_code.rb</strong>, add <strong>#{code}</strong> after <strong>#{lang}</strong>:
-<code>
-rescue MentosError
-raise "Pygments can't parse unknown language: #{lang}#{code}."
-end
-</code>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">rescue</span> <span class="no">MentosError</span>
+</span><span class='line'><span class="k">raise</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Pygments</span> <span class="n">can</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="n">t</span> <span class="n">parse</span> <span class="n">unknown</span> <span class="ss">language</span><span class="p">:</span> <span class="c1">#{lang}#{code}.&amp;rdquo;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 Then, when &ldquo;<strong>rake generate</strong>&rdquo; again, the error location will be listed.</p>
 
 <ul>
