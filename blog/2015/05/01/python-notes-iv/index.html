@@ -100,8 +100,8 @@ Enter a number: 3
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">input</span><span class="p">(</span><span class="s">&quot;Enter a number: &quot;</span><span class="p">)</span>
-</span><span class='line'><span class="n">Enter</span> <span class="n">a</span> <span class="nl">number</span><span class="p">:</span> <span class="mi">3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="nb">input</span><span class="p">(</span><span class="s">&quot;Enter a number: &quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="mi">3</span>
 </span><span class='line'><span class="mi">3</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -114,9 +114,9 @@ Enter a number: 3
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">raw_input</span><span class="p">(</span><span class="s">&quot;Enter a number: &quot;</span><span class="p">)</span>
-</span><span class='line'><span class="n">Enter</span> <span class="n">a</span> <span class="nl">number</span><span class="p">:</span> <span class="mi">3</span>
-</span><span class='line'><span class="sc">&#39;3&#39;</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Enter a number: &quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="mi">3</span>
+</span><span class='line'><span class="s">&#39;3&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -132,10 +132,10 @@ Enter a number: 3
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">print</span> <span class="n">repr</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="err">&#39;</span><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!</span><span class="err">&#39;</span>
-</span><span class='line'><span class="n">print</span> <span class="n">repr</span><span class="p">(</span><span class="mi">10000L</span><span class="p">)</span>
-</span><span class='line'><span class="mi">10000L</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="nb">repr</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;Hello, world!&#39;</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">repr</span><span class="p">(</span><span class="il">10000L</span><span class="p">)</span>
+</span><span class='line'><span class="il">10000L</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -148,9 +148,9 @@ Enter a number: 3
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">print</span> <span class="n">str</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!</span>
-</span><span class='line'><span class="n">print</span> <span class="n">str</span><span class="p">(</span><span class="mi">10000L</span><span class="p">)</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="nb">str</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="err">!</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">str</span><span class="p">(</span><span class="il">10000L</span><span class="p">)</span>
 </span><span class='line'><span class="mi">10000</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -183,26 +183,26 @@ Enter a number: 3
 <span class='line-number'>18</span>
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="o">:</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="o">:-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
-</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="o">:</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="o">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
-</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="o">:</span><span class="mi">6</span><span class="o">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="o">::</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">8</span><span class="o">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">8</span><span class="o">:</span><span class="mi">3</span><span class="o">:-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[::</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">10</span><span class="o">:</span><span class="mi">0</span><span class="o">:-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="o">::-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="o">:</span><span class="mi">5</span><span class="o">:-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[:</span><span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="o">::-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="o">:</span><span class="mi">5</span><span class="o">:-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[:</span><span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -225,10 +225,10 @@ Enter a number: 3
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">somelist</span> <span class="o">=</span> <span class="p">[</span><span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span><span class="p">,</span> <span class="sc">&#39;y&#39;</span><span class="p">]</span>
-</span><span class='line'><span class="sc">&#39; &#39;</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">somelist</span><span class="p">)</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">somelist</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;o&#39;</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="s">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">somelist</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'><span class="err">&#39;</span><span class="n">boy</span><span class="err">&#39;</span>
+</span><span class='line'><span class="s">&#39;boy&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -242,11 +242,11 @@ Enter a number: 3
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="err">&#39;</span><span class="n">Ada</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Bob</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Cecil</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">David</span><span class="err">&#39;</span><span class="p">]</span>
-</span><span class='line'><span class="n">del</span> <span class="n">names</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Ada&#39;</span><span class="p">,</span> <span class="s">&#39;Bob&#39;</span><span class="p">,</span> <span class="s">&#39;Cecil&#39;</span><span class="p">,</span> <span class="s">&#39;David&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="k">del</span> <span class="n">names</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </span><span class='line'>
 </span><span class='line'><span class="n">names</span>
-</span><span class='line'><span class="p">[</span><span class="err">&#39;</span><span class="n">Ada</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Bob</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">David</span><span class="err">&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;Ada&#39;</span><span class="p">,</span> <span class="s">&#39;Bob&#39;</span><span class="p">,</span> <span class="s">&#39;David&#39;</span><span class="p">]</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -260,11 +260,11 @@ Enter a number: 3
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">name</span> <span class="o">=</span> <span class="n">list</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Perl</span><span class="err">&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="n">name</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="p">]</span> <span class="o">=</span> <span class="n">list</span><span class="p">(</span><span class="err">&#39;</span><span class="n">ython</span><span class="err">&#39;</span><span class="p">)</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s">&#39;Perl&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">name</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s">&#39;ython&#39;</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="n">name</span>
-</span><span class='line'><span class="p">[</span><span class="sc">&#39;P&#39;</span><span class="p">,</span> <span class="sc">&#39;y&#39;</span><span class="p">,</span> <span class="sc">&#39;t&#39;</span><span class="p">,</span> <span class="sc">&#39;h&#39;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span><span class="p">,</span> <span class="sc">&#39;n&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;P&#39;</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="s">&#39;t&#39;</span><span class="p">,</span> <span class="s">&#39;h&#39;</span><span class="p">,</span> <span class="s">&#39;o&#39;</span><span class="p">,</span> <span class="s">&#39;n&#39;</span><span class="p">]</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -281,12 +281,12 @@ Enter a number: 3
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</span><span class='line'><span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span><span class='line'><span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </span><span class='line'><span class="n">nums</span>
 </span><span class='line'><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>  <span class="err">#</span> <span class="n">del</span> <span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">4</span><span class="p">]</span>
+</span><span class='line'><span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c"># del nums[1:4]</span>
 </span><span class='line'><span class="n">nums</span>
 </span><span class='line'><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </span></code></pre></td></tr></table></div></figure>
@@ -306,15 +306,15 @@ Enter a number: 3
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">str</span> <span class="o">=</span> <span class="s">&quot;Hello, %s! %s are you?&quot;</span>
-</span><span class='line'><span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="err">&#39;</span><span class="n">Peter</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">How</span><span class="err">&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="n">print</span> <span class="p">(</span><span class="n">str</span> <span class="o">%</span> <span class="n">val</span><span class="p">)</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="nb">str</span> <span class="o">=</span> <span class="s">&quot;Hello, </span><span class="si">%s</span><span class="s">! </span><span class="si">%s</span><span class="s"> are you?&quot;</span>
+</span><span class='line'><span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;Peter&#39;</span><span class="p">,</span> <span class="s">&#39;How&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span> <span class="p">(</span><span class="nb">str</span> <span class="o">%</span> <span class="n">val</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">Hello</span><span class="p">,</span> <span class="n">Peter</span><span class="o">!</span> <span class="n">How</span> <span class="n">are</span> <span class="n">you</span><span class="o">?</span>
+</span><span class='line'><span class="n">Hello</span><span class="p">,</span> <span class="n">Peter</span><span class="err">!</span> <span class="n">How</span> <span class="n">are</span> <span class="n">you</span><span class="err">?</span>
 </span><span class='line'>
-</span><span class='line'><span class="cp"># for short</span>
-</span><span class='line'><span class="err">&#39;</span><span class="o">%</span><span class="n">s</span> <span class="o">+</span> <span class="o">%</span><span class="n">s</span> <span class="o">=</span> <span class="o">%</span><span class="n">s</span><span class="err">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</span><span class='line'><span class="err">&#39;</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">2</span><span class="err">&#39;</span>
+</span><span class='line'><span class="c"># for short</span>
+</span><span class='line'><span class="s">&#39;</span><span class="si">%s</span><span class="s"> + </span><span class="si">%s</span><span class="s"> = </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;1 + 1 = 2&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -346,29 +346,29 @@ Enter a number: 3
 <span class='line-number'>21</span>
 <span class='line-number'>22</span>
 <span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">from</span> <span class="n">string</span> <span class="n">import</span> <span class="n">Template</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">s</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="err">&#39;$</span><span class="n">x</span><span class="p">,</span>  <span class="n">glorious</span> <span class="err">$</span><span class="n">x</span><span class="o">!</span><span class="err">&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="n">s</span><span class="p">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">slurm</span><span class="err">&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="err">&#39;</span><span class="n">slurm</span><span class="p">,</span>  <span class="n">glorious</span> <span class="n">slurm</span><span class="o">!</span><span class="err">&#39;</span>
+</span><span class='line'><span class="n">s</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">&#39;$x,  glorious $x!&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">s</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">&#39;slurm&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;slurm,  glorious slurm!&#39;</span>
 </span><span class='line'>
-</span><span class='line'><span class="cp"># the replacement is part of a word</span>
+</span><span class='line'><span class="c"># the replacement is part of a word</span>
 </span><span class='line'><span class="n">s</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">&quot;It&#39;s ${x}tastic!&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="n">s</span><span class="p">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="err">&#39;</span> <span class="n">slurm</span><span class="err">&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">s</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">&#39; slurm&#39;</span><span class="p">)</span>
 </span><span class='line'><span class="s">&quot;It&#39;s  slurmtastic!&quot;</span>
 </span><span class='line'>
-</span><span class='line'><span class="cp"># insert a dollar sign, use $$</span>
+</span><span class='line'><span class="c"># insert a dollar sign, use $$</span>
 </span><span class='line'><span class="n">s</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">&quot;Make $$ selling $x!&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="n">s</span><span class="p">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="err">&#39;</span><span class="n">slurm</span><span class="err">&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="err">&#39;</span><span class="n">Make</span> <span class="err">$</span> <span class="n">selling</span> <span class="n">slurm</span><span class="o">!</span><span class="err">&#39;</span>
+</span><span class='line'><span class="n">s</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">&#39;slurm&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;Make $ selling slurm!&#39;</span>
 </span><span class='line'>
-</span><span class='line'><span class="cp"># supply the value-name pairs in a dictionary</span>
-</span><span class='line'><span class="n">s</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="err">&#39;</span><span class="n">A</span> <span class="err">$</span><span class="n">thing</span> <span class="n">must</span> <span class="n">never</span> <span class="err">$</span><span class="n">action</span><span class="p">.</span><span class="err">&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="c"># supply the value-name pairs in a dictionary</span>
+</span><span class='line'><span class="n">s</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">&#39;A $thing must never $action.&#39;</span><span class="p">)</span>
 </span><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="err">&#39;</span><span class="n">thing</span><span class="err">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">dog</span><span class="err">&#39;</span>
-</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="err">&#39;</span><span class="n">action</span><span class="err">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">eat</span> <span class="n">grass</span><span class="err">&#39;</span>
-</span><span class='line'><span class="n">s</span><span class="p">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</span><span class='line'><span class="err">&#39;</span><span class="n">A</span> <span class="n">dog</span> <span class="n">must</span> <span class="n">never</span> <span class="n">eat</span> <span class="n">grass</span><span class="p">.</span><span class="err">&#39;</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;thing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;dog&#39;</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;action&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;eat grass&#39;</span>
+</span><span class='line'><span class="n">s</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;A dog must never eat grass.&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -380,8 +380,8 @@ Enter a number: 3
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Monty Python&#39;s Flying Circus&quot;</span>
-</span><span class='line'><span class="n">title</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Python</span><span class="err">&#39;</span><span class="p">)</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Monty Python&#39;s Flying Circus&quot;</span>
+</span><span class='line'><span class="n">title</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;Python&#39;</span><span class="p">)</span>
 </span><span class='line'><span class="mi">6</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -399,14 +399,14 @@ Enter a number: 3
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="err">&#39;</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="o">+</span><span class="mi">5</span><span class="err">&#39;</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="sc">&#39;+&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="p">[</span><span class="sc">&#39;1&#39;</span><span class="p">,</span> <span class="sc">&#39;2&#39;</span><span class="p">,</span> <span class="sc">&#39;3&#39;</span><span class="p">,</span> <span class="sc">&#39;4&#39;</span><span class="p">,</span> <span class="sc">&#39;5&#39;</span><span class="p">]</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="s">&#39;1+2+3+4+5&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;+&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="s">&#39;2&#39;</span><span class="p">,</span> <span class="s">&#39;3&#39;</span><span class="p">,</span> <span class="s">&#39;4&#39;</span><span class="p">,</span> <span class="s">&#39;5&#39;</span><span class="p">]</span>
 </span><span class='line'>
-</span><span class='line'><span class="err">&#39;</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">env</span><span class="err">&#39;</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="sc">&#39;/&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="p">[</span><span class="err">&#39;&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">usr</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">bin</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">env</span><span class="err">&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="s">&#39;/usr/bin/env&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;usr&#39;</span><span class="p">,</span> <span class="s">&#39;bin&#39;</span><span class="p">,</span> <span class="s">&#39;env&#39;</span><span class="p">]</span>
 </span><span class='line'>
-</span><span class='line'><span class="err">&#39;</span><span class="n">a</span>    <span class="n">aa</span>    <span class="n">aaa</span>    <span class="err">&#39;</span><span class="p">.</span><span class="n">split</span><span class="p">()</span>
-</span><span class='line'><span class="p">[</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">aa</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">aaa</span><span class="err">&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="s">&#39;a    aa    aaa    &#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;aa&#39;</span><span class="p">,</span> <span class="s">&#39;aaa&#39;</span><span class="p">]</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -429,19 +429,19 @@ The inverse of split, used to join the elements of a sequence</li>
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="sc">&#39;1&#39;</span><span class="p">,</span> <span class="sc">&#39;2&#39;</span><span class="p">,</span> <span class="sc">&#39;3&#39;</span><span class="p">,</span> <span class="sc">&#39;4&#39;</span><span class="p">,</span> <span class="sc">&#39;5&#39;</span><span class="p">]</span>
-</span><span class='line'><span class="sc">&#39;+&#39;</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
-</span><span class='line'><span class="err">&#39;</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="o">+</span><span class="mi">5</span><span class="err">&#39;</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="s">&#39;2&#39;</span><span class="p">,</span> <span class="s">&#39;3&#39;</span><span class="p">,</span> <span class="s">&#39;4&#39;</span><span class="p">,</span> <span class="s">&#39;5&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="s">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;1+2+3+4+5&#39;</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">dirs</span> <span class="o">=</span> <span class="err">&#39;&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">usr</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">bin</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">env</span><span class="err">&#39;</span>
+</span><span class='line'><span class="n">dirs</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;usr&#39;</span><span class="p">,</span> <span class="s">&#39;bin&#39;</span><span class="p">,</span> <span class="s">&#39;env&#39;</span>
 </span><span class='line'><span class="n">dirs</span>
-</span><span class='line'><span class="p">(</span><span class="err">&#39;&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">usr</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">bin</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">env</span><span class="err">&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;usr&#39;</span><span class="p">,</span> <span class="s">&#39;bin&#39;</span><span class="p">,</span> <span class="s">&#39;env&#39;</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'><span class="sc">&#39;/&#39;</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirs</span><span class="p">)</span>
-</span><span class='line'><span class="err">&#39;</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">env</span><span class="err">&#39;</span>
+</span><span class='line'><span class="s">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirs</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;/usr/bin/env&#39;</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">print</span><span class="p">(</span><span class="err">&#39;</span><span class="nl">C</span><span class="p">:</span><span class="err">&#39;</span> <span class="o">+</span> <span class="sc">&#39;\\&#39;</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirs</span><span class="p">))</span>
-</span><span class='line'><span class="nl">C</span><span class="p">:</span><span class="err">\</span><span class="n">usr</span><span class="err">\</span><span class="n">bin</span><span class="err">\</span><span class="n">env</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="s">&#39;C:&#39;</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\\</span><span class="s">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirs</span><span class="p">))</span>
+</span><span class='line'><span class="n">C</span><span class="p">:</span>\<span class="n">usr</span>\<span class="nb">bin</span>\<span class="n">env</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -460,15 +460,15 @@ Get rid of the characters listed in strip()</li>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="err">&#39;</span><span class="o">!!!</span>   <span class="n">a</span>    <span class="n">aa</span>    <span class="n">aaa</span>    <span class="o">!!!!!</span><span class="err">&#39;</span><span class="p">.</span><span class="n">strip</span><span class="p">(</span><span class="sc">&#39;!&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="err">&#39;</span>   <span class="n">a</span>    <span class="n">aa</span>    <span class="n">aaa</span>    <span class="err">&#39;</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="s">&#39;!!!   a    aa    aaa    !!!!!&#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&#39;!&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;   a    aa    aaa    &#39;</span>
 </span><span class='line'>
-</span><span class='line'><span class="err">&#39;</span>   <span class="n">a</span>    <span class="n">aa</span>    <span class="n">aaa</span>    <span class="err">&#39;</span><span class="p">.</span><span class="n">strip</span><span class="p">()</span>
-</span><span class='line'><span class="err">&#39;</span><span class="n">a</span>    <span class="n">aa</span>    <span class="n">aaa</span><span class="err">&#39;</span>
+</span><span class='line'><span class="s">&#39;   a    aa    aaa    &#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span class='line'><span class="s">&#39;a    aa    aaa&#39;</span>
 </span><span class='line'>
-</span><span class='line'><span class="cp"># list all that to remove</span>
-</span><span class='line'><span class="err">&#39;</span><span class="o">***</span> <span class="n">SPAN</span> <span class="o">*</span> <span class="k">for</span> <span class="o">*</span> <span class="n">everyone</span><span class="o">!!!</span> <span class="o">***</span><span class="err">&#39;</span><span class="p">.</span><span class="n">strip</span><span class="p">(</span><span class="err">&#39;</span> <span class="o">*!</span><span class="err">&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="err">&#39;</span><span class="n">SPAN</span> <span class="o">*</span> <span class="k">for</span> <span class="o">*</span> <span class="n">everyone</span><span class="err">&#39;</span>
+</span><span class='line'><span class="c"># list all that to remove</span>
+</span><span class='line'><span class="s">&#39;*** SPAN * for * everyone!!! ***&#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&#39; *!&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;SPAN * for * everyone&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -479,7 +479,7 @@ Get rid of the characters listed in strip()</li>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="s">&quot;that&#39;s all, folks&quot;</span><span class="p">.</span><span class="n">title</span><span class="p">()</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="s">&quot;that&#39;s all, folks&quot;</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
 </span><span class='line'><span class="s">&quot;That&#39;S All, Folks&quot;</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -492,8 +492,8 @@ Get rid of the characters listed in strip()</li>
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">import</span> <span class="n">string</span>
-</span><span class='line'><span class="n">string</span><span class="p">.</span><span class="n">capwords</span><span class="p">(</span><span class="s">&quot;that&#39;s all, folks&quot;</span><span class="p">)</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">string</span>
+</span><span class='line'><span class="n">string</span><span class="o">.</span><span class="n">capwords</span><span class="p">(</span><span class="s">&quot;that&#39;s all, folks&quot;</span><span class="p">)</span>
 </span><span class='line'><span class="s">&quot;That&#39;s All, Folks&quot;</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -505,8 +505,8 @@ Get rid of the characters listed in strip()</li>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="err">&#39;</span><span class="n">This</span> <span class="n">is</span> <span class="n">a</span> <span class="n">cat</span><span class="p">.</span><span class="err">&#39;</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="err">&#39;</span><span class="n">cat</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">dog</span><span class="err">&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="err">&#39;</span><span class="n">This</span> <span class="n">is</span> <span class="n">a</span> <span class="n">dog</span><span class="p">.</span><span class="err">&#39;</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="s">&#39;This is a cat.&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;cat&#39;</span><span class="p">,</span> <span class="s">&#39;dog&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;This is a dog.&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -521,12 +521,12 @@ Get rid of the characters listed in strip()</li>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">from</span> <span class="n">string</span> <span class="n">import</span> <span class="n">maketrans</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">maketrans</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">trantab</span> <span class="o">=</span> <span class="n">maketrans</span><span class="p">(</span><span class="err">&#39;</span><span class="n">aeiou</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="mi">12345</span><span class="err">&#39;</span><span class="p">)</span>  <span class="err">#</span> <span class="p">(</span><span class="k">in</span> <span class="o">-&gt;</span> <span class="k">out</span><span class="p">)</span>
-</span><span class='line'><span class="s">&quot;this is string example...wow!&quot;</span><span class="p">.</span><span class="n">translate</span><span class="p">(</span><span class="n">trantab</span><span class="p">);</span>
+</span><span class='line'><span class="n">trantab</span> <span class="o">=</span> <span class="n">maketrans</span><span class="p">(</span><span class="s">&#39;aeiou&#39;</span><span class="p">,</span> <span class="s">&#39;12345&#39;</span><span class="p">)</span>  <span class="c"># (in -&gt; out)</span>
+</span><span class='line'><span class="s">&quot;this is string example...wow!&quot;</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">trantab</span><span class="p">);</span>
 </span><span class='line'>
-</span><span class='line'><span class="err">&#39;</span><span class="n">th3s</span> <span class="mi">3</span><span class="n">s</span> <span class="mi">1</span> <span class="n">str3ng</span> <span class="mi">2</span><span class="n">x1mpl2</span><span class="p">...</span><span class="n">w4w</span><span class="o">!</span><span class="err">&#39;</span>
+</span><span class='line'><span class="s">&#39;th3s 3s 1 str3ng 2x1mpl2...w4w!&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -540,11 +540,11 @@ Get rid of the characters listed in strip()</li>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="err">&#39;</span><span class="n">this</span> <span class="n">is</span> <span class="n">an</span> <span class="n">incredible</span> <span class="n">test</span><span class="p">..</span><span class="err">&#39;</span><span class="p">.</span><span class="n">translate</span><span class="p">(</span><span class="n">trantab</span><span class="p">)</span>
-</span><span class='line'><span class="err">&#39;</span><span class="n">th3s</span> <span class="mi">3</span><span class="n">s</span> <span class="mi">1</span><span class="n">n</span> <span class="mi">3</span><span class="n">ncr2d3bl2</span> <span class="n">t2st</span><span class="p">.</span><span class="err">&#39;</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="s">&#39;this is an incredible test..&#39;</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">trantab</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;th3s 3s 1n 3ncr2d3bl2 t2st.&#39;</span>
 </span><span class='line'>
-</span><span class='line'><span class="err">&#39;</span><span class="n">this</span> <span class="n">is</span> <span class="n">an</span> <span class="n">incredible</span> <span class="n">test</span><span class="err">&#39;</span><span class="p">.</span><span class="n">translate</span><span class="p">(</span><span class="n">trantab</span><span class="p">,</span> <span class="sc">&#39; &#39;</span><span class="p">)</span>
-</span><span class='line'><span class="err">&#39;</span><span class="n">th3s3s1n3ncr2d3bl2t2st</span><span class="err">&#39;</span>
+</span><span class='line'><span class="s">&#39;this is an incredible test&#39;</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">trantab</span><span class="p">,</span> <span class="s">&#39; &#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;th3s3s1n3ncr2d3bl2t2st&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -558,9 +558,9 @@ Get rid of the characters listed in strip()</li>
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="cp"># (key, value)</span>
-</span><span class='line'><span class="n">dict</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">Peter</span><span class="err">&#39;</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Peter</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">age</span><span class="err">&#39;</span><span class="o">:</span> <span class="mi">12</span><span class="p">}</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># (key, value)</span>
+</span><span class='line'><span class="nb">dict</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Peter&#39;</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Peter&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -580,16 +580,16 @@ Get rid of the characters listed in strip()</li>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">x</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span class='line'><span class="n">y</span> <span class="o">=</span> <span class="n">x</span>   <span class="err">#</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">the</span> <span class="n">same</span> <span class="n">dictionary</span>
-</span><span class='line'><span class="n">x</span><span class="p">[</span><span class="err">&#39;</span><span class="n">key</span><span class="err">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">value</span><span class="err">&#39;</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">x</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">y</span> <span class="o">=</span> <span class="n">x</span>   <span class="c"># refer to the same dictionary</span>
+</span><span class='line'><span class="n">x</span><span class="p">[</span><span class="s">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;value&#39;</span>
 </span><span class='line'>
 </span><span class='line'><span class="n">y</span>
-</span><span class='line'><span class="p">{</span><span class="err">&#39;</span><span class="n">key</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">value</span><span class="err">&#39;</span><span class="p">}</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;key&#39;</span><span class="p">:</span> <span class="s">&#39;value&#39;</span><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">x</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
+</span><span class='line'><span class="n">x</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">y</span>   <span class="err">#</span> <span class="n">y</span> <span class="n">is</span> <span class="n">also</span> <span class="n">empty</span>
+</span><span class='line'><span class="n">y</span>   <span class="c"># y is also empty</span>
 </span><span class='line'><span class="p">{}</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -608,15 +608,15 @@ Get rid of the characters listed in strip()</li>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="err">&#39;</span><span class="n">username</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">admin</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">machines</span><span class="err">&#39;</span><span class="o">:</span> <span class="p">[</span><span class="err">&#39;</span><span class="n">foo</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">bar</span><span class="err">&#39;</span><span class="p">]}</span>
-</span><span class='line'><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="k">copy</span><span class="p">()</span>
-</span><span class='line'><span class="n">y</span><span class="p">[</span><span class="err">&#39;</span><span class="n">username</span><span class="err">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">peter</span><span class="err">&#39;</span>
-</span><span class='line'><span class="n">y</span><span class="p">[</span><span class="err">&#39;</span><span class="n">machines</span><span class="err">&#39;</span><span class="p">].</span><span class="n">remove</span><span class="p">(</span><span class="err">&#39;</span><span class="n">bar</span><span class="err">&#39;</span><span class="p">)</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;username&#39;</span><span class="p">:</span> <span class="s">&#39;admin&#39;</span><span class="p">,</span> <span class="s">&#39;machines&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">]}</span>
+</span><span class='line'><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span class='line'><span class="n">y</span><span class="p">[</span><span class="s">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;peter&#39;</span>
+</span><span class='line'><span class="n">y</span><span class="p">[</span><span class="s">&#39;machines&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">&#39;bar&#39;</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="n">y</span>
-</span><span class='line'><span class="p">{</span><span class="err">&#39;</span><span class="n">username</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">peter</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">machines</span><span class="err">&#39;</span><span class="o">:</span> <span class="p">[</span><span class="err">&#39;</span><span class="n">foo</span><span class="err">&#39;</span><span class="p">]}</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;username&#39;</span><span class="p">:</span> <span class="s">&#39;peter&#39;</span><span class="p">,</span> <span class="s">&#39;machines&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">]}</span>
 </span><span class='line'><span class="n">x</span>
-</span><span class='line'><span class="p">{</span><span class="err">&#39;</span><span class="n">username</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">admin</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">machines</span><span class="err">&#39;</span><span class="o">:</span> <span class="p">[</span><span class="err">&#39;</span><span class="n">foo</span><span class="err">&#39;</span><span class="p">]}</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;username&#39;</span><span class="p">:</span> <span class="s">&#39;admin&#39;</span><span class="p">,</span> <span class="s">&#39;machines&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">]}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -639,19 +639,19 @@ Avoid the situation that <em>modify</em> the value.</li>
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="err">&#39;</span><span class="n">names</span><span class="err">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="err">&#39;</span><span class="n">Alfred</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Bertrand</span><span class="err">&#39;</span><span class="p">]</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;names&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Alfred&#39;</span><span class="p">,</span> <span class="s">&#39;Bertrand&#39;</span><span class="p">]</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">c</span> <span class="o">=</span> <span class="n">d</span><span class="p">.</span><span class="k">copy</span><span class="p">()</span>
+</span><span class='line'><span class="n">c</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </span><span class='line'><span class="n">deepc</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="err">&#39;</span><span class="n">names</span><span class="err">&#39;</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Clive</span><span class="err">&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;names&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;Clive&#39;</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="n">d</span>
-</span><span class='line'><span class="p">{</span><span class="err">&#39;</span><span class="n">names</span><span class="err">&#39;</span><span class="o">:</span> <span class="p">[</span><span class="err">&#39;</span><span class="n">Alfred</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Bertrand</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Clive</span><span class="err">&#39;</span><span class="p">]}</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;names&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Alfred&#39;</span><span class="p">,</span> <span class="s">&#39;Bertrand&#39;</span><span class="p">,</span> <span class="s">&#39;Clive&#39;</span><span class="p">]}</span>
 </span><span class='line'><span class="n">c</span>
-</span><span class='line'><span class="p">{</span><span class="err">&#39;</span><span class="n">names</span><span class="err">&#39;</span><span class="o">:</span> <span class="p">[</span><span class="err">&#39;</span><span class="n">Alfred</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Bertrand</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Clive</span><span class="err">&#39;</span><span class="p">]}</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;names&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Alfred&#39;</span><span class="p">,</span> <span class="s">&#39;Bertrand&#39;</span><span class="p">,</span> <span class="s">&#39;Clive&#39;</span><span class="p">]}</span>
 </span><span class='line'><span class="n">deepc</span>
-</span><span class='line'><span class="p">{</span><span class="err">&#39;</span><span class="n">names</span><span class="err">&#39;</span><span class="o">:</span> <span class="p">[</span><span class="err">&#39;</span><span class="n">Alfred</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Bertrand</span><span class="err">&#39;</span><span class="p">]}</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;names&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Alfred&#39;</span><span class="p">,</span> <span class="s">&#39;Bertrand&#39;</span><span class="p">]}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -669,14 +669,14 @@ Create a new dictionary with the given keys.</li>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="p">{}.</span><span class="n">fromkeys</span><span class="p">([</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">age</span><span class="err">&#39;</span><span class="p">])</span>
-</span><span class='line'><span class="p">{</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="o">:</span> <span class="n">None</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">age</span><span class="err">&#39;</span><span class="o">:</span> <span class="n">None</span><span class="p">}</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="p">{}</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">])</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">dict</span><span class="p">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">age</span><span class="err">&#39;</span><span class="p">])</span>
-</span><span class='line'><span class="p">{</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="o">:</span> <span class="n">None</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">age</span><span class="err">&#39;</span><span class="o">:</span> <span class="n">None</span><span class="p">}</span>
+</span><span class='line'><span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">])</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">dict</span><span class="p">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">age</span><span class="err">&#39;</span><span class="p">],</span> <span class="err">&#39;</span><span class="p">(</span><span class="k">default</span><span class="p">)</span><span class="err">&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="p">(</span><span class="k">default</span><span class="p">)</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">age</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="p">(</span><span class="k">default</span><span class="p">)</span><span class="err">&#39;</span><span class="p">}</span>
+</span><span class='line'><span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">],</span> <span class="s">&#39;(default)&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;(default)&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="s">&#39;(default)&#39;</span><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -692,13 +692,13 @@ Create a new dictionary with the given keys.</li>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">Peter</span><span class="err">&#39;</span>
-</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="err">&#39;</span><span class="n">addr</span><span class="err">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">England</span><span class="err">&#39;</span>
-</span><span class='line'><span class="n">d</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="err">&#39;</span><span class="n">Peter</span><span class="err">&#39;</span>
-</span><span class='line'><span class="n">d</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="err">&#39;</span><span class="n">addr</span><span class="err">&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="err">&#39;</span><span class="n">England</span><span class="err">&#39;</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Peter&#39;</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;addr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;England&#39;</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;Peter&#39;</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;addr&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;England&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -715,13 +715,13 @@ Check whether a dictionary has a given key.</li>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="cp"># Be gone after Python 3.0</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># Be gone after Python 3.0</span>
 </span><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span class='line'><span class="n">d</span><span class="p">.</span><span class="n">has_key</span><span class="p">(</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="n">False</span>
-</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">Peter</span><span class="err">&#39;</span>
-</span><span class='line'><span class="n">d</span><span class="p">.</span><span class="n">has_key</span><span class="p">(</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="n">True</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="bp">False</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Peter&#39;</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="bp">True</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -734,9 +734,9 @@ Return all the items of dictionary as a list of the form (key, value)</li>
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="err">&#39;</span><span class="n">title</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Python</span> <span class="n">Web</span> <span class="n">Site</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">url</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="nl">http</span><span class="p">:</span><span class="err">#</span><span class="n">www</span><span class="p">.</span><span class="n">python</span><span class="p">.</span><span class="n">org</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">spam</span><span class="err">&#39;</span><span class="o">:</span> <span class="mi">0</span><span class="p">}</span>
-</span><span class='line'><span class="n">d</span><span class="p">.</span><span class="n">items</span><span class="p">()</span>
-</span><span class='line'><span class="p">[(</span><span class="err">&#39;</span><span class="n">url</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="nl">http</span><span class="p">:</span><span class="err">#</span><span class="n">www</span><span class="p">.</span><span class="n">python</span><span class="p">.</span><span class="n">org</span><span class="err">&#39;</span><span class="p">),</span> <span class="p">(</span><span class="err">&#39;</span><span class="n">spam</span><span class="err">&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="err">&#39;</span><span class="n">title</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Python</span> <span class="n">Web</span> <span class="n">Site</span><span class="err">&#39;</span><span class="p">)]</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&#39;Python Web Site&#39;</span><span class="p">,</span> <span class="s">&#39;url&#39;</span><span class="p">:</span> <span class="s">&#39;http:#www.python.org&#39;</span><span class="p">,</span> <span class="s">&#39;spam&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</span><span class='line'><span class="p">[(</span><span class="s">&#39;url&#39;</span><span class="p">,</span> <span class="s">&#39;http:#www.python.org&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;spam&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="s">&#39;Python Web Site&#39;</span><span class="p">)]</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -751,12 +751,12 @@ Return all the items of dictionary as a list of the form (key, value)</li>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">Return</span> <span class="n">an</span> <span class="n">iterator</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">a</span> <span class="n">list</span>
-</span><span class='line'><span class="n">it</span> <span class="o">=</span> <span class="n">d</span><span class="p">.</span><span class="n">iteritems</span><span class="p">()</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">Return</span> <span class="n">an</span> <span class="n">iterator</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">a</span> <span class="nb">list</span>
+</span><span class='line'><span class="n">it</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()</span>
 </span><span class='line'><span class="n">it</span>
-</span><span class='line'><span class="err">`</span><span class="n">dictionary</span><span class="o">-</span><span class="n">itemiterator</span> <span class="n">object</span> <span class="n">at</span> <span class="mh">0x10b918788</span><span class="err">`</span>
-</span><span class='line'><span class="n">list</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
-</span><span class='line'><span class="p">[(</span><span class="err">&#39;</span><span class="n">url</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="nl">http</span><span class="p">:</span><span class="err">#</span><span class="n">www</span><span class="p">.</span><span class="n">python</span><span class="p">.</span><span class="n">org</span><span class="err">&#39;</span><span class="p">),</span> <span class="p">(</span><span class="err">&#39;</span><span class="n">spam</span><span class="err">&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="err">&#39;</span><span class="n">title</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Python</span> <span class="n">Web</span> <span class="n">Site</span><span class="err">&#39;</span><span class="p">)]</span>
+</span><span class='line'><span class="sb">`dictionary-itemiterator object at 0x10b918788`</span>
+</span><span class='line'><span class="nb">list</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+</span><span class='line'><span class="p">[(</span><span class="s">&#39;url&#39;</span><span class="p">,</span> <span class="s">&#39;http:#www.python.org&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;spam&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="s">&#39;Python Web Site&#39;</span><span class="p">)]</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -772,13 +772,13 @@ Return all the items of dictionary as a list of the form (key, value)</li>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="err">&#39;</span><span class="n">spam</span><span class="err">&#39;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">url</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="nl">http</span><span class="p">:</span><span class="err">#</span><span class="n">www</span><span class="p">.</span><span class="n">python</span><span class="p">.</span><span class="n">org</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">title</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Python</span> <span class="n">Web</span> <span class="n">Site</span><span class="err">&#39;</span><span class="p">}</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;spam&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;url&#39;</span><span class="p">:</span> <span class="s">&#39;http:#www.python.org&#39;</span><span class="p">,</span> <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&#39;Python Web Site&#39;</span><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">d</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="err">&#39;</span><span class="n">spam</span><span class="err">&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;spam&#39;</span><span class="p">)</span>
 </span><span class='line'><span class="mi">0</span>
 </span><span class='line'>
 </span><span class='line'><span class="n">d</span>
-</span><span class='line'><span class="p">{</span><span class="err">&#39;</span><span class="n">url</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="nl">http</span><span class="p">:</span><span class="err">#</span><span class="n">www</span><span class="p">.</span><span class="n">python</span><span class="p">.</span><span class="n">org</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">title</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Python</span> <span class="n">Web</span> <span class="n">Site</span><span class="err">&#39;</span><span class="p">}</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;url&#39;</span><span class="p">:</span> <span class="s">&#39;http:#www.python.org&#39;</span><span class="p">,</span> <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&#39;Python Web Site&#39;</span><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -792,11 +792,11 @@ Return all the items of dictionary as a list of the form (key, value)</li>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="err">&#39;</span><span class="n">url</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="nl">http</span><span class="p">:</span><span class="err">#</span><span class="n">www</span><span class="p">.</span><span class="n">python</span><span class="p">.</span><span class="n">org</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">title</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Python</span> <span class="n">Web</span> <span class="n">Site</span><span class="err">&#39;</span><span class="p">}</span>
-</span><span class='line'><span class="n">d</span><span class="p">.</span><span class="n">popitem</span><span class="p">()</span>
-</span><span class='line'><span class="p">(</span><span class="err">&#39;</span><span class="n">url</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="nl">http</span><span class="p">:</span><span class="err">#</span><span class="n">www</span><span class="p">.</span><span class="n">python</span><span class="p">.</span><span class="n">org</span><span class="err">&#39;</span><span class="p">)</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;url&#39;</span><span class="p">:</span> <span class="s">&#39;http:#www.python.org&#39;</span><span class="p">,</span> <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&#39;Python Web Site&#39;</span><span class="p">}</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span>
+</span><span class='line'><span class="p">(</span><span class="s">&#39;url&#39;</span><span class="p">,</span> <span class="s">&#39;http:#www.python.org&#39;</span><span class="p">)</span>
 </span><span class='line'><span class="n">d</span>
-</span><span class='line'><span class="p">{</span><span class="err">&#39;</span><span class="n">title</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Python</span> <span class="n">Web</span> <span class="n">Site</span><span class="err">&#39;</span><span class="p">}</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&#39;Python Web Site&#39;</span><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -811,11 +811,11 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span class='line'><span class="n">d</span><span class="p">.</span><span class="n">setdefault</span><span class="p">(</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">N</span><span class="o">/</span><span class="n">A</span><span class="err">&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="err">&#39;</span><span class="n">N</span><span class="o">/</span><span class="n">A</span><span class="err">&#39;</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;N/A&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;N/A&#39;</span>
 </span><span class='line'><span class="n">d</span>
-</span><span class='line'><span class="p">{</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">N</span><span class="o">/</span><span class="n">A</span><span class="err">&#39;</span><span class="p">}</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;N/A&#39;</span><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -833,15 +833,15 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Peter</span><span class="err">&#39;</span><span class="p">,</span>
-</span><span class='line'><span class="err">&#39;</span><span class="n">addr</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">England</span><span class="err">&#39;</span><span class="p">,</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Peter&#39;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&#39;addr&#39;</span><span class="p">:</span> <span class="s">&#39;England&#39;</span><span class="p">,</span>
 </span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="err">&#39;</span><span class="n">addr</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">France</span><span class="err">&#39;</span><span class="p">}</span>
-</span><span class='line'><span class="n">d</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span class='line'><span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;addr&#39;</span><span class="p">:</span> <span class="s">&#39;France&#39;</span><span class="p">}</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="n">d</span>
-</span><span class='line'><span class="p">{</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Peter</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">addr</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">France</span><span class="err">&#39;</span><span class="p">}</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Peter&#39;</span><span class="p">,</span> <span class="s">&#39;addr&#39;</span><span class="p">:</span> <span class="s">&#39;France&#39;</span><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -856,11 +856,11 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
 </span><span class='line'><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 </span><span class='line'><span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">d</span><span class="p">.</span><span class="n">values</span><span class="p">()</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
 </span><span class='line'><span class="n">dict_values</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -875,8 +875,8 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span><span class="o">:</span>
-</span><span class='line'><span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">):</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="mi">10</span>
 </span><span class='line'><span class="mi">11</span>
@@ -893,9 +893,9 @@ Set the value corresponding to the given key if it not already in the dictionary
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">from</span> <span class="n">somemodule</span> <span class="n">import</span> <span class="n">somefunction</span>
-</span><span class='line'><span class="n">or</span>
-</span><span class='line'><span class="n">from</span> <span class="n">somemodule</span> <span class="n">import</span> <span class="o">*</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">somemodule</span> <span class="kn">import</span> <span class="n">somefunction</span>
+</span><span class='line'><span class="ow">or</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">somemodule</span> <span class="kn">import</span> <span class="o">*</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -907,7 +907,7 @@ Set the value corresponding to the given key if it not already in the dictionary
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">from</span> <span class="n">math</span> <span class="n">import</span> <span class="n">sqrt</span> <span class="n">as</span> <span class="n">foo</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span> <span class="k">as</span> <span class="n">foo</span>
 </span><span class='line'><span class="n">foo</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </span><span class='line'><span class="mf">2.0</span>
 </span></code></pre></td></tr></table></div></figure>
@@ -925,13 +925,13 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;x&#39;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="sc">&#39;y&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="sc">&#39;z&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">}</span>
-</span><span class='line'><span class="k">for</span> <span class="n">key</span> <span class="k">in</span> <span class="nl">d</span><span class="p">:</span>
-</span><span class='line'><span class="n">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;z&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+</span><span class='line'><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
 </span><span class='line'>
-</span><span class='line'><span class="cp"># this one is better</span>
-</span><span class='line'><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="k">in</span> <span class="n">d</span><span class="p">.</span><span class="n">items</span><span class="p">()</span><span class="o">:</span>
-</span><span class='line'><span class="n">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</span><span class='line'><span class="c"># this one is better</span>
+</span><span class='line'><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -942,7 +942,7 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
 </span><span class='line'><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">81</span><span class="p">]</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -955,13 +955,13 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span class='line'><span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">:</span>
-</span><span class='line'><span class="k">for</span> <span class="n">y</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">:</span>
-</span><span class='line'><span class="n">res</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+</span><span class='line'><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+</span><span class='line'><span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 </span><span class='line'>
-</span><span class='line'><span class="cp"># for short</span>
-</span><span class='line'><span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+</span><span class='line'><span class="c"># for short</span>
+</span><span class='line'><span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
 </span><span class='line'><span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -975,8 +975,8 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">exec</span> <span class="s">&quot;print &#39;hello, world!&#39;&quot;</span>
-</span><span class='line'><span class="n">hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">exec</span> <span class="s">&quot;print &#39;hello, world!&#39;&quot;</span>
+</span><span class='line'><span class="n">hello</span><span class="p">,</span> <span class="n">world</span><span class="err">!</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -989,9 +989,9 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="sc">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>  <span class="err">#</span> <span class="n">exec</span> <span class="err">&#39;</span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="err">&#39;</span> <span class="k">in</span> <span class="n">d</span>
-</span><span class='line'><span class="n">eval</span><span class="p">(</span><span class="err">&#39;</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="err">&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c"># exec &#39;x = 3&#39; in d</span>
+</span><span class='line'><span class="nb">eval</span><span class="p">(</span><span class="s">&#39;x * x&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
 </span><span class='line'><span class="mi">9</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -1008,9 +1008,9 @@ Set the value corresponding to the given key if it not already in the dictionary
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="cp"># using the former instead of the latter</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># using the former instead of the latter</span>
 </span><span class='line'><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">10</span>
-</span><span class='line'><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">num</span> <span class="n">and</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">10</span>
+</span><span class='line'><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">num</span> <span class="ow">and</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">10</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -1024,11 +1024,11 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">name</span> <span class="o">=</span> <span class="n">input</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Enter</span> <span class="nl">name</span><span class="p">:</span> <span class="err">&#39;</span><span class="p">)</span> <span class="n">or</span> <span class="err">&#39;</span><span class="n">N</span><span class="o">/</span><span class="n">A</span><span class="err">&#39;</span>
-</span><span class='line'><span class="n">Enter</span> <span class="nl">name</span><span class="p">:</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Enter name: &#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="s">&#39;N/A&#39;</span>
+</span><span class='line'><span class="n">Enter</span> <span class="n">name</span><span class="p">:</span>
 </span><span class='line'>
 </span><span class='line'><span class="n">name</span>
-</span><span class='line'><span class="err">&#39;</span><span class="n">N</span><span class="o">/</span><span class="n">A</span><span class="err">&#39;</span>
+</span><span class='line'><span class="s">&#39;N/A&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -1042,11 +1042,11 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">score</span> <span class="o">=</span> <span class="kt">int</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
-</span><span class='line'><span class="n">grade</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span> <span class="k">if</span> <span class="mi">90</span> <span class="o">&lt;=</span> <span class="n">score</span> <span class="o">&lt;=</span> <span class="mi">100</span> <span class="k">else</span> <span class="sc">&#39;B&#39;</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">score</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
+</span><span class='line'><span class="n">grade</span> <span class="o">=</span> <span class="s">&#39;A&#39;</span> <span class="k">if</span> <span class="mi">90</span> <span class="o">&lt;=</span> <span class="n">score</span> <span class="o">&lt;=</span> <span class="mi">100</span> <span class="k">else</span> <span class="s">&#39;B&#39;</span>
 </span><span class='line'>
 </span><span class='line'><span class="n">grade</span>
-</span><span class='line'><span class="sc">&#39;A&#39;</span>
+</span><span class='line'><span class="s">&#39;A&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 </div>
@@ -1109,6 +1109,10 @@ Set the value corresponding to the given key if it not already in the dictionary
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/05/02/python-notes-v/">Python Notes V</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/05/01/octopress-error-pygments-cant-parse-unknown-language/">Octopress Error: Pygments Can&#8217;t Parse Unknown Language: &lt;/p></a>
       </li>
     
@@ -1124,10 +1128,6 @@ Set the value corresponding to the given key if it not already in the dictionary
         <a href="/blog/2015/04/29/wither-and-fall/">Wither and Fall</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/04/28/python-notes-ii/">Python Notes II</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -1137,7 +1137,7 @@ Set the value corresponding to the given key if it not already in the dictionary
 <li class='category'><a href='/blog/categories/ios/'>ios (2)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/poetry/'>poetry (1)</a></li>
-<li class='category'><a href='/blog/categories/python/'>python (4)</a></li>
+<li class='category'><a href='/blog/categories/python/'>python (5)</a></li>
 
     </ul>
 </section>
