@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T17:13:45+08:00</updated>
+  <updated>2015-05-01T17:16:27+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -989,8 +989,9 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sorted(data)    # Ascending
-</span><span class='line'>sorted(data, reverse=True)  # Descending</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>    <span class="c"># Ascending</span>
+</span><span class='line'><span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>  <span class="c"># Descending</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -1030,38 +1031,39 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>30</span>
 <span class='line-number'>31</span>
 <span class='line-number'>32</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def sanitize(time_string):
-</span><span class='line'>    if '-' in time_string:
-</span><span class='line'>        splitter = '-'
-</span><span class='line'>    elif ':' in time_string:
-</span><span class='line'>        splitter = ':'
-</span><span class='line'>    else:
-</span><span class='line'>        return (time_string)
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">sanitize</span><span class="p">(</span><span class="n">time_string</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">if</span> <span class="s">&#39;-&#39;</span> <span class="ow">in</span> <span class="n">time_string</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">splitter</span> <span class="o">=</span> <span class="s">&#39;-&#39;</span>
+</span><span class='line'>    <span class="k">elif</span> <span class="s">&#39;:&#39;</span> <span class="ow">in</span> <span class="n">time_string</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">splitter</span> <span class="o">=</span> <span class="s">&#39;:&#39;</span>
+</span><span class='line'>    <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">return</span> <span class="p">(</span><span class="n">time_string</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'>    (mins, secs) = time_string.split(splitter)
-</span><span class='line'>    return (mins + '.' + secs)
+</span><span class='line'>    <span class="p">(</span><span class="n">mins</span><span class="p">,</span> <span class="n">secs</span><span class="p">)</span> <span class="o">=</span> <span class="n">time_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">splitter</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">return</span> <span class="p">(</span><span class="n">mins</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">secs</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'>def get_data(filename):
-</span><span class='line'>    try:
-</span><span class='line'>        with open(filename) as file:
-</span><span class='line'>            data = file.readline()
-</span><span class='line'>        return data.strip().split(',')
-</span><span class='line'>    except IOError as ioerr:
-</span><span class='line'>        print('File error: ' + str(ioerr))
-</span><span class='line'>        return(None)
+</span><span class='line'><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">try</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">data</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;,&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">ioerr</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&#39;File error: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ioerr</span><span class="p">))</span>
+</span><span class='line'>        <span class="k">return</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'># file operation
-</span><span class='line'>james = get_data('james.txt')
+</span><span class='line'><span class="c"># file operation</span>
+</span><span class='line'><span class="n">james</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="s">&#39;james.txt&#39;</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'>clean_james = []
-</span><span class='line'>for each_t in james:
-</span><span class='line'>    clean_james.append(sanitize(each_t))
+</span><span class='line'><span class="n">clean_james</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="n">james</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">clean_james</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sanitize</span><span class="p">(</span><span class="n">each_t</span><span class="p">))</span>
 </span><span class='line'>
-</span><span class='line'>unique_james = []
-</span><span class='line'>for each_t in clean_james:
-</span><span class='line'>    if each_t not in unique_james:
-</span><span class='line'>        unique_james.append(each_t)
-</span><span class='line'>print(sorted(unique_james)[0:3])</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="n">unique_james</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="n">clean_james</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">each_t</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_james</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">unique_james</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">each_t</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">unique_james</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -1072,9 +1074,10 @@ Set the value corresponding to the given key if it not already in the dictionary
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># file operation can be replaced with one line code
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># file operation can be replaced with one line code</span>
 </span><span class='line'>
-</span><span class='line'>print(sorted(set([sanitize(each_t) for each_t in get_date("james.txt")]))[0:3])</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">sanitize</span><span class="p">(</span><span class="n">each_t</span><span class="p">)</span> <span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="n">get_date</span><span class="p">(</span><span class="s">&quot;james.txt&quot;</span><span class="p">)]))[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -1098,22 +1101,23 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def get_data(filename):
-</span><span class='line'>    try:
-</span><span class='line'>        with open(filename) as file:
-</span><span class='line'>            data = file.readline()
-</span><span class='line'>        temp = data.strip().split(',')
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">try</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">data</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+</span><span class='line'>        <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;,&#39;</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'>        # return a dictionary
-</span><span class='line'>        return({'Name' : temp.pop(0),
-</span><span class='line'>                'DOB'  : temp.pop(0),
-</span><span class='line'>                'Times': str(sorted(set([sanitize(each_t) for each_t in temp]))[0:3])})
-</span><span class='line'>        except IOError as ioerr:
-</span><span class='line'>            print('File error: ' + str(ioerr))
-</span><span class='line'>            return(None)
+</span><span class='line'>        <span class="c"># return a dictionary</span>
+</span><span class='line'>        <span class="k">return</span><span class="p">({</span><span class="s">&#39;Name&#39;</span> <span class="p">:</span> <span class="n">temp</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+</span><span class='line'>                <span class="s">&#39;DOB&#39;</span>  <span class="p">:</span> <span class="n">temp</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+</span><span class='line'>                <span class="s">&#39;Times&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">sanitize</span><span class="p">(</span><span class="n">each_t</span><span class="p">)</span> <span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="n">temp</span><span class="p">]))[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])})</span>
+</span><span class='line'>        <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">ioerr</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="s">&#39;File error: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ioerr</span><span class="p">))</span>
+</span><span class='line'>            <span class="k">return</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'>sarah = get_data('sarah2.txt')
-</span><span class='line'>print(sarah['Name'] + "'s fastest times are: " + sarah['Times'])</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="n">sarah</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="s">&#39;sarah2.txt&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">sarah</span><span class="p">[</span><span class="s">&#39;Name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&quot;&#39;s fastest times are: &quot;</span> <span class="o">+</span> <span class="n">sarah</span><span class="p">[</span><span class="s">&#39;Times&#39;</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -1140,25 +1144,26 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>17</span>
 <span class='line-number'>18</span>
 <span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>class Athlete(list):
-</span><span class='line'>    def __init__(self, a_name, a_dob=None, a_times=[]):
-</span><span class='line'>        list.__init__([])
-</span><span class='line'>        self.name = a_name
-</span><span class='line'>        self.dob = a_dob
-</span><span class='line'>        self.extend(a_times)
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">Athlete</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a_name</span><span class="p">,</span> <span class="n">a_dob</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">a_times</span><span class="o">=</span><span class="p">[]):</span>
+</span><span class='line'>        <span class="nb">list</span><span class="o">.</span><span class="n">__init__</span><span class="p">([])</span>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">a_name</span>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">dob</span> <span class="o">=</span> <span class="n">a_dob</span>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">a_times</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'>def top3(self):
-</span><span class='line'>    return(str(sorted(set([sanitize(each_t) for each_t in self]))[0:3]))
+</span><span class='line'><span class="k">def</span> <span class="nf">top3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">return</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">sanitize</span><span class="p">(</span><span class="n">each_t</span><span class="p">)</span> <span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">]))[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]))</span>
 </span><span class='line'>
-</span><span class='line'>def get_data(filename):
-</span><span class='line'>    try:
-</span><span class='line'>        ...
-</span><span class='line'>        return(Athlete(temp.pop(0), temp.pop(0), temp))
-</span><span class='line'>    except IOError as ioerr:
-</span><span class='line'>        ...
+</span><span class='line'><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">try</span><span class="p">:</span>
+</span><span class='line'>        <span class="o">...</span>
+</span><span class='line'>        <span class="k">return</span><span class="p">(</span><span class="n">Athlete</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">temp</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">temp</span><span class="p">))</span>
+</span><span class='line'>    <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">ioerr</span><span class="p">:</span>
+</span><span class='line'>        <span class="o">...</span>
 </span><span class='line'>
-</span><span class='line'>sarah = get_data('sarah2.txt')
-</span><span class='line'>print(sarah.name + "'s fastest times are: " + sarah.top3())</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="n">sarah</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="s">&#39;sarah2.txt&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">sarah</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&quot;&#39;s fastest times are: &quot;</span> <span class="o">+</span> <span class="n">sarah</span><span class="o">.</span><span class="n">top3</span><span class="p">())</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>Model the data</h3>
@@ -1196,34 +1201,35 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>26</span>
 <span class='line-number'>27</span>
 <span class='line-number'>28</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>import pickle
-</span><span class='line'># class AthleteList is saved in athletelist.py, import AthleteList using this line of code
-</span><span class='line'># use dir() command to confirm that the import has been successful
-</span><span class='line'>from athletelist import AthleteList
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">pickle</span>
+</span><span class='line'><span class="c"># class AthleteList is saved in athletelist.py, import AthleteList using this line of code</span>
+</span><span class='line'><span class="c"># use dir() command to confirm that the import has been successful</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">athletelist</span> <span class="kn">import</span> <span class="n">AthleteList</span>
 </span><span class='line'>
-</span><span class='line'>def get_data(filename):
-</span><span class='line'>    ...
+</span><span class='line'><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+</span><span class='line'>    <span class="o">...</span>
 </span><span class='line'>
-</span><span class='line'>def put_to_store(file_list):
-</span><span class='line'>    all_athletes = {}
-</span><span class='line'>    for each_file in file_list:
-</span><span class='line'>        ath = get_data(each_file)
-</span><span class='line'>        all_athletes[ath.name] = ath
-</span><span class='line'>    try:
-</span><span class='line'>        with open('athletes.pickle', 'wb') as athf:
-</span><span class='line'>            pickle.dump(all_athletes, athf)
-</span><span class='line'>    except IOError as ioerr:
-</span><span class='line'>        print('File error (put_and_store): ' + str(ioerr))
-</span><span class='line'>        return (all_athletes)
+</span><span class='line'><span class="k">def</span> <span class="nf">put_to_store</span><span class="p">(</span><span class="n">file_list</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">all_athletes</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">each_file</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">ath</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">each_file</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">all_athletes</span><span class="p">[</span><span class="n">ath</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">ath</span>
+</span><span class='line'>    <span class="k">try</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;athletes.pickle&#39;</span><span class="p">,</span> <span class="s">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">athf</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">all_athletes</span><span class="p">,</span> <span class="n">athf</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">ioerr</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&#39;File error (put_and_store): &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ioerr</span><span class="p">))</span>
+</span><span class='line'>        <span class="k">return</span> <span class="p">(</span><span class="n">all_athletes</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'>def get_from_store():
-</span><span class='line'>    all_athletes = {}
-</span><span class='line'>    try:
-</span><span class='line'>        with open('athletes.pickle', 'rb') as athf:
-</span><span class='line'>            all_athletes = pickle.load(athf)
-</span><span class='line'>        except IOError as ioerr:
-</span><span class='line'>            print('File error (get_from_store): ' + str(ioerr))
-</span><span class='line'>            return (all_athletes)</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="k">def</span> <span class="nf">get_from_store</span><span class="p">():</span>
+</span><span class='line'>    <span class="n">all_athletes</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'>    <span class="k">try</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;athletes.pickle&#39;</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">athf</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">all_athletes</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">athf</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">ioerr</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="s">&#39;File error (get_from_store): &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ioerr</span><span class="p">))</span>
+</span><span class='line'>            <span class="k">return</span> <span class="p">(</span><span class="n">all_athletes</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <hr />
@@ -1239,10 +1245,11 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>data = [1,1,13,3,3,2,2,3,1,13,1]
-</span><span class='line'>set(data)
-</span><span class='line'># output
-</span><span class='line'>{1, 2, 3, 13}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'><span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="c"># output</span>
+</span><span class='line'><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>Bonus II: BIF: pop(i)</h3>
@@ -1258,12 +1265,13 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>data = [1,13,3,3,1]
-</span><span class='line'>data.pop(3)
-</span><span class='line'># output
-</span><span class='line'>3
-</span><span class='line'>data
-</span><span class='line'>[1,13,3,1]</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'><span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span class='line'><span class="c"># output</span>
+</span><span class='line'><span class="mi">3</span>
+</span><span class='line'><span class="n">data</span>
+</span><span class='line'><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>Bonus III: List Comprehension</h3>
@@ -1277,10 +1285,11 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>new = []
-</span><span class='line'>for each_item in old:
-</span><span class='line'>    ...
-</span><span class='line'>append(len(each_item))</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">new</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">old</span><span class="p">:</span>
+</span><span class='line'>    <span class="o">...</span>
+</span><span class='line'><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">each_item</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -1289,7 +1298,8 @@ Set the value corresponding to the given key if it not already in the dictionary
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>new = [len(each_item) for each_item in old]</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">new</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">each_item</span><span class="p">)</span> <span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">old</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>Bonus IV: Dictionary</h3>
@@ -1303,10 +1313,11 @@ Set the value corresponding to the given key if it not already in the dictionary
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># method 1
-</span><span class='line'>d1 = {}
-</span><span class='line'># method 2
-</span><span class='line'>d2 = dict()</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># method 1</span>
+</span><span class='line'><span class="n">d1</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="c"># method 2</span>
+</span><span class='line'><span class="n">d2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>

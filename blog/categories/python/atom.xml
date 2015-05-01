@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T17:13:45+08:00</updated>
+  <updated>2015-05-01T17:16:27+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -868,10 +868,11 @@ eval('x * x', d)
 <li><strong>sort()</strong>: In-place sorting, <em>replaces</em> the original data</li>
 <li><strong>sorted()</strong>: Copied sorting, return a <em>sorted copy</em> of the original data</li>
 <li>sorting order
-<code>
-sorted(data)    # Ascending
-sorted(data, reverse=True)  # Descending
-</code></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>    <span class="c"># Ascending</span>
+</span><span class='line'><span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>  <span class="c"># Descending</span>
+</span></code></pre></td></tr></table></div></figure></li>
 <li><p>Get top 3 data from file
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -908,41 +909,42 @@ sorted(data, reverse=True)  # Descending
 <span class='line-number'>33</span>
 <span class='line-number'>34</span>
 <span class='line-number'>35</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def sanitize(time_string):
-</span><span class='line'>  if &lsquo;-&rsquo; in time_string:
-</span><span class='line'>      splitter = &lsquo;-&rsquo;
-</span><span class='line'>  elif &lsquo;:&rsquo; in time_string:
-</span><span class='line'>      splitter = &lsquo;:&rsquo;
-</span><span class='line'>  else:
-</span><span class='line'>      return (time_string)&lt;/p&gt;
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">sanitize</span><span class="p">(</span><span class="n">time_string</span><span class="p">):</span>
+</span><span class='line'>  <span class="k">if</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">-&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="ow">in</span> <span class="n">time_string</span><span class="p">:</span>
+</span><span class='line'>      <span class="n">splitter</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">-&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">elif</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;:</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="ow">in</span> <span class="n">time_string</span><span class="p">:</span>
+</span><span class='line'>      <span class="n">splitter</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;:</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>      <span class="k">return</span> <span class="p">(</span><span class="n">time_string</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;  (mins, secs) = time_string.split(splitter)
-</span><span class='line'>  return (mins + &lsquo;.&rsquo; + secs)&lt;/p&gt;&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="p">(</span><span class="n">mins</span><span class="p">,</span> <span class="n">secs</span><span class="p">)</span> <span class="o">=</span> <span class="n">time_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">splitter</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">return</span> <span class="p">(</span><span class="n">mins</span> <span class="o">+</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">.&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="n">secs</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;def get_data(filename):
-</span><span class='line'>    try:
-</span><span class='line'>        with open(filename) as file:
-</span><span class='line'>            data = file.readline()
-</span><span class='line'>        return data.strip().split(&lsquo;,&rsquo;)
-</span><span class='line'>    except IOError as ioerr:
-</span><span class='line'>        print(&lsquo;File error: &rsquo; + str(ioerr))
-</span><span class='line'>        return(None)&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">try</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">data</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;,</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+</span><span class='line'>    <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">ioerr</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">File</span> <span class="n">error</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ioerr</span><span class="p">))</span>
+</span><span class='line'>        <span class="k">return</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;h1&gt;file operation&lt;/h1&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="nb">file</span> <span class="n">operation</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;james = get_data(&lsquo;james.txt&rsquo;)&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">james</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">james</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;clean_james = []
-</span><span class='line'>for each_t in james:
-</span><span class='line'>    clean_james.append(sanitize(each_t))&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">clean_james</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="n">james</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">clean_james</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sanitize</span><span class="p">(</span><span class="n">each_t</span><span class="p">))</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;unique_james = []
-</span><span class='line'>for each_t in clean_james:
-</span><span class='line'>    if each_t not in unique_james:
-</span><span class='line'>        unique_james.append(each_t)
-</span><span class='line'>print(sorted(unique_james)[0:3])</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">unique_james</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="n">clean_james</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">each_t</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_james</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">unique_james</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">each_t</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">unique_james</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <ul>
 <li>Remove the duplicates
@@ -951,13 +953,12 @@ sorted(data, reverse=True)  # Descending
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>&lt;h1&gt;file operation can be replaced with one line code&lt;/h1&gt;&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="nb">file</span> <span class="n">operation</span> <span class="n">can</span> <span class="n">be</span> <span class="n">replaced</span> <span class="k">with</span> <span class="n">one</span> <span class="n">line</span> <span class="n">code</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;print(sorted(set([sanitize(each_t) for each_t in get_date(&ldquo;james.txt&rdquo;)]))[0:3])</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">sanitize</span><span class="p">(</span><span class="n">each_t</span><span class="p">)</span> <span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="n">get_date</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">james</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)]))[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <ul>
 <li><p>Bundle the code and data in a dictionary
@@ -980,25 +981,26 @@ sorted(data, reverse=True)  # Descending
 <span class='line-number'>17</span>
 <span class='line-number'>18</span>
 <span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def get_data(filename):
-</span><span class='line'>  try:
-</span><span class='line'>      with open(filename) as file:
-</span><span class='line'>          data = file.readline()
-</span><span class='line'>      temp = data.strip().split(&lsquo;,&rsquo;)&lt;/p&gt;
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+</span><span class='line'>  <span class="k">try</span><span class="p">:</span>
+</span><span class='line'>      <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+</span><span class='line'>          <span class="n">data</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+</span><span class='line'>      <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;,</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;  # return a dictionary
-</span><span class='line'>  return({'Name' : temp.pop(0),
-</span><span class='line'>          'DOB'  : temp.pop(0),
-</span><span class='line'>          'Times': str(sorted(set([sanitize(each_t) for each_t in temp]))[0:3])})
-</span><span class='line'>  except IOError as ioerr:
-</span><span class='line'>      print('File error: ' + str(ioerr))
-</span><span class='line'>      return(None)
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>  <span class="c"># return a dictionary</span>
+</span><span class='line'>  <span class="k">return</span><span class="p">({</span><span class="s">&#39;Name&#39;</span> <span class="p">:</span> <span class="n">temp</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+</span><span class='line'>          <span class="s">&#39;DOB&#39;</span>  <span class="p">:</span> <span class="n">temp</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+</span><span class='line'>          <span class="s">&#39;Times&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">sanitize</span><span class="p">(</span><span class="n">each_t</span><span class="p">)</span> <span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="n">temp</span><span class="p">]))[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])})</span>
+</span><span class='line'>  <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">ioerr</span><span class="p">:</span>
+</span><span class='line'>      <span class="k">print</span><span class="p">(</span><span class="s">&#39;File error: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ioerr</span><span class="p">))</span>
+</span><span class='line'>      <span class="k">return</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;sarah = get_data(&lsquo;sarah2.txt&rsquo;)
-</span><span class='line'>print(sarah[&lsquo;Name&rsquo;] + &ldquo;&rsquo;s fastest times are: &rdquo; + sarah[&lsquo;Times&rsquo;])</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">sarah</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">sarah2</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">sarah</span><span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Name</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;]</span> <span class="o">+</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="n">s</span> <span class="n">fastest</span> <span class="n">times</span> <span class="n">are</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span> <span class="o">+</span> <span class="n">sarah</span><span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Times</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;])</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <ul>
 <li>Amend the code and data in a class that inherit from BIF <strong>list</strong>
@@ -1023,27 +1025,28 @@ sorted(data, reverse=True)  # Descending
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>class Athlete(list):
-</span><span class='line'>  def &lt;strong&gt;init&lt;/strong&gt;(self, a_name, a_dob=None, a_times=[]):
-</span><span class='line'>      list.&lt;strong&gt;init&lt;/strong&gt;([])
-</span><span class='line'>      self.name = a_name
-</span><span class='line'>      self.dob = a_dob
-</span><span class='line'>      self.extend(a_times)&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">Athlete</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+</span><span class='line'>  <span class="k">def</span> <span class="err">&lt;</span><span class="nf">strong</span><span class="o">&gt;</span><span class="n">init</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a_name</span><span class="p">,</span> <span class="n">a_dob</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">a_times</span><span class="o">=</span><span class="p">[]):</span>
+</span><span class='line'>      <span class="nb">list</span><span class="o">.&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">init</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span><span class="p">([])</span>
+</span><span class='line'>      <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">a_name</span>
+</span><span class='line'>      <span class="bp">self</span><span class="o">.</span><span class="n">dob</span> <span class="o">=</span> <span class="n">a_dob</span>
+</span><span class='line'>      <span class="bp">self</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">a_times</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;def top3(self):
-</span><span class='line'>    return(str(sorted(set([sanitize(each_t) for each_t in self]))[0:3]))&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">top3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">return</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">sanitize</span><span class="p">(</span><span class="n">each_t</span><span class="p">)</span> <span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">]))[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]))</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;def get_data(filename):
-</span><span class='line'>    try:
-</span><span class='line'>        &hellip;
-</span><span class='line'>        return(Athlete(temp.pop(0), temp.pop(0), temp))
-</span><span class='line'>    except IOError as ioerr:
-</span><span class='line'>        &hellip;&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">try</span><span class="p">:</span>
+</span><span class='line'>        <span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">return</span><span class="p">(</span><span class="n">Athlete</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">temp</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">temp</span><span class="p">))</span>
+</span><span class='line'>    <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">ioerr</span><span class="p">:</span>
+</span><span class='line'>        <span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;sarah = get_data(&lsquo;sarah2.txt&rsquo;)
-</span><span class='line'>print(sarah.name + &ldquo;&rsquo;s fastest times are: &rdquo; + sarah.top3())</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">sarah</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">sarah2</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">sarah</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="n">s</span> <span class="n">fastest</span> <span class="n">times</span> <span class="n">are</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span> <span class="o">+</span> <span class="n">sarah</span><span class="o">.</span><span class="n">top3</span><span class="p">())</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <h3>Model the data</h3>
 
@@ -1082,39 +1085,40 @@ sorted(data, reverse=True)  # Descending
 <span class='line-number'>31</span>
 <span class='line-number'>32</span>
 <span class='line-number'>33</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>import pickle
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">pickle</span>
 </span><span class='line'>
-</span><span class='line'>&lt;h1&gt;class AthleteList is saved in athletelist.py, import AthleteList using this line of code&lt;/h1&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="k">class</span> <span class="nc">AthleteList</span> <span class="ow">is</span> <span class="n">saved</span> <span class="ow">in</span> <span class="n">athletelist</span><span class="o">.</span><span class="n">py</span><span class="p">,</span> <span class="kn">import</span> <span class="nn">AthleteList</span> <span class="nn">using</span> <span class="nn">this</span> <span class="nn">line</span> <span class="nn">of</span> <span class="nn">code</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;h1&gt;use dir() command to confirm that the import has been successful&lt;/h1&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">use</span> <span class="nb">dir</span><span class="p">()</span> <span class="n">command</span> <span class="n">to</span> <span class="n">confirm</span> <span class="n">that</span> <span class="n">the</span> <span class="kn">import</span> <span class="nn">has</span> <span class="nn">been</span> <span class="nn">successful</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;from athletelist import AthleteList&lt;/p&gt;&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">from</span> <span class="nn">athletelist</span> <span class="kn">import</span> <span class="n">AthleteList</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;def get_data(filename):
-</span><span class='line'>    &hellip;&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+</span><span class='line'>    <span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;def put_to_store(file_list):
-</span><span class='line'>    all_athletes = {}
-</span><span class='line'>    for each_file in file_list:
-</span><span class='line'>        ath = get_data(each_file)
-</span><span class='line'>        all_athletes[ath.name] = ath
-</span><span class='line'>    try:
-</span><span class='line'>        with open(&lsquo;athletes.pickle&rsquo;, &lsquo;wb&rsquo;) as athf:
-</span><span class='line'>            pickle.dump(all_athletes, athf)
-</span><span class='line'>    except IOError as ioerr:
-</span><span class='line'>        print(&lsquo;File error (put_and_store): &rsquo; + str(ioerr))
-</span><span class='line'>        return (all_athletes)&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">put_to_store</span><span class="p">(</span><span class="n">file_list</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">all_athletes</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">each_file</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">ath</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">each_file</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">all_athletes</span><span class="p">[</span><span class="n">ath</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">ath</span>
+</span><span class='line'>    <span class="k">try</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">athletes</span><span class="o">.</span><span class="n">pickle</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">wb</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span> <span class="k">as</span> <span class="n">athf</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">all_athletes</span><span class="p">,</span> <span class="n">athf</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">ioerr</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">File</span> <span class="n">error</span> <span class="p">(</span><span class="n">put_and_store</span><span class="p">):</span> <span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ioerr</span><span class="p">))</span>
+</span><span class='line'>        <span class="k">return</span> <span class="p">(</span><span class="n">all_athletes</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;def get_from_store():
-</span><span class='line'>    all_athletes = {}
-</span><span class='line'>    try:
-</span><span class='line'>        with open(&lsquo;athletes.pickle&rsquo;, &lsquo;rb&rsquo;) as athf:
-</span><span class='line'>            all_athletes = pickle.load(athf)
-</span><span class='line'>        except IOError as ioerr:
-</span><span class='line'>            print(&lsquo;File error (get_from_store): &rsquo; + str(ioerr))
-</span><span class='line'>            return (all_athletes)</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">get_from_store</span><span class="p">():</span>
+</span><span class='line'>    <span class="n">all_athletes</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'>    <span class="k">try</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">athletes</span><span class="o">.</span><span class="n">pickle</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">rb</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span> <span class="k">as</span> <span class="n">athf</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">all_athletes</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">athf</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">ioerr</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">File</span> <span class="n">error</span> <span class="p">(</span><span class="n">get_from_store</span><span class="p">):</span> <span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ioerr</span><span class="p">))</span>
+</span><span class='line'>            <span class="k">return</span> <span class="p">(</span><span class="n">all_athletes</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <hr />
 
@@ -1128,12 +1132,13 @@ sorted(data, reverse=True)  # Descending
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>data = [1,1,13,3,3,2,2,3,1,13,1]
-</span><span class='line'>set(data)
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'><span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'>&lt;h1&gt;output&lt;/h1&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">output</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;{1, 2, 3, 13}</span></code></pre></td></tr></table></div></figure></p></li>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></p></li>
 </ul>
 
 
@@ -1149,14 +1154,15 @@ sorted(data, reverse=True)  # Descending
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>data = [1,13,3,3,1]
-</span><span class='line'>data.pop(3)
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'><span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'>&lt;h1&gt;output&lt;/h1&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">output</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;3
-</span><span class='line'>data
-</span><span class='line'>[1,13,3,1]</span></code></pre></td></tr></table></div></figure></p></li>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="mi">3</span>
+</span><span class='line'><span class="n">data</span>
+</span><span class='line'><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure></p></li>
 </ul>
 
 
@@ -1164,16 +1170,19 @@ sorted(data, reverse=True)  # Descending
 
 <ul>
 <li>When the code is like this
-<code>
-new = []
-for each_item in old:
-  ...
-append(len(each_item))
-</code></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">new</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">old</span><span class="p">:</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span>
+</span><span class='line'><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">each_item</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure></li>
 <li>Rewrite it like this
-<code>
-new = [len(each_item) for each_item in old]
-</code></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">new</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">each_item</span><span class="p">)</span> <span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">old</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure></li>
 </ul>
 
 
@@ -1188,15 +1197,14 @@ new = [len(each_item) for each_item in old]
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>&lt;h1&gt;method 1&lt;/h1&gt;
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">method</span> <span class="mi">1</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>d1 = {}
+</span><span class='line'><span class="n">d1</span> <span class="o">=</span> <span class="p">{}</span>
 </span><span class='line'>
-</span><span class='line'>&lt;h1&gt;method 2&lt;/h1&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">method</span> <span class="mi">2</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;d2 = dict()</span></code></pre></td></tr></table></div></figure></p></li>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">d2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure></p></li>
 </ul>
 
 ]]></content>
@@ -1971,8 +1979,8 @@ new = [len(each_item) for each_item in old]
 </span><span class='line'>    <span class="n">version</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="mf">1.0</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
 </span><span class='line'>    <span class="n">py_modules</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">nester</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;],</span>
 </span><span class='line'>    <span class="n">author</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">name</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
-</span><span class='line'>    <span class="n">author_email</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#109;&amp;#97;&amp;#x69;&amp;#x6c;&amp;#x74;&amp;#x6f;&amp;#x3a;&amp;#110;&amp;#97;&amp;#109;&amp;#101;&amp;#x40;&amp;#115;&amp;#111;&amp;#x6d;&amp;#x65;&amp;#x77;&amp;#x68;&amp;#x65;&amp;#x72;&amp;#101;&amp;#x2e;&amp;#99;&amp;#111;&amp;#109;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#x6e;&amp;#97;&amp;#109;&amp;#101;&amp;#x40;&amp;#x73;&amp;#111;&amp;#109;&amp;#101;&amp;#119;&amp;#x68;&amp;#x65;&amp;#x72;&amp;#101;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#109;&lt;/a&gt;&amp;rsquo;,</span>
-</span><span class='line'>    <span class="n">url</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#109;&amp;#x61;&amp;#x69;&amp;#x6c;&amp;#116;&amp;#111;&amp;#58;&amp;#x6e;&amp;#x61;&amp;#x6d;&amp;#x65;&amp;#x40;&amp;#x73;&amp;#111;&amp;#109;&amp;#x65;&amp;#112;&amp;#x6c;&amp;#97;&amp;#x63;&amp;#x65;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#x6d;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#110;&amp;#x61;&amp;#109;&amp;#101;&amp;#x40;&amp;#115;&amp;#111;&amp;#109;&amp;#x65;&amp;#x70;&amp;#108;&amp;#97;&amp;#x63;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;&amp;rsquo;,</span>
+</span><span class='line'>    <span class="n">author_email</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#109;&amp;#x61;&amp;#x69;&amp;#x6c;&amp;#x74;&amp;#111;&amp;#58;&amp;#x6e;&amp;#x61;&amp;#109;&amp;#101;&amp;#64;&amp;#115;&amp;#x6f;&amp;#x6d;&amp;#101;&amp;#119;&amp;#x68;&amp;#x65;&amp;#114;&amp;#x65;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#x6d;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#110;&amp;#x61;&amp;#x6d;&amp;#101;&amp;#64;&amp;#115;&amp;#x6f;&amp;#x6d;&amp;#101;&amp;#119;&amp;#104;&amp;#101;&amp;#114;&amp;#x65;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&amp;rsquo;,</span>
+</span><span class='line'>    <span class="n">url</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#x6d;&amp;#97;&amp;#105;&amp;#108;&amp;#116;&amp;#x6f;&amp;#x3a;&amp;#110;&amp;#97;&amp;#x6d;&amp;#101;&amp;#64;&amp;#115;&amp;#111;&amp;#x6d;&amp;#101;&amp;#x70;&amp;#x6c;&amp;#97;&amp;#99;&amp;#101;&amp;#46;&amp;#99;&amp;#x6f;&amp;#109;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#110;&amp;#97;&amp;#x6d;&amp;#x65;&amp;#64;&amp;#115;&amp;#x6f;&amp;#109;&amp;#x65;&amp;#x70;&amp;#x6c;&amp;#97;&amp;#99;&amp;#x65;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&amp;rsquo;,</span>
 </span><span class='line'>    <span class="n">description</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">A</span> <span class="n">simple</span> <span class="n">printer</span> <span class="n">of</span> <span class="n">nested</span> <span class="n">lists</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
 </span><span class='line'>    <span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
