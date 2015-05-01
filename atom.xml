@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T16:48:09+08:00</updated>
+  <updated>2015-05-01T16:50:08+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -2593,32 +2593,16 @@ Set the value corresponding to the given key if it not already in the dictionary
 <h3>ARC Rules</h3>
 
 <ul>
-<li><p>Can&rsquo;t use retain / release / retainCount / autorelease</p>
-
-<ul>
-<li>Memory management is the compiler&rsquo;s job, so there is no need to use this methods</li>
-<li>This methods is need to use when the ARC is invalid</li>
-</ul>
-</li>
-<li><p>Can&rsquo;t use NSAllocateObject / NSDeallocateObject</p>
-
-<ul>
-<li>When ARC is available, the methods NSAllocateObject and NSDeallocateObject are both forbidden</li>
-</ul>
-</li>
-<li><p>Don&rsquo;t call dealloc explicitly</p>
-
-<ul>
-<li>When the object is abandoned, dealloc is called automatically no matter ARC is available or not</li>
-</ul>
-</li>
+<li><p>Can&rsquo;t use retain / release / retainCount / autorelease
+Memory management is the compiler&rsquo;s job, so there is no need to use this methods.
+This methods is need to use when the ARC is invalid.</p></li>
+<li><p>Can&rsquo;t use NSAllocateObject / NSDeallocateObject
+When ARC is available, the methods NSAllocateObject and NSDeallocateObject are both forbidden.</p></li>
+<li><p>Don&rsquo;t call dealloc explicitly
+When the object is abandoned, dealloc is called automatically no matter ARC is available or not.</p></li>
 <li><p>Using @autoreleasepool instead of using NSAutoreleasePool</p></li>
-<li><p>Object type variables can&rsquo;t be a member of structure</p>
-
-<ul>
-<li>Structure can&rsquo;t manage the life circle of its member</li>
-</ul>
-</li>
+<li><p>Object type variables can&rsquo;t be a member of structure
+Structure can&rsquo;t manage the life circle of its member.</p></li>
 </ul>
 
 
