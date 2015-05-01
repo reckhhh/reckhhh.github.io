@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-05-01T17:10:46+08:00</updated>
+  <updated>2015-05-01T17:13:45+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -1211,28 +1211,35 @@ new = [len(each_item) for each_item in old]
 
 <ul>
 <li><p>Open and close a file
-<code>
-the_file = open('sketch.txt')
-the_file.close()
-</code></p></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">the_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">sketch</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+</span><span class='line'><span class="n">the_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure></p></li>
 <li><p>Get and change the current working directory
-<code>
-import os
-os.getcwd()
-os.chdir('.../targetDirectory')
-os.listdir()
-</code></p></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">os</span>
+</span><span class='line'><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</span><span class='line'><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="o">/</span><span class="n">targetDirectory</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+</span><span class='line'><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure></p></li>
 <li><p>Read line and back to the start location of the file
-<code>
-data = open('sketch.txt')
-print(data.readline(), end='')
-data.seek(0)    // “rewind” a file to the beginning
-</code></p></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">sketch</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">readline</span><span class="p">(),</span> <span class="n">end</span><span class="o">=&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+</span><span class='line'><span class="n">data</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>    <span class="c"># “rewind” a file to the beginning</span>
+</span></code></pre></td></tr></table></div></figure></p></li>
 <li><p>Process every line of a file
-<code>
-for eachLine in data:
-  print(eachLine, end='')
-</code></p></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">for</span> <span class="n">eachLine</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">print</span><span class="p">(</span><span class="n">eachLine</span><span class="p">,</span> <span class="n">end</span><span class="o">=&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+</span></code></pre></td></tr></table></div></figure></p></li>
 <li><p>Using <em>split()</em> method to process each line to <em>extract</em> part of the line
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1257,41 +1264,99 @@ for eachLine in data:
 <span class='line-number'>21</span>
 <span class='line-number'>22</span>
 <span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>import os&lt;/p&gt;&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">os</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;if os.path.exists(&lsquo;sketch.txt&rsquo;):
-</span><span class='line'>    data = open(&lsquo;sketch.txt&rsquo;)&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">sketch</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;):</span>
+</span><span class='line'>    <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">sketch</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;for eachLine in data:
-</span><span class='line'>    # only process the line that contains &lsquo;:&rsquo;
-</span><span class='line'>    if not eachLine.find(&lsquo;:&rsquo;) == -1:
-</span><span class='line'>        # optional arg is set to 1, line of data is only broken into 2 pieces
-</span><span class='line'>        (role, line_spoken) = eachLine.split(&lsquo;:&rsquo;, 1)
-</span><span class='line'>        line_spoken = line_spoken.strip()&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">for</span> <span class="n">eachLine</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span><span class='line'>    <span class="c"># only process the line that contains &amp;lsquo;:&amp;rsquo;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="ow">not</span> <span class="n">eachLine</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;:</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span><span class='line'>        <span class="c"># optional arg is set to 1, line of data is only broken into 2 pieces</span>
+</span><span class='line'>        <span class="p">(</span><span class="n">role</span><span class="p">,</span> <span class="n">line_spoken</span><span class="p">)</span> <span class="o">=</span> <span class="n">eachLine</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;:</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">line_spoken</span> <span class="o">=</span> <span class="n">line_spoken</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;    print(role, end='')
-</span><span class='line'>    print(' said: ', end='')
-</span><span class='line'>    print(line_spoken, end='')
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>    <span class="k">print</span><span class="p">(</span><span class="n">role</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">print</span><span class="p">(</span><span class="s">&#39; said: &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">print</span><span class="p">(</span><span class="n">line_spoken</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'>data.close()
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;else:
-</span><span class='line'>    print(&lsquo;The data file is missing!&rsquo;)</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">else</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">The</span> <span class="n">data</span> <span class="nb">file</span> <span class="ow">is</span> <span class="n">missing</span><span class="err">!</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <h3>Handle Exceptions: try/except Machanism</h3>
 
 <ul>
 <li><p>Python try to run code first, then deal with runtime errors (exceptions) as they happen
-<code>
-try:
-  code (which might cause a runtime error)
-except ErrorType:
-  error-recovery code
-</code></p></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>  <span class="n">code</span> <span class="p">(</span><span class="n">which</span> <span class="n">might</span> <span class="n">cause</span> <span class="n">a</span> <span class="n">runtime</span> <span class="n">error</span><span class="p">)</span>
+</span><span class='line'><span class="k">except</span> <span class="n">ErrorType</span><span class="p">:</span>
+</span><span class='line'>  <span class="n">error</span><span class="o">-</span><span class="n">recovery</span> <span class="n">code</span>
+</span></code></pre></td></tr></table></div></figure></p></li>
 <li><p>Python catch exceptions as they occur, gives you a chance to possibly recover from the error and, critically, not crash
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>  <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">sketch</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="k">for</span> <span class="n">eachLine</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">try</span><span class="p">:</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">role</span><span class="p">,</span> <span class="n">spoken</span><span class="p">)</span> <span class="o">=</span> <span class="n">eachLine</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;:</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">line_spoken</span> <span class="o">=</span> <span class="n">line_spoken</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>  <span class="k">print</span><span class="p">(</span><span class="n">role</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">print</span><span class="p">(</span><span class="s">&#39; said: &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">print</span><span class="p">(</span><span class="n">spoken</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="c"># for handling the case there is no &amp;lsquo;:&amp;rsquo; in a line</span>
+</span><span class='line'>  <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span class='line'>      <span class="k">pass</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'><span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">The</span> <span class="n">data</span> <span class="nb">file</span> <span class="ow">is</span> <span class="n">missing</span><span class="err">!</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<h3>Extend try/except with finally</h3>
+
+<ul>
+<li>No matter what errors occur, code in the <strong>finally</strong> suite is always run
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -1330,96 +1395,45 @@ except ErrorType:
 <span class='line-number'>36</span>
 <span class='line-number'>37</span>
 <span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>try:
-</span><span class='line'>  data = open(&lsquo;sketch.txt&rsquo;)&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  for eachLine in data:
-</span><span class='line'>  try:
-</span><span class='line'>      (role, spoken) = eachLine.split(&lsquo;:&rsquo;, 1)
-</span><span class='line'>      line_spoken = line_spoken.strip()&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;  print(role, end='')
-</span><span class='line'>  print(' said: ', end='')
-</span><span class='line'>  print(spoken, end='')
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  # for handling the case there is no &lsquo;:&rsquo; in a line
-</span><span class='line'>  except ValueError:
-</span><span class='line'>      pass&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;  data.close()
-</span><span class='line'>except IOError:
-</span><span class='line'>  print(&lsquo;The data file is missing!&rsquo;)&lt;/p&gt;&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">man</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="n">other</span> <span class="o">=</span> <span class="p">[]</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;
-</span><span class='line'>### Extend try/except with finally
-</span><span class='line'>- No matter what errors occur, code in the **finally** suite is always run
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">sketch</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;man = []
-</span><span class='line'>other = []&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">for</span> <span class="n">eachLine</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span><span class='line'><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">role</span><span class="p">,</span> <span class="n">spoken</span><span class="p">)</span> <span class="o">=</span> <span class="n">eachLine</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;:&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">spoken</span> <span class="o">=</span> <span class="n">spoken</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;try:
-</span><span class='line'>    data = open(&lsquo;sketch.txt&rsquo;)&lt;/p&gt;
+</span><span class='line'>    <span class="k">if</span> <span class="n">role</span> <span class="o">==</span> <span class="s">&#39;Man&#39;</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">man</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">spoken</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">elif</span> <span class="n">role</span> <span class="o">==</span> <span class="s">&#39;Other Man&#39;</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">other</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">spoken</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">pass</span>
 </span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;for eachLine in data:
-</span><span class='line'>try:
-</span><span class='line'>    (role, spoken) = eachLine.split(':', 1)
-</span><span class='line'>    spoken = spoken.strip()
+</span><span class='line'><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>    if role == 'Man':
-</span><span class='line'>        man.append(spoken)
-</span><span class='line'>    elif role == 'Other Man':
-</span><span class='line'>        other.append(spoken)
-</span><span class='line'>    except ValueError:
-</span><span class='line'>        pass
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">The</span> <span class="n">data</span> <span class="nb">file</span> <span class="ow">is</span> <span class="n">missing</span><span class="err">!</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>data.close()
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;except IOError:
-</span><span class='line'>    print(&lsquo;The data file is missing!&rsquo;)&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;try:
-</span><span class='line'>    man_file = open(&lsquo;man_data.txt&rsquo;, &lsquo;w&rsquo;)
-</span><span class='line'>    other_file = open(&lsquo;other_data.txt&rsquo;, &lsquo;w&rsquo;)
-</span><span class='line'>    print(man, file=man_file)
-</span><span class='line'>    print(other, file=other_file)
-</span><span class='line'>except IOError as err:
-</span><span class='line'>    print(&lsquo;File Error: &rsquo; + str(err))
-</span><span class='line'>finally:
-</span><span class='line'>    if &lsquo;man_file&rsquo; in locals():
-</span><span class='line'>        man_file.close()
-</span><span class='line'>    if &lsquo;other_file&rsquo; in locals():
-</span><span class='line'>        other_file.close()</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">man_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">man_data</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">w</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+</span><span class='line'>    <span class="n">other_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">other_data</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">w</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+</span><span class='line'>    <span class="k">print</span><span class="p">(</span><span class="n">man</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">man_file</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">print</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">other_file</span><span class="p">)</span>
+</span><span class='line'><span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">File</span> <span class="n">Error</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+</span><span class='line'><span class="k">finally</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">man_file</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">man_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">other_file</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">other_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <h3>Knowing the detailed error imformation</h3>
 
@@ -1442,44 +1456,54 @@ except ErrorType:
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>try:
-</span><span class='line'>  data = open(&lsquo;missingFile.txt&rsquo;)
-</span><span class='line'>      print(data.readline(), file=data)
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>  <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">missingFile</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+</span><span class='line'>      <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">readline</span><span class="p">(),</span> <span class="nb">file</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'>&lt;h1&gt;the error imformation is named as &lsquo;err&rsquo;&lt;/h1&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">the</span> <span class="n">error</span> <span class="n">imformation</span> <span class="ow">is</span> <span class="n">named</span> <span class="k">as</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">err</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;except IOError as err:
-</span><span class='line'>  print(&lsquo;File error: &rsquo; + str(err))
-</span><span class='line'>finally:
-</span><span class='line'>  if &lsquo;data&rsquo; in locals():
-</span><span class='line'>      data.close()&lt;/p&gt;&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">File</span> <span class="n">error</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+</span><span class='line'><span class="k">finally</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">if</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">data</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+</span><span class='line'>      <span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>&lt;h1&gt;output:&lt;/h1&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">output</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;File error: [Errno 2] No such file or directory: &lsquo;missingFile.txt&rsquo;</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">File</span> <span class="n">error</span><span class="p">:</span> <span class="p">[</span><span class="n">Errno</span> <span class="mi">2</span><span class="p">]</span> <span class="n">No</span> <span class="n">such</span> <span class="nb">file</span> <span class="ow">or</span> <span class="n">directory</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">missingFile</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <h3>Use with to reduce the amount of code</h3>
 
 <ul>
 <li><p>The following code is identical to the former as a short version
-<code>
-try:
-  with open('missingFile.txt', "w") as data:
-      print(data.readline(), file=data)
-except IOError as err:
-  print('File error: ' + str(err))
-</code></p></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">missingFile</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">w</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span> <span class="k">as</span> <span class="n">data</span><span class="p">:</span>
+</span><span class='line'>      <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">readline</span><span class="p">(),</span> <span class="nb">file</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">File</span> <span class="n">error</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure></p></li>
 <li><p>try/except/finally code can be rewrite using <strong>with</strong>
-<code>
-try:
-  with open('man_data.txt', 'w') as man_file, open('other_data.txt', 'w') as other_file:
-      print(man, file=man_file)
-      print(other, file=other_file)
-except IOError as err:
-  print('File error: ' + str(err))
-</code></p></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">man_data</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">w</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span> <span class="k">as</span> <span class="n">man_file</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">other_data</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">w</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span> <span class="k">as</span> <span class="n">other_file</span><span class="p">:</span>
+</span><span class='line'>      <span class="k">print</span><span class="p">(</span><span class="n">man</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">man_file</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">print</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">other_file</span><span class="p">)</span>
+</span><span class='line'><span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">File</span> <span class="n">error</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure></p></li>
 <li><p><strong>Note</strong>: no need to close file, because <strong>with</strong> does that job</p></li>
 </ul>
 
@@ -1488,11 +1512,13 @@ except IOError as err:
 
 <ul>
 <li>Assume there is a file named &ldquo;example.txt&rdquo; in the current directory
-<code>
-out = open("example.txt", "w")
-print("Write something to example.txt", file=out)
-out.close()
-</code></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">out</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">example</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">w</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Write</span> <span class="n">something</span> <span class="n">to</span> <span class="n">example</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="nb">file</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+</span><span class='line'><span class="n">out</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure></li>
 </ul>
 
 
@@ -1515,23 +1541,22 @@ out.close()
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>&lt;h1&gt;nester.py&lt;/h1&gt;
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">nester</span><span class="o">.</span><span class="n">py</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;import sys&lt;/p&gt;&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">import</span> <span class="nn">sys</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;def print_item (the_list, indent=False, level=0, fh=sys.stdout):
-</span><span class='line'>    for each_item in the_list:
-</span><span class='line'>        if isinstance(each_item, list):
-</span><span class='line'>            print_item (each_item, indent, level+1, fh)
-</span><span class='line'>        else:
-</span><span class='line'>            if indent:
-</span><span class='line'>                for tab_stop in range(level):
-</span><span class='line'>                    print(&ldquo;\t&rdquo;, end=&lsquo;@!&rsquo;, file=fh)
-</span><span class='line'>            print (each_item, file=fh)</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">print_item</span> <span class="p">(</span><span class="n">the_list</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">fh</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">each_item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+</span><span class='line'>            <span class="n">print_item</span> <span class="p">(</span><span class="n">each_item</span><span class="p">,</span> <span class="n">indent</span><span class="p">,</span> <span class="n">level</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">fh</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">if</span> <span class="n">indent</span><span class="p">:</span>
+</span><span class='line'>                <span class="k">for</span> <span class="n">tab_stop</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">level</span><span class="p">):</span>
+</span><span class='line'>                    <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span>\<span class="n">t</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="n">end</span><span class="o">=&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="err">@!</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="nb">file</span><span class="o">=</span><span class="n">fh</span><span class="p">)</span>
+</span><span class='line'>            <span class="k">print</span> <span class="p">(</span><span class="n">each_item</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">fh</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <ul>
 <li>Using func <strong>print_item</strong> for formating the output file
@@ -1569,40 +1594,41 @@ out.close()
 <span class='line-number'>32</span>
 <span class='line-number'>33</span>
 <span class='line-number'>34</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>import nester&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">nester</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;man = []
-</span><span class='line'>other = []&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">man</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="n">other</span> <span class="o">=</span> <span class="p">[]</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;try:
-</span><span class='line'>    data = open(&lsquo;sketch.txt&rsquo;)&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">sketch</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;for eachLine in data:
-</span><span class='line'>    try:
-</span><span class='line'>        (role, line_spoken) = eachLine.split(&lsquo;:&rsquo;, 1)
-</span><span class='line'>        line_spoken = line_spoken.strip()&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">for</span> <span class="n">eachLine</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">try</span><span class="p">:</span>
+</span><span class='line'>        <span class="p">(</span><span class="n">role</span><span class="p">,</span> <span class="n">line_spoken</span><span class="p">)</span> <span class="o">=</span> <span class="n">eachLine</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;:</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">line_spoken</span> <span class="o">=</span> <span class="n">line_spoken</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;    if role == 'Man':
-</span><span class='line'>        man.append(line_spoken)
-</span><span class='line'>    elif role == 'Other Man':
-</span><span class='line'>        other.append(line_spoken)
-</span><span class='line'>except ValueError:
-</span><span class='line'>    pass
-</span><span class='line'>data.close()
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>    <span class="k">if</span> <span class="n">role</span> <span class="o">==</span> <span class="s">&#39;Man&#39;</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">man</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line_spoken</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">elif</span> <span class="n">role</span> <span class="o">==</span> <span class="s">&#39;Other Man&#39;</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">other</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line_spoken</span><span class="p">)</span>
+</span><span class='line'><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">pass</span>
+</span><span class='line'><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;except IOError:
-</span><span class='line'>    print(&lsquo;The data file is missing!&rsquo;)&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">The</span> <span class="n">data</span> <span class="nb">file</span> <span class="ow">is</span> <span class="n">missing</span><span class="err">!</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;try:
-</span><span class='line'>    with open(&lsquo;man_data.txt&rsquo;, &lsquo;w&rsquo;) as man_file, open(&lsquo;other_data.txt&rsquo;, &lsquo;w&rsquo;) as other_file:
-</span><span class='line'>    # format the output files
-</span><span class='line'>    nester.print_item(man, fh=man_file)
-</span><span class='line'>    nester.print_item(other, fh=other_file)
-</span><span class='line'>except IOError as err:
-</span><span class='line'>    print(&lsquo;File error: &rsquo; + str(err))</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">man_data</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">w</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span> <span class="k">as</span> <span class="n">man_file</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">other_data</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">w</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span> <span class="k">as</span> <span class="n">other_file</span><span class="p">:</span>
+</span><span class='line'>    <span class="c"># format the output files</span>
+</span><span class='line'>    <span class="n">nester</span><span class="o">.</span><span class="n">print_item</span><span class="p">(</span><span class="n">man</span><span class="p">,</span> <span class="n">fh</span><span class="o">=</span><span class="n">man_file</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">nester</span><span class="o">.</span><span class="n">print_item</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">fh</span><span class="o">=</span><span class="n">other_file</span><span class="p">)</span>
+</span><span class='line'><span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">File</span> <span class="n">error</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <h3>Pickle the data</h3>
 
@@ -1633,65 +1659,62 @@ out.close()
 <span class='line-number'>23</span>
 <span class='line-number'>24</span>
 <span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>import pickle&lt;/li&gt;
-</span><span class='line'>&lt;/ul&gt;
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">pickle</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;man = []
-</span><span class='line'>other = []&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">man</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="n">other</span> <span class="o">=</span> <span class="p">[]</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;try:
-</span><span class='line'>    &hellip;
-</span><span class='line'>except IOError:
-</span><span class='line'>    &hellip;&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>    <span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span>
+</span><span class='line'><span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+</span><span class='line'>    <span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;try:
-</span><span class='line'>    # &lsquo;wb&rsquo; indicate the access mode to be &ldquo;writeable, binary&rdquo;
-</span><span class='line'>    with open(&lsquo;man_data.txt&rsquo;, &lsquo;wb&rsquo;) as man_file, open(&lsquo;other_data.txt&rsquo;, &lsquo;wb&rsquo;) as other_file:
-</span><span class='line'>    # store data
-</span><span class='line'>        pickle.dump(man, man_file)
-</span><span class='line'>        pickle.dump(other, other_file)
-</span><span class='line'>except IOError as err:
-</span><span class='line'>    print(&lsquo;File error: &rsquo; + str(err))&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>    <span class="c"># &amp;lsquo;wb&amp;rsquo; indicate the access mode to be &amp;ldquo;writeable, binary&amp;rdquo;</span>
+</span><span class='line'>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">man_data</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">wb</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span> <span class="k">as</span> <span class="n">man_file</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">other_data</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">wb</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span> <span class="k">as</span> <span class="n">other_file</span><span class="p">:</span>
+</span><span class='line'>    <span class="c"># store data</span>
+</span><span class='line'>        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">man</span><span class="p">,</span> <span class="n">man_file</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">other_file</span><span class="p">)</span>
+</span><span class='line'><span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">File</span> <span class="n">error</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;h1&gt;handle pickle exceptions&lt;/h1&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">handle</span> <span class="n">pickle</span> <span class="n">exceptions</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;except pickle.PickleError as perr:
-</span><span class='line'>    print(&lsquo;Pickling error: &rsquo; + str(perr))
-</span><span class='line'>&lt;code&gt;
-</span><span class='line'>- Load data using pickle.load()
-</span><span class='line'>&lt;/code&gt;
-</span><span class='line'>import pickle
-</span><span class='line'>import nester&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">except</span> <span class="n">pickle</span><span class="o">.</span><span class="n">PickleError</span> <span class="k">as</span> <span class="n">perr</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Pickling</span> <span class="n">error</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">perr</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+- Load data using pickle.load()
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">pickle</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">nester</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;new_man = []&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">new_man</span> <span class="o">=</span> <span class="p">[]</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;try:
-</span><span class='line'>    with open(&lsquo;man_data.txt&rsquo;, &lsquo;rb&rsquo;) as man_file:
-</span><span class='line'>        new_man = pickle.load(man_file)
-</span><span class='line'>except IOError as err:
-</span><span class='line'>    print(&lsquo;File error: &rsquo; + str(err))
-</span><span class='line'>except pickle.PickleError as perr:
-</span><span class='line'>    print(&lsquo;Pickle error: &rsquo; + str(perr))&lt;/p&gt;
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">man_data</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">rb</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span> <span class="k">as</span> <span class="n">man_file</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">new_man</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">man_file</span><span class="p">)</span>
+</span><span class='line'><span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">File</span> <span class="n">error</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+</span><span class='line'><span class="k">except</span> <span class="n">pickle</span><span class="o">.</span><span class="n">PickleError</span> <span class="k">as</span> <span class="n">perr</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Pickle</span> <span class="n">error</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">perr</span><span class="p">))</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;nester.print_item(new_man)</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">nester</span><span class="o">.</span><span class="n">print_item</span><span class="p">(</span><span class="n">new_man</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <hr />
 
@@ -1699,9 +1722,9 @@ out.close()
 
 <ul>
 <li>split(&hellip;)
-<code>
-str.split([sep[, maxsplit]]) -&gt; list of strings
-</code></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">([</span><span class="n">sep</span><span class="p">[,</span> <span class="n">maxsplit</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">strings</span>
+</span></code></pre></td></tr></table></div></figure></li>
 <li>Return a list of the words in str, using <em>sep</em> as the delimiter string</li>
 <li>If maxsplit is given, at most maxsplit splits are done</li>
 <li>If <em>sep</em> is not specified or is None, any <strong>whitespace</strong> string is a separator and empty strings are removed from the results</li>
@@ -1713,11 +1736,13 @@ str.split([sep[, maxsplit]]) -&gt; list of strings
 
 <ul>
 <li>strip(&hellip;)
-<code>
-str = "!!!!Today is a good day...Yeah.!!!!!!"
-str.strip('!')
-'Today is a good day...Yeah.'
-</code></li>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="nb">str</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="err">!!!!</span><span class="n">Today</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">good</span> <span class="n">day</span><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="n">Yeah</span><span class="o">.</span><span class="err">!!!!!!</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>
+</span><span class='line'><span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="err">!</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Today</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">good</span> <span class="n">day</span><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="n">Yeah</span><span class="o">.&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure></li>
 <li>Returns a copy in which all chars have been stripped at the beginning and the end</li>
 </ul>
 
@@ -1946,8 +1971,8 @@ str.strip('!')
 </span><span class='line'>    <span class="n">version</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="mf">1.0</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
 </span><span class='line'>    <span class="n">py_modules</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">nester</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;],</span>
 </span><span class='line'>    <span class="n">author</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">name</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
-</span><span class='line'>    <span class="n">author_email</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#109;&amp;#x61;&amp;#x69;&amp;#x6c;&amp;#116;&amp;#111;&amp;#x3a;&amp;#x6e;&amp;#97;&amp;#x6d;&amp;#x65;&amp;#64;&amp;#x73;&amp;#111;&amp;#109;&amp;#x65;&amp;#x77;&amp;#x68;&amp;#101;&amp;#114;&amp;#101;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#x6d;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#x6e;&amp;#x61;&amp;#x6d;&amp;#x65;&amp;#64;&amp;#x73;&amp;#x6f;&amp;#x6d;&amp;#x65;&amp;#x77;&amp;#x68;&amp;#x65;&amp;#114;&amp;#101;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&amp;rsquo;,</span>
-</span><span class='line'>    <span class="n">url</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#109;&amp;#x61;&amp;#x69;&amp;#x6c;&amp;#116;&amp;#111;&amp;#58;&amp;#110;&amp;#97;&amp;#109;&amp;#x65;&amp;#64;&amp;#x73;&amp;#x6f;&amp;#x6d;&amp;#101;&amp;#112;&amp;#x6c;&amp;#x61;&amp;#x63;&amp;#101;&amp;#46;&amp;#99;&amp;#x6f;&amp;#x6d;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#110;&amp;#x61;&amp;#109;&amp;#101;&amp;#64;&amp;#x73;&amp;#111;&amp;#x6d;&amp;#101;&amp;#112;&amp;#108;&amp;#97;&amp;#99;&amp;#101;&amp;#x2e;&amp;#99;&amp;#111;&amp;#x6d;&lt;/a&gt;&amp;rsquo;,</span>
+</span><span class='line'>    <span class="n">author_email</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#109;&amp;#97;&amp;#x69;&amp;#x6c;&amp;#x74;&amp;#x6f;&amp;#x3a;&amp;#110;&amp;#97;&amp;#109;&amp;#101;&amp;#x40;&amp;#115;&amp;#111;&amp;#x6d;&amp;#x65;&amp;#x77;&amp;#x68;&amp;#x65;&amp;#x72;&amp;#101;&amp;#x2e;&amp;#99;&amp;#111;&amp;#109;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#x6e;&amp;#97;&amp;#109;&amp;#101;&amp;#x40;&amp;#x73;&amp;#111;&amp;#109;&amp;#101;&amp;#119;&amp;#x68;&amp;#x65;&amp;#x72;&amp;#101;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#109;&lt;/a&gt;&amp;rsquo;,</span>
+</span><span class='line'>    <span class="n">url</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;&amp;#109;&amp;#x61;&amp;#x69;&amp;#x6c;&amp;#116;&amp;#111;&amp;#58;&amp;#x6e;&amp;#x61;&amp;#x6d;&amp;#x65;&amp;#x40;&amp;#x73;&amp;#111;&amp;#109;&amp;#x65;&amp;#112;&amp;#x6c;&amp;#97;&amp;#x63;&amp;#x65;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#x6d;&quot;</span><span class="o">&gt;&amp;</span><span class="c">#110;&amp;#x61;&amp;#109;&amp;#101;&amp;#x40;&amp;#115;&amp;#111;&amp;#109;&amp;#x65;&amp;#x70;&amp;#108;&amp;#97;&amp;#x63;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;&amp;rsquo;,</span>
 </span><span class='line'>    <span class="n">description</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">A</span> <span class="n">simple</span> <span class="n">printer</span> <span class="n">of</span> <span class="n">nested</span> <span class="n">lists</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span>
 </span><span class='line'>    <span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
