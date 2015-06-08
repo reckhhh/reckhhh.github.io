@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://reckhhh.github.io/blog/2015/05/31/linux-notes-i/</loc>
+    <lastmod>2015-05-31T23:22:56+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://reckhhh.github.io/blog/2015/05/02/python-notes-v/</loc>
     <lastmod>2015-05-02T02:35:49+08:00</lastmod>
   </url>
@@ -67,6 +71,9 @@
   </url>
   <url>
     <loc>http://reckhhh.github.io/blog/categories/octopress/</loc>
+  </url>
+  <url>
+    <loc>http://reckhhh.github.io/blog/categories/linux/</loc>
   </url>
   <url>
     <loc>http://reckhhh.github.io/posts/2/</loc>
