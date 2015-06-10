@@ -9,8 +9,8 @@
   <meta name="author" content="Chen Rui">
 
   
-  <meta name="description" content="Register an &ldquo;username&rdquo; and login in GitHub
-Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository and give it a &hellip;">
+  <meta name="description" content="Reference Count Style Memory Management A variable hold the objects generate by itself 1
+id obj = [[NSObject alloc] init]; A variable can hold the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,135 @@ Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository 
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/04/25/reference-count-style-memory-management-and-arc-rules/">Reference Count Style Memory Management and ARC Rules</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-04-25T23:32:02+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:32 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Reference Count Style Memory Management</h3>
+
+<ul>
+<li>A variable hold the objects generate by itself</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="kt">id</span> <span class="n">obj</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSObject</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>A variable can hold the objects generate by other variables</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="kt">id</span> <span class="n">obj</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSMutableArray</span> <span class="n">array</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">obj</span> <span class="k">retain</span><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>If the objects of a variable are no longer needed, the variable can release the objects held by itself</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="c1">// Generate by itself and hold the objects by itself</span>
+</span><span class='line'><span class="kt">id</span> <span class="n">obj</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSObject</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">obj</span> <span class="k">release</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Generate by others and hold the objects by itself</span>
+</span><span class='line'><span class="kt">id</span> <span class="n">obj</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSMutableArray</span> <span class="n">array</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">obj</span> <span class="k">retain</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">obj</span> <span class="k">release</span><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>A variable cannot release the objects held by others</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="kt">id</span> <span class="n">obj1</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj0</span> <span class="n">object</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">obj1</span> <span class="k">release</span><span class="p">];</span>    <span class="c1">// error</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>ARC Rules</h3>
+
+<ul>
+<li><p>Can&rsquo;t use retain / release / retainCount / autorelease</p>
+
+<ul>
+<li>Memory management is the compiler&rsquo;s job, so there is no need to use this methods</li>
+<li>This methods is need to use when the ARC is invalid</li>
+</ul>
+</li>
+<li><p>Can&rsquo;t use NSAllocateObject / NSDeallocateObject</p>
+
+<ul>
+<li>When ARC is available, the methods NSAllocateObject and NSDeallocateObject are both forbidden</li>
+</ul>
+</li>
+<li><p>Don&rsquo;t call dealloc explicitly</p>
+
+<ul>
+<li>When the object is abandoned, dealloc is called automatically no matter ARC is available or not</li>
+</ul>
+</li>
+<li><p>Using @autoreleasepool instead of using NSAutoreleasePool</p></li>
+<li><p>Object type variables can&rsquo;t be a member of structure</p>
+
+<ul>
+<li>Structure can&rsquo;t manage the life circle of its member</li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<h3>Bonus: The Diffence Between Objective-C Objects and Core Foundation Objects</h3>
+
+<ul>
+<li>Objective-C objects are generated by <strong>Foundation Framework</strong></li>
+<li>Core foundation objects are generated by <strong>Core Foundation Framework</strong></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -182,6 +311,10 @@ Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/06/10/linux-notes-ii/">Linux Notes II</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/05/31/linux-notes-i/">Linux Notes I</a>
       </li>
     
@@ -197,10 +330,6 @@ Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository 
         <a href="/blog/2015/05/01/python-notes-iv/">Python Notes IV</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/04/30/python-notes-iii/">Python Notes III</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -208,7 +337,7 @@ Click &ldquo;+&rdquo; sign at the upper right corner to create a new repository 
     <ul id="categories">
         <li class='category'><a href='/blog/categories/essay/'>essay (2)</a></li>
 <li class='category'><a href='/blog/categories/ios/'>ios (2)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (2)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/poetry/'>poetry (1)</a></li>
 <li class='category'><a href='/blog/categories/python/'>python (5)</a></li>

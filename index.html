@@ -9,8 +9,9 @@
   <meta name="author" content="Chen Rui">
 
   
-  <meta name="description" content="内核 进程调试: Linux 是抢占式多任务操作系统. 多个进程可同时驻留于内存, 每个进程都能获得对 CPU 的使用; 每个进程能使用多长时间, 由内核进程调度程序决定
-内存管理: 物理内存 RAM 属于有限资源, 内存必须公平, 高效地在进程间共享这一资源. Linux &hellip;">
+  <meta name="description" content="Ubuntu 的默认 root 密码是随机的，每次开机都有一个新 root 密码。我们可以在终端输入命令 sudo passwd，然后输入当前用户的密码
+终端会提示我们输入新的密码并确认，此时的密码就是 root 新密码。修改成功后，输入命令 su root，再输入新的密码
+普通用户变超级用户 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +68,341 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/06/10/linux-notes-ii/">Linux Notes II</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-10T22:24:51+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:24 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li><p>Ubuntu 的默认 root 密码是随机的，每次开机都有一个新 root 密码。我们可以在终端输入命令 sudo passwd，然后输入当前用户的密码</p></li>
+<li><p>终端会提示我们输入新的密码并确认，此时的密码就是 root 新密码。修改成功后，输入命令 su root，再输入新的密码</p></li>
+<li><p>普通用户变超级用户 su; 超级用户变普通用户 sudo ngcl (su + 用户名)</p></li>
+<li><p>date, 显示当前时间</p></li>
+<li><p>cal, 查看当月日历</p></li>
+<li><p>df, 查看当前的硬盘挂载情况;
+df –h 显示磁盘空间使用的情况</p></li>
+<li><p>free, 显示可用内存, 查看当前的磁盘交换空间</p></li>
+<li><p>exit, 切换超级管理员和普通用户, 或者使用 su / su ngcl</p></li>
+<li><p>ctrl + alt + F1~F6, 可访问黑屏幕终端;
+按 alt + F7, 返回图形桌面幻镜.</p></li>
+<li><p>&ldquo;.&rdquo; 代表工作目录, &ldquo;..&#8221;代表工作目录的父目录.
+例如: cd /usr/bin  &lt;==>  cd ./bin</p>
+
+<p>pwd: 结果都是 /usr/bin, 因为 . 代表了当前目录 /usr</p></li>
+<li><p>file: 确定文件类型; 例如: file sketch.txt
+sketch.txt: ASCII text
+file 命令会打印出文件内容的简短说明.</p></li>
+<li><p>less / cat: 查看文件内容
+less 程序让我们前后滚动文件.</p></li>
+<li><p>ls /usr: 指定要显示的目录</p></li>
+<li><p>ls - /usr: 指定多个目录</p></li>
+<li><p>命令后面跟一个或多个选项,带有不同选项的命令其功能不一样;
+此外, 命令后面还跟有一个或多个参数, 这些参数是命令作用的
+对象. 大部分命令的格式:
+command -option arguments</p></li>
+<li><p>ls -lt
+ls -lt &ndash;reverse (以相反的顺序输出)</p></li>
+<li><p>ls 选项
+-a, 列出所用文件
+-d, 与-l选项结合使用, 可查看目录的详细信息
+-F, 在每个所列出的名字后面加上类型指示符(例如, 如果名字是目录名, 则会加上一个斜杠)
+-r, 以相反的顺序显示结果
+-S, 以文件大小对结果排序
+-t, 按修改时间排序</p></li>
+<li><p>在UNIX操作系统中, 一切都是文件</p></li>
+<li><p>UNIX 目录</p>
+
+<ul>
+<li> /, 根目录, 一切从这里开始</li>
+<li>/bin, 常用的基本命令</li>
+<li>/sbin, 管理系统相关的基本命令</li>
+<li>/boot, 存放启动内核以及启动内核的相关文件, 例如内核、grub等</li>
+<li>/dev, 设备文件</li>
+<li>/etc，各类配置文件</li>
+<li>/etc/crontab, 定义自动化任务运行的时间</li>
+<li>/etc/fstab, 存储设备以及相关挂载点的列表</li>
+<li>/etc/passwd, 用户账号列表</li>
+<li>/home, 用户登录，除 root 用户外其他可登录用户的主目录</li>
+<li>/lib, 常用的基本函数库，内核模块，与 windows 系统中的 DLL 类似</li>
+<li>/lost+found， 当文件崩溃时，该目录用于恢复分区。除非系统发生很严重的问题，否则这个目录一直是空的</li>
+<li>/libexec, 非用户直接使用的脚本或命令</li>
+<li>/media, 用于设备挂载</li>
+<li>/mnt, 古老的用于挂载设备的目录</li>
+<li>/opt, 存放一些大型的独立软件</li>
+<li>/sys, 用于存放Linux内核的SYS文件系统</li>
+<li>/tmp, 存放临时文件，可以被任何用户使用</li>
+<li>/var, 用于存放一些日志和程序启动的 PID 文件</li>
+<li>/usr, 是linux系统中最大的目录树。包含普通用户使用的所有程序和相关文件</li>
+<li>/usr/include, 头文件存放目录</li>
+<li>/usr/bin：存放常用的命令</li>
+<li>/usr/sbin：存放管理员常用的命令</li>
+<li>/usr/lib：库函数</li>
+<li>/usr/share：用于存放各种软件包共享的辅助文件</li>
+<li>/usr/doc：存放软件说明</li>
+<li>/usr/man：存放各种命令，文件，函数</li>
+</ul>
+</li>
+<li><p>cp: 复制文件和目录</p>
+
+<ul>
+<li>cp item directory
+例如： cp cleanup.py /home/ngcl/图片</li>
+<li><p>cp file1 file2:  将file1 复制到 file2. 如 file2 存在，会被 file1 覆盖，如 file2 不存在，则创建 file2</p></li>
+<li><p>cp <strong>-i</strong> file1 file2
+覆盖时，通知用户确认</p></li>
+<li><p>cp file1 file2 dir1
+将 file1  和file2 复制到 dir1, dir1 必须已经存在</p></li>
+<li><p>cp dir1/* dir2
+使用通配符，将 dir1 中所用文件复制到 dir2, dir2 必须已经存在</p></li>
+<li><p>cp -r dir1 dir2
+将 dir1 目录复制到 dir2 目录中，如果 dir2 不存在，创建 dir2, 且包含与 dir1 目录相同的</p></li>
+</ul>
+</li>
+<li><p>mv: 移动或重命名文件和目录</p>
+
+<ul>
+<li><p>mv item1 item2, 将文件（或目录）item1移动（或重命名）为item2</p></li>
+<li><p>mv item&hellip; directory
+将一个或多个条目从一个目录移动到另一个目录</p></li>
+<li><p>mv的选项：</p>
+
+<ul>
+<li>-i, 覆盖一个已经存在的文件之前，先提示用户。</li>
+<li>-u, 将文件从一个目录移动到另一个目录，只移动那些目标目录中不存在的文件或是目标目录里相应的更新文件</li>
+<li>-v, 移动文件时显示信息性消息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>mkdir: 创建目录
+mkdir directory</p></li>
+<li><p>rm: 移动文件和目录</p>
+
+<ul>
+<li>警告，无法恢复</li>
+<li>要和 -i一起使用，可以提示用户</li>
+<li>不要和通配符 × 一起使用</li>
+<li>不要和递归符号 r 一起使用</li>
+</ul>
+</li>
+<li><p>in: 创建硬连接和符号连接</p>
+
+<ul>
+<li>为某文件在另外一个位置上建立同步的链接，当需要在不同目录用相同的文件，不必重复占用磁盘空间</li>
+<li>in 创建硬连接，实际上是创建了额外的名称，这些名称都指向同一部分数据部分</li>
+<li>in -s, 使用 -s 参数创建<strong>软链接</strong></li>
+<li>可以使用 ls -li 显示上述信息，可以看到 fun 和 fun-hard 共享同一个索引节点号，证实它们是相同的文件</li>
+<li> Linux / Unix 档案系统中，有所谓的链接(link)，我们可以将其视为档案的别名，而连结又可分为两种 : 硬链接 (hard link)与软链接 (symbolic link)
+
+<ul>
+<li>硬链接的意思是一个文件可以有多个名称, 存在于同一个磁盘分区中. 与目标文件使用同一个文件索引节点，因此只能在同一个磁盘分区中使用硬链接，并且它不能离开关联文件而独立存在。当一个硬链接被移动，重命名或者被删除时，其余关联到同一文件的硬链接不受影响。当最后一条批向该文件的硬链接被删除时，该文件内容将会消失</li>
+<li>软链接的方式则是产生一个特殊的档案，该档案的内容是指向另一个档案的位置。软链接却可以跨越不同的档案系统. 如同直接对目标文件进行操作，链接文件是一个独立文件，其存在不依赖于目标文件。如删除一个链接文件，它指向的目标文件不受影响；如果删除了一个目标文件，其指向目标文件的链接文件依然存在</li>
+<li><strong>ln source distination</strong> 是产生一个连结 distination 到 source，至于使用硬链接或软链结则由参数决定</li>
+<li>不论是硬连结或软链结都不会将原本的档案复制一份，只会占用非常少量的磁碟空间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>type： 显示命令的类型
+例如： type grep</p></li>
+<li><p>which：显示可执行程序的位置</p></li>
+<li><p>help: 显示命令的使用信息</p></li>
+<li><p>man：显示程序的手册</p></li>
+<li><p>whatis：显示命令的简要描述</p></li>
+<li><p>cat:
+读取一个或多个文件，并把它们复制到标准输出文件中。
+例如：cat >> lazy_dog.txt (以追加方式写到结尾)</p></li>
+<li><p>uniq:
+uniq &ndash; 删除列表中重复的行
+| sort | uniq | less</p></li>
+<li><p>wc:
+打印行数，字数，和字节数
+18，172，1053 output.txt</p></li>
+<li><p>grep:
+打印匹配行，查找匹配文本
+grep pattern [file &hellip;]</p></li>
+</ul>
+
+
+<p><strong>例如：ls /bin /usr/bin | sort | uniq | grep zip</strong></p>
+
+<ul>
+<li><p>head:
+输出文件的前10行，
+head output.txt</p>
+
+<p>可以和管道一起用：
+ls /usr/bin | head</p></li>
+<li><p>tail:
+输出文件的后10行，
+tail output.txt</p>
+
+<p>ls /usr/bin | tail</p></li>
+<li><p>tee:
+从 stdin 读取数据</p>
+
+<ul>
+<li><p>&ldquo;>&rdquo; (重定向，重新定义标准输出内容发送到哪里，后接文件名，可以把标准输出重定向到另一个文件中，而不是显示到屏幕上)
+例如： ls -lit > output.txt
+目的文件通常会从文件 “开头” 部分重新改写。（所以可以用来删除文件）</p></li>
+<li><p>&ldquo;>>&rdquo; (重定向， 将输出内容在文件尾部添加)</p></li>
+</ul>
+</li>
+<li><p>管道 “|”:
+使用管道操作符 “|”，可以把一个命令的标准输出送到另一个命令的标准输入中: command1 | command2</p>
+
+<p>例如： ps aux | grep python
+将当前进程传入到 grep python 中，看当前运行的 python 进程</p></li>
+<li><p>过滤器：
+ls /bin /usr/bin | sort | less
+把目录下的所有可执行程序合并成一个列表，并且排序</p></li>
+<li><p>mkdir / rmdir + 花括号扩展:
+mkdir {2014..2015}-0{1..9} {2014..2015}-0{10..12}
+rmdir {2014..2015}-0{1..9} {2014..2015}-0{10..12}</p></li>
+<li><p>使用历史命令：
+history | less, 查看历史列表</p></li>
+</ul>
+
+
+<p>history | grep /usr/bin, 查看有/usr/bin内容的命令</p>
+
+<ul>
+<li><p>!!: 重复最后一个执行的命令</p></li>
+<li><p>gcc –dumpspecs 会导出 GCC 默认的配置内容</p></li>
+<li><p>sed 文本处理工具，修改原文件</p></li>
+<li><p>!!: 重复最后一个执行的命令</p></li>
+<li><p>权限属性：
+  chmod –v a+wt
+  r: 许可打开和读取文件
+  w: 写入
+  x: 把文件当做程序来执行</p>
+
+<p>  0   000 &mdash;
+  1   001 &ndash;x
+  2   010 -w-
+  3   011 -wx
+  4   100 r&ndash;
+  5   101 r-x
+  6   110 rw-
+  7   111 rwx</p>
+
+<p>  文件所有者|组用户|其他所有用户
+  &mdash;|&mdash;|&mdash;
+  u | g | o
+  a: u, g, o 三者的组合; u (文件拥有者), g (所属组成员), o (其他用户)</p></li>
+<li><p>进程</p>
+
+<ul>
+<li><p>系统启动时，内核先把它的一些程序初始化为进程，然后运行一个称为init的程序。init依次运行一系列称为脚本(init script)的shell脚本(放在/etc目录下)，这些脚本将会启动所用的系统服务</p></li>
+<li><p>一个程序可以除法其他程序的运行，在进程中这种情况叫“父进程创建子进程”</p></li>
+<li><p>内核会被保存每个进程的信息以便确保任务有序进行。比如：每个进程将被分配一个PID(process ID)的号码。init进程的PID时钟是1.</p></li>
+<li><p>ps aux, 查看进程信息</p></li>
+<li><p>top, 查看极其运行情况的动态视图</p></li>
+<li><p>ping, 向网络主机发送特殊数据包，验证网络连接是否正常
+ping linuxcommand.org</p></li>
+<li><p>traceroute, 跟踪网络数据包的传输路径，显示文件通过网络从本地传输到指定主机过程中所有停靠的列表。
+traceroute slashdot.org</p></li>
+<li><p>netstat, 检查网络设置以及相关统计数据
+netstat -ie, 检查系统中的网络接口信息
+netstat -r , 显示内核的网络路由表</p></li>
+<li><p>ftp,  采用文件传输协议传输文件
+lftp, 更好的ftp
+wget, 非交互式网络下载工具</p></li>
+</ul>
+</li>
+<li><p>mount挂载命令，mount [选项] 设备名 目录名</p>
+
+<ul>
+<li>要挂载一个 EXT3 文件系统的磁盘分区到 /mnt 目录下，使用如下命令: mount /dev/sda3 /mnt (/dev/sda3是挂载分区，/mnt是被挂载的目录)</li>
+<li>mount   /dev/sdb2 /mnt
+挂载 /dev/sdb2 到 /mnt 下</li>
+<li>umount  /dev/sdb2 /mnt  <br/>
+卸载 /dev/sdb2 从 /mnt 中</li>
+<li>mkswap /dev/sdb1
+使sdb1作为交换分区</li>
+<li>swapoff /dev/sdb1
+取消/dev/sdb1的交换分区</li>
+</ul>
+</li>
+<li><p>ps | grep 和 ps aux | grep</p>
+
+<ul>
+<li>ps: 显示当前状态处于 running 的进程，grep 表示在这里搜索</li>
+<li><p>ps aux: 是显示所有进程和其状态
+例如：ps aux | grep python</p></li>
+<li><p>ps aux seems to conveniently list all processes and their status and resource usage</p></li>
+<li>What does aux mean?
+a = show processes for all users
+u = display the process&rsquo;s user/owner
+x = show processes not attached to a terminal</li>
+</ul>
+</li>
+<li><p>Linux命令前面加 ! 号</p></li>
+<li><p>比如 ps 跟 !ps 有什么区别
+执行最近时间的命令参数，比如最近输入ls -l，再输入！ls，系统就会按照最近时间的命令ls -l执行</p></li>
+<li><p>uname –a
+查看内核系统基本信息</p></li>
+<li><p>make</p>
+
+<ul>
+<li>make clean    <br/>
+删除大多数的编译生成文件, 但是会保留内核的配置文件 .config,  还有足够的编译支持来建立扩展模块</li>
+<li>make mrproper
+
+<ul>
+<li>删除所有的编译生成文件, 还有内核配置文件, 再加上各种备份文件</li>
+<li>在每次配置并重新编译内核前需要先执行 “make mrproper” 命令清理源代码树, 包括过去曾经配置的内核配置文件 “.config” 都将被清除. 即进行新的编译工作时将原来老的配置文件给删除到, 以免影响新的内核编译</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>dos2unix, 将windows格式转换为unix格式
+unix2dos, 将unix格式转换为windows格式</p></li>
+<li><p>当不知道用哪条命令时</p>
+
+<ul>
+<li>apropos: 当需要完成特定任务但又不知道命令的名字时，可使用关键字和 apropos 工具进行搜索。</li>
+<li>whatis: 和 apropos 很相似，但 whatis 仅搜索与关键字完全匹配的信息</li>
+</ul>
+</li>
+<li><p>获取用户和系统信息：</p>
+
+<ul>
+<li>who: 列出系统上的用户</li>
+<li>who am i: 得到用户正使用的终端或登录的时间</li>
+<li>finger: 列出系统上的用户</li>
+<li>write username: 给某人用户发消息</li>
+</ul>
+</li>
+<li><p>ls –F
+使得目录后显示斜杠，可执行文件后显示星号 *</p></li>
+<li><p>rm –r
+递归删除目录，删除目录中包含的目录和文件，还有目录自身</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -3694,135 +4030,6 @@ Set the value corresponding to the given key if it not already in the dictionary
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/04/25/reference-count-style-memory-management-and-arc-rules/">Reference Count Style Memory Management and ARC Rules</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-04-25T23:32:02+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:32 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Reference Count Style Memory Management</h3>
-
-<ul>
-<li>A variable hold the objects generate by itself</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="kt">id</span> <span class="n">obj</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSObject</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>A variable can hold the objects generate by other variables</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="kt">id</span> <span class="n">obj</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSMutableArray</span> <span class="n">array</span><span class="p">];</span>
-</span><span class='line'><span class="p">[</span><span class="n">obj</span> <span class="k">retain</span><span class="p">];</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>If the objects of a variable are no longer needed, the variable can release the objects held by itself</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="c1">// Generate by itself and hold the objects by itself</span>
-</span><span class='line'><span class="kt">id</span> <span class="n">obj</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSObject</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-</span><span class='line'><span class="p">[</span><span class="n">obj</span> <span class="k">release</span><span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// Generate by others and hold the objects by itself</span>
-</span><span class='line'><span class="kt">id</span> <span class="n">obj</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSMutableArray</span> <span class="n">array</span><span class="p">];</span>
-</span><span class='line'><span class="p">[</span><span class="n">obj</span> <span class="k">retain</span><span class="p">];</span>
-</span><span class='line'><span class="p">[</span><span class="n">obj</span> <span class="k">release</span><span class="p">];</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>A variable cannot release the objects held by others</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="kt">id</span> <span class="n">obj1</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj0</span> <span class="n">object</span><span class="p">];</span>
-</span><span class='line'><span class="p">[</span><span class="n">obj1</span> <span class="k">release</span><span class="p">];</span>    <span class="c1">// error</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>ARC Rules</h3>
-
-<ul>
-<li><p>Can&rsquo;t use retain / release / retainCount / autorelease</p>
-
-<ul>
-<li>Memory management is the compiler&rsquo;s job, so there is no need to use this methods</li>
-<li>This methods is need to use when the ARC is invalid</li>
-</ul>
-</li>
-<li><p>Can&rsquo;t use NSAllocateObject / NSDeallocateObject</p>
-
-<ul>
-<li>When ARC is available, the methods NSAllocateObject and NSDeallocateObject are both forbidden</li>
-</ul>
-</li>
-<li><p>Don&rsquo;t call dealloc explicitly</p>
-
-<ul>
-<li>When the object is abandoned, dealloc is called automatically no matter ARC is available or not</li>
-</ul>
-</li>
-<li><p>Using @autoreleasepool instead of using NSAutoreleasePool</p></li>
-<li><p>Object type variables can&rsquo;t be a member of structure</p>
-
-<ul>
-<li>Structure can&rsquo;t manage the life circle of its member</li>
-</ul>
-</li>
-</ul>
-
-
-<hr />
-
-<h3>Bonus: The Diffence Between Objective-C Objects and Core Foundation Objects</h3>
-
-<ul>
-<li>Objective-C objects are generated by <strong>Foundation Framework</strong></li>
-<li>Core foundation objects are generated by <strong>Core Foundation Framework</strong></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -3836,6 +4043,10 @@ Set the value corresponding to the given key if it not already in the dictionary
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/10/linux-notes-ii/">Linux Notes II</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2015/05/31/linux-notes-i/">Linux Notes I</a>
@@ -3853,10 +4064,6 @@ Set the value corresponding to the given key if it not already in the dictionary
         <a href="/blog/2015/05/01/python-notes-iv/">Python Notes IV</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/04/30/python-notes-iii/">Python Notes III</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -3864,7 +4071,7 @@ Set the value corresponding to the given key if it not already in the dictionary
     <ul id="categories">
         <li class='category'><a href='/blog/categories/essay/'>essay (2)</a></li>
 <li class='category'><a href='/blog/categories/ios/'>ios (2)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (2)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/poetry/'>poetry (1)</a></li>
 <li class='category'><a href='/blog/categories/python/'>python (5)</a></li>
