@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-06-11T23:43:17+08:00</updated>
+  <updated>2015-06-12T00:46:55+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Make_menuconfig Error and Solving Method]]></title>
+    <link href="http://reckhhh.github.io/blog/2015/06/12/make-menuconfig-error-and-solving-method/"/>
+    <updated>2015-06-12T00:46:02+08:00</updated>
+    <id>http://reckhhh.github.io/blog/2015/06/12/make-menuconfig-error-and-solving-method</id>
+    <content type="html"><![CDATA[<p>如使用 make menuconfig 配置内核，又碰巧系统没有安装 ncurses 库 (ubuntu系统
+默认没有安装此库), 会出现错误:</p>
+
+<p><strong><em> Unable to find the ncurses libraries or the
+</em></strong> required header files.
+*** &lsquo;make menuconfig&rsquo; requires the ncurses libraries.</p>
+
+<hr />
+
+<p>*** Install ncurses (ncurses-devel) and try again.</p>
+
+<hr />
+
+<p>make[1]: <strong><em> [scripts/kconfig/dochecklxdialog] Error 1
+make: </em></strong> [menuconfig] Error 2</p>
+
+<hr />
+
+<p>解决方法, 安装ncurses库:
+$sudo apt-get install libncurses5-dev</p>
+
+<ul>
+<li>ncurses库是字符终端下屏幕控制的基本库，可能很多新开发的程序都不使用了，不过如果要编译一些老程序，还经常用到</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Motto]]></title>

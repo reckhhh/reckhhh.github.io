@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>About - Black Mamba</title>
+  <title>Make_menuconfig Error and Solving Method - Black Mamba</title>
   <meta name="author" content="Chen Rui">
 
   
-  <meta name="description" content="About I am a software developer. I like reading, coding and playing video games. Comments Please enable JavaScript to view the comments powered by &hellip;">
+  <meta name="description" content="如使用 make menuconfig 配置内核，又碰巧系统没有安装 ncurses 库 (ubuntu系统
+默认没有安装此库), 会出现错误: Unable to find the ncurses libraries or the required header files.
+*** & &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://reckhhh.github.io/about/">
+  <link rel="canonical" href="http://reckhhh.github.io/blog/2015/06/12/make-menuconfig-error-and-solving-method/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Black Mamba" type="application/atom+xml">
@@ -65,30 +67,92 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">About</h1>
+    
+      <h1 class="entry-title">Make_menuconfig Error and Solving Method</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-12T00:46:02+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:46 am</span></time>
+        
+      </p>
     
   </header>
-  
-  <p>I am a software developer.</p>
 
-<p>I like reading, coding and playing video games.</p>
 
+<div class="entry-content"><p>如使用 make menuconfig 配置内核，又碰巧系统没有安装 ncurses 库 (ubuntu系统
+默认没有安装此库), 会出现错误:</p>
+
+<p><strong><em> Unable to find the ncurses libraries or the
+</em></strong> required header files.
+*** &lsquo;make menuconfig&rsquo; requires the ncurses libraries.</p>
+
+<hr />
+
+<p>*** Install ncurses (ncurses-devel) and try again.</p>
+
+<hr />
+
+<p>make[1]: <strong><em> [scripts/kconfig/dochecklxdialog] Error 1
+make: </em></strong> [menuconfig] Error 2</p>
+
+<hr />
+
+<p>解决方法, 安装ncurses库:
+$sudo apt-get install libncurses5-dev</p>
+
+<ul>
+<li>ncurses库是字符终端下屏幕控制的基本库，可能很多新开发的程序都不使用了，不过如果要编译一些老程序，还经常用到</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-    <footer>
+
+<span class="byline author vcard">Posted by <span class="fn">Chen Rui</span></span>
+
       
+
+
+
+
+<time class='entry-date' datetime='2015-06-12T00:46:02+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:46 am</span></time>
       
-        <div class="sharing">
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
   
   
   
 </div>
 
+    
+    <p class="meta">
       
-    </footer>
-  
+        <a class="basic-alignment left" href="/blog/2015/06/11/motto/" title="Previous Post: Motto">&laquo; Motto</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
   <section>
@@ -163,8 +227,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://reckhhh.github.io/about/index.html';
-        var disqus_url = 'http://reckhhh.github.io/about/index.html';
+        var disqus_identifier = 'http://reckhhh.github.io/blog/2015/06/12/make-menuconfig-error-and-solving-method/';
+        var disqus_url = 'http://reckhhh.github.io/blog/2015/06/12/make-menuconfig-error-and-solving-method/';
         var disqus_script = 'embed.js';
       
     (function () {

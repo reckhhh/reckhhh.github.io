@@ -9,7 +9,9 @@
   <meta name="author" content="Chen Rui">
 
   
-  <meta name="description" content="If you find something too difficult to finish, dividing it into several steps and continuing find the right approach that you can make progress. &hellip;">
+  <meta name="description" content="如使用 make menuconfig 配置内核，又碰巧系统没有安装 ncurses 库 (ubuntu系统
+默认没有安装此库), 会出现错误: Unable to find the ncurses libraries or the required header files.
+*** & &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +68,59 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/06/12/make-menuconfig-error-and-solving-method/">Make_menuconfig Error and Solving Method</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-12T00:46:02+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:46 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>如使用 make menuconfig 配置内核，又碰巧系统没有安装 ncurses 库 (ubuntu系统
+默认没有安装此库), 会出现错误:</p>
+
+<p><strong><em> Unable to find the ncurses libraries or the
+</em></strong> required header files.
+*** &lsquo;make menuconfig&rsquo; requires the ncurses libraries.</p>
+
+<hr />
+
+<p>*** Install ncurses (ncurses-devel) and try again.</p>
+
+<hr />
+
+<p>make[1]: <strong><em> [scripts/kconfig/dochecklxdialog] Error 1
+make: </em></strong> [menuconfig] Error 2</p>
+
+<hr />
+
+<p>解决方法, 安装ncurses库:
+$sudo apt-get install libncurses5-dev</p>
+
+<ul>
+<li>ncurses库是字符终端下屏幕控制的基本库，可能很多新开发的程序都不使用了，不过如果要编译一些老程序，还经常用到</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -3391,419 +3446,6 @@ Set the value corresponding to the given key if it not already in the dictionary
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/04/27/python-notes-i/">Python Notes I</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-04-27T12:28:38+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:28 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Work effectively with IDLE</h3>
-
-<ul>
-<li>Press <strong>TAB</strong> key, IDLE will offer suggestions to help you complete your statement</li>
-<li>Press <strong>Alt-P</strong> to recall the previous code statement and press <strong>Alt-N</strong> to move to the next code statement</li>
-</ul>
-
-
-<h3>Deal with Python list</h3>
-
-<ul>
-<li>Python&rsquo;s variable identifiers don&rsquo;t have a type, Python&rsquo;s list is a <strong>high-level collection</strong></li>
-<li>Using print() and len() to work out how many data items are in the list</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">animal</span>  <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Dog&quot;</span><span class="p">,</span> <span class="s">&#39;Pig&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&quot;Duck&quot;</span><span class="p">]</span>
-</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
-</span><span class='line'><span class="p">[</span><span class="s">&#39;Dog&#39;</span><span class="p">,</span> <span class="s">&#39;Pig&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&#39;Duck&#39;</span><span class="p">]</span>
-</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">animal</span><span class="p">))</span>
-</span><span class='line'><span class="mi">4</span>
-</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</span><span class='line'><span class="n">Pig</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Using append(), extend() and pop() method to add and remove data from the list</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;Tiger&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
-</span><span class='line'><span class="p">[</span><span class="s">&#39;Dog&#39;</span><span class="p">,</span> <span class="s">&#39;Pig&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&#39;Duck&#39;</span><span class="p">,</span> <span class="s">&#39;Tiger&#39;</span><span class="p">]</span>
-</span><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-</span><span class='line'><span class="s">&#39;Tiger&#39;</span>
-</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
-</span><span class='line'><span class="p">[</span><span class="s">&#39;Dog&#39;</span><span class="p">,</span> <span class="s">&#39;Pig&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&#39;Duck&#39;</span><span class="p">]</span>
-</span><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s">&quot;Fish&quot;</span><span class="p">,</span> <span class="s">&quot;Bird&quot;</span><span class="p">])</span>
-</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
-</span><span class='line'><span class="p">[</span><span class="s">&#39;Dog&#39;</span><span class="p">,</span> <span class="s">&#39;Pig&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&#39;Duck&#39;</span><span class="p">,</span> <span class="s">&#39;Fish&#39;</span><span class="p">,</span> <span class="s">&#39;Bird&#39;</span><span class="p">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Using remove() and insert() to find and remove or add a <strong>specific</strong> data from list</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">&quot;Pig&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
-</span><span class='line'><span class="p">[</span><span class="s">&#39;Dog&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&#39;Duck&#39;</span><span class="p">,</span> <span class="s">&#39;Fish&#39;</span><span class="p">,</span> <span class="s">&#39;Bird&#39;</span><span class="p">]</span>
-</span><span class='line'><span class="n">animal</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;Bull&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
-</span><span class='line'><span class="p">[</span><span class="s">&#39;Dog&#39;</span><span class="p">,</span> <span class="s">&#39;Bull&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&#39;Duck&#39;</span><span class="p">,</span> <span class="s">&#39;Fish&#39;</span><span class="p">,</span> <span class="s">&#39;Bird&#39;</span><span class="p">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>For loops work with lists of any size</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Dog&quot;</span><span class="p">,</span> <span class="s">&#39;Pig&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&quot;Duck&quot;</span><span class="p">,</span> <span class="s">&quot;Fish&quot;</span><span class="p">]</span>
-</span><span class='line'><span class="k">for</span> <span class="n">each_animal</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">:</span>
-</span><span class='line'>    <span class="k">print</span> <span class="n">each_animal</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Store list within lists</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">movie</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Titanic&quot;</span><span class="p">,</span> <span class="mi">1997</span><span class="p">,</span> <span class="s">&quot;Romance &amp; Disaster&quot;</span><span class="p">,</span> <span class="s">&quot;194 minutes&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;James Cameron&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;Leonardo DiCaprio&quot;</span><span class="p">,</span> <span class="s">&quot;Kate Winslet&quot;</span><span class="p">,</span> <span class="s">&quot;Billy Zane&quot;</span><span class="p">,</span> <span class="s">&quot;Kathy Bates&quot;</span><span class="p">,</span> <span class="s">&quot;Frances Fisher&quot;</span><span class="p">]]]</span>
-</span><span class='line'><span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">movie</span><span class="p">:</span>
-</span><span class='line'>    <span class="k">print</span> <span class="n">each_item</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">Titanic</span>
-</span><span class='line'><span class="mi">1997</span>
-</span><span class='line'><span class="n">Romance</span> <span class="o">&amp;</span> <span class="n">Disaster</span>
-</span><span class='line'><span class="mi">194</span> <span class="n">minutes</span>
-</span><span class='line'><span class="p">[</span><span class="s">&#39;James Cameron&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;Leonardo DiCaprio&#39;</span><span class="p">,</span> <span class="s">&#39;Kate Winslet&#39;</span><span class="p">,</span> <span class="s">&#39;Billy Zane&#39;</span><span class="p">,</span> <span class="s">&#39;Kathy Bates&#39;</span><span class="p">,</span> <span class="s">&#39;Frances Fisher&#39;</span><span class="p">]]</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">print</span> <span class="n">movie</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-</span><span class='line'><span class="n">Leonardo</span> <span class="n">DiCaprio</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Don&rsquo;t repeat code and create a function</h3>
-
-<ul>
-<li>isinstance() BIF checks whether an identifier refers to a data object of some specified type</li>
-<li>Using <strong>def</strong> to define a custom function</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">function_name</span> <span class="p">(</span><span class="n">arguments</span><span class="p">):</span>
-</span><span class='line'>    <span class="n">code</span> <span class="n">suite</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Python3 defaults its recursion limit to 1,000</li>
-<li>Print items in list within lists</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">print_item</span><span class="p">(</span><span class="n">the_list</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">each_item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-</span><span class='line'>            <span class="n">print_item</span><span class="p">(</span><span class="n">each_item</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="n">each_item</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">print_item</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">Titanic</span>
-</span><span class='line'><span class="mi">1997</span>
-</span><span class='line'><span class="n">Romance</span> <span class="o">&amp;</span> <span class="n">Disaster</span>
-</span><span class='line'><span class="mi">194</span> <span class="n">minutes</span>
-</span><span class='line'><span class="n">James</span> <span class="n">Cameron</span>
-</span><span class='line'><span class="n">Leonardo</span> <span class="n">DiCaprio</span>
-</span><span class='line'><span class="n">Kate</span> <span class="n">Winslet</span>
-</span><span class='line'><span class="n">Billy</span> <span class="n">Zane</span>
-</span><span class='line'><span class="n">Kathy</span> <span class="n">Bates</span>
-</span><span class='line'><span class="n">Frances</span> <span class="n">Fisher</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Build a distribution and upload code to PyPI</h3>
-
-<ul>
-<li>Create a folder for the module</li>
-<li>Create a file called &ldquo;setup.py&rdquo; in the new folder</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">distutils.core</span> <span class="kn">import</span> <span class="n">setup</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">setup</span><span class="p">(</span>
-</span><span class='line'>    <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;nester&#39;</span><span class="p">,</span>
-</span><span class='line'>    <span class="n">version</span> <span class="o">=</span> <span class="s">&#39;1.0&#39;</span><span class="p">,</span>
-</span><span class='line'>    <span class="n">py_modules</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;nester&#39;</span><span class="p">],</span>
-</span><span class='line'>    <span class="n">author</span> <span class="o">=</span> <span class="s">&#39;name&#39;</span><span class="p">,</span>
-</span><span class='line'>    <span class="n">author_email</span> <span class="o">=</span> <span class="s">&#39;name@somewhere.com&#39;</span><span class="p">,</span>
-</span><span class='line'>    <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;name@someplace.com&#39;</span><span class="p">,</span>
-</span><span class='line'>    <span class="n">description</span> <span class="o">=</span> <span class="s">&#39;A simple printer of nested lists&#39;</span><span class="p">,</span>
-</span><span class='line'>    <span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Build a distribution file, enter the command at the prompt</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Install the distribution into local copy of Python</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Then, the module has been <em>transformed</em> into a distribution and <em>installed</em> into local copy of Python</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># at the first time, should type the username and password</span>
-</span><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">register</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Finally, upload code to PyPI</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span> <span class="n">upload</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Import a module to use it</h3>
-
-<ul>
-<li>For instance, there is a function named &ldquo;nester.py&rdquo;</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">print_item</span> <span class="p">(</span><span class="n">the_list</span><span class="p">):</span>
-</span><span class='line'>    <span class="c"># This function takes a argument called &quot;the_list&quot;</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">each_item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-</span><span class='line'>            <span class="n">print_item</span> <span class="p">(</span><span class="n">each_item</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>            <span class="k">print</span> <span class="p">(</span><span class="n">each_item</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Type <strong>F5</strong> to run the module&rsquo;s code, use the following list data</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># allow us to access nester&#39;s functions</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">nester</span>
-</span><span class='line'><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Pig&#39;</span><span class="p">,</span> <span class="s">&#39;Dog&#39;</span><span class="p">,</span> <span class="s">&#39;Cat&#39;</span><span class="p">,</span> <span class="s">&#39;Bird&#39;</span><span class="p">,</span> <span class="s">&#39;Fish&#39;</span><span class="p">]</span>
-</span><span class='line'><span class="c"># &quot;nester&quot; is associated namespace which like family names helps to qualify what the code mean</span>
-</span><span class='line'><span class="n">nester</span><span class="o">.</span><span class="n">print_item</span><span class="p">(</span><span class="n">animals</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Use optional arguments</h3>
-
-<ul>
-<li>Update the function &ldquo;nester.py&rdquo; with default arguments</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">print_item</span> <span class="p">(</span><span class="n">the_list</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">each_item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-</span><span class='line'>            <span class="n">print_item</span> <span class="p">(</span><span class="n">each_item</span><span class="p">,</span> <span class="n">indent</span><span class="p">,</span> <span class="n">level</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>            <span class="k">if</span> <span class="n">indent</span><span class="p">:</span>
-</span><span class='line'>                <span class="k">for</span> <span class="n">tab_stop</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">level</span><span class="p">):</span>
-</span><span class='line'>                    <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39;@!&#39;</span><span class="p">)</span>
-</span><span class='line'>            <span class="k">print</span> <span class="p">(</span><span class="n">each_item</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Use <strong>indent</strong> to control whether indent code</li>
-<li>Use <strong>level</strong> to control the init indentation level</li>
-</ul>
-
-
-<h3>Update reversion to PyPI</h3>
-
-<ul>
-<li>Edit &ldquo;setup.py&rdquo; so that it has a new version</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">version</span> <span class="o">=</span> <span class="s">&#39;1.1&#39;</span><span class="p">,</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Upload the new distribution to PyPI</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdisk</span> <span class="n">upload</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<hr />
-
-<h3>Bonus I: Python BIFs</h3>
-
-<ul>
-<li>BIFs is short for <em>build-in functions</em>, it can mean less code to write</li>
-<li>There were over 70 BIFs in Python3</li>
-<li>BIFs have their very own namespace called <strong><em> builtins </em></strong></li>
-<li>At Python or IDLE shell, typing dir(<strong><em> builtins </em></strong>) to see a list of the built-in functions</li>
-<li>To find out what any BIF does—like input(), for example—type help(input) at the shell for a description of the BIFs function</li>
-<li>Before write new code, think BIF at first</li>
-</ul>
-
-
-<h3>Bonus II: .pyc Files</h3>
-
-<ul>
-<li>If the module code hasn&rsquo;t changed, no translation occurs and the &ldquo;compiled&rdquo; code is executed</li>
-<li>If the code has changed, the translation occurs (creating a new .pyc file) as needed</li>
-<li>When Python sees a .pyc file, it tries to use it because doing so makes everything go much faster</li>
-<li>The use of .pyc file (if found) is primarily a <strong>potential runtime optimization</strong> performed by the interpreter, it can&rsquo;t be created by users</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -3817,6 +3459,10 @@ Set the value corresponding to the given key if it not already in the dictionary
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/12/make-menuconfig-error-and-solving-method/">Make_menuconfig Error and Solving Method</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2015/06/11/motto/">Motto</a>
@@ -3834,10 +3480,6 @@ Set the value corresponding to the given key if it not already in the dictionary
         <a href="/blog/2015/05/02/python-notes-v/">Python Notes V</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/05/01/octopress-error-pygments-cant-parse-unknown-language/">Octopress Error: Pygments Can&#8217;t Parse Unknown Language: &lt;/p></a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -3845,7 +3487,7 @@ Set the value corresponding to the given key if it not already in the dictionary
     <ul id="categories">
         <li class='category'><a href='/blog/categories/essay/'>essay (2)</a></li>
 <li class='category'><a href='/blog/categories/ios/'>ios (2)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (2)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (3)</a></li>
 <li class='category'><a href='/blog/categories/motto/'>motto (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/poetry/'>poetry (1)</a></li>
