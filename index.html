@@ -90,15 +90,21 @@
 
   <div class="entry-content"><p>When install a software, sometimes the following error will occur:</p>
 
-<p>E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
-E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?</p>
+<ul>
+<li>E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)</li>
+<li>E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?</li>
+</ul>
+
 
 <hr />
 
 <p>This is the solution:</p>
 
-<p>sudo rm /var/cache/apt/archives/lock
-sudo rm /var/lib/dpkg/lock</p>
+<ul>
+<li>sudo rm /var/cache/apt/archives/lock</li>
+<li>sudo rm /var/lib/dpkg/lock</li>
+</ul>
+
 </div>
   
   
