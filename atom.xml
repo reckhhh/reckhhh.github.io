@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-06-15T23:45:27+08:00</updated>
+  <updated>2015-06-15T23:46:42+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -33,7 +33,7 @@ sudo rm /var/lib/dpkg/lock</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Make_menuconfig Error and Solving Method]]></title>
+    <title type="html"><![CDATA[Make Menuconfig Error and Solving Method]]></title>
     <link href="http://reckhhh.github.io/blog/2015/06/12/make-menuconfig-error-and-solving-method/"/>
     <updated>2015-06-12T00:46:02+08:00</updated>
     <id>http://reckhhh.github.io/blog/2015/06/12/make-menuconfig-error-and-solving-method</id>
