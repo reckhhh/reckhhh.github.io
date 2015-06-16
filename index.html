@@ -9,7 +9,9 @@
   <meta name="author" content="Chen Rui">
 
   
-  <meta name="description" content="When install a software, sometimes the following error will occur: E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily &hellip;">
+  <meta name="description" content="下载 arm-linux-gcc-4.3.2.tg 包并解压到 /usr/local/ 目录下
+配置 /etc/profile 全局环境变量, 在文件末尾加上: export PATH=$PATH:/usr/local/arm/4.3.2/bin
+source /etc/profile &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +68,46 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/06/16/install-arm-linux-gcc-on-linux/">Install Arm-linux-gcc on Linux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-16T23:39:55+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:39 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li><p>下载 arm-linux-gcc-4.3.2.tg 包并解压到 /usr/local/ 目录下</p></li>
+<li><p>配置 /etc/profile 全局环境变量, 在文件末尾加上:</p>
+
+<ul>
+<li><p>export PATH=$PATH:/usr/local/arm/4.3.2/bin</p></li>
+<li><p>source /etc/profile</p></li>
+</ul>
+</li>
+<li><p>配置成功后在命令行输入 arm-linux-gcc -v 命令查看版本信息</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -2820,45 +2862,6 @@ Set the value corresponding to the given key if it not already in the dictionary
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/04/29/wither-and-fall/">Wither and Fall</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-04-29T01:13:50+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:13 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It should be a splendid flowering season</p>
-
-<p>But grass wither and the flowers fall</p>
-
-<p>It was painful</p>
-
-<p>No flowers nor fruits</p>
-
-<p>Reluctant withered at this time</p>
-
-<p>But falled just this time</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -2872,6 +2875,10 @@ Set the value corresponding to the given key if it not already in the dictionary
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/16/install-arm-linux-gcc-on-linux/">Install Arm-linux-gcc on Linux</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2015/06/15/ubuntu-install-software-and-its-solution/">Ubuntu Install Software and Its Solution</a>
@@ -2889,10 +2896,6 @@ Set the value corresponding to the given key if it not already in the dictionary
         <a href="/blog/2015/06/10/linux-notes-ii/">Linux Notes II</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/05/31/linux-notes-i/">Linux Notes I</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -2900,7 +2903,7 @@ Set the value corresponding to the given key if it not already in the dictionary
     <ul id="categories">
         <li class='category'><a href='/blog/categories/essay/'>essay (2)</a></li>
 <li class='category'><a href='/blog/categories/ios/'>ios (2)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (4)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (5)</a></li>
 <li class='category'><a href='/blog/categories/motto/'>motto (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/poetry/'>poetry (1)</a></li>
