@@ -9,9 +9,11 @@
   <meta name="author" content="Chen Rui">
 
   
-  <meta name="description" content="下载 arm-linux-gcc-4.3.2.tg 包并解压到 /usr/local/ 目录下
-配置 /etc/profile 全局环境变量, 在文件末尾加上: export PATH=$PATH:/usr/local/arm/4.3.2/bin
-source /etc/profile &hellip;">
+  <meta name="description" content="Linux 启动过程: 加载 BIOS 的硬件信息, 并获取第一个启动设备代号
+读取第一个启动设备的 MBR 引导加载程序 (如 lilo, grub)
+加载核心操作系统的核心信息, 核心开始解压缩, 并且尝试驱动所有硬件设备
+核心执行 init 程序并获取运行信息
+init 执行 /etc/rc &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +70,95 @@ source /etc/profile &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/06/17/linux-notes-iv/">Linux Notes IV</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-17T23:40:19+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:40 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Linux 启动过程:</h3>
+
+<ul>
+<li>加载 BIOS 的硬件信息, 并获取第一个启动设备代号</li>
+<li>读取第一个启动设备的 MBR 引导加载程序 (如 lilo, grub)</li>
+<li>加载核心操作系统的核心信息, 核心开始解压缩, 并且尝试驱动所有硬件设备</li>
+<li>核心执行 init 程序并获取运行信息</li>
+<li>init 执行 /etc/rc.d/rc.sysinit 文件</li>
+<li>启动核心的外挂模块 (/etc/modprobe.conf)</li>
+<li>init 执行运行的各个批处理文件 (Scripts)</li>
+<li>init 执行 /etc/rc.d/rc.local 文件</li>
+<li>执行 /bin/login 程序, 等待用户登录</li>
+<li>登录之后开始以 Shell 控制主机</li>
+</ul>
+
+
+<h3>引导加载程序 Grub:</h3>
+
+<ul>
+<li>引导加载程序是载入核心的工具</li>
+<li>将引导加载程序分为两个阶段 (stage) 来执行
+
+<ul>
+<li>第一阶段为引导加载程序的主程序, 这个主程序必须要安装在启动区, 即 MBR 或超级块</li>
+<li>第二阶段为载入引导加载程序的所有设置文件与相关的环境参数文件, 都在 /root 下面</li>
+</ul>
+</li>
+<li>针对启动项目, 引导加载程序可以做到:
+
+<ul>
+<li>引导加载程序可以直接指定并取用核心文件, 加载到主存储器中</li>
+<li>也可以将加载程序的控制权移交给下一个加载程序</li>
+</ul>
+</li>
+<li>MBR 的 grub 可以做到:
+
+<ul>
+<li>直接指定核心 (boot/vmlinux) 来进行启动</li>
+<li>将控制权交给 /dev/hda2 超级块中的 grub 进行管理</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Grub 的设置文件 /boot/grub/menu.1st 与安装类型:</h3>
+
+<ul>
+<li>Grub 启动时可自行编辑与修改启动设置项目, 类似 bash 的命令模式</li>
+<li>可以动态搜索设置文件, 而不需要在修改设置文件后重新安装 grub, 即只要修改完 /boot/grub/menu.1st 里的设置, 下次启动就生效了</li>
+<li>Grub 与硬盘的关系
+
+<ul>
+<li>grub 对硬盘的代号: (hd0, 0)</li>
+<li>硬盘代号以小括号 () 括起来</li>
+<li>硬盘以 hd 表示, 后面接一组数字</li>
+<li>第一个搜索到的硬盘为 0 号, 第二个为 1 号,以此类推</li>
+<li>第一个硬盘的第一个分区代号为 0, 以此类推</li>
+</ul>
+</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -2495,373 +2586,6 @@ Set the value corresponding to the given key if it not already in the dictionary
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/04/30/python-notes-iii/">Python Notes III</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-04-30T01:04:15+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:04 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Sort in two ways</h3>
-
-<ul>
-<li><strong>sort()</strong>: In-place sorting, <em>replaces</em> the original data</li>
-<li><strong>sorted()</strong>: Copied sorting, return a <em>sorted copy</em> of the original data</li>
-<li>sorting order</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>    <span class="c"># Ascending</span>
-</span><span class='line'><span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>  <span class="c"># Descending</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Get top 3 data from file</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">sanitize</span><span class="p">(</span><span class="n">time_string</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">if</span> <span class="s">&#39;-&#39;</span> <span class="ow">in</span> <span class="n">time_string</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">splitter</span> <span class="o">=</span> <span class="s">&#39;-&#39;</span>
-</span><span class='line'>    <span class="k">elif</span> <span class="s">&#39;:&#39;</span> <span class="ow">in</span> <span class="n">time_string</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">splitter</span> <span class="o">=</span> <span class="s">&#39;:&#39;</span>
-</span><span class='line'>    <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">return</span> <span class="p">(</span><span class="n">time_string</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="p">(</span><span class="n">mins</span><span class="p">,</span> <span class="n">secs</span><span class="p">)</span> <span class="o">=</span> <span class="n">time_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">splitter</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">return</span> <span class="p">(</span><span class="n">mins</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">secs</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">try</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">data</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-</span><span class='line'>        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;,&#39;</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">ioerr</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&#39;File error: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ioerr</span><span class="p">))</span>
-</span><span class='line'>        <span class="k">return</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># file operation</span>
-</span><span class='line'><span class="n">james</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="s">&#39;james.txt&#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">clean_james</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span class='line'><span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="n">james</span><span class="p">:</span>
-</span><span class='line'>    <span class="n">clean_james</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sanitize</span><span class="p">(</span><span class="n">each_t</span><span class="p">))</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">unique_james</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span class='line'><span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="n">clean_james</span><span class="p">:</span>
-</span><span class='line'>    <span class="k">if</span> <span class="n">each_t</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_james</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">unique_james</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">each_t</span><span class="p">)</span>
-</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">unique_james</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Remove the duplicates</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># file operation can be replaced with one line code</span>
-</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">sanitize</span><span class="p">(</span><span class="n">each_t</span><span class="p">)</span> <span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="n">get_date</span><span class="p">(</span><span class="s">&quot;james.txt&quot;</span><span class="p">)]))[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Bundle the code and data in a dictionary</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">try</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">data</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-</span><span class='line'>        <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;,&#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="c"># return a dictionary</span>
-</span><span class='line'>        <span class="k">return</span><span class="p">({</span><span class="s">&#39;Name&#39;</span> <span class="p">:</span> <span class="n">temp</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
-</span><span class='line'>                <span class="s">&#39;DOB&#39;</span>  <span class="p">:</span> <span class="n">temp</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
-</span><span class='line'>                <span class="s">&#39;Times&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">sanitize</span><span class="p">(</span><span class="n">each_t</span><span class="p">)</span> <span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="n">temp</span><span class="p">]))[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])})</span>
-</span><span class='line'>        <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">ioerr</span><span class="p">:</span>
-</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="s">&#39;File error: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ioerr</span><span class="p">))</span>
-</span><span class='line'>            <span class="k">return</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">sarah</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="s">&#39;sarah2.txt&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">sarah</span><span class="p">[</span><span class="s">&#39;Name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&quot;&#39;s fastest times are: &quot;</span> <span class="o">+</span> <span class="n">sarah</span><span class="p">[</span><span class="s">&#39;Times&#39;</span><span class="p">])</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Amend the code and data in a class that inherit from BIF <strong>list</strong></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">Athlete</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a_name</span><span class="p">,</span> <span class="n">a_dob</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">a_times</span><span class="o">=</span><span class="p">[]):</span>
-</span><span class='line'>        <span class="nb">list</span><span class="o">.</span><span class="n">__init__</span><span class="p">([])</span>
-</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">a_name</span>
-</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">dob</span> <span class="o">=</span> <span class="n">a_dob</span>
-</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">a_times</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">top3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">return</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">sanitize</span><span class="p">(</span><span class="n">each_t</span><span class="p">)</span> <span class="k">for</span> <span class="n">each_t</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">]))[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]))</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">try</span><span class="p">:</span>
-</span><span class='line'>        <span class="o">...</span>
-</span><span class='line'>        <span class="k">return</span><span class="p">(</span><span class="n">Athlete</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">temp</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">temp</span><span class="p">))</span>
-</span><span class='line'>    <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">ioerr</span><span class="p">:</span>
-</span><span class='line'>        <span class="o">...</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">sarah</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="s">&#39;sarah2.txt&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">sarah</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&quot;&#39;s fastest times are: &quot;</span> <span class="o">+</span> <span class="n">sarah</span><span class="o">.</span><span class="n">top3</span><span class="p">())</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Model the data</h3>
-
-<ul>
-<li>Put class AthleteList in a module file</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">pickle</span>
-</span><span class='line'><span class="c"># class AthleteList is saved in athletelist.py, import AthleteList using this line of code</span>
-</span><span class='line'><span class="c"># use dir() command to confirm that the import has been successful</span>
-</span><span class='line'><span class="kn">from</span> <span class="nn">athletelist</span> <span class="kn">import</span> <span class="n">AthleteList</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-</span><span class='line'>    <span class="o">...</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">put_to_store</span><span class="p">(</span><span class="n">file_list</span><span class="p">):</span>
-</span><span class='line'>    <span class="n">all_athletes</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">each_file</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">ath</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">each_file</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">all_athletes</span><span class="p">[</span><span class="n">ath</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">ath</span>
-</span><span class='line'>    <span class="k">try</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;athletes.pickle&#39;</span><span class="p">,</span> <span class="s">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">athf</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">all_athletes</span><span class="p">,</span> <span class="n">athf</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">ioerr</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&#39;File error (put_and_store): &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ioerr</span><span class="p">))</span>
-</span><span class='line'>        <span class="k">return</span> <span class="p">(</span><span class="n">all_athletes</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">get_from_store</span><span class="p">():</span>
-</span><span class='line'>    <span class="n">all_athletes</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span class='line'>    <span class="k">try</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;athletes.pickle&#39;</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">athf</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">all_athletes</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">athf</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">ioerr</span><span class="p">:</span>
-</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="s">&#39;File error (get_from_store): &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ioerr</span><span class="p">))</span>
-</span><span class='line'>            <span class="k">return</span> <span class="p">(</span><span class="n">all_athletes</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<hr />
-
-<h3>Bonus I: Factory Function: set()</h3>
-
-<ul>
-<li>Build an unordered collection of unique elements</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-</span><span class='line'><span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</span><span class='line'><span class="c"># output</span>
-</span><span class='line'><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Bonus II: BIF: pop(i)</h3>
-
-<ul>
-<li>pop(i) call returns and removes data from the front of a list at location</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-</span><span class='line'><span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</span><span class='line'><span class="c"># output</span>
-</span><span class='line'><span class="mi">3</span>
-</span><span class='line'><span class="n">data</span>
-</span><span class='line'><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Bonus III: List Comprehension</h3>
-
-<ul>
-<li>When the code is like this</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">new</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span class='line'><span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">old</span><span class="p">:</span>
-</span><span class='line'>    <span class="o">...</span>
-</span><span class='line'><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">each_item</span><span class="p">))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Rewrite it like this</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">new</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">each_item</span><span class="p">)</span> <span class="k">for</span> <span class="n">each_item</span> <span class="ow">in</span> <span class="n">old</span><span class="p">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Bonus IV: Dictionary</h3>
-
-<ul>
-<li>Two way to create an empty dictionary</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># method 1</span>
-</span><span class='line'><span class="n">d1</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span class='line'><span class="c"># method 2</span>
-</span><span class='line'><span class="n">d2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -2875,6 +2599,10 @@ Set the value corresponding to the given key if it not already in the dictionary
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/17/linux-notes-iv/">Linux Notes IV</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2015/06/16/install-arm-linux-gcc-on-linux/">Install Arm-linux-gcc on Linux</a>
@@ -2892,10 +2620,6 @@ Set the value corresponding to the given key if it not already in the dictionary
         <a href="/blog/2015/06/11/motto/">Motto</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/06/10/linux-notes-ii/">Linux Notes II</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -2903,7 +2627,7 @@ Set the value corresponding to the given key if it not already in the dictionary
     <ul id="categories">
         <li class='category'><a href='/blog/categories/essay/'>essay (2)</a></li>
 <li class='category'><a href='/blog/categories/ios/'>ios (2)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (5)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (6)</a></li>
 <li class='category'><a href='/blog/categories/motto/'>motto (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/poetry/'>poetry (1)</a></li>

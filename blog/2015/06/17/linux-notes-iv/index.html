@@ -5,11 +5,15 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>About - Black Mamba</title>
+  <title>Linux Notes IV - Black Mamba</title>
   <meta name="author" content="Chen Rui">
 
   
-  <meta name="description" content="About I am a software developer. I like reading, coding and playing video games. Comments Please enable JavaScript to view the comments powered by &hellip;">
+  <meta name="description" content="Linux 启动过程: 加载 BIOS 的硬件信息, 并获取第一个启动设备代号
+读取第一个启动设备的 MBR 引导加载程序 (如 lilo, grub)
+加载核心操作系统的核心信息, 核心开始解压缩, 并且尝试驱动所有硬件设备
+核心执行 init 程序并获取运行信息
+init 执行 /etc/rc &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://reckhhh.github.io/about/">
+  <link rel="canonical" href="http://reckhhh.github.io/blog/2015/06/17/linux-notes-iv/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Black Mamba" type="application/atom+xml">
@@ -65,30 +69,128 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">About</h1>
+    
+      <h1 class="entry-title">Linux Notes IV</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-17T23:40:19+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:40 pm</span></time>
+        
+      </p>
     
   </header>
-  
-  <p>I am a software developer.</p>
 
-<p>I like reading, coding and playing video games.</p>
 
+<div class="entry-content"><h3>Linux 启动过程:</h3>
+
+<ul>
+<li>加载 BIOS 的硬件信息, 并获取第一个启动设备代号</li>
+<li>读取第一个启动设备的 MBR 引导加载程序 (如 lilo, grub)</li>
+<li>加载核心操作系统的核心信息, 核心开始解压缩, 并且尝试驱动所有硬件设备</li>
+<li>核心执行 init 程序并获取运行信息</li>
+<li>init 执行 /etc/rc.d/rc.sysinit 文件</li>
+<li>启动核心的外挂模块 (/etc/modprobe.conf)</li>
+<li>init 执行运行的各个批处理文件 (Scripts)</li>
+<li>init 执行 /etc/rc.d/rc.local 文件</li>
+<li>执行 /bin/login 程序, 等待用户登录</li>
+<li>登录之后开始以 Shell 控制主机</li>
+</ul>
+
+
+<h3>引导加载程序 Grub:</h3>
+
+<ul>
+<li>引导加载程序是载入核心的工具</li>
+<li>将引导加载程序分为两个阶段 (stage) 来执行
+
+<ul>
+<li>第一阶段为引导加载程序的主程序, 这个主程序必须要安装在启动区, 即 MBR 或超级块</li>
+<li>第二阶段为载入引导加载程序的所有设置文件与相关的环境参数文件, 都在 /root 下面</li>
+</ul>
+</li>
+<li>针对启动项目, 引导加载程序可以做到:
+
+<ul>
+<li>引导加载程序可以直接指定并取用核心文件, 加载到主存储器中</li>
+<li>也可以将加载程序的控制权移交给下一个加载程序</li>
+</ul>
+</li>
+<li>MBR 的 grub 可以做到:
+
+<ul>
+<li>直接指定核心 (boot/vmlinux) 来进行启动</li>
+<li>将控制权交给 /dev/hda2 超级块中的 grub 进行管理</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Grub 的设置文件 /boot/grub/menu.1st 与安装类型:</h3>
+
+<ul>
+<li>Grub 启动时可自行编辑与修改启动设置项目, 类似 bash 的命令模式</li>
+<li>可以动态搜索设置文件, 而不需要在修改设置文件后重新安装 grub, 即只要修改完 /boot/grub/menu.1st 里的设置, 下次启动就生效了</li>
+<li>Grub 与硬盘的关系
+
+<ul>
+<li>grub 对硬盘的代号: (hd0, 0)</li>
+<li>硬盘代号以小括号 () 括起来</li>
+<li>硬盘以 hd 表示, 后面接一组数字</li>
+<li>第一个搜索到的硬盘为 0 号, 第二个为 1 号,以此类推</li>
+<li>第一个硬盘的第一个分区代号为 0, 以此类推</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-    <footer>
+
+<span class="byline author vcard">Posted by <span class="fn">Chen Rui</span></span>
+
       
+
+
+
+
+<time class='entry-date' datetime='2015-06-17T23:40:19+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:40 pm</span></time>
       
-        <div class="sharing">
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
   
   
   
 </div>
 
+    
+    <p class="meta">
       
-    </footer>
-  
+        <a class="basic-alignment left" href="/blog/2015/06/16/install-arm-linux-gcc-on-linux/" title="Previous Post: Install arm-linux-gcc on Linux">&laquo; Install arm-linux-gcc on Linux</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
   <section>
@@ -163,8 +265,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://reckhhh.github.io/about/index.html';
-        var disqus_url = 'http://reckhhh.github.io/about/index.html';
+        var disqus_identifier = 'http://reckhhh.github.io/blog/2015/06/17/linux-notes-iv/';
+        var disqus_url = 'http://reckhhh.github.io/blog/2015/06/17/linux-notes-iv/';
         var disqus_script = 'embed.js';
       
     (function () {
