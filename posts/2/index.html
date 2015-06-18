@@ -9,9 +9,12 @@
   <meta name="author" content="Chen Rui">
 
   
-  <meta name="description" content="Sort in two ways sort(): In-place sorting, replaces the original data
-sorted(): Copied sorting, return a sorted copy of the original data
-sorting &hellip;">
+  <meta name="description" content="input() and raw_input() input(): Gets inputs from the user 1
+2
+3
+input(&quot;Enter a number: &quot;)
+Enter a number: 3
+3 raw_input(): Gets input from &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +71,993 @@ sorting &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/05/01/python-notes-iv/">Python Notes IV</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-05-01T04:04:53+08:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>4:04 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>input() and raw_input()</h3>
+
+<ul>
+<li>input(): Gets inputs from the user</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="nb">input</span><span class="p">(</span><span class="s">&quot;Enter a number: &quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="mi">3</span>
+</span><span class='line'><span class="mi">3</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>raw_input(): Gets input from the user, as a string</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Enter a number: &quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="mi">3</span>
+</span><span class='line'><span class="s">&#39;3&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>repr() and str()</h3>
+
+<ul>
+<li>repr(): Returns a string representation of a value</li>
+<li>A synonym for repr(&lsquo;x&rsquo;) is &lsquo;x&rsquo;</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="nb">repr</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;Hello, world!&#39;</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">repr</span><span class="p">(</span><span class="il">10000L</span><span class="p">)</span>
+</span><span class='line'><span class="il">10000L</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>str(): Converts a value to a string</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="nb">str</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="err">!</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">str</span><span class="p">(</span><span class="il">10000L</span><span class="p">)</span>
+</span><span class='line'><span class="mi">10000</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Slicing</h3>
+
+<ul>
+<li>numbers[beg : end : direction(interval)]</li>
+<li>range(beg&hellip;&lt;end), i.e., [beg, end)</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">numbers</span><span class="p">[::</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[:</span><span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</span><span class='line'><span class="n">numbers</span><span class="p">[:</span><span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Membership</h3>
+
+<ul>
+<li>if &hellip; in &hellip;</li>
+<li>if &hellip; not in &hellip;</li>
+</ul>
+
+
+<h3>Lists</h3>
+
+<ul>
+<li>To convert a list of characters such as the preceding code back to a string, use <strong>&lsquo; &rsquo;.join(somelist)</strong></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">somelist</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;o&#39;</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="s">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">somelist</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="s">&#39;boy&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Deleting Elements use del</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Ada&#39;</span><span class="p">,</span> <span class="s">&#39;Bob&#39;</span><span class="p">,</span> <span class="s">&#39;Cecil&#39;</span><span class="p">,</span> <span class="s">&#39;David&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="k">del</span> <span class="n">names</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">names</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;Ada&#39;</span><span class="p">,</span> <span class="s">&#39;Bob&#39;</span><span class="p">,</span> <span class="s">&#39;David&#39;</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Assigning to Slices</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s">&#39;Perl&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">name</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s">&#39;ython&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">name</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;P&#39;</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="s">&#39;t&#39;</span><span class="p">,</span> <span class="s">&#39;h&#39;</span><span class="p">,</span> <span class="s">&#39;o&#39;</span><span class="p">,</span> <span class="s">&#39;n&#39;</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Slice assignments can be used to insert elements without replacing any of the original ones</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span><span class='line'><span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</span><span class='line'><span class="n">nums</span>
+</span><span class='line'><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c"># del nums[1:4]</span>
+</span><span class='line'><span class="n">nums</span>
+</span><span class='line'><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>String Formatting</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="nb">str</span> <span class="o">=</span> <span class="s">&quot;Hello, </span><span class="si">%s</span><span class="s">! </span><span class="si">%s</span><span class="s"> are you?&quot;</span>
+</span><span class='line'><span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;Peter&#39;</span><span class="p">,</span> <span class="s">&#39;How&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span> <span class="p">(</span><span class="nb">str</span> <span class="o">%</span> <span class="n">val</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Hello</span><span class="p">,</span> <span class="n">Peter</span><span class="err">!</span> <span class="n">How</span> <span class="n">are</span> <span class="n">you</span><span class="err">?</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># for short</span>
+</span><span class='line'><span class="s">&#39;</span><span class="si">%s</span><span class="s"> + </span><span class="si">%s</span><span class="s"> = </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;1 + 1 = 2&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Template Strings</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">s</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">&#39;$x,  glorious $x!&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">s</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">&#39;slurm&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;slurm,  glorious slurm!&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># the replacement is part of a word</span>
+</span><span class='line'><span class="n">s</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">&quot;It&#39;s ${x}tastic!&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">s</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">&#39; slurm&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&quot;It&#39;s  slurmtastic!&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># insert a dollar sign, use $$</span>
+</span><span class='line'><span class="n">s</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">&quot;Make $$ selling $x!&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">s</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">&#39;slurm&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;Make $ selling slurm!&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># supply the value-name pairs in a dictionary</span>
+</span><span class='line'><span class="n">s</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">&#39;A $thing must never $action.&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;thing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;dog&#39;</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;action&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;eat grass&#39;</span>
+</span><span class='line'><span class="n">s</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;A dog must never eat grass.&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>find()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Monty Python&#39;s Flying Circus&quot;</span>
+</span><span class='line'><span class="n">title</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;Python&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="mi">6</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>split()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="s">&#39;1+2+3+4+5&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;+&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="s">&#39;2&#39;</span><span class="p">,</span> <span class="s">&#39;3&#39;</span><span class="p">,</span> <span class="s">&#39;4&#39;</span><span class="p">,</span> <span class="s">&#39;5&#39;</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="s">&#39;/usr/bin/env&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;usr&#39;</span><span class="p">,</span> <span class="s">&#39;bin&#39;</span><span class="p">,</span> <span class="s">&#39;env&#39;</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="s">&#39;a    aa    aaa    &#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;aa&#39;</span><span class="p">,</span> <span class="s">&#39;aaa&#39;</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>join()
+The inverse of split, used to join the elements of a sequence</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="s">&#39;2&#39;</span><span class="p">,</span> <span class="s">&#39;3&#39;</span><span class="p">,</span> <span class="s">&#39;4&#39;</span><span class="p">,</span> <span class="s">&#39;5&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="s">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;1+2+3+4+5&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">dirs</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;usr&#39;</span><span class="p">,</span> <span class="s">&#39;bin&#39;</span><span class="p">,</span> <span class="s">&#39;env&#39;</span>
+</span><span class='line'><span class="n">dirs</span>
+</span><span class='line'><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;usr&#39;</span><span class="p">,</span> <span class="s">&#39;bin&#39;</span><span class="p">,</span> <span class="s">&#39;env&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="s">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirs</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;/usr/bin/env&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="s">&#39;C:&#39;</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\\</span><span class="s">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirs</span><span class="p">))</span>
+</span><span class='line'><span class="n">C</span><span class="p">:</span>\<span class="n">usr</span>\<span class="nb">bin</span>\<span class="n">env</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>strip()
+Get rid of the characters listed in strip()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="s">&#39;!!!   a    aa    aaa    !!!!!&#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&#39;!&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;   a    aa    aaa    &#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="s">&#39;   a    aa    aaa    &#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span class='line'><span class="s">&#39;a    aa    aaa&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># list all that to remove</span>
+</span><span class='line'><span class="s">&#39;*** SPAN * for * everyone!!! ***&#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&#39; *!&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;SPAN * for * everyone&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>title()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="s">&quot;that&#39;s all, folks&quot;</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+</span><span class='line'><span class="s">&quot;That&#39;S All, Folks&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>string.capwords()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">string</span>
+</span><span class='line'><span class="n">string</span><span class="o">.</span><span class="n">capwords</span><span class="p">(</span><span class="s">&quot;that&#39;s all, folks&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&quot;That&#39;s All, Folks&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>replace()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="s">&#39;This is a cat.&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;cat&#39;</span><span class="p">,</span> <span class="s">&#39;dog&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;This is a dog.&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>maketrans() and translate()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">maketrans</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">trantab</span> <span class="o">=</span> <span class="n">maketrans</span><span class="p">(</span><span class="s">&#39;aeiou&#39;</span><span class="p">,</span> <span class="s">&#39;12345&#39;</span><span class="p">)</span>  <span class="c"># (in -&gt; out)</span>
+</span><span class='line'><span class="s">&quot;this is string example...wow!&quot;</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">trantab</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="s">&#39;th3s 3s 1 str3ng 2x1mpl2...w4w!&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>An optional second argument can be supplied to specify that should be deleted</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="s">&#39;this is an incredible test..&#39;</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">trantab</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;th3s 3s 1n 3ncr2d3bl2 t2st.&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="s">&#39;this is an incredible test&#39;</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">trantab</span><span class="p">,</span> <span class="s">&#39; &#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;th3s3s1n3ncr2d3bl2t2st&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Dictionary</h3>
+
+<ul>
+<li>dict()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># (key, value)</span>
+</span><span class='line'><span class="nb">dict</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Peter&#39;</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Peter&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>clear()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">x</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">y</span> <span class="o">=</span> <span class="n">x</span>   <span class="c"># refer to the same dictionary</span>
+</span><span class='line'><span class="n">x</span><span class="p">[</span><span class="s">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;value&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">y</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;key&#39;</span><span class="p">:</span> <span class="s">&#39;value&#39;</span><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">x</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">y</span>   <span class="c"># y is also empty</span>
+</span><span class='line'><span class="p">{}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>copy()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;username&#39;</span><span class="p">:</span> <span class="s">&#39;admin&#39;</span><span class="p">,</span> <span class="s">&#39;machines&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">]}</span>
+</span><span class='line'><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span class='line'><span class="n">y</span><span class="p">[</span><span class="s">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;peter&#39;</span>
+</span><span class='line'><span class="n">y</span><span class="p">[</span><span class="s">&#39;machines&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">&#39;bar&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">y</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;username&#39;</span><span class="p">:</span> <span class="s">&#39;peter&#39;</span><span class="p">,</span> <span class="s">&#39;machines&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">]}</span>
+</span><span class='line'><span class="n">x</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;username&#39;</span><span class="p">:</span> <span class="s">&#39;admin&#39;</span><span class="p">,</span> <span class="s">&#39;machines&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">]}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>deepcopy()
+Avoid the situation that <em>modify</em> the value.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;names&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Alfred&#39;</span><span class="p">,</span> <span class="s">&#39;Bertrand&#39;</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">c</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span class='line'><span class="n">deepc</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;names&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;Clive&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">d</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;names&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Alfred&#39;</span><span class="p">,</span> <span class="s">&#39;Bertrand&#39;</span><span class="p">,</span> <span class="s">&#39;Clive&#39;</span><span class="p">]}</span>
+</span><span class='line'><span class="n">c</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;names&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Alfred&#39;</span><span class="p">,</span> <span class="s">&#39;Bertrand&#39;</span><span class="p">,</span> <span class="s">&#39;Clive&#39;</span><span class="p">]}</span>
+</span><span class='line'><span class="n">deepc</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;names&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Alfred&#39;</span><span class="p">,</span> <span class="s">&#39;Bertrand&#39;</span><span class="p">]}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>fromkeys
+Create a new dictionary with the given keys.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="p">{}</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">])</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">])</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">],</span> <span class="s">&#39;(default)&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;(default)&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="s">&#39;(default)&#39;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>get()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Peter&#39;</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;addr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;England&#39;</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;Peter&#39;</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;addr&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;England&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>has_key()
+Check whether a dictionary has a given key.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># Be gone after Python 3.0</span>
+</span><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="bp">False</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Peter&#39;</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="bp">True</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>items()
+Return all the items of dictionary as a list of the form (key, value)</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&#39;Python Web Site&#39;</span><span class="p">,</span> <span class="s">&#39;url&#39;</span><span class="p">:</span> <span class="s">&#39;http:#www.python.org&#39;</span><span class="p">,</span> <span class="s">&#39;spam&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</span><span class='line'><span class="p">[(</span><span class="s">&#39;url&#39;</span><span class="p">,</span> <span class="s">&#39;http:#www.python.org&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;spam&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="s">&#39;Python Web Site&#39;</span><span class="p">)]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>iteritems()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">Return</span> <span class="n">an</span> <span class="n">iterator</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">a</span> <span class="nb">list</span>
+</span><span class='line'><span class="n">it</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()</span>
+</span><span class='line'><span class="n">it</span>
+</span><span class='line'><span class="sb">`dictionary-itemiterator object at 0x10b918788`</span>
+</span><span class='line'><span class="nb">list</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+</span><span class='line'><span class="p">[(</span><span class="s">&#39;url&#39;</span><span class="p">,</span> <span class="s">&#39;http:#www.python.org&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;spam&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="s">&#39;Python Web Site&#39;</span><span class="p">)]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>pop()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;spam&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;url&#39;</span><span class="p">:</span> <span class="s">&#39;http:#www.python.org&#39;</span><span class="p">,</span> <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&#39;Python Web Site&#39;</span><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;spam&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="mi">0</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">d</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;url&#39;</span><span class="p">:</span> <span class="s">&#39;http:#www.python.org&#39;</span><span class="p">,</span> <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&#39;Python Web Site&#39;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>popitem()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;url&#39;</span><span class="p">:</span> <span class="s">&#39;http:#www.python.org&#39;</span><span class="p">,</span> <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&#39;Python Web Site&#39;</span><span class="p">}</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span>
+</span><span class='line'><span class="p">(</span><span class="s">&#39;url&#39;</span><span class="p">,</span> <span class="s">&#39;http:#www.python.org&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">d</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&#39;Python Web Site&#39;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>setdefault()
+Set the value corresponding to the given key if it not already in the dictionary</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;N/A&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;N/A&#39;</span>
+</span><span class='line'><span class="n">d</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;N/A&#39;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>update()</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Peter&#39;</span><span class="p">,</span>
+</span><span class='line'><span class="s">&#39;addr&#39;</span><span class="p">:</span> <span class="s">&#39;England&#39;</span><span class="p">,</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;addr&#39;</span><span class="p">:</span> <span class="s">&#39;France&#39;</span><span class="p">}</span>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">d</span>
+</span><span class='line'><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Peter&#39;</span><span class="p">,</span> <span class="s">&#39;addr&#39;</span><span class="p">:</span> <span class="s">&#39;France&#39;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>values</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</span><span class='line'><span class="n">dict_values</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>range(a, b), <strong>[a, b)</strong></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">):</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="mi">10</span>
+</span><span class='line'><span class="mi">11</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Importing</h3>
+
+<ul>
+<li>import sth. from a module</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">somemodule</span> <span class="kn">import</span> <span class="n">somefunction</span>
+</span><span class='line'><span class="ow">or</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">somemodule</span> <span class="kn">import</span> <span class="o">*</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Define aliases</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span> <span class="k">as</span> <span class="n">foo</span>
+</span><span class='line'><span class="n">foo</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span><span class='line'><span class="mf">2.0</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>loop the key of a dictionary</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;z&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+</span><span class='line'><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># this one is better</span>
+</span><span class='line'><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Slightly Loopy</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+</span><span class='line'><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">81</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+</span><span class='line'><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+</span><span class='line'><span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># for short</span>
+</span><span class='line'><span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+</span><span class='line'><span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Executing and Evaluating</h3>
+
+<ul>
+<li>exec</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">exec</span> <span class="s">&quot;print &#39;hello, world!&#39;&quot;</span>
+</span><span class='line'><span class="n">hello</span><span class="p">,</span> <span class="n">world</span><span class="err">!</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>eval</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">d</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c"># exec &#39;x = 3&#39; in d</span>
+</span><span class='line'><span class="nb">eval</span><span class="p">(</span><span class="s">&#39;x * x&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+</span><span class='line'><span class="mi">9</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<hr />
+
+<h3>Bonus: Trick of Reduce Code</h3>
+
+<ul>
+<li>Comparison</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># using the former instead of the latter</span>
+</span><span class='line'><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">10</span>
+</span><span class='line'><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">num</span> <span class="ow">and</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">10</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>or</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Enter name: &#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="s">&#39;N/A&#39;</span>
+</span><span class='line'><span class="n">Enter</span> <span class="n">name</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">name</span>
+</span><span class='line'><span class="s">&#39;N/A&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>a if b else c</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">score</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
+</span><span class='line'><span class="n">grade</span> <span class="o">=</span> <span class="s">&#39;A&#39;</span> <span class="k">if</span> <span class="mi">90</span> <span class="o">&lt;=</span> <span class="n">score</span> <span class="o">&lt;=</span> <span class="mi">100</span> <span class="k">else</span> <span class="s">&#39;B&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">grade</span>
+</span><span class='line'><span class="s">&#39;A&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -2027,6 +3017,10 @@ sorting &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/06/18/linux-note-iii/">Linux Note III</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/06/17/linux-notes-iv/">Linux Notes IV</a>
       </li>
     
@@ -2042,10 +3036,6 @@ sorting &hellip;">
         <a href="/blog/2015/06/12/make-menuconfig-error-and-solving-method/">Make Menuconfig Error and Solving Method</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/06/11/motto/">Motto</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -2053,7 +3043,7 @@ sorting &hellip;">
     <ul id="categories">
         <li class='category'><a href='/blog/categories/essay/'>essay (2)</a></li>
 <li class='category'><a href='/blog/categories/ios/'>ios (2)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (6)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (7)</a></li>
 <li class='category'><a href='/blog/categories/motto/'>motto (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/poetry/'>poetry (1)</a></li>

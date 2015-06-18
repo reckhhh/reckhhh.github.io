@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Black Mamba]]></title>
   <link href="http://reckhhh.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-06-17T23:43:29+08:00</updated>
+  <updated>2015-06-18T23:16:30+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -12,6 +12,150 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Linux Note III]]></title>
+    <link href="http://reckhhh.github.io/blog/2015/06/18/linux-note-iii/"/>
+    <updated>2015-06-18T23:10:58+08:00</updated>
+    <id>http://reckhhh.github.io/blog/2015/06/18/linux-note-iii</id>
+    <content type="html"><![CDATA[<ul>
+<li><p>查询一个包是否被安装</p>
+
+<ul>
+<li>rpm -q | grep &lt; rpm package name></li>
+</ul>
+</li>
+<li><p>列出所有被安装的 rpm package</p>
+
+<ul>
+<li>rpm -qa | grep <rpm package name></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>隐藏/显示 隐藏文件: Ctrl + h</p>
+
+<ul>
+<li>硬盘数据分为两个区域</li>
+<li>主引导分区 (MBR, Master Boot Recorder): 放置这个硬盘的信息区，只有 4 个分区记录，这些记录被称为主分区和扩展分区(Extended)。一个磁盘最多可有 4 个(主 + 扩展)分区。其中，扩展分区只能有一个</li>
+<li>引导程序
+  磁盘分区表，分区即修改磁盘 MBR 里的分区表</li>
+</ul>
+</li>
+<li><p>数据放置区, 实际文件数据放置的地方</p>
+
+<ul>
+<li>如分区超过 4 个，一定要有扩展分区，且必须将所有剩下的空间分给扩展分区，然后再以逻辑分区来规划扩展分区的空间</li>
+</ul>
+</li>
+<li><p>关机 shutdown</p>
+
+<ul>
+<li>shutdown -h now, 立刻关机</li>
+<li>shutdown -h 20：30, 定时关机</li>
+<li>shutdown -h +10, 10分钟后关机</li>
+<li>shutdown -r now, 立刻重启</li>
+<li>shutdown -r +30 ‘The system will reboot’, 再过30分钟系统会重新启动，并显示后面的信息</li>
+</ul>
+</li>
+<li><p>Linux 文件属性</p>
+
+<ul>
+<li>－rwxrwx&mdash;, 一个文件有 10 个属性</li>
+<li>第一个属性表示这个文件是&#8221;目录, 文件或连接文件等&#8221;:</li>
+</ul>
+</li>
+<li>[d], 目录</li>
+<li>[-], 文件</li>
+<li>[l], 连接文件 (link file)</li>
+<li>[d], 设备文件中可供存储的接口设备</li>
+<li><p>[c], 设备文件中的串行端口设备</p>
+
+<ul>
+<li>例1, drwxr&ndash;r&ndash;, 这时非 root 账号不可以进入该目录, 因为 x 与目录的关系相关重要, 如果在该目录下不能执行命令的话, 那么自然也就无法进入了. 因此, 如对他人开放某个目录, 记得开放该目录的 x 属性</li>
+<li>例2, -rw-r&ndash;r&ndash;  1 root   root
+
+<ul>
+<li>拥有者为 root, 用户组为 root,只有 root 才有访问权</li>
+</ul>
+</li>
+<li>例3, -rwxr-xr&ndash;  1 test1  testgroup
+
+<ul>
+<li>拥有者为 test1, 用户组为 testgroup, test1 对此文件具有可读, 可写, 可执行的权力; 而同组其他用户可读, 可执行, 但不能写; 非 testgroup 用户组的人则仅可读, 不能写, 不能执行</li>
+</ul>
+</li>
+<li>例4, -rwxr-xr&ndash;  1 test1  testgroup
+
+<ul>
+<li>拥有者 test1 可在本目录中进行任何操作, testgroup 用户组的账号可以进入本目录进行操作, 但不能在本目录下写入; 其他权限虽然有 r, 但由于没有 x 权限, 因此不能进入此目录, <strong>x 与能否进入该目录有关</strong></li>
+</ul>
+</li>
+<li><strong>w 可以让用户删除, 更新, 新建文件或目录</strong>
+
+<ul>
+<li>更改文件权限, 当复制文件的时候使用</li>
+<li>chgrp: 改变文件所属于用户组</li>
+<li>chown: 改变文件所有者</li>
+<li>chmod: 改变文件的属性, 可使用数字或符号</li>
+<li>当以 vi 编辑 shell 的文字后, 属性通常是 -rw-rw-rw-, 也就是 666, 如要将它变成可执行文件, 并不能让其他人修改此文件, 那么就需要 -rwxr-xr-x 这个 755 的属性, 使用 chmod 755 filename 命令</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>套接字 (sockets)</p>
+
+<ul>
+<li>通常用在网络数据连接. 可以启动一个程序监听客户端的要求, 客户段就可以通过套接字来进行数据通信</li>
+</ul>
+</li>
+<li><p>cd -, 返回前一个工作目录</p></li>
+<li><p>cd ~account, 返回 account 用户的家目录</p></li>
+<li><p>[root@linux tmp]# cp -i ~/.bashrc bashhh, 将家目录下的 .bashrc 复制到 /tmp下, 并重命名为 bashhh</p></li>
+<li><p>修改文件时间与创建新文件 touch</p>
+
+<ul>
+<li>touch -t 0507150202 bashrc</li>
+<li>将 bashrc 日期修改为 2005/07/15 2:02</li>
+</ul>
+</li>
+<li><p>文件权限掩码 umask</p>
+
+<ul>
+<li>普通用户为 002, root 用户为 022</li>
+<li>&ldquo;文件&rdquo; 默认 &ldquo;没有 x 权限&rdquo;, 只有 rw (666)
+-rw-rw-rw-</li>
+<li>&ldquo;目录&rdquo; 中的 x 与是否可进入此目录有关, 因此默认开放所有权限, 即 rwx (777)</li>
+<li>-rw-rw-rw-</li>
+<li>umask -S
+u=rwx,g=rx,o=rx</li>
+<li>例如, umask 为 022, 当用户建立文件和目录时:</li>
+<li>建立文件: (-rw-rw-rw-) - (&mdash;&ndash;w&ndash;w-) = (-rw-r&ndash;r&ndash;)</li>
+<li>建立目录: (drwxrwxrwx) - (&mdash;&ndash;w&ndash;w-) = (drwxr-xr-x)</li>
+</ul>
+</li>
+<li><p>搜索文件</p>
+
+<ul>
+<li>例如: 查找 client.c</li>
+<li>locate client.c</li>
+</ul>
+</li>
+<li><p>磁盘与目录的可用容量</p>
+
+<ul>
+<li>df -h</li>
+<li>df -h /etc</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Linux Notes IV]]></title>
@@ -155,321 +299,6 @@ $sudo apt-get install libncurses5-dev</p>
 
 <ul>
 <li>ncurses库是字符终端下屏幕控制的基本库，可能很多新开发的程序都不使用了，不过如果要编译一些老程序，还经常用到</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Linux Notes II]]></title>
-    <link href="http://reckhhh.github.io/blog/2015/06/10/linux-notes-ii/"/>
-    <updated>2015-06-10T22:24:51+08:00</updated>
-    <id>http://reckhhh.github.io/blog/2015/06/10/linux-notes-ii</id>
-    <content type="html"><![CDATA[<ul>
-<li><p>Ubuntu 的默认 root 密码是随机的，每次开机都有一个新 root 密码。我们可以在终端输入命令 sudo passwd，然后输入当前用户的密码</p></li>
-<li><p>终端会提示我们输入新的密码并确认，此时的密码就是 root 新密码。修改成功后，输入命令 su root，再输入新的密码</p></li>
-<li><p>普通用户变超级用户 su; 超级用户变普通用户 sudo ngcl (su + 用户名)</p></li>
-<li><p>date, 显示当前时间</p></li>
-<li><p>cal, 查看当月日历</p></li>
-<li><p>df, 查看当前的硬盘挂载情况;
-df –h 显示磁盘空间使用的情况</p></li>
-<li><p>free, 显示可用内存, 查看当前的磁盘交换空间</p></li>
-<li><p>exit, 切换超级管理员和普通用户, 或者使用 su / su ngcl</p></li>
-<li><p>ctrl + alt + F1~F6, 可访问黑屏幕终端;
-按 alt + F7, 返回图形桌面幻镜.</p></li>
-<li><p>&ldquo;.&rdquo; 代表工作目录, &ldquo;..&#8221;代表工作目录的父目录.
-例如: cd /usr/bin  &lt;==>  cd ./bin</p>
-
-<p>pwd: 结果都是 /usr/bin, 因为 . 代表了当前目录 /usr</p></li>
-<li><p>file: 确定文件类型; 例如: file sketch.txt
-sketch.txt: ASCII text
-file 命令会打印出文件内容的简短说明.</p></li>
-<li><p>less / cat: 查看文件内容
-less 程序让我们前后滚动文件.</p></li>
-<li><p>ls /usr: 指定要显示的目录</p></li>
-<li><p>ls - /usr: 指定多个目录</p></li>
-<li><p>命令后面跟一个或多个选项,带有不同选项的命令其功能不一样;
-此外, 命令后面还跟有一个或多个参数, 这些参数是命令作用的
-对象. 大部分命令的格式:
-command -option arguments</p></li>
-<li><p>ls -lt
-ls -lt &ndash;reverse (以相反的顺序输出)</p></li>
-<li><p>ls 选项
--a, 列出所用文件
--d, 与-l选项结合使用, 可查看目录的详细信息
--F, 在每个所列出的名字后面加上类型指示符(例如, 如果名字是目录名, 则会加上一个斜杠)
--r, 以相反的顺序显示结果
--S, 以文件大小对结果排序
--t, 按修改时间排序</p></li>
-<li><p>在UNIX操作系统中, 一切都是文件</p></li>
-<li><p>UNIX 目录</p>
-
-<ul>
-<li> /, 根目录, 一切从这里开始</li>
-<li>/bin, 常用的基本命令</li>
-<li>/sbin, 管理系统相关的基本命令</li>
-<li>/boot, 存放启动内核以及启动内核的相关文件, 例如内核、grub等</li>
-<li>/dev, 设备文件</li>
-<li>/etc，各类配置文件</li>
-<li>/etc/crontab, 定义自动化任务运行的时间</li>
-<li>/etc/fstab, 存储设备以及相关挂载点的列表</li>
-<li>/etc/passwd, 用户账号列表</li>
-<li>/home, 用户登录，除 root 用户外其他可登录用户的主目录</li>
-<li>/lib, 常用的基本函数库，内核模块，与 windows 系统中的 DLL 类似</li>
-<li>/lost+found， 当文件崩溃时，该目录用于恢复分区。除非系统发生很严重的问题，否则这个目录一直是空的</li>
-<li>/libexec, 非用户直接使用的脚本或命令</li>
-<li>/media, 用于设备挂载</li>
-<li>/mnt, 古老的用于挂载设备的目录</li>
-<li>/opt, 存放一些大型的独立软件</li>
-<li>/sys, 用于存放Linux内核的SYS文件系统</li>
-<li>/tmp, 存放临时文件，可以被任何用户使用</li>
-<li>/var, 用于存放一些日志和程序启动的 PID 文件</li>
-<li>/usr, 是linux系统中最大的目录树。包含普通用户使用的所有程序和相关文件</li>
-<li>/usr/include, 头文件存放目录</li>
-<li>/usr/bin：存放常用的命令</li>
-<li>/usr/sbin：存放管理员常用的命令</li>
-<li>/usr/lib：库函数</li>
-<li>/usr/share：用于存放各种软件包共享的辅助文件</li>
-<li>/usr/doc：存放软件说明</li>
-<li>/usr/man：存放各种命令，文件，函数</li>
-</ul>
-</li>
-<li><p>cp: 复制文件和目录</p>
-
-<ul>
-<li>cp item directory
-例如： cp cleanup.py /home/ngcl/图片</li>
-<li><p>cp file1 file2:  将file1 复制到 file2. 如 file2 存在，会被 file1 覆盖，如 file2 不存在，则创建 file2</p></li>
-<li><p>cp <strong>-i</strong> file1 file2
-覆盖时，通知用户确认</p></li>
-<li><p>cp file1 file2 dir1
-将 file1  和file2 复制到 dir1, dir1 必须已经存在</p></li>
-<li><p>cp dir1/* dir2
-使用通配符，将 dir1 中所用文件复制到 dir2, dir2 必须已经存在</p></li>
-<li><p>cp -r dir1 dir2
-将 dir1 目录复制到 dir2 目录中，如果 dir2 不存在，创建 dir2, 且包含与 dir1 目录相同的</p></li>
-</ul>
-</li>
-<li><p>mv: 移动或重命名文件和目录</p>
-
-<ul>
-<li><p>mv item1 item2, 将文件（或目录）item1移动（或重命名）为item2</p></li>
-<li><p>mv item&hellip; directory
-将一个或多个条目从一个目录移动到另一个目录</p></li>
-<li><p>mv的选项：</p>
-
-<ul>
-<li>-i, 覆盖一个已经存在的文件之前，先提示用户。</li>
-<li>-u, 将文件从一个目录移动到另一个目录，只移动那些目标目录中不存在的文件或是目标目录里相应的更新文件</li>
-<li>-v, 移动文件时显示信息性消息</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>mkdir: 创建目录
-mkdir directory</p></li>
-<li><p>rm: 移动文件和目录</p>
-
-<ul>
-<li>警告，无法恢复</li>
-<li>要和 -i一起使用，可以提示用户</li>
-<li>不要和通配符 × 一起使用</li>
-<li>不要和递归符号 r 一起使用</li>
-</ul>
-</li>
-<li><p>in: 创建硬连接和符号连接</p>
-
-<ul>
-<li>为某文件在另外一个位置上建立同步的链接，当需要在不同目录用相同的文件，不必重复占用磁盘空间</li>
-<li>in 创建硬连接，实际上是创建了额外的名称，这些名称都指向同一部分数据部分</li>
-<li>in -s, 使用 -s 参数创建<strong>软链接</strong></li>
-<li>可以使用 ls -li 显示上述信息，可以看到 fun 和 fun-hard 共享同一个索引节点号，证实它们是相同的文件</li>
-<li> Linux / Unix 档案系统中，有所谓的链接(link)，我们可以将其视为档案的别名，而连结又可分为两种 : 硬链接 (hard link)与软链接 (symbolic link)
-
-<ul>
-<li>硬链接的意思是一个文件可以有多个名称, 存在于同一个磁盘分区中. 与目标文件使用同一个文件索引节点，因此只能在同一个磁盘分区中使用硬链接，并且它不能离开关联文件而独立存在。当一个硬链接被移动，重命名或者被删除时，其余关联到同一文件的硬链接不受影响。当最后一条批向该文件的硬链接被删除时，该文件内容将会消失</li>
-<li>软链接的方式则是产生一个特殊的档案，该档案的内容是指向另一个档案的位置。软链接却可以跨越不同的档案系统. 如同直接对目标文件进行操作，链接文件是一个独立文件，其存在不依赖于目标文件。如删除一个链接文件，它指向的目标文件不受影响；如果删除了一个目标文件，其指向目标文件的链接文件依然存在</li>
-<li><strong>ln source distination</strong> 是产生一个连结 distination 到 source，至于使用硬链接或软链结则由参数决定</li>
-<li>不论是硬连结或软链结都不会将原本的档案复制一份，只会占用非常少量的磁碟空间</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>type： 显示命令的类型
-例如： type grep</p></li>
-<li><p>which：显示可执行程序的位置</p></li>
-<li><p>help: 显示命令的使用信息</p></li>
-<li><p>man：显示程序的手册</p></li>
-<li><p>whatis：显示命令的简要描述</p></li>
-<li><p>cat:
-读取一个或多个文件，并把它们复制到标准输出文件中。
-例如：cat >> lazy_dog.txt (以追加方式写到结尾)</p></li>
-<li><p>uniq:
-uniq &ndash; 删除列表中重复的行
-| sort | uniq | less</p></li>
-<li><p>wc:
-打印行数，字数，和字节数
-18，172，1053 output.txt</p></li>
-<li><p>grep:
-打印匹配行，查找匹配文本
-grep pattern [file &hellip;]</p></li>
-</ul>
-
-
-<p><strong>例如：ls /bin /usr/bin | sort | uniq | grep zip</strong></p>
-
-<ul>
-<li><p>head:
-输出文件的前10行，
-head output.txt</p>
-
-<p>可以和管道一起用：
-ls /usr/bin | head</p></li>
-<li><p>tail:
-输出文件的后10行，
-tail output.txt</p>
-
-<p>ls /usr/bin | tail</p></li>
-<li><p>tee:
-从 stdin 读取数据</p>
-
-<ul>
-<li><p>&ldquo;>&rdquo; (重定向，重新定义标准输出内容发送到哪里，后接文件名，可以把标准输出重定向到另一个文件中，而不是显示到屏幕上)
-例如： ls -lit > output.txt
-目的文件通常会从文件 “开头” 部分重新改写。（所以可以用来删除文件）</p></li>
-<li><p>&ldquo;>>&rdquo; (重定向， 将输出内容在文件尾部添加)</p></li>
-</ul>
-</li>
-<li><p>管道 “|”:
-使用管道操作符 “|”，可以把一个命令的标准输出送到另一个命令的标准输入中: command1 | command2</p>
-
-<p>例如： ps aux | grep python
-将当前进程传入到 grep python 中，看当前运行的 python 进程</p></li>
-<li><p>过滤器：
-ls /bin /usr/bin | sort | less
-把目录下的所有可执行程序合并成一个列表，并且排序</p></li>
-<li><p>mkdir / rmdir + 花括号扩展:
-mkdir {2014..2015}-0{1..9} {2014..2015}-0{10..12}
-rmdir {2014..2015}-0{1..9} {2014..2015}-0{10..12}</p></li>
-<li><p>使用历史命令：
-history | less, 查看历史列表</p></li>
-</ul>
-
-
-<p>history | grep /usr/bin, 查看有/usr/bin内容的命令</p>
-
-<ul>
-<li><p>!!: 重复最后一个执行的命令</p></li>
-<li><p>gcc –dumpspecs 会导出 GCC 默认的配置内容</p></li>
-<li><p>sed 文本处理工具，修改原文件</p></li>
-<li><p>!!: 重复最后一个执行的命令</p></li>
-<li><p>权限属性：
-  chmod –v a+wt
-  r: 许可打开和读取文件
-  w: 写入
-  x: 把文件当做程序来执行</p>
-
-<p>  0   000 &mdash;
-  1   001 &ndash;x
-  2   010 -w-
-  3   011 -wx
-  4   100 r&ndash;
-  5   101 r-x
-  6   110 rw-
-  7   111 rwx</p>
-
-<p>  文件所有者|组用户|其他所有用户
-  &mdash;|&mdash;|&mdash;
-  u | g | o
-  a: u, g, o 三者的组合; u (文件拥有者), g (所属组成员), o (其他用户)</p></li>
-<li><p>进程</p>
-
-<ul>
-<li><p>系统启动时，内核先把它的一些程序初始化为进程，然后运行一个称为init的程序。init依次运行一系列称为脚本(init script)的shell脚本(放在/etc目录下)，这些脚本将会启动所用的系统服务</p></li>
-<li><p>一个程序可以除法其他程序的运行，在进程中这种情况叫“父进程创建子进程”</p></li>
-<li><p>内核会被保存每个进程的信息以便确保任务有序进行。比如：每个进程将被分配一个PID(process ID)的号码。init进程的PID时钟是1.</p></li>
-<li><p>ps aux, 查看进程信息</p></li>
-<li><p>top, 查看极其运行情况的动态视图</p></li>
-<li><p>ping, 向网络主机发送特殊数据包，验证网络连接是否正常
-ping linuxcommand.org</p></li>
-<li><p>traceroute, 跟踪网络数据包的传输路径，显示文件通过网络从本地传输到指定主机过程中所有停靠的列表。
-traceroute slashdot.org</p></li>
-<li><p>netstat, 检查网络设置以及相关统计数据
-netstat -ie, 检查系统中的网络接口信息
-netstat -r , 显示内核的网络路由表</p></li>
-<li><p>ftp,  采用文件传输协议传输文件
-lftp, 更好的ftp
-wget, 非交互式网络下载工具</p></li>
-</ul>
-</li>
-<li><p>mount挂载命令，mount [选项] 设备名 目录名</p>
-
-<ul>
-<li>要挂载一个 EXT3 文件系统的磁盘分区到 /mnt 目录下，使用如下命令: mount /dev/sda3 /mnt (/dev/sda3是挂载分区，/mnt是被挂载的目录)</li>
-<li>mount   /dev/sdb2 /mnt
-挂载 /dev/sdb2 到 /mnt 下</li>
-<li>umount  /dev/sdb2 /mnt  <br/>
-卸载 /dev/sdb2 从 /mnt 中</li>
-<li>mkswap /dev/sdb1
-使sdb1作为交换分区</li>
-<li>swapoff /dev/sdb1
-取消/dev/sdb1的交换分区</li>
-</ul>
-</li>
-<li><p>ps | grep 和 ps aux | grep</p>
-
-<ul>
-<li>ps: 显示当前状态处于 running 的进程，grep 表示在这里搜索</li>
-<li><p>ps aux: 是显示所有进程和其状态
-例如：ps aux | grep python</p></li>
-<li><p>ps aux seems to conveniently list all processes and their status and resource usage</p></li>
-<li>What does aux mean?
-a = show processes for all users
-u = display the process&rsquo;s user/owner
-x = show processes not attached to a terminal</li>
-</ul>
-</li>
-<li><p>Linux命令前面加 ! 号</p></li>
-<li><p>比如 ps 跟 !ps 有什么区别
-执行最近时间的命令参数，比如最近输入ls -l，再输入！ls，系统就会按照最近时间的命令ls -l执行</p></li>
-<li><p>uname –a
-查看内核系统基本信息</p></li>
-<li><p>make</p>
-
-<ul>
-<li>make clean    <br/>
-删除大多数的编译生成文件, 但是会保留内核的配置文件 .config,  还有足够的编译支持来建立扩展模块</li>
-<li>make mrproper
-
-<ul>
-<li>删除所有的编译生成文件, 还有内核配置文件, 再加上各种备份文件</li>
-<li>在每次配置并重新编译内核前需要先执行 “make mrproper” 命令清理源代码树, 包括过去曾经配置的内核配置文件 “.config” 都将被清除. 即进行新的编译工作时将原来老的配置文件给删除到, 以免影响新的内核编译</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>dos2unix, 将windows格式转换为unix格式
-unix2dos, 将unix格式转换为windows格式</p></li>
-<li><p>当不知道用哪条命令时</p>
-
-<ul>
-<li>apropos: 当需要完成特定任务但又不知道命令的名字时，可使用关键字和 apropos 工具进行搜索。</li>
-<li>whatis: 和 apropos 很相似，但 whatis 仅搜索与关键字完全匹配的信息</li>
-</ul>
-</li>
-<li><p>获取用户和系统信息：</p>
-
-<ul>
-<li>who: 列出系统上的用户</li>
-<li>who am i: 得到用户正使用的终端或登录的时间</li>
-<li>finger: 列出系统上的用户</li>
-<li>write username: 给某人用户发消息</li>
-</ul>
-</li>
-<li><p>ls –F
-使得目录后显示斜杠，可执行文件后显示星号 *</p></li>
-<li><p>rm –r
-递归删除目录，删除目录中包含的目录和文件，还有目录自身</p></li>
 </ul>
 
 ]]></content>

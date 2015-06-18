@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Linux Note III - Black Mamba</title>
+  <meta name="author" content="Chen Rui">
+
+  
+  <meta name="description" content="查询一个包是否被安装 rpm -q | grep &lt; rpm package name> 列出所有被安装的 rpm package rpm -qa | grep 隐藏/显示 隐藏文件: Ctrl + h 硬盘数据分为两个区域
+主引导分区 (MBR, Master Boot Recorder &hellip;&#8221;>
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://reckhhh.github.io/blog/2015/06/18/linux-note-iii/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Black Mamba" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Black Mamba</a></h1>
+  
+    <h2>Faster, Higher, Stronger.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="reckhhh.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Linux Note III</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-18T23:10:58+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:10 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><ul>
+<li><p>查询一个包是否被安装</p>
+
+<ul>
+<li>rpm -q | grep &lt; rpm package name></li>
+</ul>
+</li>
+<li><p>列出所有被安装的 rpm package</p>
+
+<ul>
+<li>rpm -qa | grep <rpm package name></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>隐藏/显示 隐藏文件: Ctrl + h</p>
+
+<ul>
+<li>硬盘数据分为两个区域</li>
+<li>主引导分区 (MBR, Master Boot Recorder): 放置这个硬盘的信息区，只有 4 个分区记录，这些记录被称为主分区和扩展分区(Extended)。一个磁盘最多可有 4 个(主 + 扩展)分区。其中，扩展分区只能有一个</li>
+<li>引导程序
+  磁盘分区表，分区即修改磁盘 MBR 里的分区表</li>
+</ul>
+</li>
+<li><p>数据放置区, 实际文件数据放置的地方</p>
+
+<ul>
+<li>如分区超过 4 个，一定要有扩展分区，且必须将所有剩下的空间分给扩展分区，然后再以逻辑分区来规划扩展分区的空间</li>
+</ul>
+</li>
+<li><p>关机 shutdown</p>
+
+<ul>
+<li>shutdown -h now, 立刻关机</li>
+<li>shutdown -h 20：30, 定时关机</li>
+<li>shutdown -h +10, 10分钟后关机</li>
+<li>shutdown -r now, 立刻重启</li>
+<li>shutdown -r +30 ‘The system will reboot’, 再过30分钟系统会重新启动，并显示后面的信息</li>
+</ul>
+</li>
+<li><p>Linux 文件属性</p>
+
+<ul>
+<li>－rwxrwx&mdash;, 一个文件有 10 个属性</li>
+<li>第一个属性表示这个文件是&#8221;目录, 文件或连接文件等&#8221;:</li>
+</ul>
+</li>
+<li>[d], 目录</li>
+<li>[-], 文件</li>
+<li>[l], 连接文件 (link file)</li>
+<li>[d], 设备文件中可供存储的接口设备</li>
+<li><p>[c], 设备文件中的串行端口设备</p>
+
+<ul>
+<li>例1, drwxr&ndash;r&ndash;, 这时非 root 账号不可以进入该目录, 因为 x 与目录的关系相关重要, 如果在该目录下不能执行命令的话, 那么自然也就无法进入了. 因此, 如对他人开放某个目录, 记得开放该目录的 x 属性</li>
+<li>例2, -rw-r&ndash;r&ndash;  1 root   root
+
+<ul>
+<li>拥有者为 root, 用户组为 root,只有 root 才有访问权</li>
+</ul>
+</li>
+<li>例3, -rwxr-xr&ndash;  1 test1  testgroup
+
+<ul>
+<li>拥有者为 test1, 用户组为 testgroup, test1 对此文件具有可读, 可写, 可执行的权力; 而同组其他用户可读, 可执行, 但不能写; 非 testgroup 用户组的人则仅可读, 不能写, 不能执行</li>
+</ul>
+</li>
+<li>例4, -rwxr-xr&ndash;  1 test1  testgroup
+
+<ul>
+<li>拥有者 test1 可在本目录中进行任何操作, testgroup 用户组的账号可以进入本目录进行操作, 但不能在本目录下写入; 其他权限虽然有 r, 但由于没有 x 权限, 因此不能进入此目录, <strong>x 与能否进入该目录有关</strong></li>
+</ul>
+</li>
+<li><strong>w 可以让用户删除, 更新, 新建文件或目录</strong>
+
+<ul>
+<li>更改文件权限, 当复制文件的时候使用</li>
+<li>chgrp: 改变文件所属于用户组</li>
+<li>chown: 改变文件所有者</li>
+<li>chmod: 改变文件的属性, 可使用数字或符号</li>
+<li>当以 vi 编辑 shell 的文字后, 属性通常是 -rw-rw-rw-, 也就是 666, 如要将它变成可执行文件, 并不能让其他人修改此文件, 那么就需要 -rwxr-xr-x 这个 755 的属性, 使用 chmod 755 filename 命令</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>套接字 (sockets)</p>
+
+<ul>
+<li>通常用在网络数据连接. 可以启动一个程序监听客户端的要求, 客户段就可以通过套接字来进行数据通信</li>
+</ul>
+</li>
+<li><p>cd -, 返回前一个工作目录</p></li>
+<li><p>cd ~account, 返回 account 用户的家目录</p></li>
+<li><p>[root@linux tmp]# cp -i ~/.bashrc bashhh, 将家目录下的 .bashrc 复制到 /tmp下, 并重命名为 bashhh</p></li>
+<li><p>修改文件时间与创建新文件 touch</p>
+
+<ul>
+<li>touch -t 0507150202 bashrc</li>
+<li>将 bashrc 日期修改为 2005/07/15 2:02</li>
+</ul>
+</li>
+<li><p>文件权限掩码 umask</p>
+
+<ul>
+<li>普通用户为 002, root 用户为 022</li>
+<li>&ldquo;文件&rdquo; 默认 &ldquo;没有 x 权限&rdquo;, 只有 rw (666)
+-rw-rw-rw-</li>
+<li>&ldquo;目录&rdquo; 中的 x 与是否可进入此目录有关, 因此默认开放所有权限, 即 rwx (777)</li>
+<li>-rw-rw-rw-</li>
+<li>umask -S
+u=rwx,g=rx,o=rx</li>
+<li>例如, umask 为 022, 当用户建立文件和目录时:</li>
+<li>建立文件: (-rw-rw-rw-) - (&mdash;&ndash;w&ndash;w-) = (-rw-r&ndash;r&ndash;)</li>
+<li>建立目录: (drwxrwxrwx) - (&mdash;&ndash;w&ndash;w-) = (drwxr-xr-x)</li>
+</ul>
+</li>
+<li><p>搜索文件</p>
+
+<ul>
+<li>例如: 查找 client.c</li>
+<li>locate client.c</li>
+</ul>
+</li>
+<li><p>磁盘与目录的可用容量</p>
+
+<ul>
+<li>df -h</li>
+<li>df -h /etc</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Chen Rui</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-06-18T23:10:58+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:10 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/06/17/linux-notes-iv/" title="Previous Post: Linux Notes IV">&laquo; Linux Notes IV</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/18/linux-note-iii/">Linux Note III</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/06/17/linux-notes-iv/">Linux Notes IV</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/06/16/install-arm-linux-gcc-on-linux/">Install Arm-linux-gcc on Linux</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/06/15/ubuntu-install-software-and-its-solution/">Ubuntu Install Software and Its Solution</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/06/12/make-menuconfig-error-and-solving-method/">Make Menuconfig Error and Solving Method</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+    <h1>Categories</h1>
+    <ul id="categories">
+        <li class='category'><a href='/blog/categories/essay/'>essay (2)</a></li>
+<li class='category'><a href='/blog/categories/ios/'>ios (2)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (7)</a></li>
+<li class='category'><a href='/blog/categories/motto/'>motto (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/poetry/'>poetry (1)</a></li>
+<li class='category'><a href='/blog/categories/python/'>python (5)</a></li>
+
+    </ul>
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Chen Rui -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'reckhhh';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://reckhhh.github.io/blog/2015/06/18/linux-note-iii/';
+        var disqus_url = 'http://reckhhh.github.io/blog/2015/06/18/linux-note-iii/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
