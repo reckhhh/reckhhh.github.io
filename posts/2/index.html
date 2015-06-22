@@ -9,12 +9,8 @@
   <meta name="author" content="Chen Rui">
 
   
-  <meta name="description" content="input() and raw_input() input(): Gets inputs from the user 1
-2
-3
-input(&quot;Enter a number: &quot;)
-Enter a number: 3
-3 raw_input(): Gets input from &hellip;">
+  <meta name="description" content="Octopress is good, but not perfect. One of the common error when type &ldquo;rake generate&rdquo; is: 1
+Error: Pygments can't parse unknown language &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -71,6 +67,64 @@ Enter a number: 3
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/05/01/octopress-error-pygments-cant-parse-unknown-language/">Octopress Error: Pygments Can&#8217;t Parse Unknown Language: &lt;/p></a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-05-01T13:30:38+08:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>1:30 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Octopress is good, but not perfect.</p>
+
+<ul>
+<li>One of the common error when type &ldquo;<strong>rake generate</strong>&rdquo; is:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Error: Pygments can't parse unknown language: &lt;/p&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Although there is a error, <em>jekyll</em> don&rsquo;t point out the detailed location where the error come from in its default setting. It was very annoying.</p>
+
+<p>To deal with the error, one way is modify the Ruby file <strong>plugins/pygments_code.rb</strong>, add <strong>#{code}</strong> after <strong>#{lang}</strong>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">rescue</span> <span class="no">MentosError</span>
+</span><span class='line'><span class="k">raise</span> <span class="s2">&quot;Pygments can&#39;t parse unknown language: </span><span class="si">#{</span><span class="n">lang</span><span class="si">}#{</span><span class="n">code</span><span class="si">}</span><span class="s2">.&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then, when &ldquo;<strong>rake generate</strong>&rdquo; again, the error location will be listed.</p>
+
+<ul>
+<li>Another thing worth noted is that when blogging <strong>&lsquo;&rsquo; should be replaced with &lsquo; &rsquo;</strong>, i.e., add a blank between &lsquo;&rsquo;, otherwise, when <strong>rake generate</strong>, &lsquo;&rsquo; without blank between them will also produce this error and it is difficult to detect through error description</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -3017,6 +3071,10 @@ Set the value corresponding to the given key if it not already in the dictionary
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/06/22/shell-notes-i/">Shell Notes I</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/06/18/linux-note-iii/">Linux Note III</a>
       </li>
     
@@ -3032,10 +3090,6 @@ Set the value corresponding to the given key if it not already in the dictionary
         <a href="/blog/2015/06/15/ubuntu-install-software-and-its-solution/">Ubuntu Install Software and Its Solution</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/06/12/make-menuconfig-error-and-solving-method/">Make Menuconfig Error and Solving Method</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -3043,7 +3097,7 @@ Set the value corresponding to the given key if it not already in the dictionary
     <ul id="categories">
         <li class='category'><a href='/blog/categories/essay/'>essay (2)</a></li>
 <li class='category'><a href='/blog/categories/ios/'>ios (2)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (7)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (8)</a></li>
 <li class='category'><a href='/blog/categories/motto/'>motto (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/poetry/'>poetry (1)</a></li>

@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-06-18T23:16:30+08:00</updated>
+  <updated>2015-06-22T23:45:55+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -12,6 +12,272 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Shell Notes I]]></title>
+    <link href="http://reckhhh.github.io/blog/2015/06/22/shell-notes-i/"/>
+    <updated>2015-06-22T23:40:00+08:00</updated>
+    <id>http://reckhhh.github.io/blog/2015/06/22/shell-notes-i</id>
+    <content type="html"><![CDATA[<ul>
+<li>替我们工作的是 &ldquo;硬件&rdquo;, 控制硬件的是 &ldquo;核心&rdquo;. 用户是通过 &ldquo;Shell&rdquo; 控制一些内核提供的 &ldquo;工具(Utility)&rdquo;, 来控制硬件工作</li>
+<li>Shell(壳) 是连接人类和 kernel(核心, 使计算机主机工作) 的桥梁</li>
+<li>命令别名设置功能</li>
+<li>alias lm=&lsquo;ls -al&rsquo;, 将 lm 命令设置为 &lsquo;ls -al&rsquo;, 即显示目录中所有的内容</li>
+<li>alias l=&lsquo;ls -F&rsquo;, 将 l 命令设置为 &lsquo;ls -F&rsquo;, 即以文件类型格式来显示目录中的内容</li>
+<li><p>unalias lm, 取消 lm 命令的别名</p></li>
+<li><p>type 命令查看命令类型</p></li>
+<li><p>type ls</p>
+
+<blockquote><p>查询 ls 是否为 shell 内置命令 ls is aliased to `ls &ndash;color=auto&#8217;</p></blockquote></li>
+<li><p>type -a ls</p>
+
+<blockquote><p>查询 ls 命令的最主要使用情况
+ls is aliased to `ls &ndash;color=auto&#8217;
+ls is /bin/ls</p></blockquote></li>
+<li><p>type cd</p>
+
+<blockquote><p>cd is a shell builtin</p></blockquote></li>
+<li><p>变量设置中的单引号与双引号的不同, 双引号可以保持变量的内容, 单引号只能是一般字符</p></li>
+<li><p>[root@linux ~]# name=&ldquo;$name&rdquo;</p></li>
+<li><p>[root@linux ~]# echo $name
+Ngcl</p></li>
+<li><p>[root@linux ~]# name=&lsquo;$name&rsquo;</p></li>
+<li><p>[root@linux ~]# echo $name</p></li>
+</ul>
+
+
+<p>$name</p>
+
+<ul>
+<li>在执行命令时, 引号 (`) 代表的含义</li>
+<li>在一串命令中, ` 之内的命令先被执行, 而其执行出来的结果将作为外部输入信息</li>
+<li>例如, locate 命令可列出所有相关文件的文件名, 如想知道每个文件的权限, 应先用 locate 将文件名数据列出来, 再用 ls 命令来处理</li>
+<li><p>[root@linux ~]# ls -l `locate crontab`</p></li>
+<li><p>变量键盘读取</p></li>
+<li>read [-pt] variable</li>
+<li>-p: 后接提示符</li>
+<li>-t: 后接时间</li>
+<li>例1:</li>
+<li>[root@linux ~]# read atest
+This is a test</li>
+<li>[root@linux ~]# echo $atest
+This is a test
+$name</li>
+<li>例2:</li>
+<li>[root@linux ~]# read -p &ldquo;Please keyin your name: &rdquo; -t 30 named
+Please keyin your name: Ngcl</li>
+<li><p>[root@linux ~]# echo named
+Ngcl</p></li>
+<li><p>历史命令: history</p>
+
+<ul>
+<li>!66, 执行第 66 条命令</li>
+<li>!!, 执行上一条命令</li>
+<li>!al, 执行最近的以 al 开头的命令</li>
+</ul>
+</li>
+<li><p>Shell 配置文件: ~/.bashrc</p>
+
+<ul>
+<li><h1>User specific aliases and functions</h1>
+
+<p>添加用户自己设定的 alias 变量别名</p></li>
+<li>使用 source 或小数点 (.), 将设置文件的内容读进当前的 shell 环境中</li>
+<li>source ~/.bashrc</li>
+<li>. ~/.bashrc</li>
+</ul>
+</li>
+<li><p>数据流重导向</p>
+
+<ul>
+<li>输入 (stdin): 代码为 0, 使用 &lt; 或 &lt;&lt;</li>
+<li>输出 (stdout): 代码为 1, 使用 > 或 >> 或 1></li>
+<li>标准错误输出 (stderr): 代码为2, 使用 2> 或 2>></li>
+<li>例如:</li>
+<li>将当前目录下的文件信息全存储到 list.txt (覆盖写)
+ls -al > list.txt</li>
+<li>将根目录下的数据也存储到 list.txt (添加写)
+ls -al / >> list.txt</li>
+</ul>
+</li>
+<li><p>正则表达式</p>
+
+<ul>
+<li>grep &lsquo;root&rsquo; ~/list.txt
+查找 list.txt 中有 &lsquo;root&rsquo; 的那一行</li>
+<li>grep -v &lsquo;root&rsquo; ~/list.txt, (v: invert)
+查找 list.txt 中没有 &lsquo;root&rsquo; 的那一行</li>
+<li>grep -n &lsquo;a&rsquo; list.txt, (n: show line number)
+查找 list.txt 中有 &lsquo;a&rsquo; 的行, 并显示行号</li>
+</ul>
+</li>
+<li><p>Shell 脚本即剧本, 即用 shell 功能所编写的 &ldquo;程序(program)&rdquo;, 可以类比为 DOS 中的批处理文件 (.bat), 最简单的功能是将许多命令写在一起, 让用户很轻松地就能执行一次执行多个命令</p>
+
+<ul>
+<li><p>可以看为一种程序语言, 且这个程序语言用 shell 相关工具命令, 所以不需要编译即可执行, 还拥有不错的调试 (debug) 工具</p></li>
+<li><p>Shell 版本 &ldquo;Hello World!&rdquo;</p></li>
+</ul>
+</li>
+</ul>
+
+
+<blockquote><p>#!/bin/bash
+    PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+    export PATH
+    echo -e &ldquo;Hello World ! \a \n&rdquo;
+    read -p &ldquo;Enter first name and last name&rdquo; firstname lastname
+    echo -e &ldquo;\nFull name: \$firstname \$lastname&rdquo;
+    exit 0</p></blockquote>
+
+<ul>
+<li>解释:</li>
+<li>第 1 行: #!/bin/bash 在声明这个脚本使用的 shell 名称和使用的 bash 的语法, 没有这一行, 该程序可能无法运行, 因为系统无法判断使用什么 shell 来执行</li>
+<li><p>PATH 用来设置好环境变量, 可让程序直接进行并执行命令, 而不必写绝对路径</p></li>
+<li><p>执行该脚本:</p>
+
+<ul>
+<li>sh hello.sh</li>
+<li>chmod a+x hello.sh
+./hello.sh</li>
+</ul>
+</li>
+<li><p>read -p</p>
+
+<ul>
+<li>后根一个字符串 &ldquo;&rdquo;, 字符串 &ldquo;some string&rdquo; 后可以跟多个变量作输入</li>
+</ul>
+</li>
+<li><p>echo -e</p>
+
+<ul>
+<li>参数前加 \$ 符号，\$firstname</li>
+</ul>
+</li>
+<li><p>判断文件类型与属性</p>
+
+<ul>
+<li>test -f, filetype=&ldquo;regulare file&rdquo;</li>
+<li>test -d, filetype=&ldquo;directory&rdquo;</li>
+<li>test -r, permission=&ldquo;readable&rdquo;</li>
+<li>test -w, permission=&ldquo;\permission writable&rdquo;</li>
+<li>test -x, permission=&ldquo;\permission executable&rdquo;</li>
+</ul>
+</li>
+<li><p>netstat -tuln 指令, 可查询到目前主机开启的网络服务端端口, 取得目前主机启动的服务</p>
+
+<ul>
+<li>常见的 port 与相关网络服务的关系:</li>
+<li>80: www</li>
+<li>22: ssh</li>
+<li>21: ftp</li>
+<li>25: mail</li>
+</ul>
+</li>
+<li><p>testing=<code>netstat -tuln | grep ":80 "</code>
+if [ &ldquo;$testing&rdquo; != &ldquo;&rdquo; ]; then
+echo &ldquo;WWW is sunning&rdquo;
+fi</p></li>
+</ul>
+
+
+<p>testing=<code>netstat -tuln | grep ":22 "</code>
+if [ &ldquo;$testing&rdquo; != &ldquo;&rdquo; ]; then
+echo &ldquo;SSH is sunning&rdquo;
+fi</p>
+
+<p>testing=<code>netstat -tuln | grep ":21 "</code>
+if [ &ldquo;$testing&rdquo; != &ldquo;&rdquo; ]; then
+echo &ldquo;FTP is sunning&rdquo;
+fi</p>
+
+<p>testing=<code>netstat -tuln | grep ":25 "</code>
+if [ &ldquo;$testing&rdquo; != &ldquo;&rdquo; ]; then
+echo &ldquo;Mail is sunning&rdquo;
+fi</p>
+
+<ul>
+<li><p>if [ &ldquo;\$yn&rdquo; == &ldquo;Y&rdquo; ] || [ &ldquo;\$yn&rdquo; == &ldquo;y&rdquo; ]; then
+echo &ldquo;OK, continue&rdquo;
+elif [ &ldquo;\$yn&rdquo; == &ldquo;N&rdquo; ] || [ &ldquo;\$yn&rdquo; == &ldquo;n&rdquo; ]; then
+echo &ldquo;Oh, interrupt!&rdquo;
+else
+echo &ldquo;I don&rsquo;t know what is your choise&rdquo;
+fi</p></li>
+<li><p>read -p &ldquo;Please input (Y/N): &rdquo; yn
+[ &ldquo;\$yn&rdquo; == &ldquo;Y&rdquo; -o &ldquo;\$yn&rdquo; == &ldquo;y&rdquo; ] &amp;&amp; echo &ldquo;OK, continue&rdquo; &amp;&amp; exit 0
+[ &ldquo;\$yn&rdquo; == &ldquo;N&rdquo; -o &ldquo;\$yn&rdquo; == &ldquo;n&rdquo; ] &amp;&amp; echo &ldquo;OK, interrupt!&rdquo; &amp;&amp; exit 0
+echo &ldquo;I don&rsquo;t know what is your choise&rdquo; &amp;&amp; exit 0</p></li>
+<li><p>if [ &ldquo;\$yn&rdquo; == &ldquo;Y&rdquo; ] || [ &ldquo;\$yn&rdquo; == &ldquo;y&rdquo; ]; then
+echo &ldquo;OK, continue&rdquo;
+exit 0
+fi
+if [ &ldquo;\$yn&rdquo; == &ldquo;N&rdquo; ] || [ &ldquo;\$yn&rdquo; == &ldquo;n&rdquo; ]; then
+echo &ldquo;Oh, interrupt&rdquo;
+exit 0
+fi
+echo &ldquo;I don&rsquo;t know what is your choise&rdquo; &amp;&amp; exit 0</p></li>
+<li><p>if [ &ldquo;\$1&rdquo; == &ldquo;hello&rdquo; ]; then
+echo &ldquo;Hello, how are you ?&rdquo;
+elif [ &ldquo;\$1&rdquo; == &ldquo;&rdquo; ]; then
+echo &ldquo;You MUST input parameters, ex> $0 someword&rdquo;
+else
+echo &ldquo;The only parameter is &lsquo;hello&rsquo;&rdquo;
+fi</p></li>
+<li><p>case \$1 in
+&ldquo;hello&rdquo;)
+echo &ldquo;Hello, how are you ?&rdquo;
+;;
+&ldquo;&rdquo;)
+echo &ldquo;You MUST input params, ex> $0 someword&rdquo;
+;;
+*)
+echo &ldquo;Usage \$0 {hello}&rdquo;
+;;
+esac</p></li>
+<li><p>算术比较类:</p>
+
+<ul>
+<li>exp1 –eq exp2 相等, 为真</li>
+<li>exp1 –ne exp2 不等，为真</li>
+<li>exp1 –gt exp2 大于，为真</li>
+<li>exp1 –ge exp2 大于或等于，为真</li>
+<li>exp1 –lt exp2 小于，为真</li>
+<li>exp1 –le exp2 小于或等于，为真</li>
+<li>!exp 表达式为假，则结果为真</li>
+</ul>
+</li>
+<li><p>until [ &ldquo;\$yn&rdquo; == &ldquo;yes&rdquo; ] || [ &ldquo;$yn&rdquo; == &ldquo;YES&rdquo; ]
+do
+read -p &ldquo;Input YES/yes to stop this program: &rdquo; yn
+done</p></li>
+<li><p>s=0
+i=0</p></li>
+</ul>
+
+
+<p>while [ &ldquo;\$i&rdquo; != 100 ]
+do
+i=\$((\$i+1))
+s=\$((\$s+\$i))
+done
+echo &ldquo;The res is ==> $s&rdquo;</p>
+
+<p>s=0
+for (( i=1; i&lt;=100; i=i+1 ))
+do
+s=\$((\$s+$i))
+done
+echo &ldquo;The result is ==> \$s&rdquo;</p>
+
+<ul>
+<li>for animal in dog cat elephant
+do
+echo &ldquo;There are &rdquo;&ldquo;$animal&rdquo;&ldquo;s&hellip;. &rdquo;
+done</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Linux Note III]]></title>
