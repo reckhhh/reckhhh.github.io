@@ -4,7 +4,7 @@
   <title><![CDATA[Black Mamba]]></title>
   <link href="http://reckhhh.github.io/atom.xml" rel="self"/>
   <link href="http://reckhhh.github.io/"/>
-  <updated>2015-06-22T23:45:55+08:00</updated>
+  <updated>2015-06-25T23:35:24+08:00</updated>
   <id>http://reckhhh.github.io/</id>
   <author>
     <name><![CDATA[Chen Rui]]></name>
@@ -12,6 +12,95 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Install and Run Hello World by Qt]]></title>
+    <link href="http://reckhhh.github.io/blog/2015/06/25/install-and-run-hello-world-by-qt/"/>
+    <updated>2015-06-25T23:32:46+08:00</updated>
+    <id>http://reckhhh.github.io/blog/2015/06/25/install-and-run-hello-world-by-qt</id>
+    <content type="html"><![CDATA[<ul>
+<li>下载 Qt-4.5.3 版本, 先读 README 文档, 得知 Qt 的安装方法在 INSTALL 文档中, 按照 INSTALL 文档中的步骤来安装</li>
+<li>./configure, 如果这一步出错, 原因可能是没有安装 g++, 解决方案
+
+<ul>
+<li>ubuntu: apt-get install g++</li>
+<li>CentOS: yum install gcc-c++.x86_64</li>
+</ul>
+</li>
+<li>./configure, 如果这一步还出错, 遇到了安装 Qt 时的经典错误 Basic xLib functionality test failed! 这说明需要安装 libx11 的开发包
+
+<ul>
+<li>在 Ubuntu 下, 安装命令为:
+
+<ul>
+<li>sudo apt-get install libx11-dev libxext-dev libxtst-dev</li>
+</ul>
+</li>
+<li>在 CentOS下, 安装命令为:
+
+<ul>
+<li>yum install libx11-devel libxext-devel libxtst-devel</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>下面开始 make, 时间比较长</li>
+<li>下面开始 make install 进行安装, 安装到了 /usr/local/Trolltech/Qt-4.5.3/bin 目录下</li>
+<li>运行 ./designer 如果看到 Qt 正常启动, 说明安装成功</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>接下来, 在 Qt 的源码目录中新建环境设置脚本 setenv.sh,设置环境变量, 内容如下:
+QTEDIR=/usr/local/Trolltech/Qt-4.5.3
+PATH=\$QTEDIR/bin:\$PATH
+LD_LIBRARY_PATH=\$QTEDIR/lib:$LD_LIBRARY_PATH</li>
+<li>再执行 source setenv.sh, 使环境变量生较</li>
+<li>设置好之后通过执行下面命令查看是否生效
+qmake -v
+which qmake
+
+<ul>
+<li>显示的 qmake 版本和路径应该与安装的版本和路径是相同的, 则输出成功</li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>接下来, 新建一个文件夹并编写一个 hello.cpp 应用程序</li>
+<li>vim hello.c</li>
+</ul>
+
+
+<p>#include &lt; QApplication>
+#include &lt; QLabel>
+int main(int argc, char <em>argv[])
+{
+QApplication app(argc, argv);
+QLabel </em>label = new QLabel(&ldquo;hello world!&rdquo;);
+label->show();
+return app.exec();
+}</p>
+
+<ul>
+<li>接下来, 在 hello.cpp 所在文件夹中执行
+
+<ul>
+<li>qmake -project, 生成 hello.pro</li>
+<li>qmake hello.pro, 生成 Makefile</li>
+<li>make, 生成 hello 和 hello.o 两个文件</li>
+<li>双击运行 hello 或 运行 ./hello 即可弹出文本框</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Shell Notes I]]></title>
@@ -4493,29 +4582,6 @@ Set the value corresponding to the given key if it not already in the dictionary
 <li>git rm sometingToRemove</li>
 </ul>
 </li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[First Blog]]></title>
-    <link href="http://reckhhh.github.io/blog/2015/04/23/first-blog/"/>
-    <updated>2015-04-23T23:38:25+08:00</updated>
-    <id>http://reckhhh.github.io/blog/2015/04/23/first-blog</id>
-    <content type="html"><![CDATA[<p>After several hours efforts, I have my Octopress blog in the end.</p>
-
-<h4><em>Hello, World !</em></h4>
-
-<p>Then, what to write ?</p>
-
-<p>I intend to:</p>
-
-<ul>
-<li><p>Share technology about <em>Programming</em> and <em>Software Development</em></p></li>
-<li><p>Share <em>Experiences</em>, <em>Lessons</em> and <em>Thoughts</em></p></li>
-<li><p>Record <em>Life</em> and <em>Time</em></p></li>
-<li><p>Write about <em>Other Interesting Stuff</em></p></li>
 </ul>
 
 ]]></content>
